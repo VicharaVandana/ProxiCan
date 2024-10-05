@@ -1,0 +1,74 @@
+<---- LOG ENTRY [raspberrypi4 - 2024-09-24 16:14:05] ---->
+UDS Request :   [0x22 0x10 0x2a]
+Explaination:   Read Data By Itentifier (Service 22) Requested for DID 0x102a
+UDS Response:   [0x62 0x10 0x2a 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x56 0x0]
+Explaination:   Positive Response Recieved
+Service ID: 0x22
+DID: 0x10 0x2a
+Data: 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x0 0x56 0x0
+<------------------- LOG ENTRY END ------------------->
+
+<---- LOG ENTRY [raspberrypi4 - 2024-09-24 16:14:35] ---->
+UDS Request :   [0x22 0x10 0x2b]
+Explaination:   Read Data By Itentifier (Service 22) Requested for DID 0x102b
+UDS Response:   [0x7f 0x22 0x31]
+Explaination:   Negative Response Recieved
+NRC Code: 0x31
+NRC Name: requestOutOfRange
+NRC Desc: This response code indicates that the requested action will not be taken because the server has detected that the request message contains a parameter which attempts to substitute a value beyond its range of authority (e.g. attempting to substitute a data byte of 111 when the data is only defined to 100), or which attempts to access a dataIdentifier/routineIdentifer that is not supported or not supported in active session. This response code shall be implemented for all services, which allow the client to read data, write data or adjust functions by data in the server.
+<------------------- LOG ENTRY END ------------------->
+
+<---- LOG ENTRY [raspberrypi4 - 2024-09-24 16:15:05] ---->
+UDS Request :   [0x10 0x3]
+Explaination:   Diagnostic Session Control (Service 10) Requested for session 0x3 and SPRMIB flag False
+UDS Response:   [0x50 0x3 0x0 0x32 0x1 0xf4]
+Explaination:   Positive Response Recieved
+Service ID: 0x10
+Diag Session: 0x3
+Suppress Positive Message Request: False
+P2ServerMax: 50 milliseconds
+P2*ServerMax: 500 milliseconds
+<------------------- LOG ENTRY END ------------------->
+
+<---- LOG ENTRY [raspberrypi4 - 2024-09-24 16:15:52] ---->
+UDS Request :   [0x10 0x81]
+Explaination:   Diagnostic Session Control (Service 10) Requested for session 0x1 and SPRMIB flag True
+UDS Response:   []
+Explaination:   No Response Recieved
+Suppress Positive Message Request: True
+Response Bytes: 
+<------------------- LOG ENTRY END ------------------->
+
+<---- LOG ENTRY [sbb925582 - 2024-09-30 17:17:29] ---->
+UDS Request :   [0x10 0x3]
+Explaination:   Diagnostic Session Control (Service 10) Requested for session 0x3 and SPRMIB flag False
+UDS Response:   [0x50 0x3 0x50 0x0 0x13 0x32]
+Explaination:   Positive Response Recieved
+Service ID: 0x10
+Diag Session: 0x3
+Suppress Positive Message Request: False
+P2ServerMax: 20480 milliseconds
+P2*ServerMax: 4914 milliseconds
+<------------------- LOG ENTRY END ------------------->
+
+<---- LOG ENTRY [sbb925582 - 2024-09-30 17:17:45] ---->
+UDS Request :   [0x10 0x1]
+Explaination:   Diagnostic Session Control (Service 10) Requested for session 0x1 and SPRMIB flag False
+UDS Response:   [0x7f 0x10 0x10]
+Explaination:   Negative Response Recieved
+Suppress Positive Message Request: False
+NRC Code: 0x10
+NRC Name: generalReject
+NRC Desc: This response code indicates that the requested action has been rejected by the server. The generalReject response code shall only be implemented in the server if none of the negative response codes defined in this document meet the needs of the implementation. At no means shall this response code be a general replacement for other response codes defined.
+<------------------- LOG ENTRY END ------------------->
+
+<---- LOG ENTRY [sbb925582 - 2024-09-30 17:17:55] ---->
+UDS Request :   [0x22 0xf1 0x22]
+Explaination:   Read Data By Itentifier (Service 22) Requested for DID 0xf122
+UDS Response:   [0x62 0xf1 0x22 0x88 0x6c 0x5e 0x3b]
+Explaination:   Positive Response Recieved
+Service ID: 0x22
+DID: 0xf1 0x22
+Data: 0x88 0x6c 0x5e 0x3b
+<------------------- LOG ENTRY END ------------------->
+
