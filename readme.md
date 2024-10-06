@@ -1,23 +1,40 @@
-# How to configure the CAN channel and make it redy for communication
+# Activities which are completed in versions
 
-Call the function **connectCAN** with argument object **canconfig** and this parameter must contain necessary values mentioned below as its elements:
-- ReqCanId  
-- RespCanId 
-- channel
-- idtype
-- bitrate
-- fdftype
-- brsrate
-- samplepoint
-- FlowCtrlTimeout
+## POC Version
 
-# How to Send the Data 
-Invoke the function **send_data** from the file **flowcontrol_can.py** with the complete N-SDU as argument. The Argument to this function **n_sdu** is python list of numbers. Each byte is one element of this list ordered properly.
+- [x] Base UDS and TP and CAN layer backend implementation
+- [x] GUI for configuration window
+- [x] Functionality for Configuration window basic
+- [x] Basic Help Document Written
+- [x] Log File functionality added for Action log, can traffic, TP log and UDS log.
+- [x] Configuring window menu for UDS services selection implemented
+- [x] Menu for Providing log file name and location implemented
 
-# How to Recieve the Data
-Invoke the Function **recieve_data** from the file **flowcontrol_can.py** to get the full N_SDU. This function if everything goes fine would return the **n_sdu** which contains all the Recieved data as list of bytes in proper order. 
 
-# Order in which the Functions must be invoked
-1. Call *connectCAN* to configure the CAN and keep the Setup Ready
-2. Call *send_data* with UDS request message data - UDS Level
-3. Call *recieve_data* and the process the return value for the UDS response message data
+#UDS Services Implemented
+- [x] **Service 10**: Diagnostic Session Control
+- [ ] **Service 11**: ECU Reset
+- [x] **Service 22**: Read Data by Identifier
+- [x] **Service 2E**: Write Data by Identifier
+- [x] **Service 27**: Security Access
+- [ ] **Service 28**: Communication Control
+- [ ] **Service 14**: Clear Diagnostic Information
+- [ ] **Service 19**: Read DTC Information
+- [ ] **Service 85**: Control DTC Setting
+- [ ] **Service 23**: Read Memory by Address
+- [ ] **Service 2A**: Read Scaling Data by Identifier
+- [ ] **Service 2C**: Dynamically Define Data Identifier
+- [ ] **Service 31**: Routine Control
+- [ ] **Service 34**: Request Download
+- [ ] **Service 35**: Request Upload
+- [ ] **Service 36**: Transfer Data
+- [ ] **Service 37**: Request Transfer Exit
+- [ ] **Service 38**: Request File Transfer
+- [ ] **Service 2F**: Input Output Control by Identifier
+- [ ] **Service 86**: Response on Event
+- [ ] **Service 83**: Access Timing Parameters
+
+
+
+
+

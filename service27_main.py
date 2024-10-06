@@ -2,6 +2,7 @@ from service27_base import Ui_Form_SID27
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QMessageBox
 import service27_functions as fun
+from securityaccesslogic import *
 from bs4 import BeautifulSoup
 import os
 import datetime
@@ -13,7 +14,7 @@ import os
 #pc#import can
 
 
-class Ui_Service27(Ui_Form_SID27):
+class Ui_Service27(Ui_Form_SID27, QtWidgets.QMainWindow):
     def redesign_ui(self):
         pass 
     
@@ -54,7 +55,146 @@ class Ui_Service27(Ui_Form_SID27):
         return
     
     def send27service(self):
-        pass
+        index_SecurityLevel = self.comboBox_SecurityLevel.currentIndex()
+        current_securitydetails = fun.getsecurityaccessdetails(index_SecurityLevel)
+
+        #Request for Get Seed part of Security Access
+        service_request_getseed = fun.form_reqmsg4srv27_getSeed(current_securitydetails["subfunction_getseed"])
+
+        gen.IsAnyServiceActive = True   #Next request is triggered, so make True      
+        while(gen.IsTesterPresentActive == True):
+            self.update_status("WAIT!! Tester present (Service 3E) is currently ongoing")
+            
+        response_getseed = uds.sendRequest(service_request_getseed, True)
+        gen.log_action("UDS Request Success", f"27 Request to get Seed Successfully sent : {' '.join(hex(number) for number in service_request_getseed)}")
+        self.update_status("Service 27 request to Get Seed is sent")
+
+        if(response_getseed.type == "Positive Response"):
+            Is_ValidateKeyNeeded = True
+            response_html = f'''<h4><U>Positive Response Recieved</U></h4>
+    <p><strong>Service ID:</strong> <I>{hex(response_getseed.resp[0]-0x40)}</I></p>
+    <p><strong>Sub Function [GET SEED]:</strong> <I>{hex(response_getseed.resp[1])}</I></p>
+    <p><strong>Seed:</strong> <I>{" ".join(hex(number) for number in response_getseed.resp[2:])}</I></p>
+'''
+            seed = fun.bytes_to_number(response_getseed.resp[2:],'big')
+
+        elif(response_getseed.type == "Negative Response"):
+            Is_ValidateKeyNeeded = False
+            response_type = response_getseed.type
+            response_html = f'''<h4><U>Negative Response Recieved</U></h4>    
+    <p><strong>NRC Code:</strong> <I>{hex(response_getseed.nrc)}</I></p>
+    <p><strong>NRC Name:</strong> <I>{response_getseed.nrcname}</I></p>
+    <p><strong>NRC Desc:</strong> <I>{response_getseed.nrcdesc}</I></p>
+    <p><strong>Security Access:</strong> <I>DENIED</I></p>
+'''
+            
+        elif(response_getseed.type == "Unknown Response Type"):
+            Is_ValidateKeyNeeded = False
+            response_type = response_getseed.type
+            response_html = f'''<h4><U>Unidentified Response Recieved</U></h4>
+    <p><strong>Response Bytes:</strong> <I>{" ".join(hex(number) for number in response_getseed.resp)}</I></p>
+    <p><strong>Security Access:</strong> <I>DENIED</I></p>
+'''
+        elif(response_getseed.type == "No Response"):
+            Is_ValidateKeyNeeded = False
+            response_type = response_getseed.type
+            response_html = f'''<h4><U>No Response Recieved</U></h4>    
+    <p><strong>Response Bytes:</strong> <I>{" ".join(hex(number) for number in response_getseed.resp)}</I></p>
+    <p><strong>Security Access:</strong> <I>DENIED</I></p>
+'''
+        else:
+            Is_ValidateKeyNeeded = False
+            response_type = "Error"
+            response_html = f'''<h4><U>ERROR OCCURED</U></h4>
+            <p><strong>Security Access:</strong> <I>DENIED</I></p>'''
+
+        #Request for Validate Key part
+        if(Is_ValidateKeyNeeded == True):
+            #Compute the key from seed
+            logicfunction = current_securitydetails["SecurityFunction"]
+            #print(f"function is {logicfunction}. Seed is {seed} and key value is {globals()[logicfunction](seed)}")
+            key = globals()[logicfunction](seed)
+
+            #Request for Validate Key part of Security Access
+            service_request_validatekey = fun.form_reqmsg4srv27_validateKey(current_securitydetails["subfunction_validatekey"], key, current_securitydetails["keyLength"])
+
+            response_validatekey = uds.sendRequest(service_request_validatekey, True)
+            gen.log_action("UDS Request Success", f"27 Request to Validate Key Successfully sent : {' '.join(hex(number) for number in service_request_validatekey)}")
+            self.update_status("Service 27 request to Validate Key is sent")
+
+            if(response_validatekey.type == "Positive Response"):
+                response_type = response_validatekey.type
+                response_html = f'''{response_html}
+        <p><strong>Sub Function [VALIDATE KEY]:</strong> <I>{hex(response_validatekey.resp[1])}</I></p>
+        <p><strong>Key:</strong> <I>{" ".join(hex(number) for number in service_request_validatekey[2:])}</I></p>
+        <p><strong>Security Access:</strong> <I>GRANTED</I></p>
+    '''
+
+            elif(response_validatekey.type == "Negative Response"):
+                response_type = response_validatekey.type
+                response_html = f'''<h4><U>Negative Response Recieved</U></h4>    
+        <p><strong>NRC Code:</strong> <I>{hex(response_validatekey.nrc)}</I></p>
+        <p><strong>NRC Name:</strong> <I>{response_validatekey.nrcname}</I></p>
+        <p><strong>NRC Desc:</strong> <I>{response_validatekey.nrcdesc}</I></p>
+        <p><strong>Note:</strong> <I>Security Access Request of Get Seed functionality was successful.</I></p>
+        <p><strong>Security Access:</strong> <I>DENIED</I></p>
+    '''
+                
+            elif(response_validatekey.type == "Unknown Response Type"):
+                response_type = response_validatekey.type
+                response_html = f'''<h4><U>Unidentified Response Recieved</U></h4>
+        <p><strong>Response Bytes:</strong> <I>{" ".join(hex(number) for number in response_validatekey.resp)}</I></p>
+        <p><strong>Note:</strong> <I>Security Access Request of Get Seed functionality was successful.</I></p>
+        <p><strong>Security Access:</strong> <I>DENIED</I></p>
+    '''
+            elif(response_validatekey.type == "No Response"):
+                response_type = response_validatekey.type
+                response_html = f'''<h4><U>No Response Recieved</U></h4>    
+        <p><strong>Response Bytes:</strong> <I>{" ".join(hex(number) for number in response_validatekey.resp)}</I></p>
+        <p><strong>Note:</strong> <I>Security Access Request of Get Seed functionality was successful.</I></p>
+        <p><strong>Security Access:</strong> <I>DENIED</I></p>
+    '''
+            else:
+                response_type = "Error"
+                response_html = f'''<h4><U>ERROR OCCURED</U></h4>
+                <p><strong>Security Access:</strong> <I>DENIED</I></p>'''
+
+        #Request Response complete 
+        gen.IsAnyServiceActive = False   #Next response recieved , so make False
+
+        #Update the response data on userform
+        self.label_ResType.setText(response_type)
+        self.textBrowser_Resp.setHtml(response_html)
+
+        current_user = os.getlogin()
+        currenttime = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        soup = BeautifulSoup(response_html, 'html.parser')
+        response_text = soup.get_text()
+
+        self.logentrystring = f'''<---- LOG ENTRY [{current_user} - {currenttime}] ---->
+UDS Request for Get Seed :   [{" ".join(hex(number) for number in service_request_getseed)}]
+Explaination:   Security Access (Service 27) Requested to Get seed value for Security Level {(current_securitydetails["subfunction_validatekey"]//2)} - Subfunctions {hex(current_securitydetails["subfunction_getseed"])}_{hex(current_securitydetails["subfunction_validatekey"])}
+UDS Response for Get Seed:   [{" ".join(hex(number) for number in response_getseed.resp)}]'''
+        if(Is_ValidateKeyNeeded == True):
+            self.logentrystring = f'''{self.logentrystring}
+UDS Get Seed Successful. The Seed Recieved is: {hex(seed)}. The Key computed internally is {hex(key)}
+UDS Request for Validate Key :   [{" ".join(hex(number) for number in service_request_validatekey)}]
+Explaination:   Security Access (Service 27) Requested to validate Key computed for Security Level {(current_securitydetails["subfunction_validatekey"]//2)} - Subfunctions {hex(current_securitydetails["subfunction_getseed"])}_{hex(current_securitydetails["subfunction_validatekey"])}
+UDS Response for Validate Key:   [{" ".join(hex(number) for number in response_validatekey.resp)}]'''
+
+        self.logentrystring = f'''{self.logentrystring}
+Explaination:   {response_text}<------------------- LOG ENTRY END ------------------->
+
+'''
+        return
+
+    def closeEvent(self, event):
+        # Custom logic when the window is closed
+        gen.log_action(f"Window Close", f"Service 27 Window Closed.")
+        return    
+        
+        
+
     
 
 

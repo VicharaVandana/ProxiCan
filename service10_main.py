@@ -134,6 +134,11 @@ Explaination:   {response_text}<------------------- LOG ENTRY END --------------
 
 '''
         return
+    
+    def closeEvent(self, event):
+        # Custom logic when the window is closed
+        gen.log_action(f"Window Close", f"Service 10 Window Closed.")
+        return
 
 
 

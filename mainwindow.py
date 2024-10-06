@@ -13,11 +13,12 @@ import general as gen
 import service22_main as rdbi
 import service2e_main as wdbi
 import service10_main as dsc
+import service27_main as secuacc
 
 Is_CanConnected = False
 
 #Create a child class of the mainwindow
-class mainwindow(Ui_MainWindow, QtWidgets.QMainWindow):
+class mainwindow(Ui_MainWindow, QtWidgets.QMainWindow, QtWidgets.QWidget):
     def redesign_ui(self):
         self.lbl_statusbar.setWordWrap(True)
         self.udsbuttons = []
@@ -126,6 +127,7 @@ class mainwindow(Ui_MainWindow, QtWidgets.QMainWindow):
         self.pushButton_22.clicked.connect(self.openservice22)
         self.pushButton_2E.clicked.connect(self.openservice2E)
         self.pushButton_10.clicked.connect(self.openservice10)
+        self.pushButton_27.clicked.connect(self.openservice27)
         return
     
     def on_radiobutton_fdf_clicked(self):
@@ -166,6 +168,20 @@ class mainwindow(Ui_MainWindow, QtWidgets.QMainWindow):
             gen.log_action("Button Click", "Service 10 Window Opened")
         else:
             self.update_status(f"10 Button clicked. But unable to open the service window as CAN is not connected")
+        return
+    
+    def openservice27(self):
+        if(Is_CanConnected == True):
+            self.window27 = QMainWindow()
+            self.ui27 = secuacc.Ui_Service27()
+            self.ui27.setupUi(self.window27)
+            self.ui27.redesign_ui()
+            self.ui27.connectFunctions()
+            self.window27.show()  # Display the new window
+            self.update_status(f"27 Button clicked. Security Access service window opened")
+            gen.log_action("Button Click", "Service 27 Window Opened")
+        else:
+            self.update_status(f"27 Button clicked. But unable to open the service window as CAN is not connected")
         return
     
     def openservice22(self):
@@ -378,6 +394,11 @@ class mainwindow(Ui_MainWindow, QtWidgets.QMainWindow):
         self.update_status(f"Disconnect Button Clicked: CAN Disconnected successfully")
         gen.log_action(f"CAN Connection", f"CAN disconnected successfully.")
         Is_CanConnected = False
+        return
+    
+
+
+
 
 
 

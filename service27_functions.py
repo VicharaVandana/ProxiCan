@@ -37,6 +37,13 @@ def number_to_bytes(number, length, byteorder='big'):
     byte_list = list(byte_array)
     
     return byte_list
+
+def bytes_to_number(byte_array, byteorder='big'):
+    
+    # Convert the byte array to a single integer
+    number = int.from_bytes(byte_array, byteorder=byteorder)  # 'big' for big-endian byte order
+    
+    return number
    
         
 def form_reqmsg4srv27_getSeed(subfunction):    
