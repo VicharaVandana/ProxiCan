@@ -14,6 +14,7 @@ import service22_main as rdbi
 import service2e_main as wdbi
 import service10_main as dsc
 import service27_main as secuacc
+import service11_main as er
 
 Is_CanConnected = False
 
@@ -128,6 +129,7 @@ class mainwindow(Ui_MainWindow, QtWidgets.QMainWindow, QtWidgets.QWidget):
         self.pushButton_2E.clicked.connect(self.openservice2E)
         self.pushButton_10.clicked.connect(self.openservice10)
         self.pushButton_27.clicked.connect(self.openservice27)
+        self.pushButton_11.clicked.connect(self.openservice11)
         return
     
     def on_radiobutton_fdf_clicked(self):
@@ -168,6 +170,20 @@ class mainwindow(Ui_MainWindow, QtWidgets.QMainWindow, QtWidgets.QWidget):
             gen.log_action("Button Click", "Service 10 Window Opened")
         else:
             self.update_status(f"10 Button clicked. But unable to open the service window as CAN is not connected")
+        return
+
+    def openservice11(self):
+        if(Is_CanConnected == True):
+            self.window11 = QMainWindow()
+            self.ui11 = dsc.Ui_Service11()
+            self.ui11.setupUi(self.window11)
+            self.ui11.redesign_ui()
+            self.ui11.connectFunctions()
+            self.window11.show()  # Display the new window
+            self.update_status(f"11 Button clicked. Diagnostic Session Control service window opened")
+            gen.log_action("Button Click", "Service 11 Window Opened")
+        else:
+            self.update_status(f"11 Button clicked. But unable to open the service window as CAN is not connected")
         return
     
     def openservice27(self):
