@@ -55,8 +55,8 @@ class Ui_Service11(Ui_Form_SID11):
         return
     
     def send11service(self):
-        index_dscSession = self.comboBox_ECUReset.currentIndex()
-        session = fun.getsubfunction(index_dscSession)
+        index_ERSession = self.comboBox_ECUReset.currentIndex()
+        session = fun.getsubfunction(index_ERSession)
         sprmib_flg = self.checkBox_suppressposmsg.isChecked()
 
         #session should be a valid value and not zero
@@ -80,15 +80,14 @@ class Ui_Service11(Ui_Form_SID11):
         gen.log_action("UDS Request Success", f"11 Request Successfully sent : {' '.join(hex(number) for number in service_request)}")
 
         if(response.type == "Positive Response"):
-            p2servermax = ((response.resp[2] << 8)|(response.resp[3]))
-            p2starservermax = ((response.resp[4] << 8)|(response.resp[5]))
+            #p2servermax = ((response.resp[2] << 8)|(response.resp[3]))
+            #p2starservermax = ((response.resp[4] << 8)|(response.resp[5]))
 
             response_html = f'''<h4><U>Positive Response Recieved</U></h4>
     <p><strong>Service ID:</strong> <I>{hex(response.resp[0]-0x40)}</I></p>
-    <p><strong>Diag Session:</strong> <I>{hex(response.resp[1])}</I></p>
+    <p><strong>Reset Type:</strong> <I>{hex(response.resp[1])}</I></p>
     <p><strong>Suppress Positive Message Request:</strong> <I>{sprmib_flg}</I></p>
-    <p><strong>P2ServerMax:</strong> <I>{p2servermax} milliseconds</I></p>
-    <p><strong>P2*ServerMax:</strong> <I>{p2starservermax} milliseconds</I></p>
+    
 '''
 
         elif(response.type == "Negative Response"):
