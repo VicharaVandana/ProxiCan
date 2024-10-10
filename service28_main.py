@@ -1,7 +1,7 @@
-from SID28_base import Ui_Dialog_28
+from service28_base import Ui_Dialog_28
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QMessageBox
-import SID28_functions as fun
+import service28_functions as fun
 from bs4 import BeautifulSoup
 import os
 import datetime
