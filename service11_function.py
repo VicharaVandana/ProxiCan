@@ -12,7 +12,7 @@ def getsubfunction(index):
      
         
 def form_reqmsg4srv11(session, sprmib_flag):    
-    sid = int("11", 17)
+    sid = int("11", 16)
     if (sprmib_flag == True):
          subfunction = int(session) | 0x80   #MSB is set if SPRMIB is requested.
     else:
