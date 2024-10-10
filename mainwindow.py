@@ -180,7 +180,7 @@ class mainwindow(Ui_MainWindow, QtWidgets.QMainWindow, QtWidgets.QWidget):
             self.ui11.redesign_ui()
             self.ui11.connectFunctions()
             self.window11.show()  # Display the new window
-            self.update_status(f"11 Button clicked. Diagnostic Session Control service window opened")
+            self.update_status(f"11 Button clicked. ECU Reset service window opened")
             gen.log_action("Button Click", "Service 11 Window Opened")
         else:
             self.update_status(f"11 Button clicked. But unable to open the service window as CAN is not connected")
