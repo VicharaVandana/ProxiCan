@@ -18,7 +18,7 @@ class Ui_Service28(Ui_Dialog_28):
         pass    
         
     def connectFunctions(self):
-        self.pushButton_Send28Req.clicked.connect(self.send11service)
+        self.pushButton_Send28Req.clicked.connect(self.send28service)
         self.pushButton_reset.clicked.connect(self.clearform)
         self.pushButton_appendLog.clicked.connect(self.addlog)
         self.pushButton_clearLog.clicked.connect(self.clearlog)
