@@ -175,7 +175,7 @@ class mainwindow(Ui_MainWindow, QtWidgets.QMainWindow, QtWidgets.QWidget):
     def openservice11(self):
         if(Is_CanConnected == True):
             self.window11 = QMainWindow()
-            self.ui11 = dsc.Ui_Service11()
+            self.ui11 = er.Ui_Service11()
             self.ui11.setupUi(self.window11)
             self.ui11.redesign_ui()
             self.ui11.connectFunctions()
