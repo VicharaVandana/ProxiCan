@@ -1,4 +1,4 @@
-
+#import re
 def getsubfunction(index):
      if(index == 0):
           return(0x01)
@@ -8,9 +8,19 @@ def getsubfunction(index):
           return(0x03)
      else:
           return(0x00)
+
+
+def getsubfunctionname(session):
+     if(session == 0x01):
+          return("Hard reset")
+     elif(session == 0x02) :
+          return("Key Off/On Reset")
+     elif(session == 0x03):
+          return("Soft Reset") 
+     else:
+          return("User defined reset (Unknown) ")  
      
-     
-        
+          
 def form_reqmsg4srv11(session, sprmib_flag):    
     sid = int("11", 16)
     if (sprmib_flag == True):
