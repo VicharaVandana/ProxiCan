@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>698</width>
+    <height>531</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QWidget" name="layoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>80</y>
+     <width>621</width>
+     <height>302</height>
+    </rect>
+   </property>
+   <layout class="QGridLayout" name="gridLayout">
+    <property name="sizeConstraint">
+     <enum>QLayout::SetNoConstraint</enum>
+    </property>
+    <item row="3" column="3">
+     <widget class="QPushButton" name="pushButton_appendLog">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(85, 255, 127);
+color: rgb(85, 0, 0);</string>
+      </property>
+      <property name="text">
+       <string>Add to Log</string>
+      </property>
+     </widget>
+    </item>
+    <item row="6" column="1" colspan="2">
+     <widget class="QTextBrowser" name="textBrowser_Resp"/>
+    </item>
+    <item row="3" column="2">
+     <widget class="QPushButton" name="pushButton_clearLog">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(85, 255, 127);
+color: rgb(85, 0, 0);</string>
+      </property>
+      <property name="text">
+       <string>Clear Log</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="1" alignment="Qt::AlignHCenter">
+     <widget class="QComboBox" name="comboBox_ECUReset">
+      <property name="minimumSize">
+       <size>
+        <width>220</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>220</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="toolTip">
+       <string>Select the ECU Reset to which you want ECU to move. If your reset type is not in list then contact admin</string>
+      </property>
+      <item>
+       <property name="text">
+        <string>01 - Hard reset</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>02 - KeyOffOn reset</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>03 - Soft reset</string>
+       </property>
+      </item>
+     </widget>
+    </item>
+    <item row="3" column="1">
+     <widget class="QLabel" name="label_ResType">
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(0, 0, 255);</string>
+      </property>
+      <property name="text">
+       <string>No Response</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="0">
+     <widget class="QLabel" name="label_2">
+      <property name="minimumSize">
+       <size>
+        <width>130</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>Response Type</string>
+      </property>
+     </widget>
+    </item>
+    <item row="6" column="0">
+     <widget class="QLabel" name="label_3">
+      <property name="text">
+       <string>Response</string>
+      </property>
+     </widget>
+    </item>
+    <item row="6" column="3">
+     <widget class="QPushButton" name="pushButton_reset">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(170, 170, 0);
+font: 75 8pt &quot;MS Shell Dlg 2&quot;;
+color: rgb(0, 85, 0);</string>
+      </property>
+      <property name="text">
+       <string>Reset</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="0">
+     <widget class="QLabel" name="label">
+      <property name="text">
+       <string>Reset Type</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="3">
+     <widget class="QPushButton" name="pushButton_Send11Req">
+      <property name="toolTip">
+       <string>Sends the 10 service request to ECU</string>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(0, 255, 255);
+border-color: rgb(0, 0, 0);
+color: rgb(0, 0, 0);</string>
+      </property>
+      <property name="text">
+       <string>Send Request</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="2" alignment="Qt::AlignRight">
+     <widget class="QCheckBox" name="checkBox_suppressposmsg">
+      <property name="toolTip">
+       <string>If selected then Suppress Positive Response Message Indication bit will be set in Subfunction</string>
+      </property>
+      <property name="text">
+       <string>SPRMIB</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+   <zorder>pushButton_appendLog</zorder>
+   <zorder>label_ResType</zorder>
+   <zorder>textBrowser_Resp</zorder>
+   <zorder>pushButton_clearLog</zorder>
+   <zorder>label</zorder>
+   <zorder>pushButton_reset</zorder>
+   <zorder>label_3</zorder>
+   <zorder>pushButton_Send11Req</zorder>
+   <zorder>comboBox_ECUReset</zorder>
+   <zorder>label_2</zorder>
+   <zorder>checkBox_suppressposmsg</zorder>
+  </widget>
+  <widget class="QLabel" name="label_status">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>400</y>
+     <width>621</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(255, 255, 127);
+color: rgb(85, 0, 0);
+border-color: rgb(0, 0, 255);</string>
+   </property>
+   <property name="text">
+    <string>No Status</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="wordWrap">
+    <bool>true</bool>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
