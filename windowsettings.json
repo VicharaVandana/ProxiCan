@@ -21,5 +21,9 @@
         "2F": true,
         "83": true,
         "86": false
-    }
+    },
+    "ACTIONLOG_FULLPATH": "./reports/can_actionlog_report.txt",
+    "CANTRAFFICLOG_FULLPATH": "./reports/cantraffic_log_report.txt",
+    "CANTPLOG_FULLPATH": "./reports/tp_log_report.txt",
+    "UDSLOG_FULLPATH": "./reports/uds_log_report.txt"
 }

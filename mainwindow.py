@@ -18,7 +18,7 @@ import service27_main as secuacc
 Is_CanConnected = False
 
 #Create a child class of the mainwindow
-class mainwindow(Ui_MainWindow, QtWidgets.QMainWindow, QtWidgets.QWidget):
+class mainwindow(Ui_MainWindow, QtWidgets.QWidget):
     def redesign_ui(self):
         self.lbl_statusbar.setWordWrap(True)
         self.udsbuttons = []

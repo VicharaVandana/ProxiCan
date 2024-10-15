@@ -13,7 +13,7 @@
 
 #UDS Services Implemented
 - [x] **Service 10**: Diagnostic Session Control
-- [ ] **Service 11**: ECU Reset
+- [x] **Service 11**: ECU Reset
 - [x] **Service 22**: Read Data by Identifier
 - [x] **Service 2E**: Write Data by Identifier
 - [x] **Service 27**: Security Access
