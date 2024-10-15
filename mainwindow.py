@@ -224,6 +224,7 @@ class mainwindow(Ui_MainWindow, QtWidgets.QMainWindow, QtWidgets.QWidget):
             self.window28.show()  # Display the new window
             if(self.ui28.Communication_type==1):
                 self.ui28.lineEdit_NIN.hide()
+                self.ui28.lineEdit_NIN=0x0000
             self.update_status(f"28 Button clicked.Communication control service window opened")
             gen.log_action("Button Click", "Service 28 Window Opened")
         else:
