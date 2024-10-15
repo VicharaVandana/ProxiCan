@@ -15,6 +15,7 @@ import service2e_main as wdbi
 import service10_main as dsc
 import service27_main as secuacc
 import service11_main as er
+import service85_main as cdtcs
 
 Is_CanConnected = False
 
@@ -130,6 +131,7 @@ class mainwindow(Ui_MainWindow, QtWidgets.QMainWindow, QtWidgets.QWidget):
         self.pushButton_10.clicked.connect(self.openservice10)
         self.pushButton_27.clicked.connect(self.openservice27)
         self.pushButton_11.clicked.connect(self.openservice11)
+        self.pushButton_85.clicked.connect(self.openservice85)
         return
     
     def on_radiobutton_fdf_clicked(self):
@@ -184,6 +186,25 @@ class mainwindow(Ui_MainWindow, QtWidgets.QMainWindow, QtWidgets.QWidget):
             gen.log_action("Button Click", "Service 11 Window Opened")
         else:
             self.update_status(f"11 Button clicked. But unable to open the service window as CAN is not connected")
+        return
+        
+    def openservice85(self):
+        if(Is_CanConnected == True):
+            self.window85 = QMainWindow()
+            self.ui85 = cdtcs.Ui_Service85()
+            self.ui85.setupUi(self.window85)
+            self.ui85.redesign_ui()
+            self.ui85.connectFunctions()
+            self.window85.show()  # Display the new window
+            if(self.ui85.checkBox_DTCOption == 1):    #Display the DTC Setting Control Record Input box only if the checkbox is ticked 
+                self.ui85.lineEdit_DTCSettingInput.show()
+            else:
+                self.ui85.lineEdit_DTCSettingInput.hide()
+
+            self.update_status(f"85 Button clicked. Control DTC Settings service window opened")
+            gen.log_action("Button Click", "Service 85 Window Opened")
+        else:
+            self.update_status(f"85 Button clicked. But unable to open the service window as CAN is not connected")
         return
     
     def openservice27(self):
