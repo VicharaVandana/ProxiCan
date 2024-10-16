@@ -44,14 +44,14 @@ class Ui_Service85(Ui_Form_SID85):
         #Add the uds transaction to the log file
         gen.log_udsreport(self.logentrystring)
         self.logentrystring = ""    #Clear the log entry so that if multiple tiomes the button is clicked continuously only one entry is made.
-        self.update_status(f"Log file appended with the current UDS transaction (Mainwindow\reports\cantraffic_log_report.txt)")
-        gen.log_action("Button Click", "Add to Log button for Service 11 window clicked.")
+        self.update_status(f"Log file appended with the current UDS transaction (Mainwindow/reports/cantraffic_log_report.txt)")
+        gen.log_action("Button Click", "Add to Log button for Service 85 window clicked.")
         return
     
     def clearlog(self):
         gen.clearudslogfile()
-        self.update_status(f"Log file cleared (Mainwindow\reports\cantraffic_log_report.txt)")
-        gen.log_action("Button Click", "Clear Log button for Service 11 window clicked.")
+        self.update_status(f"Log file cleared (Mainwindow/reports/cantraffic_log_report.txt)")
+        gen.log_action("Button Click", "Clear Log button for Service 85 window clicked.")
         return
     
     def send85service(self):
@@ -91,15 +91,13 @@ class Ui_Service85(Ui_Form_SID85):
         gen.log_action("UDS Request Success", f"85 Request Successfully sent : {' '.join(hex(number) for number in service_request)}")
 
         if(response.type == "Positive Response"):
-            p2servermax = ((response.resp[2] << 8)|(response.resp[3]))
-            p2starservermax = ((response.resp[4] << 8)|(response.resp[5]))
+            #p2servermax = ((response.resp[2] << 8)|(response.resp[3]))
+            #p2starservermax = ((response.resp[4] << 8)|(response.resp[5]))
 
             response_html = f'''<h4><U>Positive Response Recieved</U></h4>
     <p><strong>Service ID:</strong> <I>{hex(response.resp[0]-0x40)}</I></p>
     <p><strong>Control DTC Setting Type:</strong> <I>{hex(response.resp[1])}</I></p>
     <p><strong>Suppress Positive Message Request:</strong> <I>{sprmib_flg}</I></p>
-    <p><strong>P2ServerMax:</strong> <I>{p2servermax} milliseconds</I></p>
-    <p><strong>P2*ServerMax:</strong> <I>{p2starservermax} milliseconds</I></p>
     
 '''
 
