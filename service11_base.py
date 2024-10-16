@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'SID_11.ui'
+# Form implementation generated from reading ui file 'c:\Users\ass930085\OneDrive - Tata Technologies\Documents\PROXI GIT\ProxiCan\er_widget.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.11
 #
@@ -12,10 +12,10 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 
 
 class Ui_Form_SID11(object):
-    def setupUi(self, Dialog):
-        Dialog.setObjectName("Dialog")
-        Dialog.resize(698, 531)
-        self.layoutWidget = QtWidgets.QWidget(Dialog)
+    def setupUi(self, Form_SID11):
+        Form_SID11.setObjectName("Form_SID11")
+        Form_SID11.resize(698, 531)
+        self.layoutWidget = QtWidgets.QWidget(Form_SID11)
         self.layoutWidget.setGeometry(QtCore.QRect(50, 80, 621, 302))
         self.layoutWidget.setObjectName("layoutWidget")
         self.gridLayout = QtWidgets.QGridLayout(self.layoutWidget)
@@ -85,7 +85,7 @@ class Ui_Form_SID11(object):
         self.comboBox_ECUReset.raise_()
         self.label_2.raise_()
         self.checkBox_suppressposmsg.raise_()
-        self.label_status = QtWidgets.QLabel(Dialog)
+        self.label_status = QtWidgets.QLabel(Form_SID11)
         self.label_status.setGeometry(QtCore.QRect(50, 400, 621, 71))
         self.label_status.setStyleSheet("background-color: rgb(255, 255, 127);\n"
 "color: rgb(85, 0, 0);\n"
@@ -94,35 +94,25 @@ class Ui_Form_SID11(object):
         self.label_status.setWordWrap(True)
         self.label_status.setObjectName("label_status")
 
-        self.retranslateUi(Dialog)
-        QtCore.QMetaObject.connectSlotsByName(Dialog)
+        self.retranslateUi(Form_SID11)
+        QtCore.QMetaObject.connectSlotsByName(Form_SID11)
 
-    def retranslateUi(self, Dialog):
+    def retranslateUi(self, Form_SID11):
         _translate = QtCore.QCoreApplication.translate
-        Dialog.setWindowTitle(_translate("Dialog", "Dialog"))
-        self.pushButton_appendLog.setText(_translate("Dialog", "Add to Log"))
-        self.pushButton_clearLog.setText(_translate("Dialog", "Clear Log"))
-        self.comboBox_ECUReset.setToolTip(_translate("Dialog", "Select the Reset Type to which you want ECU to reset. If your reset type is not in list then contact admin"))
-        self.comboBox_ECUReset.setItemText(0, _translate("Dialog", "01 - Hard reset"))
-        self.comboBox_ECUReset.setItemText(1, _translate("Dialog", "02 - KeyOffOn reset"))
-        self.comboBox_ECUReset.setItemText(2, _translate("Dialog", "03 - Soft reset"))
-        self.label_ResType.setText(_translate("Dialog", "No Response"))
-        self.label_2.setText(_translate("Dialog", "Response Type"))
-        self.label_3.setText(_translate("Dialog", "Response"))
-        self.pushButton_reset.setText(_translate("Dialog", "Reset"))
-        self.label.setText(_translate("Dialog", "Reset Type"))
-        self.pushButton_Send11Req.setToolTip(_translate("Dialog", "Sends the 11 service request to ECU"))
-        self.pushButton_Send11Req.setText(_translate("Dialog", "Send Request"))
-        self.checkBox_suppressposmsg.setToolTip(_translate("Dialog", "If selected then Suppress Positive Response Message Indication bit will be set in Subfunction"))
-        self.checkBox_suppressposmsg.setText(_translate("Dialog", "SPRMIB"))
-        self.label_status.setText(_translate("Dialog", "No Status"))
-
-
-if __name__ == "__main__":
-    import sys
-    app = QtWidgets.QApplication(sys.argv)
-    Dialog = QtWidgets.QDialog()
-    ui = Ui_Form_SID11()
-    ui.setupUi(Dialog)
-    Dialog.show()
-    sys.exit(app.exec_())
+        Form_SID11.setWindowTitle(_translate("Form_SID11", "ECU Reset Service 11"))
+        self.pushButton_appendLog.setText(_translate("Form_SID11", "Add to Log"))
+        self.pushButton_clearLog.setText(_translate("Form_SID11", "Clear Log"))
+        self.comboBox_ECUReset.setToolTip(_translate("Form_SID11", "Select the ECU Reset to which you want ECU to move. If your reset type is not in list then contact admin"))
+        self.comboBox_ECUReset.setItemText(0, _translate("Form_SID11", "01 - Hard reset"))
+        self.comboBox_ECUReset.setItemText(1, _translate("Form_SID11", "02 - KeyOffOn reset"))
+        self.comboBox_ECUReset.setItemText(2, _translate("Form_SID11", "03 - Soft reset"))
+        self.label_ResType.setText(_translate("Form_SID11", "No Response"))
+        self.label_2.setText(_translate("Form_SID11", "Response Type"))
+        self.label_3.setText(_translate("Form_SID11", "Response"))
+        self.pushButton_reset.setText(_translate("Form_SID11", "Reset"))
+        self.label.setText(_translate("Form_SID11", "Reset Type"))
+        self.pushButton_Send11Req.setToolTip(_translate("Form_SID11", "Sends the 10 service request to ECU"))
+        self.pushButton_Send11Req.setText(_translate("Form_SID11", "Send Request"))
+        self.checkBox_suppressposmsg.setToolTip(_translate("Form_SID11", "If selected then Suppress Positive Response Message Indication bit will be set in Subfunction"))
+        self.checkBox_suppressposmsg.setText(_translate("Form_SID11", "SPRMIB"))
+        self.label_status.setText(_translate("Form_SID11", "No Status"))
