@@ -18,9 +18,9 @@ def getsubfunctionname(session):
      elif(session == 0x03):
           return("Soft Reset") 
      else:
-          return("User defined reset (Unknown) ")  
-     
-          
+          return("User defined reset (Unknown) ")
+
+
 def form_reqmsg4srv11(session, sprmib_flag):    
     sid = int("11", 16)
     if (sprmib_flag == True):
@@ -32,7 +32,12 @@ def form_reqmsg4srv11(session, sprmib_flag):
     print(f"{sid} {subfunction}")
     return(req_bytes)
     
-
+def checkresetinitiation(response):
+     if(response.type == "Positive Response"): 
+          return("Yes")
+     else:
+          return("No")
+     
 if __name__ == "__main__":
      print(form_reqmsg4srv11("03", False))
 

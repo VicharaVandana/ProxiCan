@@ -110,11 +110,11 @@ class Ui_Form_SID85(object):
         self.retranslateUi(Form_SID85)
         QtCore.QMetaObject.connectSlotsByName(Form_SID85)
         
-      # Function to show/hide lineEdit based on dropdown selection
+      # Function to show/hide lineEdit based on CHECKBOX selection
     def toggle_line_edit(self, state):
-        if state == QtCore.Qt.Checked: # Option 2 selected (index 1)
+        if state == QtCore.Qt.Checked: # Show lineEdit if checked
             self.lineEdit_DTCSettingInput.show()
-        else:  # Option 1 selected (index 0)
+        else:  # Hide lineEdit if not checked
             self.lineEdit_DTCSettingInput.hide()
     
     def retranslateUi(self, Form_SID85):

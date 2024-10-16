@@ -1,10 +1,22 @@
-<ass930085>[2024-10-16 10:11:37] UDS Request Success: 10 Request Successfully sent : 0x10 0x81
-<ass930085>[2024-10-16 10:13:56] UDS Request Success: 11 Request Successfully sent : 0x11 0x1
-<ass930085>[2024-10-16 10:14:23] UDS Request Success: 85 Request Successfully sent : 0x85 0x1
-<ass930085>[2024-10-16 10:14:42] UDS Request Success: 85 Request Successfully sent : 0x85 0x1
-<ass930085>[2024-10-16 10:18:32] UDS Request Success: 85 Request Successfully sent : 0x85 0x1
-<ass930085>[2024-10-16 10:18:58] UDS Request Success: 85 Request Successfully sent : 0x85 0x1
-<ass930085>[2024-10-16 10:19:05] UDS Request Success: 85 Request Successfully sent : 0x85 0x2
-<ass930085>[2024-10-16 11:06:36] UDS Request Success: 85 Request Successfully sent : 0x85 0x1
-<ass930085>[2024-10-16 11:11:09] UDS Request Success: 11 Request Successfully sent : 0x11 0x1
-<ass930085>[2024-10-16 11:25:07] UDS Request Success: 11 Request Successfully sent : 0x11 0x1
+<ass930085>[2024-10-16 14:03:41] Button Click: Send 22 request button clicked with DID[0x22].
+<ass930085>[2024-10-16 14:03:41] UDS Request Fail: 22 Request not happened due to invalid DID format
+<ass930085>[2024-10-16 14:03:45] Button Click: Send 22 request button clicked with DID[0x22].
+<ass930085>[2024-10-16 14:03:45] UDS Request Fail: 22 Request not happened due to invalid DID format
+<ass930085>[2024-10-16 14:03:47] Button Click: Send 22 request button clicked with DID[0x22].
+<ass930085>[2024-10-16 14:03:47] UDS Request Fail: 22 Request not happened due to invalid DID format
+<ass930085>[2024-10-16 14:04:03] Button Click: Send 22 request button clicked with DID[2224].
+<ass930085>[2024-10-16 14:04:03] UDS Request Success: 22 Request Successfully sent : 0x22 0x22 0x24
+<ass930085>[2024-10-16 14:31:14] UDS Request Success: 11 Request Successfully sent : 0x11 0x1
+<ass930085>[2024-10-16 14:31:22] Button Click: Add to Log button for Service 11 window clicked.
+<ass930085>[2024-10-16 14:31:35] UDS Request Success: 11 Request Successfully sent : 0x11 0x3
+<ass930085>[2024-10-16 14:31:41] UDS Request Success: 11 Request Successfully sent : 0x11 0x83
+<ass930085>[2024-10-16 14:36:22] UDS Request Success: 10 Request Successfully sent : 0x10 0x81
+<ass930085>[2024-10-16 14:50:25] UDS Request Success: 11 Request Successfully sent : 0x11 0x1
+<ass930085>[2024-10-16 14:56:32] UDS Request Success: 11 Request Successfully sent : 0x11 0x1
+<ass930085>[2024-10-16 14:56:56] UDS Request Success: 11 Request Successfully sent : 0x11 0x81
+<ass930085>[2024-10-16 14:58:10] UDS Request Success: 11 Request Successfully sent : 0x11 0x1
+<ass930085>[2024-10-16 14:58:22] Button Click: Clear Form for Service 11 window clicked. Userfields cleared successfully.
+<ass930085>[2024-10-16 14:58:25] UDS Request Success: 11 Request Successfully sent : 0x11 0x1
+<ass930085>[2024-10-16 14:58:27] Button Click: Add to Log button for Service 11 window clicked.
+<ass930085>[2024-10-16 15:14:44] UDS Request Success: 11 Request Successfully sent : 0x11 0x1
+<ass930085>[2024-10-16 15:16:31] UDS Request Success: 11 Request Successfully sent : 0x11 0x1

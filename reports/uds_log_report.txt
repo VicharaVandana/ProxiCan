@@ -49,3 +49,24 @@ Key: 0xe6 0xb9
 Security Access: GRANTED
 <------------------- LOG ENTRY END ------------------->
 
+<---- LOG ENTRY [ass930085 - 2024-10-16 14:31:14] ---->
+UDS Request :   [0x11 0x1]
+Explaination:   ECU Reset (Service 11) Requested for reset type 0x1 (Hard reset) and SPRMIB flag False
+UDS Response:   [0x51 0x1]
+Explaination:   Positive Response Recieved
+Service ID: 0x11
+Reset Type: 0x1
+Suppress Positive Message Request: False
+<------------------- LOG ENTRY END ------------------->
+
+<---- LOG ENTRY [ass930085 - 2024-10-16 14:58:25] ---->
+UDS Request :   [0x11 0x1]
+Explaination:   ECU Reset (Service 11) Requested for reset type 0x1 (Hard reset) and SPRMIB flag False
+UDS Response:   [0x51 0x1]
+Explaination:   Positive Response Recieved
+Service ID: 0x11
+Reset Type: 0x1 Hard reset
+Requested Reset Initiated: Yes
+Suppress Positive Message Request: False
+<------------------- LOG ENTRY END ------------------->
+

@@ -79,9 +79,11 @@ class Ui_Service11(Ui_Form_SID11):
             IsPosResExpected = False 
                
         response = uds.sendRequest(service_request, IsPosResExpected)
+
         
         self.update_status("Service 11 request is sent")
         gen.log_action("UDS Request Success", f"11 Request Successfully sent : {' '.join(hex(number) for number in service_request)}")
+        reset_initiation=fun.checkresetinitiation(response)
 
         if(response.type == "Positive Response"):
             #p2servermax = ((response.resp[2] << 8)|(response.resp[3]))
@@ -89,7 +91,8 @@ class Ui_Service11(Ui_Form_SID11):
 
             response_html = f'''<h4><U>Positive Response Recieved</U></h4>
     <p><strong>Service ID:</strong> <I>{hex(response.resp[0]-0x40)}</I></p>
-    <p><strong>Reset Type:</strong> <I>{hex(response.resp[1])}</I></p>
+    <p><strong>Reset Type:</strong> <I>{hex(response.resp[1])} {session_name}</I></p>
+    <p><strong>Requested Reset Initiated:</strong> <I>{reset_initiation}</I></p>
     <p><strong>Suppress Positive Message Request:</strong> <I>{sprmib_flg}</I></p>
     
 '''
@@ -97,6 +100,7 @@ class Ui_Service11(Ui_Form_SID11):
         elif(response.type == "Negative Response"):
             response_html = f'''<h4><U>Negative Response Recieved</U></h4>    
     <p><strong>Suppress Positive Message Request:</strong> <I>{sprmib_flg}</I></p>
+    <p><strong>Requested Reset Initiated:</strong> <I>{reset_initiation}</I></p>
     <p><strong>NRC Code:</strong> <I>{hex(response.nrc)}</I></p>
     <p><strong>NRC Name:</strong> <I>{response.nrcname}</I></p>
     <p><strong>NRC Desc:</strong> <I>{response.nrcdesc}</I></p>
@@ -109,6 +113,7 @@ class Ui_Service11(Ui_Form_SID11):
         elif(response.type == "No Response"):
             response_html = f'''<h4><U>No Response Recieved</U></h4>    
     <p><strong>Suppress Positive Message Request:</strong> <I>{sprmib_flg}</I></p>
+    <p><strong>Requested Reset Initiated:</strong> <I>{reset_initiation}</I></p>
     <p><strong>Response Bytes:</strong> <I>{" ".join(hex(number) for number in response.resp)}</I></p>
 '''
         else:
