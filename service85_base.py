@@ -103,9 +103,20 @@ class Ui_Form_SID85(object):
         self.checkBox_DTCOption.raise_()
         self.lineEdit_DTCSettingInput.raise_()
 
+        self.lineEdit_DTCSettingInput.hide()
+        
+        self.checkBox_DTCOption.stateChanged.connect(self.toggle_line_edit)
+
         self.retranslateUi(Form_SID85)
         QtCore.QMetaObject.connectSlotsByName(Form_SID85)
-
+        
+      # Function to show/hide lineEdit based on dropdown selection
+    def toggle_line_edit(self, state):
+        if state == QtCore.Qt.Checked: # Option 2 selected (index 1)
+            self.lineEdit_DTCSettingInput.show()
+        else:  # Option 1 selected (index 0)
+            self.lineEdit_DTCSettingInput.hide()
+    
     def retranslateUi(self, Form_SID85):
         _translate = QtCore.QCoreApplication.translate
         Form_SID85.setWindowTitle(_translate("Form_SID85", "Control DTC Setting 85"))

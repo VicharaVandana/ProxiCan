@@ -195,12 +195,6 @@ class mainwindow(Ui_MainWindow, QtWidgets.QMainWindow, QtWidgets.QWidget):
             self.ui85.setupUi(self.window85)
             self.ui85.redesign_ui()
             self.ui85.connectFunctions()
-            self.window85.show()  # Display the new window
-            if(self.ui85.checkBox_DTCOption == 1):    #Display the DTC Setting Control Record Input box only if the checkbox is ticked 
-                self.ui85.lineEdit_DTCSettingInput.show()
-            else:
-                self.ui85.lineEdit_DTCSettingInput.hide()
-
             self.update_status(f"85 Button clicked. Control DTC Settings service window opened")
             gen.log_action("Button Click", "Service 85 Window Opened")
         else:

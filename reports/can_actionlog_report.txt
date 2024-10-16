@@ -1,1 +1,8 @@
 <ass930085>[2024-10-16 10:11:37] UDS Request Success: 10 Request Successfully sent : 0x10 0x81
+<ass930085>[2024-10-16 10:13:56] UDS Request Success: 11 Request Successfully sent : 0x11 0x1
+<ass930085>[2024-10-16 10:14:23] UDS Request Success: 85 Request Successfully sent : 0x85 0x1
+<ass930085>[2024-10-16 10:14:42] UDS Request Success: 85 Request Successfully sent : 0x85 0x1
+<ass930085>[2024-10-16 10:18:32] UDS Request Success: 85 Request Successfully sent : 0x85 0x1
+<ass930085>[2024-10-16 10:18:58] UDS Request Success: 85 Request Successfully sent : 0x85 0x1
+<ass930085>[2024-10-16 10:19:05] UDS Request Success: 85 Request Successfully sent : 0x85 0x2
+<ass930085>[2024-10-16 11:06:36] UDS Request Success: 85 Request Successfully sent : 0x85 0x1

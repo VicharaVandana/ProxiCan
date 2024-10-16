@@ -22,7 +22,8 @@ class Ui_Service85(Ui_Form_SID85):
         self.pushButton_reset.clicked.connect(self.clearform)
         self.pushButton_appendLog.clicked.connect(self.addlog)
         self.pushButton_clearLog.clicked.connect(self.clearlog)
-        return
+        
+        
     
     def update_status(self, msg):
         # Create a QMessageBox instance
@@ -59,16 +60,10 @@ class Ui_Service85(Ui_Form_SID85):
         session = fun.getsubfunction(index_DTCSession)
         session_name = fun.getsubfunctionname(session)
         sprmib_flg = self.checkBox_suppressposmsg.isChecked()
-
-
-
-        if(self.checkBox_DTCOption == 1):    #Display the DTC Setting Control Record Input box only if the checkbox is ticked 
-                self.lineEdit_DTCSettingInput.show()
-        else:
-                self.lineEdit_DTCSettingInput.hide()
+        
+    
         
 
-        
 
         #session should be a valid value and not zero
         if(0 == session):
