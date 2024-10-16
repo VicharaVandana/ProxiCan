@@ -44,13 +44,13 @@ class Ui_Service11(Ui_Form_SID11):
         #Add the uds transaction to the log file
         gen.log_udsreport(self.logentrystring)
         self.logentrystring = ""    #Clear the log entry so that if multiple tiomes the button is clicked continuously only one entry is made.
-        self.update_status(f"Log file appended with the current UDS transaction (Mainwindow\reports\cantraffic_log_report.txt)")
+        self.update_status(f"Log file appended with the current UDS transaction (Mainwindow/reports/cantraffic_log_report.txt)")
         gen.log_action("Button Click", "Add to Log button for Service 11 window clicked.")
         return
     
     def clearlog(self):
         gen.clearudslogfile()
-        self.update_status(f"Log file cleared (Mainwindow\reports\cantraffic_log_report.txt)")
+        self.update_status(f"Log file cleared (Mainwindow/reports/cantraffic_log_report.txt)")
         gen.log_action("Button Click", "Clear Log button for Service 11 window clicked.")
         return
     
