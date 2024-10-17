@@ -51,7 +51,7 @@ class Ui_Dialog_28(object):
         self.gridLayout.addWidget(self.lineEdit_NIN, 4, 1, 1, 1)
         self.Communication_type = QtWidgets.QComboBox(self.layoutWidget)
         self.Communication_type.setMinimumSize(QtCore.QSize(220, 0))
-        self.Communication_type.setMaximumSize(QtCore.QSize(220, 16777215))
+        self.Communication_type.setMaximumSize(QtCore.QSize(300, 16777215))
         self.Communication_type.setObjectName("Communication_type")
         self.Communication_type.addItem("")
         self.Communication_type.addItem("")
@@ -85,7 +85,7 @@ class Ui_Dialog_28(object):
         self.gridLayout.addWidget(self.label_5, 3, 0, 1, 1)
         self.Control_Type = QtWidgets.QComboBox(self.layoutWidget)
         self.Control_Type.setMinimumSize(QtCore.QSize(220, 0))
-        self.Control_Type.setMaximumSize(QtCore.QSize(220, 16777215))
+        self.Control_Type.setMaximumSize(QtCore.QSize(300, 16777215))
         self.Control_Type.setObjectName("Control_Type")
         self.Control_Type.addItem("")
         self.Control_Type.addItem("")
@@ -117,13 +117,31 @@ class Ui_Dialog_28(object):
         self.label_status.setAlignment(QtCore.Qt.AlignCenter)
         self.label_status.setWordWrap(True)
         self.label_status.setObjectName("label_status")
+        self.lineEdit_NIN.hide()
+        self.label_4.hide()
+
+        # Connect the dropdown change event to a function
+        self.Control_Type.currentIndexChanged.connect(self.toggle_line_edit)
+
 
         self.retranslateUi(Dialog)
         QtCore.QMetaObject.connectSlotsByName(Dialog)
 
+    # Function to show/hide lineEdit based on dropdown selection
+    def toggle_line_edit(self, index):
+        print("CONTROL TYPE",self.Control_Type)
+        if index == 4 or index==5:  # Option 2 selected (index 1)
+            self.lineEdit_NIN.show()
+            self.label_4.show()
+        else:  # Option 1 selected (index 0)
+            self.lineEdit_NIN.hide()
+            self.label_4.hide()
+            #self.label_4.hide()
+
+
     def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate
-        Dialog.setWindowTitle(_translate("Dialog", "Dialog"))
+        Dialog.setWindowTitle(_translate("Dialog", "Communication Control Service 28"))
         self.label_2.setText(_translate("Dialog", "Response Type"))
         self.label_3.setText(_translate("Dialog", "Response"))
         self.pushButton_Send28Req.setToolTip(_translate("Dialog", "Sends the 28 service request to ECU"))
