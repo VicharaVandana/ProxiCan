@@ -1,4 +1,4 @@
-#pc#import can
+import can
 import os
 
 
@@ -35,10 +35,10 @@ def connectCAN(canconfig):
     try:
         #initialise the can
         # Set up the CAN interface
-        os.system(f'sudo ip link set {can_channel} up type can bitrate {baudrate} dbitrate {datarate} restart-ms 1000 berr-reporting on fd on')
-
-        #pc#tx = can.interface.Bus(channel=can_channel, bustype='socketcan', fd=True)
-        #pc#rx = can.interface.Bus(channel=can_channel, bustype='socketcan', fd=True)
+        #os.system(f'sudo ip link set {can_channel} up type can bitrate {baudrate} dbitrate {datarate} restart-ms 1000 berr-reporting on fd on')
+        os.system('sudo ip link set can0 up type can bitrate 500000 sample-point 0.800 dbitrate 2000000 dsample-point 0.800 fd on')
+        tx = can.interface.Bus(channel=can_channel, bustype='socketcan', fd=True)
+        rx = can.interface.Bus(channel=can_channel, bustype='socketcan', fd=True)
         return True
     except ValueError as e:
         return e
