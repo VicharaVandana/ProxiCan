@@ -1,12 +1,5 @@
-<raspberrypi4>[2024-10-17 14:05:44] Button Click: Import pxi button clicked
-<raspberrypi4>[2024-10-17 14:06:18] Config File Import Success: Config File Loaded successfully from: /home/raspberrypi4/ProxiCan/conf.pxi
-<raspberrypi4>[2024-10-17 14:06:20] Button Click: Connect CAN button clicked
-<raspberrypi4>[2024-10-17 14:06:20] CAN Connection: CAN can0 connected with baudrate 500000 and fdf type CANFD
-<raspberrypi4>[2024-10-17 14:06:22] Button Click: Service 11 Window Opened
-<raspberrypi4>[2024-10-17 14:06:26] UDS Request Success: 11 Request Successfully sent : 0x11 0x1
-<raspberrypi4>[2024-10-17 14:06:50] UDS Request Success: 11 Request Successfully sent : 0x11 0x1
-<raspberrypi4>[2024-10-17 14:06:51] Button Click: Clear Form for Service 11 window clicked. Userfields cleared successfully.
-<raspberrypi4>[2024-10-17 14:06:57] UDS Request Success: 11 Request Successfully sent : 0x11 0x1
-<raspberrypi4>[2024-10-17 14:07:03] UDS Request Success: 11 Request Successfully sent : 0x11 0x2
-<raspberrypi4>[2024-10-17 14:07:14] UDS Request Success: 11 Request Successfully sent : 0x11 0x3
-<raspberrypi4>[2024-10-17 14:07:19] UDS Request Success: 11 Request Successfully sent : 0x11 0x2
+<raspberrypi4>[2024-10-17 14:48:54] Button Click: Import pxi button clicked
+<raspberrypi4>[2024-10-17 14:48:58] Config File Import Success: Config File Loaded successfully from: /home/raspberrypi4/ProxiCan/conf.pxi
+<raspberrypi4>[2024-10-17 14:49:01] Button Click: Connect CAN button clicked
+<raspberrypi4>[2024-10-17 14:49:01] CAN Connection: CAN can0 connected with baudrate 500000 and fdf type CANFD
+<raspberrypi4>[2024-10-17 14:49:02] Button Click: Service 28 Window Opened
