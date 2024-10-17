@@ -1,4 +1,4 @@
-#pc#import can
+import can
 import time
 import datetime
 import configure as conf
