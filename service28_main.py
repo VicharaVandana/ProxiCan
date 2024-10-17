@@ -58,104 +58,173 @@ class Ui_Service28(Ui_Dialog_28):
     def send28service(self):
         index_Control_type = self.Control_Type.currentIndex()
         Control_type = fun.get_subfunction(index_Control_type)
+        Control_type_name=fun.getsubfunction_name(Control_type)
         index_Communication_type = self.Communication_type.currentIndex()
         Comm_type = fun.get_communication_type(index_Communication_type)
+        Comm_type_name=fun.get_communication_type_name(Comm_type)
         sprmib_flg = self.checkBox_suppressposmsg.isChecked()
-
+        #self.lineEdit_NIN.hide()
         #session should be a valid value and not zero
-        if(0 == Control_type):
-            self.update_status("Please select a valid Control Type.")
-            gen.log_action("UDS Request Fail", f"28 Request not happened due to invalid Reset Type selection [{self.Control_Type.currentText()}]")
-            return
-                #session should be a valid value and not zero
-        if(0 == Comm_type):
-            self.update_status("Please select a valid communication Type.")
-            gen.log_action("UDS Request Fail", f"28 Request not happened due to invalid Reset Type selection [{self.Communication_type.currentText()}]")
-            return
+        #if(Control_type==4 or Control_type==5):
+        #    self.lineEdit_NIN.show()
+
         #Get the service Request List for Diagnostic Session Control
-        service_request = fun.form_reqmsg4srv28(Control_type,Comm_type,sprmib_flg)
+ 
 
         #Send the service request and get the response 
         if(sprmib_flg == False):
             IsPosResExpected = True 
         else:
             IsPosResExpected = False 
+
         ###############################################################
-        nin_string = self.lineEdit_NIN.text().strip().replace(" ","").replace(" ","").replace(" ","")
+        if(Control_type==4 or Control_type==5):
+        
+            nin_string = self.lineEdit_NIN.text().strip().replace(" ","").replace(" ","").replace(" ","")
         #gen.log_action("Button Click", f"Send 22 request button clicked with DID[{did_string}].")
 
-        if(False == gen.check_2Bytehexadecimal(nin_string)):
-            #Show messagebox with enter valid DID value
-            self.update_status("Please enter a valid NIN value. It must be 2 byte in hexadecimal format")
-            gen.log_action("UDS Request Fail", "28 Request not happened due to invalid NIN format")
-            return 
-        #DID is valid  
-        self.update_status("NIN is validated.")
-        #Get the service Request List for Read Data By Identifier
-        service_request = fun.form_reqmsg4srv28(nin_string)
 
-        #Send the service request        
-        response = uds.sendRequest(service_request, True)
-        
-        self.update_status("Service 28 request is sent")
-        gen.log_action("UDS Request Success", f"28 Request Successfully sent : {' '.join(hex(number) for number in service_request)}")
-        ##############################################################
-               
-        response = uds.sendRequest(service_request, IsPosResExpected)
-        
-        self.update_status("Service 28 request is sent")
-        gen.log_action("UDS Request Success", f"28 Request Successfully sent : {' '.join(hex(number) for number in service_request)}")
+            if(False == gen.check_2Bytehexadecimal(nin_string)):
+                #Show messagebox with enter valid DID value
+                self.update_status("Please enter a valid NIN value. It must be 2 byte in hexadecimal format")
+                gen.log_action("UDS Request Fail", "28 Request not happened due to invalid NIN format")
+                return 
 
-        if(response.type == "Positive Response"):
-            p2servermax = ((response.resp[2] << 8)|(response.resp[3]))
-            p2starservermax = ((response.resp[4] << 8)|(response.resp[5]))
+            self.update_status("NIN is validated.")
+            service_request = fun.form_reqmsg4srv28_withNIN(Control_type,Comm_type,nin_string,sprmib_flg)
+            print(f"the service request is : {service_request}")
+            #Get the service Request List for Read Data By Identifier
+            #service_request = fun.form_reqmsg4srv28(nin_string)
 
-            response_html = f'''<h4><U>Positive Response Recieved</U></h4>
-    <p><strong>Service ID:</strong> <I>{hex(response.resp[0]-0x40)}</I></p>
-    <p><strong>Diag Session:</strong> <I>{hex(response.resp[1])}</I></p>
-    <p><strong>Suppress Positive Message Request:</strong> <I>{sprmib_flg}</I></p>
-    <p><strong>P2ServerMax:</strong> <I>{p2servermax} milliseconds</I></p>
-    <p><strong>P2*ServerMax:</strong> <I>{p2starservermax} milliseconds</I></p>
-'''
-
-        elif(response.type == "Negative Response"):
-            response_html = f'''<h4><U>Negative Response Recieved</U></h4>    
-    <p><strong>Suppress Positive Message Request:</strong> <I>{sprmib_flg}</I></p>
-    <p><strong>NRC Code:</strong> <I>{hex(response.nrc)}</I></p>
-    <p><strong>NRC Name:</strong> <I>{response.nrcname}</I></p>
-    <p><strong>NRC Desc:</strong> <I>{response.nrcdesc}</I></p>
-'''
+            #Send the service request        
+            response = uds.sendRequest(service_request, True)
             
-        elif(response.type == "Unknown Response Type"):
-            response_html = f'''<h4><U>Unidentified Response Recieved</U></h4>
-    <p><strong>Response Bytes:</strong> <I>{" ".join(hex(number) for number in response.resp)}</I></p>
-'''
-        elif(response.type == "No Response"):
-            response_html = f'''<h4><U>No Response Recieved</U></h4>    
-    <p><strong>Suppress Positive Message Request:</strong> <I>{sprmib_flg}</I></p>
-    <p><strong>Response Bytes:</strong> <I>{" ".join(hex(number) for number in response.resp)}</I></p>
-'''
-        else:
-            response_html = f'''<h4><U>ERROR OCCURED</U></h4>'''
+            self.update_status("Service 28 request is sent")
+            gen.log_action("UDS Request Success", f"28 Request Successfully sent : {' '.join(hex(number) for number in service_request)}")
+            ##############################################################
+                
+            response = uds.sendRequest(service_request, IsPosResExpected)
+            
+            self.update_status("Service 28 request is sent")
+            gen.log_action("UDS Request Success", f"28 Request Successfully sent : {' '.join(hex(number) for number in service_request)}")
 
+            if(response.type == "Positive Response"):
+
+
+                response_html = f'''<h4><U>Positive Response Recieved</U></h4>
+        <p><strong>Service ID:</strong> <I>{hex(response.resp[0]-0x40)}</I></p>
+        <p><strong>Control Type:</strong> <I>{hex(response.resp[1])} {Control_type_name} {Comm_type_name}</I></p>
+        <p><strong>Suppress Positive Message Request:</strong> <I>{sprmib_flg}</I></p>
+
+    '''
+
+            elif(response.type == "Negative Response"):
+                response_html = f'''<h4><U>Negative Response Recieved</U></h4>    
+        <p><strong>Suppress Positive Message Request:</strong> <I>{sprmib_flg}</I></p>
+        <p><strong>NRC Code:</strong> <I>{hex(response.nrc)}</I></p>
+        <p><strong>NRC Name:</strong> <I>{response.nrcname}</I></p>
+        <p><strong>NRC Desc:</strong> <I>{response.nrcdesc}</I></p>
+    '''
+                
+            elif(response.type == "Unknown Response Type"):
+                response_html = f'''<h4><U>Unidentified Response Recieved</U></h4>
+        <p><strong>Response Bytes:</strong> <I>{" ".join(hex(number) for number in response.resp)}</I></p>
+    '''
+            elif(response.type == "No Response"):
+                response_html = f'''<h4><U>No Response Recieved</U></h4>    
+        <p><strong>Suppress Positive Message Request:</strong> <I>{sprmib_flg}</I></p>
+        <p><strong>Response Bytes:</strong> <I>{" ".join(hex(number) for number in response.resp)}</I></p>
+    '''
+            else:
+                response_html = f'''<h4><U>ERROR OCCURED</U></h4>'''
+
+            
+            #Update the response data on userform
+            self.label_ResType.setText(response.type)
+            self.textBrowser_Resp.setHtml(response_html)
+
+            current_user = os.getlogin()
+            currenttime = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+            soup = BeautifulSoup(response_html, 'html.parser')
+            response_text = soup.get_text()
+
+            self.logentrystring = f'''<---- LOG ENTRY [{current_user} - {currenttime}] ---->
+    UDS Request :   [{" ".join(hex(number) for number in service_request)}]
+    Explaination:   Communication control Requested for control type 0x{Control_type} and communication type 0x{Comm_type} and SPRMIB flag {sprmib_flg}
+    UDS Response:   [{" ".join(hex(number) for number in response.resp)}]
+    Explaination:   {response_text}<------------------- LOG ENTRY END ------------------->
+
+    '''
+            return
+        elif(Control_type==0 or Control_type==1 or Control_type==2 or Control_type==3):
         
-        #Update the response data on userform
-        self.label_ResType.setText(response.type)
-        self.textBrowser_Resp.setHtml(response_html)
+            service_request = fun.form_reqmsg4srv28_withoutNIN(Control_type,Comm_type,sprmib_flg)
+                        #DID is valid  
+            #self.update_status("NIN is validated.")
+            #Get the service Request List for Read Data By Identifier
+            #service_request = fun.form_reqmsg4srv28(nin_string)
 
-        current_user = os.getlogin()
-        currenttime = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-        soup = BeautifulSoup(response_html, 'html.parser')
-        response_text = soup.get_text()
+            #Send the service request        
+            response = uds.sendRequest(service_request, True)
+            
+            self.update_status("Service 28 request is sent")
+            gen.log_action("UDS Request Success", f"28 Request Successfully sent : {' '.join(hex(number) for number in service_request)}")
+            ##############################################################
+                
+            response = uds.sendRequest(service_request, IsPosResExpected)
+            
+            self.update_status("Service 28 request is sent")
+            gen.log_action("UDS Request Success", f"28 Request Successfully sent : {' '.join(hex(number) for number in service_request)}")
 
-        self.logentrystring = f'''<---- LOG ENTRY [{current_user} - {currenttime}] ---->
-UDS Request :   [{" ".join(hex(number) for number in service_request)}]
-Explaination:   Communication control Requested for control type 0x{Control_type} and communication type 0x{Comm_type} and SPRMIB flag {sprmib_flg}
-UDS Response:   [{" ".join(hex(number) for number in response.resp)}]
-Explaination:   {response_text}<------------------- LOG ENTRY END ------------------->
+            if(response.type == "Positive Response"):
+                
 
-'''
-        return
+                response_html = f'''<h4><U>Positive Response Recieved</U></h4>
+        <p><strong>Service ID:</strong> <I>{hex(response.resp[0]-0x40)}</I></p>
+        <p><strong>Control Type:</strong> <I>{hex(response.resp[1])} {Control_type_name} {Comm_type_name}</I></p>
+        <p><strong>Suppress Positive Message Request:</strong> <I>{sprmib_flg}</I></p>
+
+    '''
+
+            elif(response.type == "Negative Response"):
+                response_html = f'''<h4><U>Negative Response Recieved</U></h4>    
+        <p><strong>Suppress Positive Message Request:</strong> <I>{sprmib_flg}</I></p>
+        <p><strong>NRC Code:</strong> <I>{hex(response.nrc)}</I></p>
+        <p><strong>NRC Name:</strong> <I>{response.nrcname}</I></p>
+        <p><strong>NRC Desc:</strong> <I>{response.nrcdesc}</I></p>
+    '''
+                
+            elif(response.type == "Unknown Response Type"):
+                response_html = f'''<h4><U>Unidentified Response Recieved</U></h4>
+        <p><strong>Response Bytes:</strong> <I>{" ".join(hex(number) for number in response.resp)}</I></p>
+    '''
+            elif(response.type == "No Response"):
+                response_html = f'''<h4><U>No Response Recieved</U></h4>    
+        <p><strong>Suppress Positive Message Request:</strong> <I>{sprmib_flg}</I></p>
+        <p><strong>Response Bytes:</strong> <I>{" ".join(hex(number) for number in response.resp)}</I></p>
+    '''
+            else:
+                response_html = f'''<h4><U>ERROR OCCURED</U></h4>'''
+
+            
+            #Update the response data on userform
+            self.label_ResType.setText(response.type)
+            self.textBrowser_Resp.setHtml(response_html)
+
+            current_user = os.getlogin()
+            currenttime = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+            soup = BeautifulSoup(response_html, 'html.parser')
+            response_text = soup.get_text()
+
+            self.logentrystring = f'''<---- LOG ENTRY [{current_user} - {currenttime}] ---->
+    UDS Request :   [{" ".join(hex(number) for number in service_request)}]
+    Explaination:   Communication control Requested for control type 0x{Control_type} and communication type 0x{Comm_type} and SPRMIB flag {sprmib_flg}
+    UDS Response:   [{" ".join(hex(number) for number in response.resp)}]
+    Explaination:   {response_text}<------------------- LOG ENTRY END ------------------->
+
+    '''
+                
+            return
 
 
 
