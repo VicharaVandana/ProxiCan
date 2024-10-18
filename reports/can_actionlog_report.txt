@@ -1,34 +1,12 @@
-<raspberrypi4>[2024-10-18 11:14:47] Button Click: Import pxi button clicked
-<raspberrypi4>[2024-10-18 11:14:52] Config File Import Success: Config File Loaded successfully from: /home/raspberrypi4/ProxiCan/conf.pxi
-<raspberrypi4>[2024-10-18 11:14:53] Button Click: Connect CAN button clicked
-<raspberrypi4>[2024-10-18 11:14:54] CAN Connection: CAN can0 connected with baudrate 500000 and fdf type CANFD
-<raspberrypi4>[2024-10-18 11:14:55] Button Click: Service 10 Window Opened
-<raspberrypi4>[2024-10-18 11:14:58] UDS Request Success: 10 Request Successfully sent : 0x10 0x3
-<raspberrypi4>[2024-10-18 11:15:01] Button Click: Service 85 Window Opened
-<raspberrypi4>[2024-10-18 11:15:04] UDS Request Success: 85 Request Successfully sent : 0x85 0x1
-<raspberrypi4>[2024-10-18 11:15:16] Button Click: Service 10 Window Opened
-<raspberrypi4>[2024-10-18 11:15:22] UDS Request Success: 10 Request Successfully sent : 0x10 0x3
-<raspberrypi4>[2024-10-18 11:15:25] Button Click: Service 85 Window Opened
-<raspberrypi4>[2024-10-18 11:15:27] UDS Request Success: 85 Request Successfully sent : 0x85 0x1
-<raspberrypi4>[2024-10-18 11:15:49] Button Click: Add to Log button for Service 85 window clicked.
-<raspberrypi4>[2024-10-18 11:15:55] UDS Request Success: 85 Request Successfully sent : 0x85 0x81
-<raspberrypi4>[2024-10-18 11:15:59] Button Click: Service 10 Window Opened
-<raspberrypi4>[2024-10-18 11:16:03] UDS Request Success: 10 Request Successfully sent : 0x10 0x3
-<raspberrypi4>[2024-10-18 11:16:06] Button Click: Service 28 Window Opened
-<raspberrypi4>[2024-10-18 11:16:08] Button Click: Service 85 Window Opened
-<raspberrypi4>[2024-10-18 11:16:09] UDS Request Success: 85 Request Successfully sent : 0x85 0x1
-<raspberrypi4>[2024-10-18 11:16:13] Button Click: Service 10 Window Opened
-<raspberrypi4>[2024-10-18 11:16:16] UDS Request Success: 10 Request Successfully sent : 0x10 0x3
-<raspberrypi4>[2024-10-18 11:16:19] Button Click: Service 85 Window Opened
-<raspberrypi4>[2024-10-18 11:16:20] UDS Request Success: 85 Request Successfully sent : 0x85 0x1
-<raspberrypi4>[2024-10-18 11:16:26] UDS Request Success: 85 Request Successfully sent : 0x85 0x2
-<raspberrypi4>[2024-10-18 11:16:30] Button Click: Service 10 Window Opened
-<raspberrypi4>[2024-10-18 11:16:33] UDS Request Success: 10 Request Successfully sent : 0x10 0x3
-<raspberrypi4>[2024-10-18 11:16:36] Button Click: Service 85 Window Opened
-<raspberrypi4>[2024-10-18 11:16:39] UDS Request Success: 85 Request Successfully sent : 0x85 0x2
-<raspberrypi4>[2024-10-18 11:16:43] Button Click: Service 10 Window Opened
-<raspberrypi4>[2024-10-18 11:16:47] UDS Request Success: 10 Request Successfully sent : 0x10 0x3
-<raspberrypi4>[2024-10-18 11:16:49] Button Click: Service 85 Window Opened
-<raspberrypi4>[2024-10-18 11:16:51] UDS Request Success: 85 Request Successfully sent : 0x85 0x2
-<raspberrypi4>[2024-10-18 11:17:07] Button Click: Disonnect CAN button clicked
-<raspberrypi4>[2024-10-18 11:17:07] CAN Connection: CAN disconnected successfully.
+<raspberrypi4>[2024-10-18 11:33:01] Button Click: Import pxi button clicked
+<raspberrypi4>[2024-10-18 11:33:04] Config File Import Success: Config File Loaded successfully from: /home/raspberrypi4/ProxiCan/conf.pxi
+<raspberrypi4>[2024-10-18 11:33:06] Button Click: Connect CAN button clicked
+<raspberrypi4>[2024-10-18 11:33:06] CAN Connection: CAN can0 connected with baudrate 500000 and fdf type CANFD
+<raspberrypi4>[2024-10-18 11:33:07] Button Click: Service 10 Window Opened
+<raspberrypi4>[2024-10-18 11:33:10] UDS Request Success: 10 Request Successfully sent : 0x10 0x3
+<raspberrypi4>[2024-10-18 11:33:12] Button Click: Service 85 Window Opened
+<raspberrypi4>[2024-10-18 11:33:14] UDS Request Success: 85 Request Successfully sent : 0x85 0x1
+<raspberrypi4>[2024-10-18 11:33:19] UDS Request Success: 85 Request Successfully sent : 0x85 0x2
+<raspberrypi4>[2024-10-18 11:33:25] UDS Request Success: 85 Request Successfully sent : 0x85 0x82
+<raspberrypi4>[2024-10-18 11:33:34] Button Click: Disonnect CAN button clicked
+<raspberrypi4>[2024-10-18 11:33:34] CAN Connection: CAN disconnected successfully.
