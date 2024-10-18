@@ -1,33 +1,12 @@
-<raspberrypi4>[2024-10-18 10:02:00] Button Click: Import pxi button clicked
-<raspberrypi4>[2024-10-18 10:02:06] Config File Import Success: Config File Loaded successfully from: /home/raspberrypi4/ProxiCan/conf.pxi
-<raspberrypi4>[2024-10-18 10:02:07] Button Click: Connect CAN button clicked
-<raspberrypi4>[2024-10-18 10:02:07] CAN Connection: CAN can0 connected with baudrate 500000 and fdf type CANFD
-<raspberrypi4>[2024-10-18 10:02:09] Button Click: Service 10 Window Opened
-<raspberrypi4>[2024-10-18 10:02:12] UDS Request Success: 10 Request Successfully sent : 0x10 0x3
-<raspberrypi4>[2024-10-18 10:02:15] Button Click: Service 11 Window Opened
-<raspberrypi4>[2024-10-18 10:02:18] UDS Request Success: 11 Request Successfully sent : 0x11 0x2
-<raspberrypi4>[2024-10-18 10:02:21] UDS Request Success: 11 Request Successfully sent : 0x11 0x1
-<raspberrypi4>[2024-10-18 10:02:25] Button Click: Service 28 Window Opened
-<raspberrypi4>[2024-10-18 10:02:26] UDS Request Success: 28 Request Successfully sent : 0x28 0x0 0x1
-<raspberrypi4>[2024-10-18 10:02:26] UDS Request Success: 28 Request Successfully sent : 0x28 0x0 0x1
-<raspberrypi4>[2024-10-18 10:02:30] Button Click: Service 10 Window Opened
-<raspberrypi4>[2024-10-18 10:02:32] UDS Request Success: 10 Request Successfully sent : 0x10 0x3
-<raspberrypi4>[2024-10-18 10:02:35] Button Click: Service 28 Window Opened
-<raspberrypi4>[2024-10-18 10:02:36] UDS Request Success: 28 Request Successfully sent : 0x28 0x0 0x1
-<raspberrypi4>[2024-10-18 10:02:36] UDS Request Success: 28 Request Successfully sent : 0x28 0x0 0x1
-<raspberrypi4>[2024-10-18 10:02:40] UDS Request Success: 28 Request Successfully sent : 0x28 0x1 0x1
-<raspberrypi4>[2024-10-18 10:02:40] UDS Request Success: 28 Request Successfully sent : 0x28 0x1 0x1
-<raspberrypi4>[2024-10-18 10:02:46] UDS Request Success: 28 Request Successfully sent : 0x28 0x2 0x1
-<raspberrypi4>[2024-10-18 10:02:46] UDS Request Success: 28 Request Successfully sent : 0x28 0x2 0x1
-<raspberrypi4>[2024-10-18 10:02:49] UDS Request Success: 28 Request Successfully sent : 0x28 0x3 0x1
-<raspberrypi4>[2024-10-18 10:02:49] UDS Request Success: 28 Request Successfully sent : 0x28 0x3 0x1
-<raspberrypi4>[2024-10-18 10:02:56] Button Click: Service 10 Window Opened
-<raspberrypi4>[2024-10-18 10:03:03] UDS Request Success: 10 Request Successfully sent : 0x10 0x3
-<raspberrypi4>[2024-10-18 10:03:05] Button Click: Service 28 Window Opened
-<raspberrypi4>[2024-10-18 10:03:10] UDS Request Success: 28 Request Successfully sent : 0x28 0x3 0x1
-<raspberrypi4>[2024-10-18 10:03:10] UDS Request Success: 28 Request Successfully sent : 0x28 0x3 0x1
-<raspberrypi4>[2024-10-18 10:03:23] UDS Request Success: 28 Request Successfully sent : 0x28 0x4 0x1 0x0 0xa
-<raspberrypi4>[2024-10-18 10:03:23] UDS Request Success: 28 Request Successfully sent : 0x28 0x4 0x1 0x0 0xa
-<raspberrypi4>[2024-10-18 10:03:29] UDS Request Fail: 28 Request not happened due to invalid NIN format
-<raspberrypi4>[2024-10-18 10:03:36] Button Click: Disonnect CAN button clicked
-<raspberrypi4>[2024-10-18 10:03:36] CAN Connection: CAN disconnected successfully.
+<raspberrypi4>[2024-10-18 10:09:09] Button Click: Import pxi button clicked
+<raspberrypi4>[2024-10-18 10:09:13] Config File Import Success: Config File Loaded successfully from: /home/raspberrypi4/ProxiCan/conf.pxi
+<raspberrypi4>[2024-10-18 10:09:17] Button Click: Connect CAN button clicked
+<raspberrypi4>[2024-10-18 10:09:17] CAN Connection: CAN can0 connected with baudrate 500000 and fdf type CANFD
+<raspberrypi4>[2024-10-18 10:09:19] Button Click: Service 28 Window Opened
+<raspberrypi4>[2024-10-18 10:09:20] UDS Request Success: 28 Request Successfully sent : 0x28 0x0 0x1
+<raspberrypi4>[2024-10-18 10:09:20] UDS Request Success: 28 Request Successfully sent : 0x28 0x0 0x1
+<raspberrypi4>[2024-10-18 10:09:25] Button Click: Service 10 Window Opened
+<raspberrypi4>[2024-10-18 10:09:28] UDS Request Success: 10 Request Successfully sent : 0x10 0x3
+<raspberrypi4>[2024-10-18 10:09:31] Button Click: Service 28 Window Opened
+<raspberrypi4>[2024-10-18 10:09:33] UDS Request Success: 28 Request Successfully sent : 0x28 0x0 0x1
+<raspberrypi4>[2024-10-18 10:09:33] UDS Request Success: 28 Request Successfully sent : 0x28 0x0 0x1
