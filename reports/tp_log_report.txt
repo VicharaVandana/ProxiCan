@@ -1,8 +1,22 @@
-[2024-10-18 11:33:10] Single Frame Sent: Timestamp:        0.000000    ID: 18da6cf2    X Rx     F          DL:  3    02 10 03
-[2024-10-18 11:33:10] Single Frame Recieved: RX	ID:417002092	datalength:6bytes	 data:[0x50 0x3 0x0 0x32 0x1 0xf4].
-[2024-10-18 11:33:14] Single Frame Sent: Timestamp:        0.000000    ID: 18da6cf2    X Rx     F          DL:  3    02 85 01
-[2024-10-18 11:33:14] Single Frame Recieved: RX	ID:417002092	datalength:2bytes	 data:[0xc5 0x1].
-[2024-10-18 11:33:19] Single Frame Sent: Timestamp:        0.000000    ID: 18da6cf2    X Rx     F          DL:  3    02 85 02
-[2024-10-18 11:33:19] Single Frame Recieved: RX	ID:417002092	datalength:2bytes	 data:[0xc5 0x2].
-[2024-10-18 11:33:23] Single Frame Sent: Timestamp:        0.000000    ID: 18da6cf2    X Rx     F          DL:  3    02 85 82
-[2024-10-18 11:33:25] No Frame recieved before timeout 2s -FLOW is TERMINATED : None
+[2024-10-18 15:25:21] Single Frame Sent: Timestamp:        0.000000    ID: 18da6cf2    X Rx     F          DL:  3    02 10 03
+[2024-10-18 15:25:21] Single Frame Recieved: RX	ID:417002092	datalength:6bytes	 data:[0x50 0x3 0x0 0x32 0x1 0xf4].
+[2024-10-18 15:25:26] Single Frame Sent: Timestamp:        0.000000    ID: 18da6cf2    X Rx     F          DL:  3    02 85 01
+[2024-10-18 15:25:26] Single Frame Recieved: RX	ID:417002092	datalength:2bytes	 data:[0xc5 0x1].
+[2024-10-18 15:25:26] Single Frame Sent: Timestamp:        0.000000    ID: 18da6cf2    X Rx     F          DL:  3    02 85 01
+[2024-10-18 15:25:26] Single Frame Recieved: RX	ID:417002092	datalength:2bytes	 data:[0xc5 0x1].
+[2024-10-18 15:25:34] Single Frame Sent: Timestamp:        0.000000    ID: 18da6cf2    X Rx     F          DL:  6    05 85 01 ff ff ff
+[2024-10-18 15:25:34] Single Frame Recieved: RX	ID:417002092	datalength:3bytes	 data:[0x7f 0x85 0x7f].
+[2024-10-18 15:25:34] Single Frame Sent: Timestamp:        0.000000    ID: 18da6cf2    X Rx     F          DL:  6    05 85 01 ff ff ff
+[2024-10-18 15:25:34] Single Frame Recieved: RX	ID:417002092	datalength:3bytes	 data:[0x7f 0x85 0x7f].
+[2024-10-18 15:25:50] Single Frame Sent: Timestamp:        0.000000    ID: 18da6cf2    X Rx     F          DL:  3    02 10 03
+[2024-10-18 15:25:50] Single Frame Recieved: RX	ID:417002092	datalength:6bytes	 data:[0x50 0x3 0x0 0x32 0x1 0xf4].
+[2024-10-18 15:25:57] Single Frame Sent: Timestamp:        0.000000    ID: 18da6cf2    X Rx     F          DL:  6    05 85 01 ff ff ff
+[2024-10-18 15:25:57] Single Frame Recieved: RX	ID:417002092	datalength:3bytes	 data:[0x7f 0x85 0x7f].
+[2024-10-18 15:25:57] Single Frame Sent: Timestamp:        0.000000    ID: 18da6cf2    X Rx     F          DL:  6    05 85 01 ff ff ff
+[2024-10-18 15:25:57] Single Frame Recieved: RX	ID:417002092	datalength:3bytes	 data:[0x7f 0x85 0x7f].
+[2024-10-18 15:26:03] Single Frame Sent: Timestamp:        0.000000    ID: 18da6cf2    X Rx     F          DL:  3    02 10 03
+[2024-10-18 15:26:03] Single Frame Recieved: RX	ID:417002092	datalength:6bytes	 data:[0x50 0x3 0x0 0x32 0x1 0xf4].
+[2024-10-18 15:26:09] Single Frame Sent: Timestamp:        0.000000    ID: 18da6cf2    X Rx     F          DL:  6    05 85 01 ff ff ff
+[2024-10-18 15:26:09] Single Frame Recieved: RX	ID:417002092	datalength:3bytes	 data:[0x7f 0x85 0x7f].
+[2024-10-18 15:26:09] Single Frame Sent: Timestamp:        0.000000    ID: 18da6cf2    X Rx     F          DL:  6    05 85 01 ff ff ff
+[2024-10-18 15:26:09] Single Frame Recieved: RX	ID:417002092	datalength:3bytes	 data:[0x7f 0x85 0x7f].

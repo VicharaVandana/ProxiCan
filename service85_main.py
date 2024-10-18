@@ -60,6 +60,20 @@ class Ui_Service85(Ui_Form_SID85):
         session = fun.getsubfunction(index_DTCSession)
         session_name = fun.getsubfunctionname(session)
         sprmib_flg = self.checkBox_suppressposmsg.isChecked()
+        if(self.checkBox_DTCOption.isChecked()): 
+            dtc_string= self.lineEdit_DTCSettingInput.text().strip().replace(" ","").replace(" ","").replace(" ","")
+            if(False == gen.check_3Bytehexadecimal(dtc_string)):
+                self.update_status("Please enter a valid DTC value. It must be 3 byte in hexadecimal format")
+                print(f"DTC {dtc_string} is invalid")
+                gen.log_action("UDS Request Fail", "85 Request not happened due to invalid DTC format")
+                return
+        
+            #Show messagebox with enter valid DTC value
+            
+        #First check if a valid DTC is entered in DTC field        
+         
+        
+
         
     
         
@@ -72,7 +86,21 @@ class Ui_Service85(Ui_Form_SID85):
             return
         
         #Get the service Request List for Control DTC Setting service
-        service_request = fun.form_reqmsg4srv85(session,sprmib_flg)
+        if(self.checkBox_DTCOption.isChecked()):
+            service_request = fun.form_reqmsg4srv85_withdtc(session,sprmib_flg,dtc_string)
+        else:
+            service_request = fun.form_reqmsg4srv85(session,sprmib_flg)
+
+        gen.IsAnyServiceActive = True   #Next request is triggered, so make True
+        #Send the service request  
+        while(gen.IsTesterPresentActive == True):
+            self.update_status("WAIT!! Tester present (Service 3E) is currently ongoing")
+            
+        response = uds.sendRequest(service_request, True)
+
+        gen.IsAnyServiceActive = False   #Next response recieved , so make False
+        
+        
 
         #Send the service request and get the response 
         if(sprmib_flg == False):

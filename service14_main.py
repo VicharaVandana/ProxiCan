@@ -6,11 +6,11 @@ from bs4 import BeautifulSoup
 import os
 import datetime
 import general as gen
-import uds_dummy as uds     #will have to be replaced with actual uds file while testing on board
-#pc#import uds
+#import uds_dummy as uds     #will have to be replaced with actual uds file while testing on board
+import uds
 import configure as conf
 import os
-#pc#import can
+import can
 
 class Ui_Service14(Ui_Form_SID14):
     def redesign_ui(self):
