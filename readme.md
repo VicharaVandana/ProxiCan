@@ -34,6 +34,32 @@
 - [ ] **Service 86**: Response on Event
 - [ ] **Service 83**: Access Timing Parameters
 
+# Guide on Git branches and how to push new changes for each services
+The Project is on github repository : https://github.com/VicharaVandana/ProxiCan.git 
+
+For Each service please follow the below steps
+1. Get the latest main branch from the remote to your local with below commands in git bash
+    `git fetch`
+    `git chechout main`
+    `git pull`
+
+2. Then create a new branch for the service you are working on with below command
+    `git checkout -b <new_branch_name>`
+    The format of new branch name is as foloows:
+    feature_Service<SIDinhex>_<shortformofServicename>
+
+    For example if we are working on ECU Reset then the branch name shall be `feature_Service11_EcuReset`.
+    If multiple services are combined in a single branch (not advised) thenwe have to seperate the services with double underscores as shown below:
+    `feature_Service22_RDBI__Service2E_WDBI`
+
+3. Once the new branch is created. Implement the Service changes in that and then add the files to local repository and commit and push the new branch to remote repository with below steps:
+    `git add *`
+    `git commit -m "<Appropriate comment here>"`
+    `git push origin <new_branch_name>`
+
+4. Once the branch is pushed. Please do a self review and create a pull request from your branch to main branch and request for the review. Once the review is complete and if there are no review points then the branch would be merged with main branch and it will be part of deployment.
+
+
 
 
 
