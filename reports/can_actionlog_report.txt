@@ -1,12 +1,12 @@
-<raspberrypi4>[2024-10-18 10:09:09] Button Click: Import pxi button clicked
-<raspberrypi4>[2024-10-18 10:09:13] Config File Import Success: Config File Loaded successfully from: /home/raspberrypi4/ProxiCan/conf.pxi
-<raspberrypi4>[2024-10-18 10:09:17] Button Click: Connect CAN button clicked
-<raspberrypi4>[2024-10-18 10:09:17] CAN Connection: CAN can0 connected with baudrate 500000 and fdf type CANFD
-<raspberrypi4>[2024-10-18 10:09:19] Button Click: Service 28 Window Opened
-<raspberrypi4>[2024-10-18 10:09:20] UDS Request Success: 28 Request Successfully sent : 0x28 0x0 0x1
-<raspberrypi4>[2024-10-18 10:09:20] UDS Request Success: 28 Request Successfully sent : 0x28 0x0 0x1
-<raspberrypi4>[2024-10-18 10:09:25] Button Click: Service 10 Window Opened
-<raspberrypi4>[2024-10-18 10:09:28] UDS Request Success: 10 Request Successfully sent : 0x10 0x3
-<raspberrypi4>[2024-10-18 10:09:31] Button Click: Service 28 Window Opened
-<raspberrypi4>[2024-10-18 10:09:33] UDS Request Success: 28 Request Successfully sent : 0x28 0x0 0x1
-<raspberrypi4>[2024-10-18 10:09:33] UDS Request Success: 28 Request Successfully sent : 0x28 0x0 0x1
+<raspberrypi4>[2024-10-18 10:16:45] Button Click: Import pxi button clicked
+<raspberrypi4>[2024-10-18 10:16:48] Config File Import Failed: Config File not loaded as the file path: [] is invalid.
+<raspberrypi4>[2024-10-18 10:16:57] Button Click: Import pxi button clicked
+<raspberrypi4>[2024-10-18 10:16:59] Config File Import Success: Config File Loaded successfully from: /home/raspberrypi4/ProxiCan/conf.pxi
+<raspberrypi4>[2024-10-18 10:17:00] Button Click: Connect CAN button clicked
+<raspberrypi4>[2024-10-18 10:17:00] CAN Connection: CAN can0 connected with baudrate 500000 and fdf type CANFD
+<raspberrypi4>[2024-10-18 10:17:02] Button Click: Service 10 Window Opened
+<raspberrypi4>[2024-10-18 10:17:03] UDS Request Success: 10 Request Successfully sent : 0x10 0x1
+<raspberrypi4>[2024-10-18 10:17:06] Button Click: Service 11 Window Opened
+<raspberrypi4>[2024-10-18 10:17:08] UDS Request Success: 11 Request Successfully sent : 0x11 0x1
+<raspberrypi4>[2024-10-18 10:17:18] Button Click: Disonnect CAN button clicked
+<raspberrypi4>[2024-10-18 10:17:18] CAN Connection: CAN disconnected successfully.

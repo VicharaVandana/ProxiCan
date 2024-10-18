@@ -485,6 +485,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
+        
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
@@ -569,23 +570,6 @@ class Ui_MainWindow(object):
         self.menuMenu.setTitle(_translate("MainWindow", "Menu"))
         self.actionSettings.setText(_translate("MainWindow", "UDS Service Settings"))
         self.actionLog_Files_Location.setText(_translate("MainWindow", "Log Files Location"))
-#########################################################################################################################
-        def __init__(self):
-            super().__init__()
-            self.setupUi(self)  # Assuming you are setting up the UI in this method
-        def event(self, event):
-            if event.type() == QEvent.HoverMove:
-                pos = event.pos()
-                close_button_rect = self.rect().adjusted(self.width() - 50, 0, 0, 50)
-                if close_button_rect.contains(pos):
-                    QToolTip.showText(event.globalPos(), "Close the window", self)
-                else:
-                    QToolTip.hideText()
-            return super().event(event)
-        
-
-#####################################################################################################################################################################
-
 
 
 if __name__ == "__main__":
