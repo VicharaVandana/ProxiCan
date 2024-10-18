@@ -197,6 +197,7 @@ class mainwindow(Ui_MainWindow, QtWidgets.QMainWindow, QtWidgets.QWidget):
             self.ui85.setupUi(self.window85)
             self.ui85.redesign_ui()
             self.ui85.connectFunctions()
+            self.window85.show()  #Display the new window
             self.update_status(f"85 Button clicked. Control DTC Settings service window opened")
             gen.log_action("Button Click", "Service 85 Window Opened")
         else:
