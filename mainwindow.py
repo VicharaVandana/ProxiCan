@@ -14,11 +14,15 @@ import service22_main as rdbi
 import service2e_main as wdbi
 import service10_main as dsc
 import service27_main as secuacc
+import service11_main as er
+import service85_main as cdtcs
+import service28_main as commctr 
+import service14_main as clearDTC
 
 Is_CanConnected = False
 
 #Create a child class of the mainwindow
-class mainwindow(Ui_MainWindow, QtWidgets.QWidget):
+class mainwindow(Ui_MainWindow, QtWidgets.QMainWindow, QtWidgets.QWidget):
     def redesign_ui(self):
         self.lbl_statusbar.setWordWrap(True)
         self.udsbuttons = []
@@ -128,6 +132,10 @@ class mainwindow(Ui_MainWindow, QtWidgets.QWidget):
         self.pushButton_2E.clicked.connect(self.openservice2E)
         self.pushButton_10.clicked.connect(self.openservice10)
         self.pushButton_27.clicked.connect(self.openservice27)
+        self.pushButton_11.clicked.connect(self.openservice11)
+        self.pushButton_85.clicked.connect(self.openservice85)
+        self.pushButton_28.clicked.connect(self.openservice28)
+        self.pushButton_14.clicked.connect(self.openservice14)
         return
     
     def on_radiobutton_fdf_clicked(self):
@@ -168,6 +176,48 @@ class mainwindow(Ui_MainWindow, QtWidgets.QWidget):
             gen.log_action("Button Click", "Service 10 Window Opened")
         else:
             self.update_status(f"10 Button clicked. But unable to open the service window as CAN is not connected")
+        return
+
+    def openservice11(self):
+        if(Is_CanConnected == True):
+            self.window11 = QMainWindow()
+            self.ui11 = er.Ui_Service11()
+            self.ui11.setupUi(self.window11)
+            self.ui11.redesign_ui()
+            self.ui11.connectFunctions()
+            self.window11.show()  # Display the new window
+            self.update_status(f"11 Button clicked. ECU Reset service window opened")
+            gen.log_action("Button Click", "Service 11 Window Opened")
+        else:
+            self.update_status(f"11 Button clicked. But unable to open the service window as CAN is not connected")
+        return
+
+    def openservice14(self):
+        if(Is_CanConnected == True):
+            self.window14 = QMainWindow()
+            self.ui14 = clearDTC.Ui_Service14()
+            self.ui14.setupUi(self.window14)
+            self.ui14.redesign_ui()
+            self.ui14.connectFunctions()
+            self.window14.show()  # Display the new window
+            self.update_status(f"14 Button clicked. Diagnostic Session Control service window opened")
+            gen.log_action("Button Click", "Service 14 Window Opened")
+        else:
+            self.update_status(f"14 Button clicked. But unable to open the service window as CAN is not connected")
+        return
+    
+    def openservice85(self):
+        if(Is_CanConnected == True):
+            self.window85 = QMainWindow()
+            self.ui85 = cdtcs.Ui_Service85()
+            self.ui85.setupUi(self.window85)
+            self.ui85.redesign_ui()
+            self.ui85.connectFunctions()
+            self.window85.show()     # Display the new window
+            self.update_status(f"85 Button clicked. Control DTC Settings service window opened")
+            gen.log_action("Button Click", "Service 85 Window Opened")
+        else:
+            self.update_status(f"85 Button clicked. But unable to open the service window as CAN is not connected")
         return
     
     def openservice27(self):
@@ -210,6 +260,20 @@ class mainwindow(Ui_MainWindow, QtWidgets.QWidget):
             gen.log_action("Button Click", "Service 2E Window Opened")
         else:
             self.update_status(f"2E Button clicked. But unable to open the service window as CAN is not connected")
+        return
+    
+    def openservice28(self):
+        if(Is_CanConnected == True):
+            self.window28 = QMainWindow()
+            self.ui28 = commctr.Ui_Service28()
+            self.ui28.setupUi(self.window28)
+            self.ui28.redesign_ui()
+            self.ui28.connectFunctions()
+            self.window28.show() #Display the new window
+            self.update_status(f"28 Button clicked. Communication control service window opened")
+            gen.log_action("Button Click", "Service 28 Window Opened")
+        else:
+            self.update_status(f"28 Button clicked. But unable to open the service window as CAN is not connected")
         return
     
     def update_status(self, msg):

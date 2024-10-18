@@ -7,11 +7,11 @@ from bs4 import BeautifulSoup
 import os
 import datetime
 import general as gen
-import uds_dummy as uds     #will have to be replaced with actual uds file while testing on board
-#pc#import uds
+#import uds_dummy as uds     #will have to be replaced with actual uds file while testing on board
+import uds
 import configure as conf
 import os
-#pc#import can
+import can
 
 
 class Ui_Service27(Ui_Form_SID27, QtWidgets.QMainWindow):

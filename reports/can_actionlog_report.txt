@@ -1,16 +1,19 @@
-<sbb925582>[2024-10-15 15:49:27] Button Click: Connect CAN button clicked
-<sbb925582>[2024-10-15 15:49:27] CAN Connection: CAN can0 connected with baudrate 125000 and fdf type CAN
-<sbb925582>[2024-10-15 15:49:35] Button Click: Disonnect CAN button clicked
-<sbb925582>[2024-10-15 15:49:35] CAN Connection: CAN disconnected successfully.
-<sbb925582>[2024-10-15 15:49:37] Button Click: Connect CAN button clicked
-<sbb925582>[2024-10-15 15:49:37] CAN Connection: CAN can0 connected with baudrate 125000 and fdf type CAN
-<sbb925582>[2024-10-15 15:49:47] Button Click: Service 10 Window Opened
-<sbb925582>[2024-10-15 15:49:48] UDS Request Success: 10 Request Successfully sent : 0x10 0x1
-<sbb925582>[2024-10-15 15:49:49] Button Click: Clear Log button for Service 10 window clicked.
-<sbb925582>[2024-10-15 15:49:53] Button Click: Add to Log button for Service 10 window clicked.
-<sbb925582>[2024-10-15 15:50:01] Button Click: Service 27 Window Opened
-<sbb925582>[2024-10-15 15:50:04] UDS Request Success: 27 Request to get Seed Successfully sent : 0x27 0x1
-<sbb925582>[2024-10-15 15:50:04] UDS Request Success: 27 Request to Validate Key Successfully sent : 0x27 0x2 0xe6 0xb9
-<sbb925582>[2024-10-15 15:50:05] Button Click: Add to Log button for Service 27 window clicked.
-<sbb925582>[2024-10-15 15:50:12] Button Click: Disonnect CAN button clicked
-<sbb925582>[2024-10-15 15:50:12] CAN Connection: CAN disconnected successfully.
+<raspberrypi4>[2024-10-18 15:25:07] Button Click: Import pxi button clicked
+<raspberrypi4>[2024-10-18 15:25:10] Config File Import Success: Config File Loaded successfully from: /home/raspberrypi4/ProxiCan/conf.pxi
+<raspberrypi4>[2024-10-18 15:25:16] Button Click: Connect CAN button clicked
+<raspberrypi4>[2024-10-18 15:25:16] CAN Connection: CAN can0 connected with baudrate 500000 and fdf type CANFD
+<raspberrypi4>[2024-10-18 15:25:18] Button Click: Service 10 Window Opened
+<raspberrypi4>[2024-10-18 15:25:21] UDS Request Success: 10 Request Successfully sent : 0x10 0x3
+<raspberrypi4>[2024-10-18 15:25:24] Button Click: Service 85 Window Opened
+<raspberrypi4>[2024-10-18 15:25:26] UDS Request Success: 85 Request Successfully sent : 0x85 0x1
+<raspberrypi4>[2024-10-18 15:25:34] UDS Request Success: 85 Request Successfully sent : 0x85 0x1 0xff 0xff 0xff
+<raspberrypi4>[2024-10-18 15:25:47] Button Click: Service 10 Window Opened
+<raspberrypi4>[2024-10-18 15:25:50] UDS Request Success: 10 Request Successfully sent : 0x10 0x3
+<raspberrypi4>[2024-10-18 15:25:52] Button Click: Service 85 Window Opened
+<raspberrypi4>[2024-10-18 15:25:57] UDS Request Success: 85 Request Successfully sent : 0x85 0x1 0xff 0xff 0xff
+<raspberrypi4>[2024-10-18 15:26:01] Button Click: Service 10 Window Opened
+<raspberrypi4>[2024-10-18 15:26:03] UDS Request Success: 10 Request Successfully sent : 0x10 0x3
+<raspberrypi4>[2024-10-18 15:26:06] Button Click: Service 85 Window Opened
+<raspberrypi4>[2024-10-18 15:26:09] UDS Request Success: 85 Request Successfully sent : 0x85 0x1 0xff 0xff 0xff
+<raspberrypi4>[2024-10-18 15:26:19] Button Click: Disonnect CAN button clicked
+<raspberrypi4>[2024-10-18 15:26:19] CAN Connection: CAN disconnected successfully.

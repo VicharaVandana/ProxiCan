@@ -1,4 +1,4 @@
-#pc#import can
+import can
 import time
 import configure as conf
 import general as gen
