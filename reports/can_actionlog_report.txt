@@ -1,16 +1,7 @@
-<sbb925582>[2024-10-15 15:49:27] Button Click: Connect CAN button clicked
-<sbb925582>[2024-10-15 15:49:27] CAN Connection: CAN can0 connected with baudrate 125000 and fdf type CAN
-<sbb925582>[2024-10-15 15:49:35] Button Click: Disonnect CAN button clicked
-<sbb925582>[2024-10-15 15:49:35] CAN Connection: CAN disconnected successfully.
-<sbb925582>[2024-10-15 15:49:37] Button Click: Connect CAN button clicked
-<sbb925582>[2024-10-15 15:49:37] CAN Connection: CAN can0 connected with baudrate 125000 and fdf type CAN
-<sbb925582>[2024-10-15 15:49:47] Button Click: Service 10 Window Opened
-<sbb925582>[2024-10-15 15:49:48] UDS Request Success: 10 Request Successfully sent : 0x10 0x1
-<sbb925582>[2024-10-15 15:49:49] Button Click: Clear Log button for Service 10 window clicked.
-<sbb925582>[2024-10-15 15:49:53] Button Click: Add to Log button for Service 10 window clicked.
-<sbb925582>[2024-10-15 15:50:01] Button Click: Service 27 Window Opened
-<sbb925582>[2024-10-15 15:50:04] UDS Request Success: 27 Request to get Seed Successfully sent : 0x27 0x1
-<sbb925582>[2024-10-15 15:50:04] UDS Request Success: 27 Request to Validate Key Successfully sent : 0x27 0x2 0xe6 0xb9
-<sbb925582>[2024-10-15 15:50:05] Button Click: Add to Log button for Service 27 window clicked.
-<sbb925582>[2024-10-15 15:50:12] Button Click: Disonnect CAN button clicked
-<sbb925582>[2024-10-15 15:50:12] CAN Connection: CAN disconnected successfully.
+<vicha>[2024-10-18 19:27:29] Button Click: Connect CAN button clicked
+<vicha>[2024-10-18 19:27:29] CAN Connection: CAN can0 connected with baudrate 125000 and fdf type CAN
+<vicha>[2024-10-18 19:27:31] Button Click: Service 22 Window Opened
+<vicha>[2024-10-18 19:27:35] Button Click: Send 22 request button clicked with DID[f122].
+<vicha>[2024-10-18 19:27:35] UDS Request Success: 22 Request Successfully sent : 0x22 0xf1 0x22
+<vicha>[2024-10-18 19:27:40] Button Click: Clear Log button for Service 22 window clicked.
+<vicha>[2024-10-18 19:27:41] Button Click: Add to Log button for Service 22 window clicked.

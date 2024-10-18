@@ -1,3 +1,11 @@
+from environment import *
+
+if RUNNING_ON_RASPBERRYPI == False:
+    import uds_dummy as uds     #will have to be replaced with actual uds file while testing on board
+else:
+    import uds
+    import can
+    
 from service2e_base import Ui_Form_SID2E
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QMessageBox
@@ -6,11 +14,9 @@ from bs4 import BeautifulSoup
 import os
 import datetime
 import general as gen
-import uds_dummy as uds     #will have to be replaced with actual uds file while testing on board
-#pc#import uds
 import configure as conf
 import os
-#pc#import can
+
 
 class Ui_Service2E(Ui_Form_SID2E):
     def redesign_ui(self):
@@ -158,11 +164,12 @@ if __name__ == "__main__":
     ui.setupUi(Form_SID2E)
     ui.redesign_ui()
     ui.connectFunctions()
+    
     #Initializing the CAN
-    #os.system(f'sudo ip link set {conf.can_channel} up type can bitrate {conf.baudrate} dbitrate {conf.datarate} restart-ms 1000 berr-reporting on fd on')
-
-    #conf.tx = can.interface.Bus(channel=conf.can_channel, bustype='socketcan', fd=True)
-    #conf.rx = can.interface.Bus(channel=conf.can_channel, bustype='socketcan', fd=True)
+    if RUNNING_ON_RASPBERRYPI == True:
+        os.system(f'sudo ip link set {conf.can_channel} up type can bitrate {conf.baudrate} dbitrate {conf.datarate} restart-ms 1000 berr-reporting on fd on')
+        conf.tx = can.interface.Bus(channel=conf.can_channel, bustype='socketcan', fd=True)
+        conf.rx = can.interface.Bus(channel=conf.can_channel, bustype='socketcan', fd=True)
 
     Form_SID2E.show()
     sys.exit(app.exec_())

@@ -1,4 +1,7 @@
-#pc#import can
+from environment import *
+
+if RUNNING_ON_RASPBERRYPI == True:
+    import can
 import time
 import datetime
 import configure as conf

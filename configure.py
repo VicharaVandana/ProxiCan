@@ -1,4 +1,7 @@
-#pc#import can
+from environment import *
+
+if RUNNING_ON_RASPBERRYPI == True:
+    import can
 import os
 
 
@@ -35,10 +38,11 @@ def connectCAN(canconfig):
     try:
         #initialise the can
         # Set up the CAN interface
-        os.system(f'sudo ip link set {can_channel} up type can bitrate {baudrate} dbitrate {datarate} restart-ms 1000 berr-reporting on fd on')
+        if RUNNING_ON_RASPBERRYPI == True:
+            os.system(f'sudo ip link set {can_channel} up type can bitrate {baudrate} dbitrate {datarate} restart-ms 1000 berr-reporting on fd on')
 
-        #pc#tx = can.interface.Bus(channel=can_channel, bustype='socketcan', fd=True)
-        #pc#rx = can.interface.Bus(channel=can_channel, bustype='socketcan', fd=True)
+            tx = can.interface.Bus(channel=can_channel, bustype='socketcan', fd=True)
+            rx = can.interface.Bus(channel=can_channel, bustype='socketcan', fd=True)
         return True
     except ValueError as e:
         return e
