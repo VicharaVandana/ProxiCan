@@ -569,6 +569,9 @@ class Ui_MainWindow(object):
         self.actionLog_Files_Location.setText(_translate("MainWindow", "Log Files Location"))
 
 
+        
+
+
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
