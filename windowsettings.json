@@ -5,10 +5,10 @@
         "2E": true,
         "11": true,
         "27": true,
-        "28": false,
+        "28": true,
         "14": true,
         "19": true,
-        "85": false,
+        "85": true,
         "23": true,
         "2A": true,
         "2C": true,
@@ -21,9 +21,5 @@
         "2F": true,
         "83": true,
         "86": false
-    },
-    "ACTIONLOG_FULLPATH": "./reports/can_actionlog_report.txt",
-    "CANTRAFFICLOG_FULLPATH": "./reports/cantraffic_log_report.txt",
-    "CANTPLOG_FULLPATH": "./reports/tp_log_report.txt",
-    "UDSLOG_FULLPATH": "./reports/uds_log_report.txt"
+    }
 }

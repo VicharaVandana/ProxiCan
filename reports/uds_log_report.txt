@@ -20,3 +20,23 @@ Requested Reset Initiated: Yes
 Suppress Positive Message Request: False
 <------------------- LOG ENTRY END ------------------->
 
+<---- LOG ENTRY [ass930085 - 2024-10-21 14:15:39] ---->
+UDS Request :   [0x85 0x1]
+Explaination:   Control DTC Setting (Service 85) Requested for Control DTC Setting type 0x1 ON and SPRMIB flag False
+UDS Response:   [0xc5 0x1]
+Explaination:   Positive Response Recieved
+Service ID: 0x85
+Control DTC Setting Type: 0x1 ON
+Suppress Positive Message Request: False
+<------------------- LOG ENTRY END ------------------->
+
+<---- LOG ENTRY [ass930085 - 2024-10-21 14:15:50] ---->
+UDS Request :   [0x85 0x2]
+Explaination:   Control DTC Setting (Service 85) Requested for Control DTC Setting type 0x2 OFF and SPRMIB flag False
+UDS Response:   [0xc5 0x2]
+Explaination:   Positive Response Recieved
+Service ID: 0x85
+Control DTC Setting Type: 0x2 OFF
+Suppress Positive Message Request: False
+<------------------- LOG ENTRY END ------------------->
+
