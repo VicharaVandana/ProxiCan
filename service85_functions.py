@@ -9,9 +9,9 @@ def getsubfunction(index):
      
 def getsubfunctionname(session):
      if(session == 0x01):
-          return("ON")
+          return("ON - To enable setting of DTC")
      elif(session == 0x02) :
-          return("OFF")
+          return("OFF - To disable setting of DTC")
      else:
           return("User defined setting (Unknown)")
      
