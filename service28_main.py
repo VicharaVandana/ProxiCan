@@ -1,3 +1,10 @@
+from environment import *
+
+if RUNNING_ON_RASPBERRYPI == False:
+    import uds_dummy as uds     #will have to be replaced with actual uds file while testing on board
+else:
+    import uds
+    import can
 from service28_base import Ui_Form_SID28
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QMessageBox
@@ -7,10 +14,10 @@ import os
 import datetime
 import general as gen
 import uds_dummy as uds     #will have to be replaced with actual uds file while testing on board
-#pc#import uds
 import configure as conf
 import os
-#pc#import can
+
+
 
 
 class Ui_Service28(Ui_Form_SID28):
