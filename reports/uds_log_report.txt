@@ -1,10 +1,22 @@
-<---- LOG ENTRY [vicha - 2024-10-18 19:27:35] ---->
-UDS Request :   [0x22 0xf1 0x22]
-Explaination:   Read Data By Itentifier (Service 22) Requested for DID 0xf122
-UDS Response:   [0x62 0xf1 0x22 0x88 0x6c 0x5e 0x3b]
+<---- LOG ENTRY [ass930085 - 2024-10-21 12:14:23] ---->
+UDS Request :   [0x11 0x1]
+Explaination:   ECU Reset (Service 11) Requested for reset type 0x1 (Hard reset) and SPRMIB flag False
+UDS Response:   [0x51 0x1]
 Explaination:   Positive Response Recieved
-Service ID: 0x22
-DID: 0xf1 0x22
-Data: 0x88 0x6c 0x5e 0x3b
+Service ID: 0x11
+Reset Type: 0x1 Hard reset
+Requested Reset Initiated: Yes
+Suppress Positive Message Request: False
+<------------------- LOG ENTRY END ------------------->
+
+<---- LOG ENTRY [ass930085 - 2024-10-21 12:15:01] ---->
+UDS Request :   [0x11 0x3]
+Explaination:   ECU Reset (Service 11) Requested for reset type 0x3 (Soft Reset) and SPRMIB flag False
+UDS Response:   [0x51 0x3]
+Explaination:   Positive Response Recieved
+Service ID: 0x11
+Reset Type: 0x3 Soft Reset
+Requested Reset Initiated: Yes
+Suppress Positive Message Request: False
 <------------------- LOG ENTRY END ------------------->
 
