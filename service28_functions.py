@@ -77,16 +77,6 @@ def form_reqmsg4srv28_withNIN(Control,communication,ninstring, sprmib_flag):
 
 
 
-
-#    ninstring_without_spaces = re.sub(r"\s+", "", didstring)
-#    sid = int("22", 16)
-#    nin_highbyte = int(ninstring_without_spaces[:2], 16)
-#    nin_lowbyte = int(ninstring_without_spaces[2:], 16)
-#    req_bytes = [sid, subfunction,communication,nin_highbyte, nin_lowbyte]
-#    print(f"{sid}{subfunction}{communication} {nin_highbyte} {nin_lowbyte}")
-#    return(req_bytes)
-    
-
 if __name__ == "__main__":
      print(form_reqmsg4srv28_withNIN("05","01","00 0A",False))
      #pass
