@@ -181,6 +181,36 @@ def sendRequest(request, IsPosResExpected = True):
             response.nrc = 0x33
             response.nrcname = NRC_DATA.get(response.nrc, "Unknown NRC")[0]
             response.nrcdesc = NRC_DATA.get(response.nrc, "Unknown NRC Recieved. There is no record of this NRC in UDS ISO 14229 Document")[1]
+    
+    elif(request[0] == 0x85): #dummy implementation for service 85
+        if(request[1] == 0x02):
+            res = [0xC5, 0x02]
+            response.resp = res.copy()
+            response.type = "Positive Response"
+            response.nrc = 0x00
+            response.nrcname = NRC_DATA.get(response.nrc, "Unknown NRC")[0]
+            response.nrcdesc = NRC_DATA.get(response.nrc, "Unknown NRC Recieved. There is no record of this NRC in UDS ISO 14229 Document")[1]
+        elif(request[1] == 0x01):
+            res = [0xC5, 0x01]
+            response.resp = res.copy()
+            response.type = "Positive Response"
+            response.nrc = 0x00
+            response.nrcname = NRC_DATA.get(response.nrc, "Unknown NRC")[0]
+            response.nrcdesc = NRC_DATA.get(response.nrc, "Unknown NRC Recieved. There is no record of this NRC in UDS ISO 14229 Document")[1]
+        elif(request[1] == 0x03):
+            res = [0x7F, 0x85, 0x12]
+            response.resp = res.copy()
+            response.type = "Negative Response"
+            response.nrc = 0x12
+            response.nrcname = NRC_DATA.get(response.nrc, "Unknown NRC")[0]
+            response.nrcdesc = NRC_DATA.get(response.nrc, "Unknown NRC Recieved. There is no record of this NRC in UDS ISO 14229 Document")[1]
+        else:
+            res = [0x7F, 0x85, 0x31]
+            response.resp = res.copy()
+            response.type = "Negative Response"
+            response.nrc = 0x31
+            response.nrcname = NRC_DATA.get(response.nrc, "Unknown NRC")[0]
+            response.nrcdesc = NRC_DATA.get(response.nrc, "Unknown NRC Recieved. There is no record of this NRC in UDS ISO 14229 Document")[1]
 
     elif(request[0] == 0x28): #dummy implementation for service 28
         if(request[1] == [0x02]):

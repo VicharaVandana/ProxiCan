@@ -17,6 +17,7 @@ import service27_main as secuacc
 import service11_main as er
 import service14_main as clearDTC
 import service28_main as commcontrol
+import service85_main as cdtcs
 
 Is_CanConnected = False
 
@@ -132,6 +133,7 @@ class mainwindow(Ui_MainWindow, QtWidgets.QWidget):
         self.pushButton_10.clicked.connect(self.openservice10)
         self.pushButton_27.clicked.connect(self.openservice27)
         self.pushButton_11.clicked.connect(self.openservice11)
+        self.pushButton_85.clicked.connect(self.openservice85)
         self.pushButton_14.clicked.connect(self.openservice14)
         self.pushButton_28.clicked.connect(self.openservice28)        
         return
@@ -202,6 +204,20 @@ class mainwindow(Ui_MainWindow, QtWidgets.QWidget):
             gen.log_action("Button Click", "Service 11 Window Opened")
         else:
             self.update_status(f"11 Button clicked. But unable to open the service window as CAN is not connected")
+        return
+    
+    def openservice85(self):
+        if(Is_CanConnected == True):
+            self.window85 = QMainWindow()
+            self.ui85 = cdtcs.Ui_Service85()
+            self.ui85.setupUi(self.window85)
+            self.ui85.redesign_ui()
+            self.ui85.connectFunctions()
+            self.window85.show()   # Display the new window
+            self.update_status(f"85 Button clicked. Control DTC Settings service window opened")
+            gen.log_action("Button Click", "Service 85 Window Opened")
+        else:
+            self.update_status(f"85 Button clicked. But unable to open the service window as CAN is not connected")
         return
     
     def openservice22(self):
