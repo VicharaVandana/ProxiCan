@@ -16,11 +16,11 @@
 - [x] **Service 11**: ECU Reset
 - [x] **Service 22**: Read Data by Identifier
 - [x] **Service 2E**: Write Data by Identifier
-- [x] **Service 27**: Security Access
-- [ ] **Service 28**: Communication Control
-- [ ] **Service 14**: Clear Diagnostic Information
+- [o] **Service 27**: Security Access
+- [x] **Service 28**: Communication Control
+- [x] **Service 14**: Clear Diagnostic Information
 - [ ] **Service 19**: Read DTC Information
-- [ ] **Service 85**: Control DTC Setting
+- [x] **Service 85**: Control DTC Setting
 - [ ] **Service 23**: Read Memory by Address
 - [ ] **Service 2A**: Read Scaling Data by Identifier
 - [ ] **Service 2C**: Dynamically Define Data Identifier
