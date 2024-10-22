@@ -1,13 +1,15 @@
-<ass930085>[2024-10-21 12:14:07] Button Click: Connect CAN button clicked
-<ass930085>[2024-10-21 12:14:07] CAN Connection: CAN can0 connected with baudrate 125000 and fdf type CAN
-<ass930085>[2024-10-21 12:14:11] Button Click: Service 10 Window Opened
-<ass930085>[2024-10-21 12:14:14] Button Click: Service 22 Window Opened
-<ass930085>[2024-10-21 12:14:18] Button Click: Service 11 Window Opened
-<ass930085>[2024-10-21 12:14:23] UDS Request Success: 11 Request Successfully sent : 0x11 0x1
-<ass930085>[2024-10-21 12:14:26] Button Click: Clear Log button for Service 11 window clicked.
-<ass930085>[2024-10-21 12:14:42] Button Click: Add to Log button for Service 11 window clicked.
-<ass930085>[2024-10-21 12:14:54] Button Click: Clear Form for Service 11 window clicked. Userfields cleared successfully.
-<ass930085>[2024-10-21 12:15:01] UDS Request Success: 11 Request Successfully sent : 0x11 0x3
-<ass930085>[2024-10-21 12:15:06] Button Click: Add to Log button for Service 11 window clicked.
-<ass930085>[2024-10-21 12:15:12] Button Click: Disonnect CAN button clicked
-<ass930085>[2024-10-21 12:15:12] CAN Connection: CAN disconnected successfully.
+<ass930085>[2024-10-21 14:16:23] Button Click: Connect CAN button clicked
+<ass930085>[2024-10-21 14:16:23] CAN Connection: CAN can0 connected with baudrate 125000 and fdf type CAN
+<ass930085>[2024-10-21 14:16:29] Button Click: Service 85 Window Opened
+<ass930085>[2024-10-21 16:26:59] UDS Request Success: 85 Request Successfully sent : 0x85 0x1
+<ass930085>[2024-10-21 16:27:10] Button Click: Add to Log button for Service 85 window clicked.
+<ass930085>[2024-10-21 16:28:50] UDS Request Success: 85 Request Successfully sent : 0x85 0x1
+<ass930085>[2024-10-21 16:29:11] Button Click: Add to Log button for Service 85 window clicked.
+<ass930085>[2024-10-21 16:40:57] UDS Request Success: 85 Request Successfully sent : 0x85 0x1
+<ass930085>[2024-10-21 16:41:01] Button Click: Add to Log button for Service 85 window clicked.
+<ass930085>[2024-10-21 16:41:06] UDS Request Success: 85 Request Successfully sent : 0x85 0x2
+<ass930085>[2024-10-21 16:41:08] Button Click: Add to Log button for Service 85 window clicked.
+<ass930085>[2024-10-22 13:21:40] UDS Request Success: 85 Request Successfully sent : 0x85 0x1
+<ass930085>[2024-10-22 13:21:44] Button Click: Add to Log button for Service 85 window clicked.
+<ass930085>[2024-10-22 13:21:52] UDS Request Success: 85 Request Successfully sent : 0x85 0x2
+<ass930085>[2024-10-22 13:21:54] Button Click: Add to Log button for Service 85 window clicked.
