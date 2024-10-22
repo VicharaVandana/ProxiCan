@@ -147,7 +147,8 @@ class Ui_Service85(Ui_Form_SID85):
 
         self.logentrystring = f'''<---- LOG ENTRY [{current_user} - {currenttime}] ---->
 UDS Request :   [{" ".join(hex(number) for number in service_request)}]
-Explaination:   Control DTC Setting (Service 85) Requested for Control DTC Setting type 0x{session} {session_name} and SPRMIB flag {sprmib_flg}
+Explaination:   Control DTC Setting (Service 85) Requested for Control DTC Setting type 0x{session} {session_name} 
+SPRMIB flag :   {sprmib_flg}
 UDS Response:   [{" ".join(hex(number) for number in response.resp)}]
 Explaination:   {response_text}<------------------- LOG ENTRY END ------------------->
 

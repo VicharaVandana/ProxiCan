@@ -9,3 +9,7 @@
 <ass930085>[2024-10-21 16:41:01] Button Click: Add to Log button for Service 85 window clicked.
 <ass930085>[2024-10-21 16:41:06] UDS Request Success: 85 Request Successfully sent : 0x85 0x2
 <ass930085>[2024-10-21 16:41:08] Button Click: Add to Log button for Service 85 window clicked.
+<ass930085>[2024-10-22 13:21:40] UDS Request Success: 85 Request Successfully sent : 0x85 0x1
+<ass930085>[2024-10-22 13:21:44] Button Click: Add to Log button for Service 85 window clicked.
+<ass930085>[2024-10-22 13:21:52] UDS Request Success: 85 Request Successfully sent : 0x85 0x2
+<ass930085>[2024-10-22 13:21:54] Button Click: Add to Log button for Service 85 window clicked.

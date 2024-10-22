@@ -80,3 +80,25 @@ Control DTC Setting Type: 0x2 OFF - To disable setting of DTC
 Suppress Positive Message Request: False
 <------------------- LOG ENTRY END ------------------->
 
+<---- LOG ENTRY [ass930085 - 2024-10-22 13:21:40] ---->
+UDS Request :   [0x85 0x1]
+Explaination:   Control DTC Setting (Service 85) Requested for Control DTC Setting type 0x1 ON - To enable setting of DTCs 
+SPRMIB flag :   False
+UDS Response:   [0xc5 0x1]
+Explaination:   Positive Response Recieved
+Service ID: 0x85
+Control DTC Setting Type: 0x1 ON - To enable setting of DTCs
+Suppress Positive Message Request: False
+<------------------- LOG ENTRY END ------------------->
+
+<---- LOG ENTRY [ass930085 - 2024-10-22 13:21:52] ---->
+UDS Request :   [0x85 0x2]
+Explaination:   Control DTC Setting (Service 85) Requested for Control DTC Setting type 0x2 OFF - To disable setting of DTCs 
+SPRMIB flag :   False
+UDS Response:   [0xc5 0x2]
+Explaination:   Positive Response Recieved
+Service ID: 0x85
+Control DTC Setting Type: 0x2 OFF - To disable setting of DTCs
+Suppress Positive Message Request: False
+<------------------- LOG ENTRY END ------------------->
+
