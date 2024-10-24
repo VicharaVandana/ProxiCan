@@ -111,7 +111,7 @@ class Ui_Form_SID11(object):
         self.label_3.setText(_translate("Form_SID11", "Response"))
         self.pushButton_reset.setText(_translate("Form_SID11", "Reset"))
         self.label.setText(_translate("Form_SID11", "Reset Type"))
-        self.pushButton_Send11Req.setToolTip(_translate("Form_SID11", "Sends the 10 service request to ECU"))
+        self.pushButton_Send11Req.setToolTip(_translate("Form_SID11", "Sends the 11 service request to ECU"))
         self.pushButton_Send11Req.setText(_translate("Form_SID11", "Send Request"))
         self.checkBox_suppressposmsg.setToolTip(_translate("Form_SID11", "If selected then Suppress Positive Response Message Indication bit will be set in Subfunction"))
         self.checkBox_suppressposmsg.setText(_translate("Form_SID11", "SPRMIB"))
