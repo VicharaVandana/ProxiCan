@@ -126,7 +126,7 @@ class Ui_Form_SID85(object):
         self.label_3.setText(_translate("Form_SID85", "Response"))
         self.label_2.setText(_translate("Form_SID85", "Response Type"))
         self.pushButton_clearLog.setText(_translate("Form_SID85", "Clear Log"))
-        self.pushButton_Send85Req.setToolTip(_translate("Form_SID85", "Sends the 10 service request to ECU"))
+        self.pushButton_Send85Req.setToolTip(_translate("Form_SID85", "Sends the 85 service request to ECU"))
         self.pushButton_Send85Req.setText(_translate("Form_SID85", "Send Request"))
         self.pushButton_appendLog.setText(_translate("Form_SID85", "Add to Log"))
         self.pushButton_reset.setText(_translate("Form_SID85", "Reset"))
