@@ -2,3 +2,8 @@
 <sbb925582>[2024-10-25 10:28:51] Button Click: In Log File Selector Window, the button <Browse Action Log> is clicked
 <sbb925582>[2024-10-25 10:29:21] Log Path Change: In Log File Selector Window, the ACTIONLOG_FULLPATH path changed <D:/Projects/Internal Projects/ProxiCAN_GUI/GIT/ProxiCan/reports/can_actionlog_report2.txt> is clicked
 <sbb925582>[2024-10-25 10:29:24] Button Click: In Log File Selector Window, the button <Save Log Paths> is clicked
+<ass930085>[2024-10-28 14:38:27] UDS Request Success: 10 Request Successfully sent : 0x10 0x82
+<ass930085>[2024-10-28 14:43:01] UDS Request Success: 10 Request Successfully sent : 0x10 0x82
+<ass930085>[2024-10-28 14:45:19] UDS Request Success: 10 Request Successfully sent : 0x10 0x82
+<ass930085>[2024-10-28 14:45:42] UDS Request Success: 10 Request Successfully sent : 0x10 0x82
+<ass930085>[2024-10-28 14:45:46] Button Click: Clear Form for Service 10 window clicked. Userfields cleared successfully.

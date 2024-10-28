@@ -91,7 +91,7 @@ class Ui_Service10(Ui_Form_SID10):
         self.update_status("Service 10 request is sent")
         gen.log_action("UDS Request Success", f"10 Request Successfully sent : {' '.join(hex(number) for number in service_request)}")
 
-        if(response.type == "Positive Response"):
+        if(response.type == "Positive Response" and sprmib_flg == False):
             p2servermax = ((response.resp[2] << 8)|(response.resp[3]))
             p2starservermax = ((response.resp[4] << 8)|(response.resp[5]))
 
@@ -120,6 +120,18 @@ class Ui_Service10(Ui_Form_SID10):
     <p><strong>Suppress Positive Message Request:</strong> <I>{sprmib_flg}</I></p>
     <p><strong>Response Bytes:</strong> <I>{" ".join(hex(number) for number in response.resp)}</I></p>
 '''
+        elif(response.type == "Positive Response" and sprmib_flg == True ):
+            p2servermax = ((response.resp[2] << 8)|(response.resp[3]))
+            p2starservermax = ((response.resp[4] << 8)|(response.resp[5]))
+            response_html = f'''<h4><U>Positive Response Recieved after a Response Pending (0x78)</U></h4>
+    <p><strong>Service ID:</strong> <I>{hex(response.resp[0]-0x40)}</I></p>
+    <p><strong>Diag Session:</strong> <I>{hex(response.resp[1])}</I></p>
+    <p><strong>Positive Response Pending count:</strong> <I>{response.positiveResponsePending_count}</I></p>
+    <p><strong>Suppress Positive Message Request:</strong> <I>{sprmib_flg}</I></p>
+    <p><strong>P2ServerMax:</strong> <I>{p2servermax} milliseconds</I></p>
+    <p><strong>P2*ServerMax:</strong> <I>{p2starservermax} milliseconds</I></p>
+'''
+
         else:
             response_html = f'''<h4><U>ERROR OCCURED</U></h4>'''
 

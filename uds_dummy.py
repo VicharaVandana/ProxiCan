@@ -110,6 +110,15 @@ def sendRequest(request, IsPosResExpected = True):
             response.nrc = 0x00
             response.nrcname = NRC_DATA.get(response.nrc, "Unknown NRC")[0]
             response.nrcdesc = NRC_DATA.get(response.nrc, "Unknown NRC Recieved. There is no record of this NRC in UDS ISO 14229 Document")[1]
+        elif(request[1] == 0x82):
+            res = [0x50, 0x02, 0x00, 0x32, 0x1, 0xf4]
+            response.resp = res.copy()
+            response.type = "Positive Response"
+            response.nrc = 0x00
+            response.nrcname = NRC_DATA.get(response.nrc, "Unknown NRC")[0]
+            response.nrcdesc = NRC_DATA.get(response.nrc, "Unknown NRC Recieved. There is no record of this NRC in UDS ISO 14229 Document")[1]
+            response.positiveResponsePending_count= response.positiveResponsePending_count + 1
+
         elif(request[1] == 0x02):
             res = [0x7F, 0x10, 0x7F]
             response.resp = res.copy()
