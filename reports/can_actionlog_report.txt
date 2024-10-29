@@ -1,4 +1,0 @@
-<sbb925582>[2024-10-25 10:28:39] Menu Option Click: <Log File Location> Option Selected
-<sbb925582>[2024-10-25 10:28:51] Button Click: In Log File Selector Window, the button <Browse Action Log> is clicked
-<sbb925582>[2024-10-25 10:29:21] Log Path Change: In Log File Selector Window, the ACTIONLOG_FULLPATH path changed <D:/Projects/Internal Projects/ProxiCAN_GUI/GIT/ProxiCan/reports/can_actionlog_report2.txt> is clicked
-<sbb925582>[2024-10-25 10:29:24] Button Click: In Log File Selector Window, the button <Save Log Paths> is clicked
