@@ -95,7 +95,7 @@ class Ui_Form_SID_23(object):
         self.label_status.setText(_translate("Form_SID_23", "No Status"))
         self.label_5.setText(_translate("Form_SID_23", "Response Type: "))
         self.pushButton_appendLog_2.setText(_translate("Form_SID_23", "Add to Log"))
-        self.pushButton_Send23Req_2.setToolTip(_translate("Form_SID_23", "Sends the 22 service request to ECU"))
+        self.pushButton_Send23Req_2.setToolTip(_translate("Form_SID_23", "Sends the 23 service request to ECU"))
         self.pushButton_Send23Req_2.setText(_translate("Form_SID_23", "Send Request"))
         self.label_4.setText(_translate("Form_SID_23", "Response : "))
         self.label_6.setText(_translate("Form_SID_23", "ALFID"))
