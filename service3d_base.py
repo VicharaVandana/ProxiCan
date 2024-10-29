@@ -107,7 +107,7 @@ class Ui_Form_SID3D(object):
         self.pushButton_reset.setText(_translate("Form_SID3D", "Reset"))
         self.label_7.setText(_translate("Form_SID3D", "Memory size"))
         self.label_ResType_2.setText(_translate("Form_SID3D", "No Response"))
-        self.pushButton_Send3DReq.setToolTip(_translate("Form_SID3D", "Sends the 22 service request to ECU"))
+        self.pushButton_Send3DReq.setToolTip(_translate("Form_SID3D", "Sends the 3D service request to ECU"))
         self.pushButton_Send3DReq.setText(_translate("Form_SID3D", "Send Request"))
         self.pushButton_clearLog.setText(_translate("Form_SID3D", "Clear Log"))
         self.pushButton_appendLog.setText(_translate("Form_SID3D", "Add to Log"))

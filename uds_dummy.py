@@ -207,7 +207,7 @@ def sendRequest(request, IsPosResExpected = True):
             response.nrcname = NRC_DATA.get(response.nrc, "Unknown NRC")[0]
             response.nrcdesc = NRC_DATA.get(response.nrc, "Unknown NRC Recieved. There is no record of this NRC in UDS ISO 14229 Document")[1]
 
-    elif(request[0] == 0x23): #dummy implementation for service 28
+    elif(request[0] == 0x23): #dummy implementation for service 23
         if(request[1] == 0x23):
             res = [0x7F, 0x28]
             response.resp = res.copy()
@@ -234,7 +234,7 @@ def sendRequest(request, IsPosResExpected = True):
             response.nrcname = NRC_DATA.get(response.nrc, "Unknown NRC")[0]
             response.nrcdesc = NRC_DATA.get(response.nrc, "Unknown NRC Recieved. There is no record of this NRC in UDS ISO 14229 Document")[1]
 
-    elif(request[0] == 0x3d): #dummy implementation for service 28
+    elif(request[0] == 0x3d): #dummy implementation for service 3d
         if(request[1] == 0x22):
             res = [0x7F, 0x28]
             response.resp = res.copy()
