@@ -15,7 +15,10 @@ import service2e_main as wdbi
 import service10_main as dsc
 import service27_main as secuacc
 import service28_main as commcontrol 
-
+import service14_main as clearDTC
+import service23_main as rdmembyadd
+import service34_main as reqdownload
+import service3d_main as wrmembyadd
 Is_CanConnected = False
 
 #Create a child class of the mainwindow
@@ -42,6 +45,7 @@ class mainwindow(Ui_MainWindow, QtWidgets.QMainWindow, QtWidgets.QWidget):
         self.udsbuttons.append(self.pushButton_36)
         self.udsbuttons.append(self.pushButton_37)
         self.udsbuttons.append(self.pushButton_38)
+        self.udsbuttons.append(self.pushButton_3D)
         self.udsbuttons.append(self.pushButton_2F)
         self.udsbuttons.append(self.pushButton_86)
         self.udsbuttons.append(self.pushButton_83)
@@ -130,6 +134,10 @@ class mainwindow(Ui_MainWindow, QtWidgets.QMainWindow, QtWidgets.QWidget):
         self.pushButton_10.clicked.connect(self.openservice10)
         self.pushButton_27.clicked.connect(self.openservice27)
         self.pushButton_28.clicked.connect(self.openservice28)
+        self.pushButton_14.clicked.connect(self.openservice14)
+        self.pushButton_23.clicked.connect(self.openservice23)
+        self.pushButton_34.clicked.connect(self.openservice34)
+        self.pushButton_3D.clicked.connect(self.openservice3D)
         return
     
     def on_radiobutton_fdf_clicked(self):
@@ -170,6 +178,20 @@ class mainwindow(Ui_MainWindow, QtWidgets.QMainWindow, QtWidgets.QWidget):
             gen.log_action("Button Click", "Service 10 Window Opened")
         else:
             self.update_status(f"10 Button clicked. But unable to open the service window as CAN is not connected")
+        return
+    
+    def openservice14(self):
+        if(Is_CanConnected == True):
+            self.window14 = QMainWindow()
+            self.ui14 = clearDTC.Ui_Service14()
+            self.ui14.setupUi(self.window14)
+            self.ui14.redesign_ui()
+            self.ui14.connectFunctions()
+            self.window14.show()  # Display the new window
+            self.update_status(f"14 Button clicked. Diagnostic Session Control service window opened")
+            gen.log_action("Button Click", "Service 14 Window Opened")
+        else:
+            self.update_status(f"14 Button clicked. But unable to open the service window as CAN is not connected")
         return
     
     def openservice27(self):
@@ -222,13 +244,52 @@ class mainwindow(Ui_MainWindow, QtWidgets.QMainWindow, QtWidgets.QWidget):
             self.ui28.redesign_ui()
             self.ui28.connectFunctions()
             self.window28.show()  # Display the new window
-            if(self.ui28.Communication_type==1):
-                self.ui28.lineEdit_NIN.hide()
-                self.ui28.lineEdit_NIN=0x0000
             self.update_status(f"28 Button clicked.Communication control service window opened")
             gen.log_action("Button Click", "Service 28 Window Opened")
         else:
             self.update_status(f"28 Button clicked. But unable to open the service window as CAN is not connected")
+        return
+    
+    def openservice23(self):
+        if(Is_CanConnected == True):
+            self.window23 = QMainWindow()
+            self.ui23 = rdmembyadd.Ui_Service23()
+            self.ui23.setupUi(self.window23)
+            self.ui23.redesign_ui()
+            self.ui23.connectFunctions()
+            self.window23.show()  # Display the new window
+            self.update_status(f"23 Button clicked.Communication control service window opened")
+            gen.log_action("Button Click", "Service 23 Window Opened")
+        else:
+            self.update_status(f"23 Button clicked. But unable to open the service window as CAN is not connected")
+        return
+    
+    def openservice34(self):
+        if(Is_CanConnected == True):
+            self.window34 = QMainWindow()
+            self.ui34 = reqdownload.Ui_Service34()
+            self.ui34.setupUi(self.window34)
+            self.ui34.redesign_ui()
+            self.ui34.connectFunctions()
+            self.window34.show()  # Display the new window
+            self.update_status(f"34 Button clicked.Communication control service window opened")
+            gen.log_action("Button Click", "Service 34 Window Opened")
+        else:
+            self.update_status(f"34 Button clicked. But unable to open the service window as CAN is not connected")
+        return
+        
+    def openservice3D(self):
+        if(Is_CanConnected == True):
+            self.window3d = QMainWindow()
+            self.ui3d = wrmembyadd.Ui_Service3D()
+            self.ui3d.setupUi(self.window3d)
+            self.ui3d.redesign_ui()
+            self.ui3d.connectFunctions()
+            self.window3d.show()  # Display the new window
+            self.update_status(f"3D Button clicked.Communication control service window opened")
+            gen.log_action("Button Click", "Service 3D Window Opened")
+        else:
+            self.update_status(f"3D Button clicked. But unable to open the service window as CAN is not connected")
         return
     
     def update_status(self, msg):
