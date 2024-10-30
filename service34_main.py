@@ -41,7 +41,7 @@ class Ui_Service34(Ui_Form_SID34):
         self.label_ResType_2.setText("No Response")
         self.textBrowser_Resp_2.clear()
         self.update_status("Userform cleared successfully")
-        gen.log_action("Button Click", "Clear Form for Service 28 window clicked. Userfields cleared successfully.")
+        gen.log_action("Button Click", "Clear Form for Service 34 window clicked. Userfields cleared successfully.")
         return
     
     def addlog(self):
@@ -49,13 +49,13 @@ class Ui_Service34(Ui_Form_SID34):
         gen.log_udsreport(self.logentrystring)
         self.logentrystring = ""    #Clear the log entry so that if multiple tiomes the button is clicked continuously only one entry is made.
         self.update_status(f"Log file appended with the current UDS transaction (./reports/uds_log_report.txt)")
-        gen.log_action("Button Click", "Add to Log button for Service 28 window clicked.")
+        gen.log_action("Button Click", "Add to Log button for Service 34 window clicked.")
         return
     
     def clearlog(self):
         gen.clearudslogfile()
         self.update_status(f"Log file cleared (./reports/uds_log_report.txt)")
-        gen.log_action("Button Click", "Clear Log button for Service 28 window clicked.")
+        gen.log_action("Button Click", "Clear Log button for Service 34 window clicked.")
         return
     
     def send34service(self):
@@ -69,12 +69,12 @@ class Ui_Service34(Ui_Form_SID34):
 
         if not gen.check_1Bytehexadecimal(alfid):
             self.update_status("Invalid ALFID. Please enter a valid hexadecimal value of 1 byte.")
-            gen.log_action("UDS Request Fail", "23 Request failed due to invalid ALFID byte.")
+            gen.log_action("UDS Request Fail", "34 Request failed due to invalid ALFID byte.")
             return        
         
         if not gen.check_hexadecimal(alfid):
             self.update_status("Invalid ALFID. Please enter a valid hexadecimal value of 1 byte.")
-            gen.log_action("UDS Request Fail", "23 Request failed due to invalid ALFID byte.")
+            gen.log_action("UDS Request Fail", "34 Request failed due to invalid ALFID byte.")
             return 
         
         alfid_mem_size=int(alfid[0],16)
@@ -84,32 +84,32 @@ class Ui_Service34(Ui_Form_SID34):
         # Validate memory address and size
         if not gen.check_hexadecimal(mem_add):
             self.update_status("Invalid memory address. Please enter a valid hexadecimal value.")
-            gen.log_action("UDS Request Fail", "23 Request failed due to invalid memory address.")
+            gen.log_action("UDS Request Fail", "34 Request failed due to invalid memory address.")
             return
 
         if len(mem_add) % 2 != 0:
             self.update_status("The length of Memory address must be even since its in bytes formart.")
-            gen.log_action("UDS Request Fail", "23 Request failed due to invalid memory address.")
+            gen.log_action("UDS Request Fail", "34 Request failed due to invalid memory address.")
             return
         
         if(alfid_mem_add!=len(mem_add)//2):
             self.update_status("The Memory address size must match with ALFID byte.")
-            gen.log_action("UDS Request Fail", "23 Request failed due to invalid memory address size.")
+            gen.log_action("UDS Request Fail", "34 Request failed due to invalid memory address size.")
             return
         
         if not gen.check_hexadecimal(mem_size):
             self.update_status("Invalid memory size. Please enter a valid hexadecimal value.")
-            gen.log_action("UDS Request Fail", "23 Request failed due to invalid memory size.")
+            gen.log_action("UDS Request Fail", "34 Request failed due to invalid memory size.")
             return
 
         if len(mem_size) % 2 != 0:
             self.update_status("The length of Memory size must be even since its in bytes formart.")
-            gen.log_action("UDS Request Fail", "23 Request failed due to invalid memory size.")
+            gen.log_action("UDS Request Fail", "34 Request failed due to invalid memory size.")
             return
 
         if(alfid_mem_size!=len(mem_size)//2):
             self.update_status("The Memory address size must match with ALFID byte.")
-            gen.log_action("UDS Request Fail", "23 Request failed due to invalid memory address size.")
+            gen.log_action("UDS Request Fail", "34 Request failed due to invalid memory address size.")
             return    
         
         self.update_status("Memory address and size validated.")
@@ -163,7 +163,7 @@ class Ui_Service34(Ui_Form_SID34):
 
         self.logentrystring = f'''<---- LOG ENTRY [{current_user} - {currenttime}] ---->
         UDS Request :   [{" ".join(hex(number) for number in service_request)}]
-        Explanation:    Read Memory By Address request for memory address {mem_add} and size {mem_size}
+        Explanation:    Request Download for memory address {mem_add} and size {mem_size}
         UDS Response:   [{" ".join(hex(number) for number in response.resp)}]
         Explanation:    {response_text}<------------------- LOG ENTRY END ------------------->
 
