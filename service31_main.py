@@ -40,8 +40,7 @@ class Ui_Service31(Ui_Form_SID_31):
         self.logentrystring = ""
         self.label_ResType.setText("No Response")
         self.textBrowser_Resp.clear()
-        self.lineEdit_DID.clear()
-        self.lineEdit_DataValue.clear()
+        self.lineEdit_RoutineIdentifier.clear()
         self.update_status("Userform cleared successfully")
         gen.log_action("Button Click", "Clear Form for Service 31 window clicked. Userfields cleared successfully.")
         return
