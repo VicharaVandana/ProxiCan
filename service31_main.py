@@ -62,9 +62,11 @@ class Ui_Service31(Ui_Form_SID_31):
     def send31service(self):
         index_sub_fun = self.Subfunction.currentIndex()
         sub_fun = fun.get_subfunction(index_sub_fun)
+        sub_fun_name=fun.get_subfunction_name(sub_fun)
         rid_string = self.lineEdit_RoutineIdentifier.text().strip().replace(" ","").replace(" ","").replace(" ","")
         gen.log_action("Button Click", f"Send 31 request button clicked with RID[{rid_string}].")
         sprmib_flg = self.checkBox_suppressposmsg.isChecked()
+        SR=self.checkBox_StatusRecord.isChecked()
 
         #First check if a valid DID is entered in DID field        
         if(False == gen.check_2Bytehexadecimal(rid_string)):
@@ -75,8 +77,20 @@ class Ui_Service31(Ui_Form_SID_31):
             return 
         
         #print(f"RID {rid_string} is valid")
-
-        service_request = fun.form_reqmsg4srv31(sub_fun,rid_string,sprmib_flg)
+        if(SR==False):
+            service_request = fun.form_reqmsg4srv31_without_SR(sub_fun,rid_string,sprmib_flg)
+        else:
+            status_record = self.lineEdit_StatusRecord.text().strip().replace(" ","").replace(" ","").replace(" ","")
+            if not gen.check_hexadecimal(status_record):
+                self.update_status("Invalid Status Record. Please enter a valid hexadecimal value.")
+                gen.log_action("UDS Request Fail", "23 Request failed due to invalid Status Record.")
+                return
+            if len(status_record) % 2 != 0:
+                self.update_status("The length of status record must be even since its in bytes formart.")
+                gen.log_action("UDS Request Fail", "23 Request failed due to invalid status record.")
+                return
+            gen.log_action("Button Click", f"Send 31 request button clicked with Status Record[{status_record}].")
+            service_request = fun.form_reqmsg4srv31_with_SR(sub_fun,rid_string,status_record,sprmib_flg)
         #Send the service request and get the response 
         if(sprmib_flg == False):
             IsPosResExpected = True 
@@ -106,7 +120,8 @@ class Ui_Service31(Ui_Form_SID_31):
         if(response.type == "Positive Response"):
             response_html = f'''<h4><U>Positive Response Recieved</U></h4>
     <p><strong>Service ID:</strong> <I>{hex(response.resp[0]-0x40)}</I></p>
-    <p><strong>RID:</strong> <I>{hex(response.resp[2])} {hex(response.resp[3])}</I></p>
+    <p><strong>RID:</strong> <I>{hex(response.resp[1])} {hex(response.resp[2])}</I></p>
+    <p><strong>Status:</strong> <I>The ecu has entered the sub function {sub_fun_name} with RID {hex(response.resp[1])} {hex(response.resp[2])} successfully</I></p>
 '''
 
         elif(response.type == "Negative Response"):
@@ -139,7 +154,7 @@ class Ui_Service31(Ui_Form_SID_31):
 
         self.logentrystring = f'''<---- LOG ENTRY [{current_user} - {currenttime}] ---->
 UDS Request :   [{" ".join(hex(number) for number in service_request)}]
-Explaination:   Write Data By Itentifier (Service 31) Requested for RID 0x{rid_string}
+Explaination:   Routine control (Service 31) Requested for {sub_fun_name} with RID 0x{rid_string}
 UDS Response:   [{" ".join(hex(number) for number in response.resp)}]
 Explaination:   {response_text}<------------------- LOG ENTRY END ------------------->
 
@@ -148,7 +163,7 @@ Explaination:   {response_text}<------------------- LOG ENTRY END --------------
     
     def closeEvent(self, event):
         # Custom logic when the window is closed
-        gen.log_action(f"Window Close", f"Service 2E Window Closed.")
+        gen.log_action(f"Window Close", f"Service 31 Window Closed.")
         return
     
 
