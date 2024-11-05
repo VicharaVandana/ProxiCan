@@ -106,7 +106,7 @@ class Ui_Service31(Ui_Form_SID_31):
         if(response.type == "Positive Response"):
             response_html = f'''<h4><U>Positive Response Recieved</U></h4>
     <p><strong>Service ID:</strong> <I>{hex(response.resp[0]-0x40)}</I></p>
-    <p><strong>RID:</strong> <I>{hex(response.resp[1])} {hex(response.resp[2])}</I></p>
+    <p><strong>RID:</strong> <I>{hex(response.resp[2])} {hex(response.resp[3])}</I></p>
 '''
 
         elif(response.type == "Negative Response"):
@@ -139,7 +139,7 @@ class Ui_Service31(Ui_Form_SID_31):
 
         self.logentrystring = f'''<---- LOG ENTRY [{current_user} - {currenttime}] ---->
 UDS Request :   [{" ".join(hex(number) for number in service_request)}]
-Explaination:   Write Data By Itentifier (Service 31) Requested for DID 0x{rid_string}
+Explaination:   Write Data By Itentifier (Service 31) Requested for RID 0x{rid_string}
 UDS Response:   [{" ".join(hex(number) for number in response.resp)}]
 Explaination:   {response_text}<------------------- LOG ENTRY END ------------------->
 
