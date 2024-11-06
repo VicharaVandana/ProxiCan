@@ -17,7 +17,6 @@ import service27_main as secuacc
 import service28_main as commcontrol 
 import service14_main as clearDTC
 import service23_main as rdmembyadd
-import service34_main as reqdownload
 import service3d_main as wrmembyadd
 import service31_main as routinecontrol
 Is_CanConnected = False
@@ -137,7 +136,6 @@ class mainwindow(Ui_MainWindow, QtWidgets.QMainWindow, QtWidgets.QWidget):
         self.pushButton_28.clicked.connect(self.openservice28)
         self.pushButton_14.clicked.connect(self.openservice14)
         self.pushButton_23.clicked.connect(self.openservice23)
-        self.pushButton_34.clicked.connect(self.openservice34)
         self.pushButton_3D.clicked.connect(self.openservice3D)
         self.pushButton_31.clicked.connect(self.openservice31)
         return
@@ -280,20 +278,6 @@ class mainwindow(Ui_MainWindow, QtWidgets.QMainWindow, QtWidgets.QWidget):
             self.update_status(f"31 Button clicked. But unable to open the service window as CAN is not connected")
         return
 
-    def openservice34(self):
-        if(Is_CanConnected == True):
-            self.window34 = QMainWindow()
-            self.ui34 = reqdownload.Ui_Service34()
-            self.ui34.setupUi(self.window34)
-            self.ui34.redesign_ui()
-            self.ui34.connectFunctions()
-            self.window34.show()  # Display the new window
-            self.update_status(f"34 Button clicked.Communication control service window opened")
-            gen.log_action("Button Click", "Service 34 Window Opened")
-        else:
-            self.update_status(f"34 Button clicked. But unable to open the service window as CAN is not connected")
-        return
-        
     def openservice3D(self):
         if(Is_CanConnected == True):
             self.window3d = QMainWindow()
