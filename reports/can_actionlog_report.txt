@@ -7,3 +7,71 @@
 <ass930085>[2024-10-28 14:45:19] UDS Request Success: 10 Request Successfully sent : 0x10 0x82
 <ass930085>[2024-10-28 14:45:42] UDS Request Success: 10 Request Successfully sent : 0x10 0x82
 <ass930085>[2024-10-28 14:45:46] Button Click: Clear Form for Service 10 window clicked. Userfields cleared successfully.
+<sbb925582>[2024-11-10 15:02:31] Button Click: Clear Form for Service 27 window clicked. Userfields cleared successfully.
+<sbb925582>[2024-11-10 15:02:50] Button Click: Clear Form for Service 27 window clicked. Userfields cleared successfully.
+<sbb925582>[2024-11-10 15:03:13] Button Click: Clear Form for Service 27 window clicked. Userfields cleared successfully.
+<sbb925582>[2024-11-10 15:03:35] Button Click: Clear Form for Service 27 window clicked. Userfields cleared successfully.
+<sbb925582>[2024-11-10 15:03:59] Button Click: Clear Form for Service 27 window clicked. Userfields cleared successfully.
+<sbb925582>[2024-11-10 15:04:13] Button Click: Clear Form for Service 27 window clicked. Userfields cleared successfully.
+<sbb925582>[2024-11-10 15:04:37] Button Click: Clear Form for Service 27 window clicked. Userfields cleared successfully.
+<sbb925582>[2024-11-10 15:04:41] Button Click: Clear Form for Service 27 window clicked. Userfields cleared successfully.
+<sbb925582>[2024-11-10 15:04:42] Button Click: Clear Form for Service 27 window clicked. Userfields cleared successfully.
+<sbb925582>[2024-11-10 15:04:42] Button Click: Clear Form for Service 27 window clicked. Userfields cleared successfully.
+<sbb925582>[2024-11-10 15:19:50] Button Click: Clear Form for Service 27 window clicked. Userfields cleared successfully.
+<sbb925582>[2024-11-10 15:26:27] Button Click: Clear Form for Service 27 window clicked. Userfields cleared successfully.
+<sbb925582>[2024-11-10 15:28:03] Button Click: Clear Form for Service 27 window clicked. Userfields cleared successfully.
+<sbb925582>[2024-11-10 15:29:16] Button Click: Clear Form for Service 27 window clicked. Userfields cleared successfully.
+<sbb925582>[2024-11-10 15:35:04] Button Click: Clear Form for Service 27 window clicked. Userfields cleared successfully.
+<sbb925582>[2024-11-10 15:41:00] Button Click: Clear Form for Service 27 window clicked. Userfields cleared successfully.
+<sbb925582>[2024-11-10 15:42:09] Button Click: Clear Form for Service 27 window clicked. Userfields cleared successfully.
+<sbb925582>[2024-11-10 15:42:26] Button Click: Clear Form for Service 27 window clicked. Userfields cleared successfully.
+<sbb925582>[2024-11-10 15:45:41] Button Click: Clear Form for Service 27 window clicked. Userfields cleared successfully.
+<sbb925582>[2024-11-10 15:45:48] Button Click: Clear Form for Service 27 window clicked. Userfields cleared successfully.
+<sbb925582>[2024-11-10 15:45:52] Button Click: Clear Form for Service 27 window clicked. Userfields cleared successfully.
+<sbb925582>[2024-11-10 15:47:36] Button Click: Clear Form for Service 27 window clicked. Userfields cleared successfully.
+<sbb925582>[2024-11-10 15:47:41] Button Click: Clear Form for Service 27 window clicked. Userfields cleared successfully.
+<sbb925582>[2024-11-10 15:47:44] Button Click: Clear Form for Service 27 window clicked. Userfields cleared successfully.
+<sbb925582>[2024-11-10 15:47:45] Button Click: Clear Form for Service 27 window clicked. Userfields cleared successfully.
+<sbb925582>[2024-11-10 15:47:45] Button Click: Clear Form for Service 27 window clicked. Userfields cleared successfully.
+<sbb925582>[2024-11-10 15:50:39] Button Click: Clear Form for Service 27 window clicked. Userfields cleared successfully.
+<sbb925582>[2024-11-10 15:50:42] Button Click: Clear Form for Service 27 window clicked. Userfields cleared successfully.
+<sbb925582>[2024-11-10 15:50:44] Button Click: Clear Form for Service 27 window clicked. Userfields cleared successfully.
+<sbb925582>[2024-11-10 15:50:44] Button Click: Clear Form for Service 27 window clicked. Userfields cleared successfully.
+<sbb925582>[2024-11-10 15:50:44] Button Click: Clear Form for Service 27 window clicked. Userfields cleared successfully.
+<sbb925582>[2024-11-10 15:50:45] Button Click: Clear Form for Service 27 window clicked. Userfields cleared successfully.
+<sbb925582>[2024-11-10 15:51:47] Button Click: Clear Form for Service 27 window clicked. Userfields cleared successfully.
+<sbb925582>[2024-11-10 15:51:55] Button Click: Clear Form for Service 27 window clicked. Userfields cleared successfully.
+<sbb925582>[2024-11-10 15:51:56] Button Click: Clear Form for Service 27 window clicked. Userfields cleared successfully.
+<sbb925582>[2024-11-10 15:53:58] Button Click: Clear Form for Service 27 window clicked. Userfields cleared successfully.
+<sbb925582>[2024-11-10 15:54:02] Button Click: Clear Form for Service 27 window clicked. Userfields cleared successfully.
+<sbb925582>[2024-11-10 15:54:05] Button Click: Clear Form for Service 27 window clicked. Userfields cleared successfully.
+<sbb925582>[2024-11-10 15:54:07] Button Click: Clear Form for Service 27 window clicked. Userfields cleared successfully.
+<sbb925582>[2024-11-10 15:54:27] Button Click: Clear Form for Service 27 window clicked. Userfields cleared successfully.
+<sbb925582>[2024-11-10 15:54:56] Button Click: Clear Form for Service 27 window clicked. Userfields cleared successfully.
+<sbb925582>[2024-11-10 15:55:01] Button Click: Clear Form for Service 27 window clicked. Userfields cleared successfully.
+<sbb925582>[2024-11-10 15:55:19] Button Click: Clear Form for Service 27 window clicked. Userfields cleared successfully.
+<sbb925582>[2024-11-10 15:55:23] Button Click: Clear Form for Service 27 window clicked. Userfields cleared successfully.
+<sbb925582>[2024-11-10 15:56:35] Button Click: Clear Form for Service 27 window clicked. Userfields cleared successfully.
+<sbb925582>[2024-11-10 15:56:36] Button Click: Clear Form for Service 27 window clicked. Userfields cleared successfully.
+<sbb925582>[2024-11-10 15:56:37] Button Click: Clear Form for Service 27 window clicked. Userfields cleared successfully.
+<sbb925582>[2024-11-10 15:56:37] Button Click: Clear Form for Service 27 window clicked. Userfields cleared successfully.
+<sbb925582>[2024-11-10 15:58:11] Button Click: Clear Form for Service 27 window clicked. Userfields cleared successfully.
+<sbb925582>[2024-11-10 16:14:59] Button Click: Clear Form for Service 27 window clicked. Userfields cleared successfully.
+<sbb925582>[2024-11-10 16:17:15] Button Click: Clear Form for Service 27 window clicked. Userfields cleared successfully.
+<sbb925582>[2024-11-10 16:18:59] Button Click: Clear Form for Service 27 window clicked. Userfields cleared successfully.
+<sbb925582>[2024-11-10 16:31:50] Button Click: Clear Form for Service 27 window clicked. Userfields cleared successfully.
+<sbb925582>[2024-11-10 16:35:03] Button Click: Clear Form for Service 27 window clicked. Userfields cleared successfully.
+<sbb925582>[2024-11-10 16:36:15] Button Click: Clear Form for Service 27 window clicked. Userfields cleared successfully.
+<sbb925582>[2024-11-10 18:01:10] Button Click: Clear Form for Service 27 window clicked. Userfields cleared successfully.
+<sbb925582>[2024-11-10 18:17:18] Button Click: Clear Form for Service 27 Security Level Configurations window clicked. Userfields cleared successfully.
+<sbb925582>[2024-11-10 18:52:06] Button Click: Clear Form for Service 27 Security Level Configurations window clicked. Userfields cleared successfully.
+<sbb925582>[2024-11-10 18:55:00] Button Click: Clear Form for Service 27 Security Level Configurations window clicked. Userfields cleared successfully.
+<sbb925582>[2024-11-10 19:10:26] Button Click: Clear Form for Service 27 Security Level Configurations window clicked. Userfields cleared successfully.
+<sbb925582>[2024-11-10 19:10:27] Button Click: Clear Form for Service 27 Security Level Configurations window clicked. Userfields cleared successfully.
+<sbb925582>[2024-11-10 19:10:41] Button Click: Clear Form for Service 27 Security Level Configurations window clicked. Userfields cleared successfully.
+<sbb925582>[2024-11-10 19:10:52] Button Click: Clear Form for Service 27 Security Level Configurations window clicked. Userfields cleared successfully.
+<sbb925582>[2024-11-10 19:11:07] Button Click: Clear Form for Service 27 Security Level Configurations window clicked. Userfields cleared successfully.
+<sbb925582>[2024-11-10 19:29:18] Button Click: Clear Form for Service 27 Security Level Configurations window clicked. Userfields cleared successfully.
+<sbb925582>[2024-11-10 19:29:22] Button Click: Clear Form for Service 27 Security Level Configurations window clicked. Userfields cleared successfully.
+<sbb925582>[2024-11-10 19:43:23] Button Click: Clear Form for Service 27 Security Level Configurations window clicked. Userfields cleared successfully.
+<sbb925582>[2024-11-10 19:43:44] Button Click: Clear Form for Service 27 Security Level Configurations window clicked. Userfields cleared successfully.

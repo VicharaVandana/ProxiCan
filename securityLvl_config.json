@@ -1,0 +1,32 @@
+{
+    "SecuLvl_01_SubFn_01_02": {
+        "subfunction_getseed": "01",
+        "subfunction_validatekey": "02",
+        "seedLength": "02",
+        "keyLength": "02",
+        "SampleSeed": "1234",
+        "SampleKey": "EDCC",
+        "SecurityFunction": "getKey4mSeed_SecuLvl_01",
+        "SecurityFunctionDefinition": "def getKey4mSeed_SecuLvl_01(seed):\n    # Update the code between start and end section only\n    ################# START ########################\n    # Logic: Key is 2's complement of the seed \n    ones_complement = ~seed\n    twos_complement = ones_complement + 1\n    key = 0xFFFF & twos_complement\n    ################## END #########################\n    return(key)"
+    },
+    "New_SecurityLevel": {
+        "subfunction_getseed": "",
+        "subfunction_validatekey": "",
+        "seedLength": "",
+        "keyLength": "",
+        "SampleSeed": "",
+        "SampleKey": "",
+        "SecurityFunction": "SecurityFunction",
+        "SecurityFunctionDefinition": "def SecurityFunction(seed):\n    # Logic to compute key from seed in python\n    # START OF LOGIC \n    #Enter your python code here\n    key = seed  #to be replaced with actual logic\n    # END OF LOGIC\n    return key\n"
+    },
+    "": {
+        "subfunction_getseed": "",
+        "subfunction_validatekey": "",
+        "seedLength": "",
+        "keyLength": "",
+        "SampleSeed": "",
+        "SampleKey": "",
+        "SecurityFunction": "",
+        "SecurityFunctionDefinition": ""
+    }
+}

@@ -1,0 +1,1 @@
+{"SecurityFunctionDefinition": "def SecurityFunction(seed):\n    # Logic to compute key from seed in python\n    # START OF LOGIC \n    #Enter your python code here\n    key = seed  #to be replaced with actual logic\n    # END OF LOGIC\n    return key\n"}
