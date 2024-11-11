@@ -59,20 +59,22 @@ class Ui_Service23(Ui_Form_SID_23):
         return
 
     def send23service(self):
-        alfid = self.lineEdit_ALFID.text().strip().replace(" ","").replace(" ","").replace(" ","")
+        #define the alfid based on your requirement
+        alfid="24"            
+        # alfid = self.lineEdit_ALFID.text().strip().replace(" ","").replace(" ","").replace(" ","")
 
 
 
 
-        if not gen.check_1Bytehexadecimal(alfid):
-            self.update_status("Invalid ALFID. Please enter a valid hexadecimal value of 1 byte.")
-            gen.log_action("UDS Request Fail", "23 Request failed due to invalid ALFID byte.")
-            return        
+        # if not gen.check_1Bytehexadecimal(alfid):
+        #     self.update_status("Invalid ALFID. Please enter a valid hexadecimal value of 1 byte.")
+        #     gen.log_action("UDS Request Fail", "23 Request failed due to invalid ALFID byte.")
+        #     return        
         
-        if not gen.check_hexadecimal(alfid):
-            self.update_status("Invalid ALFID. Please enter a valid hexadecimal value of 1 byte.")
-            gen.log_action("UDS Request Fail", "23 Request failed due to invalid ALFID byte.")
-            return 
+        # if not gen.check_hexadecimal(alfid):
+        #     self.update_status("Invalid ALFID. Please enter a valid hexadecimal value of 1 byte.")
+        #     gen.log_action("UDS Request Fail", "23 Request failed due to invalid ALFID byte.")
+        #     return 
         
         alfid_mem_size=int(alfid[0],16)
         alfid_mem_add=int(alfid[1],16)
@@ -85,12 +87,12 @@ class Ui_Service23(Ui_Form_SID_23):
             return
 
         if len(mem_add) % 2 != 0:
-            self.update_status("The Memory address must have an even number of characters since its in bytes formart.")
+            self.update_status("The length of Memory address must be even since its in bytes formart.")
             gen.log_action("UDS Request Fail", "23 Request failed due to invalid memory address.")
             return
         
         if(alfid_mem_add!=len(mem_add)//2):
-            self.update_status("The Memory address size must match with ALFID byte.")
+            self.update_status(f"The Memory address size must match with ALFID byte of {alfid_mem_add}.")
             gen.log_action("UDS Request Fail", "23 Request failed due to invalid memory address size.")
             return
         
@@ -100,12 +102,12 @@ class Ui_Service23(Ui_Form_SID_23):
             return
 
         if len(mem_size) % 2 != 0:
-            self.update_status("The Memory size must have an even number of characters since its in bytes formart.")
+            self.update_status("The length of Memory size must be even since its in bytes formart.")
             gen.log_action("UDS Request Fail", "23 Request failed due to invalid memory size.")
             return
 
         if(alfid_mem_size!=len(mem_size)//2):
-            self.update_status("The Memory address size must match with ALFID byte.")
+            self.update_status(f"The Memory size must match with ALFID byte of {alfid_mem_size}.")
             gen.log_action("UDS Request Fail", "23 Request failed due to invalid memory address size.")
             return    
         
@@ -113,7 +115,7 @@ class Ui_Service23(Ui_Form_SID_23):
         
         # Send the service request
         service_request = fun.form_reqmsg4srv23(alfid,mem_add, mem_size)
-        #IsPosResExpected = not self.checkBox_suppressposmsg.isChecked()
+
 
         response = uds.sendRequest(service_request)
         
@@ -127,6 +129,7 @@ class Ui_Service23(Ui_Form_SID_23):
             <p><strong>Service ID:</strong> <I>{hex(response.resp[0]-0x40)}</I></p>
             <p><strong>Memory Address:</strong> <I>{mem_add}</I></p>
             <p><strong>Memory Size:</strong> <I>{mem_size}</I></p>
+            <p><strong>Info:</strong> <I> Service 23 is successfully sent with Message address {mem_add} and Message size {mem_size}</I></p>
             '''
         elif response.type == "Negative Response":
             response_html = f'''

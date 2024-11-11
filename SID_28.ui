@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Dialog</class>
- <widget class="QDialog" name="Dialog">
+ <class>Form_SID28</class>
+ <widget class="QDialog" name="Form_SID28">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -34,7 +34,11 @@
      </widget>
     </item>
     <item row="4" column="1">
-     <widget class="QLineEdit" name="lineEdit_NIN"/>
+     <widget class="QLineEdit" name="lineEdit_NIN">
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Enter Node Identification Number in hexadecimal format&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
     </item>
     <item row="4" column="0">
      <widget class="QLabel" name="label_4">
@@ -58,7 +62,7 @@
        </size>
       </property>
       <property name="toolTip">
-       <string>Select the Diag session to which you want ECU to move. If your session is not in list then contact admin</string>
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Select the Communication type to which you want ECU to move. &lt;/p&gt;&lt;p&gt;If your Communication type is not in list then contact admin&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
       <item>
        <property name="text">
@@ -122,7 +126,7 @@
        </size>
       </property>
       <property name="toolTip">
-       <string>Select the Diag session to which you want ECU to move. If your session is not in list then contact admin</string>
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Select the Control type to which you want ECU to move. &lt;br/&gt;If your control type is not in list then contact admin&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
       <item>
        <property name="text">
@@ -175,7 +179,7 @@
     <item row="0" column="3">
      <widget class="QPushButton" name="pushButton_Send28Req">
       <property name="toolTip">
-       <string>Sends the 10 service request to ECU</string>
+       <string>Sends the 28 service request to ECU</string>
       </property>
       <property name="styleSheet">
        <string notr="true">background-color: rgb(0, 255, 255);

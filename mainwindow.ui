@@ -937,18 +937,18 @@ background-color: rgb(170, 255, 255);</string>
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>450</x>
       <y>40</y>
       <width>231</width>
-      <height>255</height>
+      <height>292</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout_UDSserviceButtons">
-     <item row="1" column="0">
-      <widget class="QPushButton" name="pushButton_11">
+     <item row="5" column="1">
+      <widget class="QPushButton" name="pushButton_37">
        <property name="minimumSize">
         <size>
          <width>51</width>
@@ -962,326 +962,14 @@ background-color: rgb(170, 255, 255);</string>
         </font>
        </property>
        <property name="toolTip">
-        <string>Opens ECU Reset Service Widget</string>
+        <string>Opens Request Transfer Exit Service Widget</string>
        </property>
        <property name="styleSheet">
         <string notr="true">background-color: rgb(170, 255, 0);
 color: rgb(0, 0, 255);</string>
        </property>
        <property name="text">
-        <string>11</string>
-       </property>
-      </widget>
-     </item>
-     <item row="5" column="0">
-      <widget class="QPushButton" name="pushButton_36">
-       <property name="minimumSize">
-        <size>
-         <width>51</width>
-         <height>31</height>
-        </size>
-       </property>
-       <property name="font">
-        <font>
-         <family>Lucida Console</family>
-         <pointsize>10</pointsize>
-        </font>
-       </property>
-       <property name="toolTip">
-        <string>Opens Request Transfer Service Widget</string>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">background-color: rgb(170, 255, 0);
-color: rgb(0, 0, 255);</string>
-       </property>
-       <property name="text">
-        <string>36</string>
-       </property>
-      </widget>
-     </item>
-     <item row="3" column="1">
-      <widget class="QPushButton" name="pushButton_2A">
-       <property name="minimumSize">
-        <size>
-         <width>51</width>
-         <height>31</height>
-        </size>
-       </property>
-       <property name="font">
-        <font>
-         <family>Lucida Console</family>
-         <pointsize>10</pointsize>
-        </font>
-       </property>
-       <property name="toolTip">
-        <string>Opens Read Data by Periodic Identifier Service Widget</string>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">background-color: rgb(170, 255, 0);
-color: rgb(0, 0, 255);</string>
-       </property>
-       <property name="text">
-        <string>2A</string>
-       </property>
-      </widget>
-     </item>
-     <item row="0" column="1">
-      <widget class="QPushButton" name="pushButton_22">
-       <property name="minimumSize">
-        <size>
-         <width>51</width>
-         <height>31</height>
-        </size>
-       </property>
-       <property name="font">
-        <font>
-         <family>Lucida Console</family>
-         <pointsize>10</pointsize>
-        </font>
-       </property>
-       <property name="toolTip">
-        <string>Opens Read DID Service Widget</string>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">background-color: rgb(170, 255, 0);
-color: rgb(0, 0, 255);</string>
-       </property>
-       <property name="text">
-        <string>22</string>
-       </property>
-      </widget>
-     </item>
-     <item row="0" column="2">
-      <widget class="QPushButton" name="pushButton_2E">
-       <property name="minimumSize">
-        <size>
-         <width>51</width>
-         <height>31</height>
-        </size>
-       </property>
-       <property name="font">
-        <font>
-         <family>Lucida Console</family>
-         <pointsize>10</pointsize>
-        </font>
-       </property>
-       <property name="toolTip">
-        <string>Opens Write DID Service Widget</string>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">background-color: rgb(170, 255, 0);
-color: rgb(0, 0, 255);</string>
-       </property>
-       <property name="text">
-        <string>2E</string>
-       </property>
-      </widget>
-     </item>
-     <item row="0" column="0">
-      <widget class="QPushButton" name="pushButton_10">
-       <property name="minimumSize">
-        <size>
-         <width>51</width>
-         <height>31</height>
-        </size>
-       </property>
-       <property name="font">
-        <font>
-         <family>Lucida Console</family>
-         <pointsize>10</pointsize>
-        </font>
-       </property>
-       <property name="toolTip">
-        <string>Opens Diagnostic Session Control Service Widget</string>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">background-color: rgb(170, 255, 0);
-color: rgb(0, 0, 255);</string>
-       </property>
-       <property name="text">
-        <string>10</string>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="1">
-      <widget class="QPushButton" name="pushButton_27">
-       <property name="minimumSize">
-        <size>
-         <width>51</width>
-         <height>31</height>
-        </size>
-       </property>
-       <property name="font">
-        <font>
-         <family>Lucida Console</family>
-         <pointsize>10</pointsize>
-        </font>
-       </property>
-       <property name="toolTip">
-        <string>Opens Security Access Service Widget</string>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">background-color: rgb(170, 255, 0);
-color: rgb(0, 0, 255);</string>
-       </property>
-       <property name="text">
-        <string>27</string>
-       </property>
-      </widget>
-     </item>
-     <item row="2" column="0">
-      <widget class="QPushButton" name="pushButton_14">
-       <property name="minimumSize">
-        <size>
-         <width>51</width>
-         <height>31</height>
-        </size>
-       </property>
-       <property name="font">
-        <font>
-         <family>Lucida Console</family>
-         <pointsize>10</pointsize>
-        </font>
-       </property>
-       <property name="toolTip">
-        <string>Opens Clear Diagnostic Information Service Widget</string>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">background-color: rgb(170, 255, 0);
-color: rgb(0, 0, 255);</string>
-       </property>
-       <property name="text">
-        <string>14</string>
-       </property>
-      </widget>
-     </item>
-     <item row="2" column="2">
-      <widget class="QPushButton" name="pushButton_85">
-       <property name="minimumSize">
-        <size>
-         <width>51</width>
-         <height>31</height>
-        </size>
-       </property>
-       <property name="font">
-        <font>
-         <family>Lucida Console</family>
-         <pointsize>10</pointsize>
-        </font>
-       </property>
-       <property name="toolTip">
-        <string>Opens Control DTC Setting Service Widget</string>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">background-color: rgb(170, 255, 0);
-color: rgb(0, 0, 255);</string>
-       </property>
-       <property name="text">
-        <string>85</string>
-       </property>
-      </widget>
-     </item>
-     <item row="3" column="2">
-      <widget class="QPushButton" name="pushButton_2C">
-       <property name="minimumSize">
-        <size>
-         <width>51</width>
-         <height>31</height>
-        </size>
-       </property>
-       <property name="font">
-        <font>
-         <family>Lucida Console</family>
-         <pointsize>10</pointsize>
-        </font>
-       </property>
-       <property name="toolTip">
-        <string>Opens Dynamically Define Data Identifier Service Widget</string>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">background-color: rgb(170, 255, 0);
-color: rgb(0, 0, 255);</string>
-       </property>
-       <property name="text">
-        <string>2C</string>
-       </property>
-      </widget>
-     </item>
-     <item row="6" column="0">
-      <widget class="QPushButton" name="pushButton_2F">
-       <property name="minimumSize">
-        <size>
-         <width>51</width>
-         <height>31</height>
-        </size>
-       </property>
-       <property name="font">
-        <font>
-         <family>Lucida Console</family>
-         <pointsize>10</pointsize>
-        </font>
-       </property>
-       <property name="toolTip">
-        <string>Opens IOCBI Service Widget</string>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">background-color: rgb(170, 255, 0);
-color: rgb(0, 0, 255);</string>
-       </property>
-       <property name="text">
-        <string>2F</string>
-       </property>
-      </widget>
-     </item>
-     <item row="6" column="1">
-      <widget class="QPushButton" name="pushButton_86">
-       <property name="minimumSize">
-        <size>
-         <width>51</width>
-         <height>31</height>
-        </size>
-       </property>
-       <property name="font">
-        <font>
-         <family>Lucida Console</family>
-         <pointsize>10</pointsize>
-        </font>
-       </property>
-       <property name="toolTip">
-        <string>Opens Response on Event Service Widget</string>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">background-color: rgb(170, 255, 0);
-color: rgb(0, 0, 255);</string>
-       </property>
-       <property name="text">
-        <string>86</string>
-       </property>
-      </widget>
-     </item>
-     <item row="4" column="1">
-      <widget class="QPushButton" name="pushButton_34">
-       <property name="minimumSize">
-        <size>
-         <width>51</width>
-         <height>31</height>
-        </size>
-       </property>
-       <property name="font">
-        <font>
-         <family>Lucida Console</family>
-         <pointsize>10</pointsize>
-        </font>
-       </property>
-       <property name="toolTip">
-        <string>Opens Request Download Service Widget</string>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">background-color: rgb(170, 255, 0);
-color: rgb(0, 0, 255);</string>
-       </property>
-       <property name="text">
-        <string>34</string>
+        <string>37</string>
        </property>
       </widget>
      </item>
@@ -1311,8 +999,8 @@ color: rgb(0, 0, 255);</string>
        </property>
       </widget>
      </item>
-     <item row="5" column="1">
-      <widget class="QPushButton" name="pushButton_37">
+     <item row="3" column="2">
+      <widget class="QPushButton" name="pushButton_2C">
        <property name="minimumSize">
         <size>
          <width>51</width>
@@ -1326,19 +1014,19 @@ color: rgb(0, 0, 255);</string>
         </font>
        </property>
        <property name="toolTip">
-        <string>Opens Request Transfer Exit Service Widget</string>
+        <string>Opens Dynamically Define Data Identifier Service Widget</string>
        </property>
        <property name="styleSheet">
         <string notr="true">background-color: rgb(170, 255, 0);
 color: rgb(0, 0, 255);</string>
        </property>
        <property name="text">
-        <string>37</string>
+        <string>2C</string>
        </property>
       </widget>
      </item>
-     <item row="4" column="0">
-      <widget class="QPushButton" name="pushButton_31">
+     <item row="3" column="1">
+      <widget class="QPushButton" name="pushButton_2A">
        <property name="minimumSize">
         <size>
          <width>51</width>
@@ -1352,14 +1040,196 @@ color: rgb(0, 0, 255);</string>
         </font>
        </property>
        <property name="toolTip">
-        <string>Opens Routine Control Service Widget</string>
+        <string>Opens Read Data by Periodic Identifier Service Widget</string>
        </property>
        <property name="styleSheet">
         <string notr="true">background-color: rgb(170, 255, 0);
 color: rgb(0, 0, 255);</string>
        </property>
        <property name="text">
-        <string>31</string>
+        <string>2A</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0">
+      <widget class="QPushButton" name="pushButton_14">
+       <property name="minimumSize">
+        <size>
+         <width>51</width>
+         <height>31</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Lucida Console</family>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
+       <property name="toolTip">
+        <string>Opens Clear Diagnostic Information Service Widget</string>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(170, 255, 0);
+color: rgb(0, 0, 255);</string>
+       </property>
+       <property name="text">
+        <string>14</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="2">
+      <widget class="QPushButton" name="pushButton_35">
+       <property name="minimumSize">
+        <size>
+         <width>51</width>
+         <height>31</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Lucida Console</family>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
+       <property name="toolTip">
+        <string>Opens Request Upload Service Widget</string>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(170, 255, 0);
+color: rgb(0, 0, 255);</string>
+       </property>
+       <property name="text">
+        <string>35</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QPushButton" name="pushButton_22">
+       <property name="minimumSize">
+        <size>
+         <width>51</width>
+         <height>31</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Lucida Console</family>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
+       <property name="toolTip">
+        <string>Opens Read DID Service Widget</string>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(170, 255, 0);
+color: rgb(0, 0, 255);</string>
+       </property>
+       <property name="text">
+        <string>22</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="0">
+      <widget class="QPushButton" name="pushButton_23">
+       <property name="minimumSize">
+        <size>
+         <width>51</width>
+         <height>31</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Lucida Console</family>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
+       <property name="toolTip">
+        <string>Opens Read Memory By Address Service Widget</string>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(170, 255, 0);
+color: rgb(0, 0, 255);</string>
+       </property>
+       <property name="text">
+        <string>23</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="0">
+      <widget class="QPushButton" name="pushButton_10">
+       <property name="minimumSize">
+        <size>
+         <width>51</width>
+         <height>31</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Lucida Console</family>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
+       <property name="toolTip">
+        <string>Opens Diagnostic Session Control Service Widget</string>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(170, 255, 0);
+color: rgb(0, 0, 255);</string>
+       </property>
+       <property name="text">
+        <string>10</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="2">
+      <widget class="QPushButton" name="pushButton_2E">
+       <property name="minimumSize">
+        <size>
+         <width>51</width>
+         <height>31</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Lucida Console</family>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
+       <property name="toolTip">
+        <string>Opens Write DID Service Widget</string>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(170, 255, 0);
+color: rgb(0, 0, 255);</string>
+       </property>
+       <property name="text">
+        <string>2E</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QPushButton" name="pushButton_11">
+       <property name="minimumSize">
+        <size>
+         <width>51</width>
+         <height>31</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Lucida Console</family>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
+       <property name="toolTip">
+        <string>Opens ECU Reset Service Widget</string>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(170, 255, 0);
+color: rgb(0, 0, 255);</string>
+       </property>
+       <property name="text">
+        <string>11</string>
        </property>
       </widget>
      </item>
@@ -1441,8 +1311,8 @@ color: rgb(0, 0, 255);</string>
        </property>
       </widget>
      </item>
-     <item row="4" column="2">
-      <widget class="QPushButton" name="pushButton_35">
+     <item row="6" column="1">
+      <widget class="QPushButton" name="pushButton_86">
        <property name="minimumSize">
         <size>
          <width>51</width>
@@ -1456,19 +1326,19 @@ color: rgb(0, 0, 255);</string>
         </font>
        </property>
        <property name="toolTip">
-        <string>Opens Request Upload Service Widget</string>
+        <string>Opens Response on Event Service Widget</string>
        </property>
        <property name="styleSheet">
         <string notr="true">background-color: rgb(170, 255, 0);
 color: rgb(0, 0, 255);</string>
        </property>
        <property name="text">
-        <string>35</string>
+        <string>86</string>
        </property>
       </widget>
      </item>
-     <item row="3" column="0">
-      <widget class="QPushButton" name="pushButton_23">
+     <item row="6" column="0">
+      <widget class="QPushButton" name="pushButton_2F">
        <property name="minimumSize">
         <size>
          <width>51</width>
@@ -1482,14 +1352,170 @@ color: rgb(0, 0, 255);</string>
         </font>
        </property>
        <property name="toolTip">
-        <string>Opens Read Memory By Address Service Widget</string>
+        <string>Opens IOCBI Service Widget</string>
        </property>
        <property name="styleSheet">
         <string notr="true">background-color: rgb(170, 255, 0);
 color: rgb(0, 0, 255);</string>
        </property>
        <property name="text">
-        <string>23</string>
+        <string>2F</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="1">
+      <widget class="QPushButton" name="pushButton_34">
+       <property name="minimumSize">
+        <size>
+         <width>51</width>
+         <height>31</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Lucida Console</family>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
+       <property name="toolTip">
+        <string>Opens Request Download Service Widget</string>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(170, 255, 0);
+color: rgb(0, 0, 255);</string>
+       </property>
+       <property name="text">
+        <string>34</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="0">
+      <widget class="QPushButton" name="pushButton_31">
+       <property name="minimumSize">
+        <size>
+         <width>51</width>
+         <height>31</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Lucida Console</family>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
+       <property name="toolTip">
+        <string>Opens Routine Control Service Widget</string>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(170, 255, 0);
+color: rgb(0, 0, 255);</string>
+       </property>
+       <property name="text">
+        <string>31</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="2">
+      <widget class="QPushButton" name="pushButton_85">
+       <property name="minimumSize">
+        <size>
+         <width>51</width>
+         <height>31</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Lucida Console</family>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
+       <property name="toolTip">
+        <string>Opens Control DTC Setting Service Widget</string>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(170, 255, 0);
+color: rgb(0, 0, 255);</string>
+       </property>
+       <property name="text">
+        <string>85</string>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="0">
+      <widget class="QPushButton" name="pushButton_36">
+       <property name="minimumSize">
+        <size>
+         <width>51</width>
+         <height>31</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Lucida Console</family>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
+       <property name="toolTip">
+        <string>Opens Request Transfer Service Widget</string>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(170, 255, 0);
+color: rgb(0, 0, 255);</string>
+       </property>
+       <property name="text">
+        <string>36</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QPushButton" name="pushButton_27">
+       <property name="minimumSize">
+        <size>
+         <width>51</width>
+         <height>31</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Lucida Console</family>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
+       <property name="toolTip">
+        <string>Opens Security Access Service Widget</string>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(170, 255, 0);
+color: rgb(0, 0, 255);</string>
+       </property>
+       <property name="text">
+        <string>27</string>
+       </property>
+      </widget>
+     </item>
+     <item row="7" column="0">
+      <widget class="QPushButton" name="pushButton_3D">
+       <property name="minimumSize">
+        <size>
+         <width>51</width>
+         <height>31</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Lucida Console</family>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
+       <property name="toolTip">
+        <string>Opens  Write Memory By Address Service Widget</string>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(170, 255, 0);
+color: rgb(0, 0, 255);</string>
+       </property>
+       <property name="text">
+        <string>3D</string>
        </property>
       </widget>
      </item>
@@ -1502,7 +1528,7 @@ color: rgb(0, 0, 255);</string>
      <x>0</x>
      <y>0</y>
      <width>694</width>
-     <height>22</height>
+     <height>26</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuMenu">

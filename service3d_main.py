@@ -6,7 +6,7 @@ else:
     import uds
     import can
 
-from service3d_base import Ui_Form_SID3D
+from service3d_base import Ui_Ui_form_SID3D
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QMessageBox
 import service3d_functions as fun
@@ -19,15 +19,15 @@ import uds_dummy as uds  # Replace with actual uds file while testing on board
 import os
 
 
-class Ui_Service3D(Ui_Form_SID3D):
+class Ui_Service3D(Ui_Ui_form_SID3D):
     def redesign_ui(self):
         pass
 
     def connectFunctions(self):
-        self.pushButton_Send3DReq.clicked.connect(self.send3dservice)
-        self.pushButton_reset.clicked.connect(self.clearform)
-        self.pushButton_appendLog.clicked.connect(self.addlog)
-        self.pushButton_clearLog.clicked.connect(self.clearlog)
+        self.pushButton_Send23Req_2.clicked.connect(self.send3dservice)
+        self.pushButton_reset_2.clicked.connect(self.clearform)
+        self.pushButton_appendLog_2.clicked.connect(self.addlog)
+        self.pushButton_clearLog_2.clicked.connect(self.clearlog)
         return
 
     def update_status(self, msg):
@@ -39,7 +39,7 @@ class Ui_Service3D(Ui_Form_SID3D):
         # Clears all the fields for entering new service request
         self.logentrystring = ""
         self.label_ResType_2.setText("No Response")
-        self.textBrowser_Resp.clear()
+        self.textBrowser_Resp_2.clear()
         self.update_status("User form cleared successfully")
         gen.log_action("Button Click", "Clear Form for Service 3d window clicked. User fields cleared successfully.")
         return
@@ -59,20 +59,22 @@ class Ui_Service3D(Ui_Form_SID3D):
         return
 
     def send3dservice(self):
-        alfid = self.lineEdit_ALFID.text().strip().replace(" ","").replace(" ","").replace(" ","")
+        #Define ALFID based on your requirement
+        alfid="12"
+        # alfid = self.lineEdit_ALFID.text().strip().replace(" ","").replace(" ","").replace(" ","")
 
 
 
 
-        if not gen.check_1Bytehexadecimal(alfid):
-            self.update_status("Invalid ALFID. Please enter a valid hexadecimal value of 1 byte.")
-            gen.log_action("UDS Request Fail", "23 Request failed due to invalid ALFID byte.")
-            return        
+        # if not gen.check_1Bytehexadecimal(alfid):
+        #     self.update_status("Invalid ALFID. Please enter a valid hexadecimal value of 1 byte.")
+        #     gen.log_action("UDS Request Fail", "23 Request failed due to invalid ALFID byte.")
+        #     return        
         
-        if not gen.check_hexadecimal(alfid):
-            self.update_status("Invalid ALFID. Please enter a valid hexadecimal value of 1 byte.")
-            gen.log_action("UDS Request Fail", "23 Request failed due to invalid ALFID byte.")
-            return 
+        # if not gen.check_hexadecimal(alfid):
+        #     self.update_status("Invalid ALFID. Please enter a valid hexadecimal value of 1 byte.")
+        #     gen.log_action("UDS Request Fail", "23 Request failed due to invalid ALFID byte.")
+        #     return 
         
         alfid_mem_size=int(alfid[0],16)
         alfid_mem_add=int(alfid[1],16)
@@ -90,7 +92,7 @@ class Ui_Service3D(Ui_Form_SID3D):
             return
         
         if(alfid_mem_add!=len(mem_add)//2):
-            self.update_status("The Memory address size must match with ALFID byte.")
+            self.update_status(f"The Memory address size must match with ALFID byte of {alfid_mem_add}.")
             gen.log_action("UDS Request Fail", "3d Request failed due to invalid memory address size.")
             return
         
@@ -105,10 +107,10 @@ class Ui_Service3D(Ui_Form_SID3D):
             return
 
         if(alfid_mem_size!=len(mem_size)//2):
-            self.update_status("The Memory address size must match with ALFID byte.")
+            self.update_status(f"The Memory address size must match with ALFID byte of {alfid_mem_size}.")
             gen.log_action("UDS Request Fail", "3d Request failed due to invalid memory address size.")
             return    
-        data_record = self.lineEdit_DataRec.text().strip().replace(" ","").replace(" ","").replace(" ","")
+        data_record = self.textEdit_DataRecord.toPlainText().replace(" ", "").replace("\t", "").replace("\n", "")
 
         if not gen.check_hexadecimal(data_record):
             self.update_status("Invalid Data Record. Please enter a valid hexadecimal value.")
@@ -124,7 +126,7 @@ class Ui_Service3D(Ui_Form_SID3D):
         
         # Send the service request
         service_request = fun.form_reqmsg4srv3d(alfid,mem_add, mem_size,data_record)
-        #IsPosResExpected = not self.checkBox_suppressposmsg.isChecked()
+
 
         response = uds.sendRequest(service_request)
         
@@ -139,6 +141,7 @@ class Ui_Service3D(Ui_Form_SID3D):
             <p><strong>Memory Address:</strong> <I>{mem_add}</I></p>
             <p><strong>Memory Size:</strong> <I>{mem_size}</I></p>
             <p><strong>Data Record:</strong> <I>{data_record}</I></p>
+            <p><strong>Info:</strong> <I>Service 3D have been successfully sent with Data Record {data_record}</I></p>
             '''
         elif response.type == "Negative Response":
             response_html = f'''
@@ -162,7 +165,7 @@ class Ui_Service3D(Ui_Form_SID3D):
 
         # Update the response data on the user form
         self.label_ResType_2.setText(response.type)
-        self.textBrowser_Resp.setHtml(response_html)
+        self.textBrowser_Resp_2.setHtml(response_html)
 
         current_user = os.getlogin()
         currenttime = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')

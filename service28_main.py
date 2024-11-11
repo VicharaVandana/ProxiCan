@@ -19,7 +19,6 @@ import os
 
 
 
-
 class Ui_Service28(Ui_Form_SID28):
     def redesign_ui(self):
         pass    
@@ -189,7 +188,7 @@ class Ui_Service28(Ui_Form_SID28):
                 response_html = f'''<h4><U>Positive Response Recieved</U></h4>
         <p><strong>Service ID:</strong> <I>{hex(response.resp[0]-0x40)}</I></p>
         <p><strong>Control Type:</strong> <I>{hex(response.resp[1])} {Control_type_name} {Comm_type_name}</I></p>
-        <p><strong>Suppress Positive Message Request:</strong> <I>{sprmib_flg}</I></p>
+        <p><strong>Info:</strong> <I> Service 28 is successfully sent with control type {Control_type_name} and communication type {Comm_type_name}</I></p>
 
     '''
 
@@ -225,7 +224,7 @@ class Ui_Service28(Ui_Form_SID28):
 
             self.logentrystring = f'''<---- LOG ENTRY [{current_user} - {currenttime}] ---->
     UDS Request :   [{" ".join(hex(number) for number in service_request)}]
-    Explaination:   Communication control Requested for control type 0x{Control_type} and communication type 0x{Comm_type} and SPRMIB flag {sprmib_flg}
+    Explaination:   Communication control Requested for control type 0x{Control_type} and communication type 0x{Comm_type} 
     UDS Response:   [{" ".join(hex(number) for number in response.resp)}]
     Explaination:   {response_text}<------------------- LOG ENTRY END ------------------->
 

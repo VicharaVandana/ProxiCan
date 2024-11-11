@@ -130,6 +130,30 @@ def check_2Bytehexadecimal(data):
             return True
         else:
             return False
+        
+def check_1Bytehexadecimal(data):
+        # Retrieve text from QLineEdit
+        text = data
+        # Regular expression for 2-byte hexadecimal value
+        hex_pattern = re.compile(r'^[0-9A-Fa-f]{2}$')
+
+        # Validate and update the result label
+        if hex_pattern.match(text):
+            return True
+        else:
+            return False
+        
+def check_hexadecimal(data):
+        # Retrieve text from QLineEdit
+        text = data
+        # Regular expression for 2-byte hexadecimal value
+        hex_pattern = re.compile(r'^[0-9A-Fa-f]+$')
+
+        # Validate and update the result label
+        if hex_pattern.match(text):
+            return True
+        else:
+            return False
 
 def check_3Bytehexadecimal(data):
         # Retrieve text from QLineEdit
@@ -141,8 +165,8 @@ def check_3Bytehexadecimal(data):
         if hex_pattern.match(text):
             return True
         else:
-            return False     
-
+            return False
+        
 def check_min1Bytehexadecimal(data):
         # Retrieve text from QLineEdit
         text = data

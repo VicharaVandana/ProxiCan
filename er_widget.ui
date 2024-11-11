@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>698</width>
-    <height>531</height>
+    <width>699</width>
+    <height>516</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,10 +16,10 @@
   <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
-     <x>50</x>
-     <y>80</y>
-     <width>621</width>
-     <height>302</height>
+     <x>30</x>
+     <y>21</y>
+     <width>641</width>
+     <height>361</height>
     </rect>
    </property>
    <layout class="QGridLayout" name="gridLayout">
@@ -181,9 +181,9 @@ color: rgb(0, 0, 0);</string>
   <widget class="QLabel" name="label_status">
    <property name="geometry">
     <rect>
-     <x>50</x>
+     <x>30</x>
      <y>400</y>
-     <width>621</width>
+     <width>641</width>
      <height>71</height>
     </rect>
    </property>

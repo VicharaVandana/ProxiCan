@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'SID_28.ui'
+# Form implementation generated from reading ui file 'c:\Users\ass930085\OneDrive - Tata Technologies\Documents\PROXI GIT\reference\ProxiCan\SID_28.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.11
 #
@@ -12,10 +12,10 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 
 
 class Ui_Form_SID28(object):
-    def setupUi(self, Dialog):
-        Dialog.setObjectName("Dialog")
-        Dialog.resize(758, 581)
-        self.layoutWidget = QtWidgets.QWidget(Dialog)
+    def setupUi(self, Form_SID28):
+        Form_SID28.setObjectName("Form_SID28")
+        Form_SID28.resize(758, 581)
+        self.layoutWidget = QtWidgets.QWidget(Form_SID28)
         self.layoutWidget.setGeometry(QtCore.QRect(30, 10, 681, 451))
         self.layoutWidget.setObjectName("layoutWidget")
         self.gridLayout = QtWidgets.QGridLayout(self.layoutWidget)
@@ -109,7 +109,7 @@ class Ui_Form_SID28(object):
         self.Control_Type.raise_()
         self.pushButton_clearLog.raise_()
         self.pushButton_appendLog.raise_()
-        self.label_status = QtWidgets.QLabel(Dialog)
+        self.label_status = QtWidgets.QLabel(Form_SID28)
         self.label_status.setGeometry(QtCore.QRect(30, 470, 681, 71))
         self.label_status.setStyleSheet("background-color: rgb(255, 255, 127);\n"
 "color: rgb(85, 0, 0);\n"
@@ -117,16 +117,14 @@ class Ui_Form_SID28(object):
         self.label_status.setAlignment(QtCore.Qt.AlignCenter)
         self.label_status.setWordWrap(True)
         self.label_status.setObjectName("label_status")
-
+        
         self.lineEdit_NIN.hide()
         self.label_4.hide()
-
-        # Connect the dropdown change event to a function
         self.Control_Type.currentIndexChanged.connect(self.toggle_line_edit)
 
+        self.retranslateUi(Form_SID28)
+        QtCore.QMetaObject.connectSlotsByName(Form_SID28)
 
-        self.retranslateUi(Dialog)
-        QtCore.QMetaObject.connectSlotsByName(Dialog)
 
     # Function to show/hide lineEdit based on dropdown selection
     def toggle_line_edit(self, index):
@@ -138,41 +136,43 @@ class Ui_Form_SID28(object):
             self.label_4.hide()
             #self.label_4.hide()
 
-    def retranslateUi(self, Dialog):
+
+    def retranslateUi(self, Form_SID28):
         _translate = QtCore.QCoreApplication.translate
-        Dialog.setWindowTitle(_translate("Dialog", "Communication Control Service 28"))
-        self.label_5.setText(_translate("Dialog", "Comm Type"))
-        self.label_4.setText(_translate("Dialog", "NIN"))
-        self.Communication_type.setToolTip(_translate("Dialog", "Select the Diag session to which you want ECU to move. If your session is not in list then contact admin"))
-        self.Communication_type.setItemText(0, _translate("Dialog", "01 - Normal communication"))
-        self.Communication_type.setItemText(1, _translate("Dialog", "02 - Network Management"))
-        self.Communication_type.setItemText(2, _translate("Dialog", "03 - Normal comm and network management"))
-        self.label_2.setText(_translate("Dialog", "Response Type"))
-        self.label_3.setText(_translate("Dialog", "Response"))
-        self.checkBox_suppressposmsg.setToolTip(_translate("Dialog", "If selected then Suppress Positive Response Message Indication bit will be set in Subfunction"))
-        self.checkBox_suppressposmsg.setText(_translate("Dialog", "SPRMIB"))
-        self.Control_Type.setToolTip(_translate("Dialog", "Select the Diag session to which you want ECU to move. If your session is not in list then contact admin"))
-        self.Control_Type.setItemText(0, _translate("Dialog", "00 - Enable Rx and Tx"))
-        self.Control_Type.setItemText(1, _translate("Dialog", "01 - Enable Rx and Disable Tx"))
-        self.Control_Type.setItemText(2, _translate("Dialog", "02 - Disable Rx and Enable Tx"))
-        self.Control_Type.setItemText(3, _translate("Dialog", "03 - Disable Rx and Tx"))
-        self.Control_Type.setItemText(4, _translate("Dialog", "04 - Enable Rx and Disable Tx with Address Info"))
-        self.Control_Type.setItemText(5, _translate("Dialog", "05 - Enable Rx and Tx  with Address Info"))
-        self.label_ResType.setText(_translate("Dialog", "No Response"))
-        self.pushButton_Send28Req.setToolTip(_translate("Dialog", "Sends the 10 service request to ECU"))
-        self.pushButton_Send28Req.setText(_translate("Dialog", "Send Request"))
-        self.pushButton_reset.setText(_translate("Dialog", "Reset"))
-        self.label.setText(_translate("Dialog", "Control Type"))
-        self.pushButton_clearLog.setText(_translate("Dialog", "Clear Log"))
-        self.pushButton_appendLog.setText(_translate("Dialog", "Add to Log"))
-        self.label_status.setText(_translate("Dialog", "No Status"))
+        Form_SID28.setWindowTitle(_translate("Form_SID28", "Communication Control Service 28"))
+        self.label_5.setText(_translate("Form_SID28", "Comm Type"))
+        self.lineEdit_NIN.setToolTip(_translate("Form_SID28", "<html><head/><body><p>Enter Node Identification Number in hexadecimal format</p></body></html>"))
+        self.label_4.setText(_translate("Form_SID28", "NIN"))
+        self.Communication_type.setToolTip(_translate("Form_SID28", "<html><head/><body><p>Select the Communication type to which you want ECU to move. </p><p>If your Communication type is not in list then contact admin</p></body></html>"))
+        self.Communication_type.setItemText(0, _translate("Form_SID28", "01 - Normal communication"))
+        self.Communication_type.setItemText(1, _translate("Form_SID28", "02 - Network Management"))
+        self.Communication_type.setItemText(2, _translate("Form_SID28", "03 - Normal comm and network management"))
+        self.label_2.setText(_translate("Form_SID28", "Response Type"))
+        self.label_3.setText(_translate("Form_SID28", "Response"))
+        self.checkBox_suppressposmsg.setToolTip(_translate("Form_SID28", "If selected then Suppress Positive Response Message Indication bit will be set in Subfunction"))
+        self.checkBox_suppressposmsg.setText(_translate("Form_SID28", "SPRMIB"))
+        self.Control_Type.setToolTip(_translate("Form_SID28", "<html><head/><body><p>Select the Control type to which you want ECU to move. <br/>If your control type is not in list then contact admin</p></body></html>"))
+        self.Control_Type.setItemText(0, _translate("Form_SID28", "00 - Enable Rx and Tx"))
+        self.Control_Type.setItemText(1, _translate("Form_SID28", "01 - Enable Rx and Disable Tx"))
+        self.Control_Type.setItemText(2, _translate("Form_SID28", "02 - Disable Rx and Enable Tx"))
+        self.Control_Type.setItemText(3, _translate("Form_SID28", "03 - Disable Rx and Tx"))
+        self.Control_Type.setItemText(4, _translate("Form_SID28", "04 - Enable Rx and Disable Tx with Address Info"))
+        self.Control_Type.setItemText(5, _translate("Form_SID28", "05 - Enable Rx and Tx  with Address Info"))
+        self.label_ResType.setText(_translate("Form_SID28", "No Response"))
+        self.pushButton_Send28Req.setToolTip(_translate("Form_SID28", "Sends the 28 service request to ECU"))
+        self.pushButton_Send28Req.setText(_translate("Form_SID28", "Send Request"))
+        self.pushButton_reset.setText(_translate("Form_SID28", "Reset"))
+        self.label.setText(_translate("Form_SID28", "Control Type"))
+        self.pushButton_clearLog.setText(_translate("Form_SID28", "Clear Log"))
+        self.pushButton_appendLog.setText(_translate("Form_SID28", "Add to Log"))
+        self.label_status.setText(_translate("Form_SID28", "No Status"))
 
 
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
-    Form_SID_28 = QtWidgets.QDialog()
+    Form_SID28 = QtWidgets.QDialog()
     ui = Ui_Form_SID28()
-    ui.setupUi(Form_SID_28)
-    Form_SID_28.show()
+    ui.setupUi(Form_SID28)
+    Form_SID28.show()
     sys.exit(app.exec_())

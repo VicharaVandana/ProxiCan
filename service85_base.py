@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'c:\Users\ass930085\Downloads\PROXI\Mainwindow\cdtcs_widget.ui'
+# Form implementation generated from reading ui file 'c:\Users\ass930085\OneDrive - Tata Technologies\Documents\PROXI GIT\reference\ProxiCan\cdtcs_widget.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.11
 #
@@ -116,7 +116,9 @@ class Ui_Form_SID85(object):
             self.lineEdit_DTCSettingInput.show()
         else:  # Hide lineEdit if not checked
             self.lineEdit_DTCSettingInput.hide()
-    
+
+        
+
     def retranslateUi(self, Form_SID85):
         _translate = QtCore.QCoreApplication.translate
         Form_SID85.setWindowTitle(_translate("Form_SID85", "Control DTC Setting 85"))
@@ -135,4 +137,16 @@ class Ui_Form_SID85(object):
         self.comboBox_DTCSettingType.setItemText(1, _translate("Form_SID85", "02 - OFF"))
         self.label.setText(_translate("Form_SID85", "DTC Setting Type"))
         self.label_ResType.setText(_translate("Form_SID85", "No Response"))
+        self.checkBox_DTCOption.setToolTip(_translate("Form_SID85", "Enable this option to adjust DTC settings, allowing modification, enabling, or disabling of DTCs for diagnostic operations"))
         self.checkBox_DTCOption.setText(_translate("Form_SID85", "DTC Setting Control Option Record "))
+        self.lineEdit_DTCSettingInput.setToolTip(_translate("Form_SID85", "Enter DTC bytes in hexadecimal format"))
+
+
+if __name__ == "__main__":
+    import sys
+    app = QtWidgets.QApplication(sys.argv)
+    Form_SID85 = QtWidgets.QWidget()
+    ui = Ui_Form_SID85()
+    ui.setupUi(Form_SID85)
+    Form_SID85.show()
+    sys.exit(app.exec_())

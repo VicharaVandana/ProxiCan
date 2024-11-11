@@ -198,13 +198,20 @@ color: rgb(0, 85, 0);</string>
         <height>20</height>
        </size>
       </property>
+      <property name="toolTip">
+       <string>Enable this option to adjust DTC settings, allowing modification, enabling, or disabling of DTCs for diagnostic operations</string>
+      </property>
       <property name="text">
        <string>DTC Setting Control Option Record </string>
       </property>
      </widget>
     </item>
     <item row="2" column="1" colspan="3">
-     <widget class="QLineEdit" name="lineEdit_DTCSettinGInput"/>
+     <widget class="QLineEdit" name="lineEdit_DTCSettingInput">
+      <property name="toolTip">
+       <string>Enter DTC bytes in hexadecimal format</string>
+      </property>
+     </widget>
     </item>
    </layout>
    <zorder>pushButton_appendLog</zorder>
@@ -219,7 +226,7 @@ color: rgb(0, 85, 0);</string>
    <zorder>label_2</zorder>
    <zorder>checkBox_suppressposmsg</zorder>
    <zorder>checkBox_DTCOption</zorder>
-   <zorder>lineEdit_DTCSettinGInput</zorder>
+   <zorder>lineEdit_DTCSettingInput</zorder>
   </widget>
  </widget>
  <resources/>

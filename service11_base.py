@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'c:\Users\ass930085\OneDrive - Tata Technologies\Documents\PROXI GIT\ProxiCan\er_widget.ui'
+# Form implementation generated from reading ui file 'c:\Users\ass930085\OneDrive - Tata Technologies\Documents\PROXI GIT\reference\ProxiCan\er_widget.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.11
 #
@@ -14,9 +14,9 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_Form_SID11(object):
     def setupUi(self, Form_SID11):
         Form_SID11.setObjectName("Form_SID11")
-        Form_SID11.resize(698, 531)
+        Form_SID11.resize(699, 516)
         self.layoutWidget = QtWidgets.QWidget(Form_SID11)
-        self.layoutWidget.setGeometry(QtCore.QRect(50, 80, 621, 302))
+        self.layoutWidget.setGeometry(QtCore.QRect(30, 21, 641, 361))
         self.layoutWidget.setObjectName("layoutWidget")
         self.gridLayout = QtWidgets.QGridLayout(self.layoutWidget)
         self.gridLayout.setSizeConstraint(QtWidgets.QLayout.SetNoConstraint)
@@ -86,7 +86,7 @@ class Ui_Form_SID11(object):
         self.label_2.raise_()
         self.checkBox_suppressposmsg.raise_()
         self.label_status = QtWidgets.QLabel(Form_SID11)
-        self.label_status.setGeometry(QtCore.QRect(50, 400, 621, 71))
+        self.label_status.setGeometry(QtCore.QRect(30, 400, 641, 71))
         self.label_status.setStyleSheet("background-color: rgb(255, 255, 127);\n"
 "color: rgb(85, 0, 0);\n"
 "border-color: rgb(0, 0, 255);")
@@ -116,3 +116,13 @@ class Ui_Form_SID11(object):
         self.checkBox_suppressposmsg.setToolTip(_translate("Form_SID11", "If selected then Suppress Positive Response Message Indication bit will be set in Subfunction"))
         self.checkBox_suppressposmsg.setText(_translate("Form_SID11", "SPRMIB"))
         self.label_status.setText(_translate("Form_SID11", "No Status"))
+
+
+if __name__ == "__main__":
+    import sys
+    app = QtWidgets.QApplication(sys.argv)
+    Form_SID11 = QtWidgets.QWidget()
+    ui = Ui_Form_SID11()
+    ui.setupUi(Form_SID11)
+    Form_SID11.show()
+    sys.exit(app.exec_())

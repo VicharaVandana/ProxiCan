@@ -16,8 +16,8 @@ def pair_hex_values(hex_list):
     return paired_list
       
 def form_reqmsg4srv3d(alfid,mem_add,mem_size,data_rec):
-    alfid_without_spaces = re.sub(r"\s+", "", alfid)
-    alfid_hex=int(alfid_without_spaces,16)
+    #alfid_without_spaces = re.sub(r"\s+", "", alfid)
+    alfid_hex=int(alfid,16)
 
     sid = int("3d", 16)
 

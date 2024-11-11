@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'wmba_widget.ui'
+# Form implementation generated from reading ui file 'SID_3D.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.11
 #
@@ -11,113 +11,109 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 
-class Ui_Form_SID3D(object):
-    def setupUi(self, Form_SID3D):
-        Form_SID3D.setObjectName("Form_SID3D")
-        Form_SID3D.resize(875, 600)
-        self.label_status = QtWidgets.QLabel(Form_SID3D)
-        self.label_status.setGeometry(QtCore.QRect(30, 520, 821, 51))
-        self.label_status.setStyleSheet("background-color: rgb(255, 255, 127);\n"
-"color: rgb(85, 0, 0);\n"
-"border-color: rgb(0, 0, 255);")
-        self.label_status.setAlignment(QtCore.Qt.AlignCenter)
-        self.label_status.setWordWrap(True)
-        self.label_status.setObjectName("label_status")
-        self.layoutWidget = QtWidgets.QWidget(Form_SID3D)
-        self.layoutWidget.setGeometry(QtCore.QRect(30, 30, 831, 471))
+class Ui_Ui_form_SID3D(object):
+    def setupUi(self, Ui_form_SID3D):
+        Ui_form_SID3D.setObjectName("Ui_form_SID3D")
+        Ui_form_SID3D.resize(676, 685)
+        self.layoutWidget = QtWidgets.QWidget(Ui_form_SID3D)
+        self.layoutWidget.setGeometry(QtCore.QRect(20, 30, 621, 561))
         self.layoutWidget.setObjectName("layoutWidget")
         self.gridLayout_2 = QtWidgets.QGridLayout(self.layoutWidget)
         self.gridLayout_2.setSizeConstraint(QtWidgets.QLayout.SetNoConstraint)
         self.gridLayout_2.setContentsMargins(0, 0, 0, 0)
         self.gridLayout_2.setObjectName("gridLayout_2")
-        self.label_5 = QtWidgets.QLabel(self.layoutWidget)
-        self.label_5.setObjectName("label_5")
-        self.gridLayout_2.addWidget(self.label_5, 4, 0, 1, 1)
-        self.textBrowser_Resp = QtWidgets.QTextBrowser(self.layoutWidget)
-        self.textBrowser_Resp.setObjectName("textBrowser_Resp")
-        self.gridLayout_2.addWidget(self.textBrowser_Resp, 7, 1, 1, 2)
         self.label_4 = QtWidgets.QLabel(self.layoutWidget)
         self.label_4.setObjectName("label_4")
         self.gridLayout_2.addWidget(self.label_4, 7, 0, 1, 1)
+        self.label_8 = QtWidgets.QLabel(self.layoutWidget)
+        self.label_8.setObjectName("label_8")
+        self.gridLayout_2.addWidget(self.label_8, 0, 0, 1, 1)
         self.lineEdit_Mem_size = QtWidgets.QLineEdit(self.layoutWidget)
         self.lineEdit_Mem_size.setObjectName("lineEdit_Mem_size")
         self.gridLayout_2.addWidget(self.lineEdit_Mem_size, 2, 1, 1, 1)
-        self.label_6 = QtWidgets.QLabel(self.layoutWidget)
-        self.label_6.setObjectName("label_6")
-        self.gridLayout_2.addWidget(self.label_6, 0, 0, 1, 1)
-        self.label = QtWidgets.QLabel(self.layoutWidget)
-        self.label.setObjectName("label")
-        self.gridLayout_2.addWidget(self.label, 3, 0, 1, 1)
-        self.label_8 = QtWidgets.QLabel(self.layoutWidget)
-        self.label_8.setObjectName("label_8")
-        self.gridLayout_2.addWidget(self.label_8, 1, 0, 1, 1)
-        self.pushButton_reset = QtWidgets.QPushButton(self.layoutWidget)
-        self.pushButton_reset.setStyleSheet("background-color: rgb(170, 170, 0);\n"
+        self.pushButton_clearLog_2 = QtWidgets.QPushButton(self.layoutWidget)
+        self.pushButton_clearLog_2.setStyleSheet("background-color: rgb(85, 255, 127);\n"
+"color: rgb(85, 0, 0);")
+        self.pushButton_clearLog_2.setObjectName("pushButton_clearLog_2")
+        self.gridLayout_2.addWidget(self.pushButton_clearLog_2, 2, 3, 1, 1)
+        self.pushButton_reset_2 = QtWidgets.QPushButton(self.layoutWidget)
+        self.pushButton_reset_2.setStyleSheet("background-color: rgb(170, 170, 0);\n"
 "font: 75 8pt \"MS Shell Dlg 2\";\n"
 "color: rgb(0, 85, 0);")
-        self.pushButton_reset.setObjectName("pushButton_reset")
-        self.gridLayout_2.addWidget(self.pushButton_reset, 7, 3, 1, 1)
+        self.pushButton_reset_2.setObjectName("pushButton_reset_2")
+        self.gridLayout_2.addWidget(self.pushButton_reset_2, 4, 3, 1, 1)
         self.label_7 = QtWidgets.QLabel(self.layoutWidget)
         self.label_7.setObjectName("label_7")
         self.gridLayout_2.addWidget(self.label_7, 2, 0, 1, 1)
-        self.lineEdit_Mem_address = QtWidgets.QLineEdit(self.layoutWidget)
-        self.lineEdit_Mem_address.setObjectName("lineEdit_Mem_address")
-        self.gridLayout_2.addWidget(self.lineEdit_Mem_address, 1, 1, 1, 1)
+        self.label_9 = QtWidgets.QLabel(self.layoutWidget)
+        self.label_9.setObjectName("label_9")
+        self.gridLayout_2.addWidget(self.label_9, 3, 0, 1, 1)
         self.label_ResType_2 = QtWidgets.QLabel(self.layoutWidget)
         self.label_ResType_2.setAutoFillBackground(False)
         self.label_ResType_2.setStyleSheet("color: rgb(0, 0, 255);")
         self.label_ResType_2.setAlignment(QtCore.Qt.AlignCenter)
         self.label_ResType_2.setObjectName("label_ResType_2")
         self.gridLayout_2.addWidget(self.label_ResType_2, 4, 1, 1, 1)
-        self.lineEdit_DataRec = QtWidgets.QLineEdit(self.layoutWidget)
-        self.lineEdit_DataRec.setObjectName("lineEdit_DataRec")
-        self.gridLayout_2.addWidget(self.lineEdit_DataRec, 3, 1, 1, 3)
-        self.lineEdit_ALFID = QtWidgets.QLineEdit(self.layoutWidget)
-        self.lineEdit_ALFID.setObjectName("lineEdit_ALFID")
-        self.gridLayout_2.addWidget(self.lineEdit_ALFID, 0, 1, 1, 1)
-        self.pushButton_Send3DReq = QtWidgets.QPushButton(self.layoutWidget)
-        self.pushButton_Send3DReq.setStyleSheet("background-color: rgb(0, 255, 255);\n"
+        self.lineEdit_Mem_address = QtWidgets.QLineEdit(self.layoutWidget)
+        self.lineEdit_Mem_address.setObjectName("lineEdit_Mem_address")
+        self.gridLayout_2.addWidget(self.lineEdit_Mem_address, 0, 1, 1, 1)
+        self.textEdit_DataRecord = QtWidgets.QTextEdit(self.layoutWidget)
+        self.textEdit_DataRecord.setObjectName("textEdit_DataRecord")
+        self.gridLayout_2.addWidget(self.textEdit_DataRecord, 3, 1, 1, 3)
+        self.label_5 = QtWidgets.QLabel(self.layoutWidget)
+        self.label_5.setObjectName("label_5")
+        self.gridLayout_2.addWidget(self.label_5, 4, 0, 1, 1)
+        self.pushButton_Send23Req_2 = QtWidgets.QPushButton(self.layoutWidget)
+        self.pushButton_Send23Req_2.setStyleSheet("background-color: rgb(0, 255, 255);\n"
 "border-color: rgb(0, 0, 0);\n"
 "color: rgb(0, 0, 0);")
-        self.pushButton_Send3DReq.setObjectName("pushButton_Send3DReq")
-        self.gridLayout_2.addWidget(self.pushButton_Send3DReq, 0, 3, 1, 1)
-        self.pushButton_clearLog = QtWidgets.QPushButton(self.layoutWidget)
-        self.pushButton_clearLog.setStyleSheet("background-color: rgb(85, 255, 127);\n"
+        self.pushButton_Send23Req_2.setObjectName("pushButton_Send23Req_2")
+        self.gridLayout_2.addWidget(self.pushButton_Send23Req_2, 0, 2, 1, 2)
+        self.pushButton_appendLog_2 = QtWidgets.QPushButton(self.layoutWidget)
+        self.pushButton_appendLog_2.setStyleSheet("background-color: rgb(85, 255, 127);\n"
 "color: rgb(85, 0, 0);")
-        self.pushButton_clearLog.setObjectName("pushButton_clearLog")
-        self.gridLayout_2.addWidget(self.pushButton_clearLog, 1, 3, 1, 1)
-        self.pushButton_appendLog = QtWidgets.QPushButton(self.layoutWidget)
-        self.pushButton_appendLog.setStyleSheet("background-color: rgb(85, 255, 127);\n"
-"color: rgb(85, 0, 0);")
-        self.pushButton_appendLog.setObjectName("pushButton_appendLog")
-        self.gridLayout_2.addWidget(self.pushButton_appendLog, 2, 3, 1, 1)
+        self.pushButton_appendLog_2.setObjectName("pushButton_appendLog_2")
+        self.gridLayout_2.addWidget(self.pushButton_appendLog_2, 2, 2, 1, 1)
+        self.textBrowser_Resp_2 = QtWidgets.QTextBrowser(self.layoutWidget)
+        self.textBrowser_Resp_2.setObjectName("textBrowser_Resp_2")
+        self.gridLayout_2.addWidget(self.textBrowser_Resp_2, 7, 1, 1, 3)
+        self.label_status = QtWidgets.QLabel(Ui_form_SID3D)
+        self.label_status.setGeometry(QtCore.QRect(20, 610, 621, 61))
+        self.label_status.setStyleSheet("background-color: rgb(255, 255, 127);\n"
+"color: rgb(85, 0, 0);\n"
+"border-color: rgb(0, 0, 255);")
+        self.label_status.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_status.setWordWrap(True)
+        self.label_status.setObjectName("label_status")
 
-        self.retranslateUi(Form_SID3D)
-        QtCore.QMetaObject.connectSlotsByName(Form_SID3D)
+        self.retranslateUi(Ui_form_SID3D)
+        QtCore.QMetaObject.connectSlotsByName(Ui_form_SID3D)
 
-    def retranslateUi(self, Form_SID3D):
+    def retranslateUi(self, Ui_form_SID3D):
         _translate = QtCore.QCoreApplication.translate
-        Form_SID3D.setWindowTitle(_translate("Form_SID3D", "Write Memory by Address Service 3D"))
-        self.label_status.setText(_translate("Form_SID3D", "No Status"))
-        self.label_5.setText(_translate("Form_SID3D", "Response Type: "))
-        self.label_4.setText(_translate("Form_SID3D", "Response : "))
-        self.label_6.setText(_translate("Form_SID3D", "Address & Length Format Identifier"))
-        self.label.setText(_translate("Form_SID3D", "Data Record"))
-        self.label_8.setText(_translate("Form_SID3D", "Memory address"))
-        self.pushButton_reset.setText(_translate("Form_SID3D", "Reset"))
-        self.label_7.setText(_translate("Form_SID3D", "Memory size"))
-        self.label_ResType_2.setText(_translate("Form_SID3D", "No Response"))
-        self.pushButton_Send3DReq.setToolTip(_translate("Form_SID3D", "Sends the 3D service request to ECU"))
-        self.pushButton_Send3DReq.setText(_translate("Form_SID3D", "Send Request"))
-        self.pushButton_clearLog.setText(_translate("Form_SID3D", "Clear Log"))
-        self.pushButton_appendLog.setText(_translate("Form_SID3D", "Add to Log"))
+        Ui_form_SID3D.setWindowTitle(_translate("Ui_form_SID3D", "Write Memory By Address Service 3D"))
+        self.label_4.setText(_translate("Ui_form_SID3D", "Response : "))
+        self.label_8.setText(_translate("Ui_form_SID3D", "Memory address"))
+        self.lineEdit_Mem_size.setToolTip(_translate("Ui_form_SID3D", "<html><head/><body><p>Enter Memory size in hexadecimal format</p></body></html>"))
+        self.pushButton_clearLog_2.setText(_translate("Ui_form_SID3D", "Clear Log"))
+        self.pushButton_reset_2.setText(_translate("Ui_form_SID3D", "Reset"))
+        self.label_7.setText(_translate("Ui_form_SID3D", "Memory size"))
+        self.label_9.setText(_translate("Ui_form_SID3D", "Data Record"))
+        self.label_ResType_2.setText(_translate("Ui_form_SID3D", "No Response"))
+        self.lineEdit_Mem_address.setToolTip(_translate("Ui_form_SID3D", "<html><head/><body><p>Enter Memory Address in hexadecimal format</p></body></html>"))
+        self.textEdit_DataRecord.setToolTip(_translate("Ui_form_SID3D", "<html><head/><body><p>Enter Data Record in hexadecimal format</p></body></html>"))
+        self.label_5.setText(_translate("Ui_form_SID3D", "Response Type: "))
+        self.pushButton_Send23Req_2.setToolTip(_translate("Ui_form_SID3D", "<html><head/><body><p>Sends the 3D service request to ECU</p></body></html>"))
+        self.pushButton_Send23Req_2.setText(_translate("Ui_form_SID3D", "Send Request"))
+        self.pushButton_appendLog_2.setText(_translate("Ui_form_SID3D", "Add to Log"))
+        self.label_status.setText(_translate("Ui_form_SID3D", "No Status"))
 
 
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
-    Form_SID3D = QtWidgets.QDialog()
-    ui = Ui_Form_SID3D()
-    ui.setupUi(Form_SID3D)
-    Form_SID3D.show()
+    Ui_form_SID3D = QtWidgets.QDialog()
+    ui = Ui_Ui_form_SID3D()
+    ui.setupUi(Ui_form_SID3D)
+    Ui_form_SID3D.show()
     sys.exit(app.exec_())

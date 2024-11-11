@@ -16,19 +16,18 @@ def pair_hex_values(hex_list):
     return paired_list
       
 def form_reqmsg4srv23(alfid,mem_add,mem_size):
-    alfid_without_spaces = re.sub(r"\s+", "", alfid)
-    alfid_hex=int(alfid_without_spaces,16)
+    #alfid_without_spaces = re.sub(r"\s+", "", alfid)
+    alfid_hex=int(alfid,16)
 
     sid = int("23", 16)
-    alfid_mem_size=int(alfid_without_spaces[0],16)
-    alfid_mem_add=int(alfid_without_spaces[1],16)
+
 
     mem_add_without_spaces=re.sub(r"\s+", "", mem_add)
-    add_size=(len(mem_add_without_spaces)//2)
-    add_size_hex=hex(add_size)
+
+
     mem_size_without_spaces=re.sub(r"\s+", "", mem_size)
-    memory_size=len(mem_size_without_spaces)//2
-    memory_size_hex=hex(memory_size) 
+
+
 
     paired_mem_add = pair_hex_values([mem_add_without_spaces])
     paired_mem_size=pair_hex_values([mem_size_without_spaces])
