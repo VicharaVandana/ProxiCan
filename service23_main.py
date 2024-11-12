@@ -15,7 +15,7 @@ import os
 import datetime
 import general as gen
 import configure as conf
-import uds_dummy as uds  # Replace with actual uds file while testing on board
+#import uds_dummy as uds  # Replace with actual uds file while testing on board
 import os
 
 

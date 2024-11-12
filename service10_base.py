@@ -101,7 +101,7 @@ class Ui_Form_SID10(object):
 
     def retranslateUi(self, Form_SID10):
         _translate = QtCore.QCoreApplication.translate
-        Form_SID10.setWindowTitle(_translate("Form_SID10", "Disgnostic Session Control Service 10"))
+        Form_SID10.setWindowTitle(_translate("Form_SID10", "Diagnostic Session Control Service 10"))
         self.label_status.setText(_translate("Form_SID10", "No Status"))
         self.pushButton_appendLog.setText(_translate("Form_SID10", "Add to Log"))
         self.pushButton_clearLog.setText(_translate("Form_SID10", "Clear Log"))

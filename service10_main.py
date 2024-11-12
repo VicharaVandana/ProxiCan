@@ -14,7 +14,6 @@ from bs4 import BeautifulSoup
 import os
 import datetime
 import general as gen
-
 import configure as conf
 import os
 
