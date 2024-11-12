@@ -14,7 +14,7 @@ from bs4 import BeautifulSoup
 import os
 import datetime
 import general as gen
-import uds_dummy as uds     #will have to be replaced with actual uds file while testing on board
+#import uds_dummy as uds     #will have to be replaced with actual uds file while testing on board
 import configure as conf
 import os
 

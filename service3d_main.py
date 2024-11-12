@@ -15,7 +15,6 @@ import os
 import datetime
 import general as gen
 import configure as conf
-import uds_dummy as uds  # Replace with actual uds file while testing on board
 import os
 
 
@@ -107,7 +106,7 @@ class Ui_Service3D(Ui_Ui_form_SID3D):
             return
 
         if(alfid_mem_size!=len(mem_size)//2):
-            self.update_status(f"The Memory address size must match with ALFID byte of {alfid_mem_size}.")
+            self.update_status(f"The Memory size must match with ALFID byte of {alfid_mem_size}.")
             gen.log_action("UDS Request Fail", "3d Request failed due to invalid memory address size.")
             return    
         data_record = self.textEdit_DataRecord.toPlainText().replace(" ", "").replace("\t", "").replace("\n", "")
