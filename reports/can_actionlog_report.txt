@@ -1,12 +1,7 @@
-<ass930085>[2024-11-11 15:19:34] Button Click: Connect CAN button clicked
-<ass930085>[2024-11-11 15:19:34] CAN Connection: CAN can0 connected with baudrate 125000 and fdf type CAN
-<ass930085>[2024-11-11 15:19:35] Button Click: Service 85 Window Opened
-<ass930085>[2024-11-11 15:19:38] UDS Request Success: 85 Request Successfully sent : 0x85 0x1
-<ass930085>[2024-11-11 15:19:41] Button Click: Service 23 Window Opened
-<ass930085>[2024-11-11 15:19:47] UDS Request Fail: 23 Request failed due to invalid memory address size.
-<ass930085>[2024-11-11 15:19:53] UDS Request Success: 23 Request Successfully sent : 0x23 0x24 0x12 0x12 0x12 0x12 0x12 0x12
-<ass930085>[2024-11-11 15:19:58] Button Click: Service 31 Window Opened
-<ass930085>[2024-11-11 15:20:02] Button Click: Send 31 request button clicked with RID[2112].
-<ass930085>[2024-11-11 15:20:02] UDS Request Success: 31 Request Successfully sent : 0x31 0x1 0x21 0x12
-<ass930085>[2024-11-11 15:20:12] Button Click: Service 3D Window Opened
-<ass930085>[2024-11-11 15:20:17] Button Click: Service 19 Window Opened
+<ass930085>[2024-11-12 10:02:12] Button Click: Connect CAN button clicked
+<ass930085>[2024-11-12 10:02:12] CAN Connection: CAN can0 connected with baudrate 125000 and fdf type CAN
+<ass930085>[2024-11-12 10:02:15] Button Click: Service 19 Window Opened
+<ass930085>[2024-11-12 10:02:20] UDS Request Success: 19 Request Successfully sent : 0x19 0x1 0x12
+<ass930085>[2024-11-12 10:02:20] UDS Request Success: 19 Request Successfully sent : 0x19 0x1 0x12
+<ass930085>[2024-11-12 10:02:33] UDS Request Success: 19 Request Successfully sent : 0x19 0x2 0x12
+<ass930085>[2024-11-12 10:02:33] UDS Request Success: 19 Request Successfully sent : 0x19 0x2 0x12
