@@ -21,8 +21,8 @@ def get_subfunction(index):
         return(0x0C)
      elif(index == 9):
         return(0x0E)
-     elif(index == 10):
-        return([0x14,0xFF,0xFF,0xFF])
+     # elif(index == 10):
+     #    return([0x14,0xFF,0xFF,0xFF])
      else:
           return(0x00)
      
@@ -47,8 +47,8 @@ def getsubfunction_name(subfun):
           return("Report First Confirmed DTC")
      elif(subfun == 0x0E):
           return("Report Most Recent Confirmed DTC")
-     elif(subfun == [0x14,0xFF,0xFF,0xFF]):
-          return("Fault Memory Clear")
+     # elif(subfun == [0x14,0xFF,0xFF,0xFF]):
+     #      return("Fault Memory Clear")
 
      
 def form_reqmsg4srv19_subfun_3_4(subfun,DTCMaskRecord,DTCSnapshotRecordNumber,sprmib_flag): 
@@ -132,10 +132,10 @@ def form_reqmsg4srv19_subfun_A_B_C_D_E_14_15(subfun,sprmib_flag):
     print(f"{sid} {subfunction}")
     return(req_bytes)
 
-def form_reqmsg4srv19_subfun_clear(sprmib_flag): 
-    req_bytes = [0x14,0xff,0xff,0xff]
-    print(req_bytes)
-    return(req_bytes)
+# def form_reqmsg4srv19_subfun_clear(sprmib_flag): 
+#     req_bytes = [0x14,0xff,0xff,0xff]
+#     print(req_bytes)
+#     return(req_bytes)
 
 
 if __name__ == "__main__":

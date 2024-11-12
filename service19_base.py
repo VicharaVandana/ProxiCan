@@ -103,7 +103,6 @@ class Ui_Form_SID_19(object):
         self.Subfunction.addItem("")
         self.Subfunction.addItem("")
         self.Subfunction.addItem("")
-        self.Subfunction.addItem("")
         self.gridLayout_2.addWidget(self.Subfunction, 0, 1, 1, 1)
         self.DTCSeverityMaskRecord = QtWidgets.QLabel(self.layoutWidget)
         self.DTCSeverityMaskRecord.setObjectName("DTCSeverityMaskRecord")
@@ -119,7 +118,6 @@ class Ui_Form_SID_19(object):
         self.label_status.setAlignment(QtCore.Qt.AlignCenter)
         self.label_status.setWordWrap(True)
         self.label_status.setObjectName("label_status")
-
 
         self.DTCMaskRecord_label.hide()
         self.lineEdit_DTCMaskRecord.hide()
@@ -204,12 +202,11 @@ class Ui_Form_SID_19(object):
             self.DTCExtDataRecordNumber_label.hide()
             self.lineEdit_ExtDataRecordNumber.hide()
             self.DTCSeverityMaskRecord.hide()
-            self.lineEdit_SeverityMaskRecord.hide()    
-
+            self.lineEdit_SeverityMaskRecord.hide()  
 
     def retranslateUi(self, Form_SID_19):
         _translate = QtCore.QCoreApplication.translate
-        Form_SID_19.setWindowTitle(_translate("Form_SID_19", "Clear DTC Service 19"))
+        Form_SID_19.setWindowTitle(_translate("Form_SID_19", "Clear DTC Service 19 "))
         self.Subfunction_label.setText(_translate("Form_SID_19", "Sub Function"))
         self.pushButton_Send19Req.setToolTip(_translate("Form_SID_19", "<html><head/><body><p>Sends the 19 service request to ECU</p></body></html>"))
         self.pushButton_Send19Req.setText(_translate("Form_SID_19", "Send Request"))
@@ -240,7 +237,6 @@ class Ui_Form_SID_19(object):
         self.Subfunction.setItemText(7, _translate("Form_SID_19", "0A - Report Supported DTC"))
         self.Subfunction.setItemText(8, _translate("Form_SID_19", "0C - Report First Confirmed DTC"))
         self.Subfunction.setItemText(9, _translate("Form_SID_19", "0E - Report Most Recent Confirmed DTC"))
-        self.Subfunction.setItemText(10, _translate("Form_SID_19", "14 FF FF FF - Fault Memory CLeatr"))
         self.DTCSeverityMaskRecord.setText(_translate("Form_SID_19", "DTC Severity Mask Record"))
         self.lineEdit_SeverityMaskRecord.setToolTip(_translate("Form_SID_19", "<html><head/><body><p>Enter DTC Severity Mask Record in hexadecimal format</p></body></html>"))
         self.label_status.setText(_translate("Form_SID_19", "No Status"))

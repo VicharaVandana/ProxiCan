@@ -539,69 +539,69 @@ class Ui_Service19(Ui_Form_SID_19):
     Explaination:   {response_text}<------------------- LOG ENTRY END ------------------->
 
     '''
-        elif(index_subfunction_type==10):
-            service_request = fun.form_reqmsg4srv19_subfun_clear(sprmib_flg)
-            print(f"the service request is : {service_request}")
+#         elif(index_subfunction_type==10):
+#             service_request = fun.form_reqmsg4srv19_subfun_clear(sprmib_flg)
+#             print(f"the service request is : {service_request}")
 
-            #Send the service request        
-            response = uds.sendRequest(service_request, True)
+#             #Send the service request        
+#             response = uds.sendRequest(service_request, True)
             
-            self.update_status("Service 19 request is sent")
-            gen.log_action("UDS Request Success", f"19 Request Successfully sent : {' '.join(hex(number) for number in service_request)}")
-            ##############################################################
+#             self.update_status("Service 19 request is sent")
+#             gen.log_action("UDS Request Success", f"19 Request Successfully sent : {' '.join(hex(number) for number in service_request)}")
+#             ##############################################################
                 
-            response = uds.sendRequest(service_request, IsPosResExpected)
+#             response = uds.sendRequest(service_request, IsPosResExpected)
             
-            self.update_status("Service 19 request is sent")
-            gen.log_action("UDS Request Success", f"19 Request Successfully sent : {' '.join(hex(number) for number in service_request)}")
+#             self.update_status("Service 19 request is sent")
+#             gen.log_action("UDS Request Success", f"19 Request Successfully sent : {' '.join(hex(number) for number in service_request)}")
 
-            if(response.type == "Positive Response"):
+#             if(response.type == "Positive Response"):
                 
 
-                response_html = f'''<h4><U>Positive Response Recieved</U></h4>
-        <p><strong>Service ID:</strong> <I>{hex(response.resp[0]-0x40)}</I></p>
-        <p><strong>Control Type:</strong> <I>{hex(response.resp[1])} {subfun_type_name}</I></p>
-        <p><strong>Suppress Positive Message Request:</strong> <I>{sprmib_flg}</I></p>
-        <p><strong>Info:</strong> <I>Service 19 is successfully sent with subfunction {subfun_type_name}</I></p> 
-    '''
+#                 response_html = f'''<h4><U>Positive Response Recieved</U></h4>
+#         <p><strong>Service ID:</strong> <I>{hex(response.resp[0]-0x40)}</I></p>
+#         <p><strong>Control Type:</strong> <I>{hex(response.resp[1])} {subfun_type_name}</I></p>
+#         <p><strong>Suppress Positive Message Request:</strong> <I>{sprmib_flg}</I></p>
+#         <p><strong>Info:</strong> <I>Service 19 is successfully sent with subfunction {subfun_type_name}</I></p> 
+#     '''
 
-            elif(response.type == "Negative Response"):
-                response_html = f'''<h4><U>Negative Response Recieved</U></h4>    
-        <p><strong>Suppress Positive Message Request:</strong> <I>{sprmib_flg}</I></p>
-        <p><strong>NRC Code:</strong> <I>{hex(response.nrc)}</I></p>
-        <p><strong>NRC Name:</strong> <I>{response.nrcname}</I></p>
-        <p><strong>NRC Desc:</strong> <I>{response.nrcdesc}</I></p>
-    '''
+#             elif(response.type == "Negative Response"):
+#                 response_html = f'''<h4><U>Negative Response Recieved</U></h4>    
+#         <p><strong>Suppress Positive Message Request:</strong> <I>{sprmib_flg}</I></p>
+#         <p><strong>NRC Code:</strong> <I>{hex(response.nrc)}</I></p>
+#         <p><strong>NRC Name:</strong> <I>{response.nrcname}</I></p>
+#         <p><strong>NRC Desc:</strong> <I>{response.nrcdesc}</I></p>
+#     '''
                 
-            elif(response.type == "Unknown Response Type"):
-                response_html = f'''<h4><U>Unidentified Response Recieved</U></h4>
-        <p><strong>Response Bytes:</strong> <I>{" ".join(hex(number) for number in response.resp)}</I></p>
-    '''
-            elif(response.type == "No Response"):
-                response_html = f'''<h4><U>No Response Recieved</U></h4>    
-        <p><strong>Suppress Positive Message Request:</strong> <I>{sprmib_flg}</I></p>
-        <p><strong>Response Bytes:</strong> <I>{" ".join(hex(number) for number in response.resp)}</I></p>
-    '''
-            else:
-                response_html = f'''<h4><U>ERROR OCCURED</U></h4>'''
+#             elif(response.type == "Unknown Response Type"):
+#                 response_html = f'''<h4><U>Unidentified Response Recieved</U></h4>
+#         <p><strong>Response Bytes:</strong> <I>{" ".join(hex(number) for number in response.resp)}</I></p>
+#     '''
+#             elif(response.type == "No Response"):
+#                 response_html = f'''<h4><U>No Response Recieved</U></h4>    
+#         <p><strong>Suppress Positive Message Request:</strong> <I>{sprmib_flg}</I></p>
+#         <p><strong>Response Bytes:</strong> <I>{" ".join(hex(number) for number in response.resp)}</I></p>
+#     '''
+#             else:
+#                 response_html = f'''<h4><U>ERROR OCCURED</U></h4>'''
 
             
-            #Update the response data on userform
-            self.label_ResType.setText(response.type)
-            self.textBrowser_Resp.setHtml(response_html)
+#             #Update the response data on userform
+#             self.label_ResType.setText(response.type)
+#             self.textBrowser_Resp.setHtml(response_html)
 
-            current_user = os.getlogin()
-            currenttime = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-            soup = BeautifulSoup(response_html, 'html.parser')
-            response_text = soup.get_text()
+#             current_user = os.getlogin()
+#             currenttime = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+#             soup = BeautifulSoup(response_html, 'html.parser')
+#             response_text = soup.get_text()
 
-            self.logentrystring = f'''<---- LOG ENTRY [{current_user} - {currenttime}] ---->
-    UDS Request :   [{" ".join(hex(number) for number in service_request)}]
-    Explaination:   Read DTC information Requested for subfunction {subfun_type_name} 
-    UDS Response:   [{" ".join(hex(number) for number in response.resp)}]
-    Explaination:   {response_text}<------------------- LOG ENTRY END ------------------->
+#             self.logentrystring = f'''<---- LOG ENTRY [{current_user} - {currenttime}] ---->
+#     UDS Request :   [{" ".join(hex(number) for number in service_request)}]
+#     Explaination:   Read DTC information Requested for subfunction {subfun_type_name} 
+#     UDS Response:   [{" ".join(hex(number) for number in response.resp)}]
+#     Explaination:   {response_text}<------------------- LOG ENTRY END ------------------->
             
-'''
+# '''
 
 
 if __name__ == "__main__":

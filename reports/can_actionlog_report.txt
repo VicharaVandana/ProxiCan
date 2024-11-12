@@ -3,3 +3,6 @@
 <vkk930175>[2024-11-12 11:15:48] Button Click: Service 28 Window Opened
 <vkk930175>[2024-11-12 11:15:49] UDS Request Success: 28 Request Successfully sent : 0x28 0x0 0x1
 <vkk930175>[2024-11-12 11:15:49] UDS Request Success: 28 Request Successfully sent : 0x28 0x0 0x1
+<vkk930175>[2024-11-12 12:31:26] UDS Request Fail: 19 Request not happened due to invalid DTC Status Mask format
+<vkk930175>[2024-11-12 12:31:29] UDS Request Success: 19 Request Successfully sent : 0x19 0x1 0x12
+<vkk930175>[2024-11-12 12:31:29] UDS Request Success: 19 Request Successfully sent : 0x19 0x1 0x12
