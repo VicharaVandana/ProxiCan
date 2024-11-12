@@ -136,6 +136,9 @@
       <height>20</height>
      </size>
     </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Select the CAN channel&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
     <item>
      <property name="text">
       <string>can0</string>
@@ -209,6 +212,9 @@
        <pointsize>6</pointsize>
       </font>
      </property>
+     <property name="toolTip">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Select the CAN type here&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
      <property name="text">
       <string>CAN</string>
      </property>
@@ -244,6 +250,9 @@
       <font>
        <pointsize>6</pointsize>
       </font>
+     </property>
+     <property name="toolTip">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Select the CAN type here&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
      <property name="text">
       <string>CANFD</string>
@@ -301,6 +310,9 @@
        <height>500</height>
       </size>
      </property>
+     <property name="toolTip">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Select for Standard CAN&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
      <property name="text">
       <string>Standard</string>
      </property>
@@ -325,6 +337,9 @@
        <width>500</width>
        <height>500</height>
       </size>
+     </property>
+     <property name="toolTip">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Select for Extended CAN&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
      <property name="text">
       <string>Extended</string>
@@ -402,6 +417,9 @@
       <height>19</height>
      </size>
     </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Enter the Request ID in hexadecimal format&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
    </widget>
    <widget class="QLineEdit" name="lineEdit_resmsgid">
     <property name="geometry">
@@ -423,6 +441,9 @@
       <width>111</width>
       <height>19</height>
      </size>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Select the Response ID in hexadecimal format&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_5">
@@ -474,6 +495,9 @@
       <height>19</height>
      </size>
     </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Select the required Baudrate&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
     <item>
      <property name="text">
       <string>125kbps</string>
@@ -515,6 +539,9 @@
       <width>111</width>
       <height>19</height>
      </size>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Select the required Datarate&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
     <item>
      <property name="text">
@@ -625,7 +652,7 @@
      </size>
     </property>
     <property name="toolTip">
-     <string>provide the sample point ratio. if you want 75% then enter 0.75</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Enter the required Sample point here&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
     <property name="text">
      <string>0.8</string>
@@ -654,6 +681,9 @@
       <width>500</width>
       <height>500</height>
      </size>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Connects the ECU to the tool&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
     <property name="styleSheet">
      <string notr="true">background-color: rgb(85, 255, 127);
@@ -684,6 +714,9 @@ color: rgb(0, 85, 255);</string>
       <height>500</height>
      </size>
     </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Disconnects the ECU from the tool&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
     <property name="styleSheet">
      <string notr="true">background-color: rgb(170, 170, 127);
 color: rgb(0, 85, 0);</string>
@@ -712,6 +745,9 @@ color: rgb(0, 85, 0);</string>
       <width>500</width>
       <height>500</height>
      </size>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Export the entered configuration values&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
     <property name="styleSheet">
      <string notr="true">background-color: rgb(0, 255, 255);
@@ -742,6 +778,9 @@ color: rgb(0, 85, 0);</string>
       <height>500</height>
      </size>
     </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Import the configuration values&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
     <property name="styleSheet">
      <string notr="true">background-color: rgb(255, 255, 0);
 color: rgb(85, 85, 0);</string>
@@ -770,6 +809,9 @@ color: rgb(85, 85, 0);</string>
       <width>500</width>
       <height>500</height>
      </size>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Connection Indicator&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
     <property name="styleSheet">
      <string notr="true">background-color: rgb(85, 85, 255);</string>

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'c:\Users\ass930085\OneDrive - Tata Technologies\Documents\PROXI GIT\reference\ProxiCan\mainwindow.ui'
+# Form implementation generated from reading ui file 'mainwindow.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.11
 #
@@ -499,19 +499,28 @@ class Ui_MainWindow(object):
         MainWindow.setWindowTitle(_translate("MainWindow", "ProxiCAN"))
         self.label.setText(_translate("MainWindow", "Configuration Window"))
         self.label_2.setText(_translate("MainWindow", "  CAN Channel  "))
+        self.cmb_CanChannel.setToolTip(_translate("MainWindow", "<html><head/><body><p>Select the CAN channel</p></body></html>"))
         self.cmb_CanChannel.setItemText(0, _translate("MainWindow", "can0"))
         self.cmb_CanChannel.setItemText(1, _translate("MainWindow", "can1"))
+        self.radiobtn_fdftype_can.setToolTip(_translate("MainWindow", "<html><head/><body><p>Select the CAN type here</p></body></html>"))
         self.radiobtn_fdftype_can.setText(_translate("MainWindow", "CAN"))
+        self.radiobtn_fdftype_canfd.setToolTip(_translate("MainWindow", "<html><head/><body><p>Select the CAN type here</p></body></html>"))
         self.radiobtn_fdftype_canfd.setText(_translate("MainWindow", "CANFD"))
+        self.radiobtn_idtype_standard.setToolTip(_translate("MainWindow", "<html><head/><body><p>Select for Standard CAN</p></body></html>"))
         self.radiobtn_idtype_standard.setText(_translate("MainWindow", "Standard"))
+        self.radiobtn_idtype_extended.setToolTip(_translate("MainWindow", "<html><head/><body><p>Select for Extended CAN</p></body></html>"))
         self.radiobtn_idtype_extended.setText(_translate("MainWindow", "Extended"))
         self.label_3.setText(_translate("MainWindow", "Request ID"))
         self.label_4.setText(_translate("MainWindow", "Response ID"))
+        self.lineEdit_reqmsgid.setToolTip(_translate("MainWindow", "<html><head/><body><p>Enter the Request ID in hexadecimal format</p></body></html>"))
+        self.lineEdit_resmsgid.setToolTip(_translate("MainWindow", "<html><head/><body><p>Select the Response ID in hexadecimal format</p></body></html>"))
         self.label_5.setText(_translate("MainWindow", "Baudrate"))
+        self.cmb_baudrate.setToolTip(_translate("MainWindow", "<html><head/><body><p>Select the required Baudrate</p></body></html>"))
         self.cmb_baudrate.setItemText(0, _translate("MainWindow", "125kbps"))
         self.cmb_baudrate.setItemText(1, _translate("MainWindow", "250kbps"))
         self.cmb_baudrate.setItemText(2, _translate("MainWindow", "500kbps"))
         self.cmb_baudrate.setItemText(3, _translate("MainWindow", "1mbps"))
+        self.cmb_datarate.setToolTip(_translate("MainWindow", "<html><head/><body><p>Select the required Datarate</p></body></html>"))
         self.cmb_datarate.setItemText(0, _translate("MainWindow", "125kbps"))
         self.cmb_datarate.setItemText(1, _translate("MainWindow", "250kbps"))
         self.cmb_datarate.setItemText(2, _translate("MainWindow", "500kbps"))
@@ -520,12 +529,17 @@ class Ui_MainWindow(object):
         self.cmb_datarate.setItemText(5, _translate("MainWindow", "5mbps"))
         self.label_datarate.setText(_translate("MainWindow", "Datarate"))
         self.label_7.setText(_translate("MainWindow", "Sample Point"))
-        self.lineEdit_samplepoint.setToolTip(_translate("MainWindow", "provide the sample point ratio. if you want 75% then enter 0.75"))
+        self.lineEdit_samplepoint.setToolTip(_translate("MainWindow", "<html><head/><body><p>Enter the required Sample point here</p></body></html>"))
         self.lineEdit_samplepoint.setText(_translate("MainWindow", "0.8"))
+        self.pushButton_connect.setToolTip(_translate("MainWindow", "<html><head/><body><p>Connects the ECU to the tool</p></body></html>"))
         self.pushButton_connect.setText(_translate("MainWindow", "  Connect  "))
+        self.pushButton_disconnect.setToolTip(_translate("MainWindow", "<html><head/><body><p>Disconnects the ECU from the tool</p></body></html>"))
         self.pushButton_disconnect.setText(_translate("MainWindow", " Disconnect "))
+        self.pushButton_exportconfig.setToolTip(_translate("MainWindow", "<html><head/><body><p>Export the entered configuration values</p></body></html>"))
         self.pushButton_exportconfig.setText(_translate("MainWindow", " Export pxi "))
+        self.pushButton_importconfig.setToolTip(_translate("MainWindow", "<html><head/><body><p>Import the configuration values</p></body></html>"))
         self.pushButton_importconfig.setText(_translate("MainWindow", " Import pxi "))
+        self.label_connectionstatus.setToolTip(_translate("MainWindow", "<html><head/><body><p>Connection Indicator</p></body></html>"))
         self.label_8.setText(_translate("MainWindow", "UDS Services"))
         self.lbl_statusbar.setText(_translate("MainWindow", "Status"))
         self.checkBox_EnableTesterPresent.setText(_translate("MainWindow", "Enable Tester Present"))
@@ -589,4 +603,3 @@ if __name__ == "__main__":
     ui.setupUi(MainWindow)
     MainWindow.show()
     sys.exit(app.exec_())
-

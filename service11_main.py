@@ -100,7 +100,7 @@ class Ui_Service11(Ui_Form_SID11):
     <p><strong>Reset Type:</strong> <I>{hex(response.resp[1])} {session_name}</I></p>
     <p><strong>Requested Reset Initiated:</strong> <I>{reset_initiation}</I></p>
     <p><strong>Suppress Positive Message Request:</strong> <I>{sprmib_flg}</I></p>
-    
+    <p><strong>Info:</strong> <I>Service 11 is successfully sent with reset type {session_name}</I></p>   
 '''
 
         elif(response.type == "Negative Response"):
