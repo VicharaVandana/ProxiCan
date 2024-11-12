@@ -1,0 +1,5 @@
+<vkk930175>[2024-11-12 11:15:46] Button Click: Connect CAN button clicked
+<vkk930175>[2024-11-12 11:15:46] CAN Connection: CAN can0 connected with baudrate 125000 and fdf type CAN
+<vkk930175>[2024-11-12 11:15:48] Button Click: Service 28 Window Opened
+<vkk930175>[2024-11-12 11:15:49] UDS Request Success: 28 Request Successfully sent : 0x28 0x0 0x1
+<vkk930175>[2024-11-12 11:15:49] UDS Request Success: 28 Request Successfully sent : 0x28 0x0 0x1

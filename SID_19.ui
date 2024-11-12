@@ -248,11 +248,6 @@ color: rgb(85, 0, 0);</string>
         <string>0E - Report Most Recent Confirmed DTC</string>
        </property>
       </item>
-      <item>
-       <property name="text">
-        <string>14 FF FF FF - Fault Memory CLeatr</string>
-       </property>
-      </item>
      </widget>
     </item>
     <item row="5" column="0">
