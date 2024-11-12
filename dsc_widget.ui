@@ -17,7 +17,7 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string>Disgnostic Session Control Service 10</string>
+   <string>Diagnostic Session Control Service 10</string>
   </property>
   <widget class="QLabel" name="label_status">
    <property name="geometry">
