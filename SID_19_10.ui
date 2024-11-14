@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Report Mirror Memory DTC Extended Data Record by DTC Number 0X10 </string>
+   <string>Report Mirror Memory DTC Extended Data Record by DTC Number 0x10 </string>
   </property>
   <widget class="QLabel" name="label_status">
    <property name="geometry">
@@ -60,7 +60,7 @@ border-color: rgb(0, 0, 255);</string>
     <item row="0" column="1" colspan="2">
      <widget class="QLabel" name="subFunction_Name">
       <property name="text">
-       <string>Report Mirror Memory DTC Extended Data Record by DTC Number 0X10 </string>
+       <string>Report Mirror Memory DTC Extended Data Record by DTC Number 0x10 </string>
       </property>
      </widget>
     </item>
