@@ -1,0 +1,450 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form_Subfun_SID19</class>
+ <widget class="QDialog" name="Form_Subfun_SID19">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1363</width>
+    <height>682</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Sub-functions for Read DTC Information Servie 19</string>
+  </property>
+  <widget class="QWidget" name="layoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>100</y>
+     <width>1321</width>
+     <height>551</height>
+    </rect>
+   </property>
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="2">
+     <widget class="QPushButton" name="pushButton_03">
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Opens the subfunction window 0x03&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-color: rgb(255, 8, 251);
+background-color: rgb(252, 255, 0);
+color: rgb(255, 50, 14);</string>
+      </property>
+      <property name="text">
+       <string>Report DTC Snapshot Identification Number 0x03</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="2">
+     <widget class="QPushButton" name="pushButton_06">
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Opens the subfunction window 0x06&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-color: rgb(255, 8, 251);
+background-color: rgb(252, 255, 0);
+color: rgb(255, 50, 14);</string>
+      </property>
+      <property name="text">
+       <string>Report DTC External Data Record by DTC Number 0x06</string>
+      </property>
+     </widget>
+    </item>
+    <item row="7" column="0">
+     <widget class="QPushButton" name="pushButton_16">
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Opens the subfunction window 0x16&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-color: rgb(255, 8, 251);
+background-color: rgb(252, 255, 0);
+color: rgb(255, 50, 14);</string>
+      </property>
+      <property name="text">
+       <string>Report DTC Ext Data Record By Record Number 0x16</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="1">
+     <widget class="QPushButton" name="pushButton_08">
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Opens the subfunction window 0x08&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-color: rgb(255, 8, 251);
+background-color: rgb(252, 255, 0);
+color: rgb(255, 50, 14);</string>
+      </property>
+      <property name="text">
+       <string>Report DTC by Severity Mask Record 0x08</string>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="2">
+     <widget class="QPushButton" name="pushButton_12">
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Opens the subfunction window 0x12&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-color: rgb(255, 8, 251);
+background-color: rgb(252, 255, 0);
+color: rgb(255, 50, 14);</string>
+      </property>
+      <property name="text">
+       <string>Report Number Of Emissions OBD DTC By Status Mask 0x12</string>
+      </property>
+     </widget>
+    </item>
+    <item row="6" column="2">
+     <widget class="QPushButton" name="pushButton_15">
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Opens the subfunction window 0x15&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-color: rgb(255, 8, 251);
+background-color: rgb(252, 255, 0);
+color: rgb(255, 50, 14);</string>
+      </property>
+      <property name="text">
+       <string>Report DTC With Permanent Status 0x15</string>
+      </property>
+     </widget>
+    </item>
+    <item row="6" column="0">
+     <widget class="QPushButton" name="pushButton_13">
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Opens the subfunction window 0x13&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-color: rgb(255, 8, 251);
+background-color: rgb(252, 255, 0);
+color: rgb(255, 50, 14);</string>
+      </property>
+      <property name="text">
+       <string>Report Emissions OBD DTC By Status Mask 0x13</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="0">
+     <widget class="QPushButton" name="pushButton_0D">
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Opens the subfunction window 0x0D&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-color: rgb(255, 8, 251);
+background-color: rgb(252, 255, 0);
+color: rgb(255, 50, 14);</string>
+      </property>
+      <property name="text">
+       <string>Report Most Recent Test Failed DTC 0x0D</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="2">
+     <widget class="QPushButton" name="pushButton_0F">
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Opens the subfunction window 0x0F&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-color: rgb(255, 8, 251);
+background-color: rgb(252, 255, 0);
+color: rgb(255, 50, 14);</string>
+      </property>
+      <property name="text">
+       <string>Report Mirror Memory DTC by Status Mask 0x0F  </string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="0">
+     <widget class="QPushButton" name="pushButton_0A">
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Opens the subfunction window 0x0A&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-color: rgb(255, 8, 251);
+background-color: rgb(252, 255, 0);
+color: rgb(255, 50, 14);</string>
+      </property>
+      <property name="text">
+       <string>Report Supported DTC 0x0A</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="1">
+     <widget class="QPushButton" name="pushButton_0B">
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Opens the subfunction window 0x0B&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-color: rgb(255, 8, 251);
+background-color: rgb(252, 255, 0);
+color: rgb(255, 50, 14);</string>
+      </property>
+      <property name="text">
+       <string>Report First Test Failed DTC 0x0B</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <widget class="QPushButton" name="pushButton_04">
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Opens the subfunction window 0x04&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-color: rgb(255, 8, 251);
+background-color: rgb(252, 255, 0);
+color: rgb(255, 50, 14);</string>
+      </property>
+      <property name="text">
+       <string>Report DTC Snapshot Record by DTC Number 0x04</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="2">
+     <widget class="QPushButton" name="pushButton_09">
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Opens the subfunction window 0x09&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-color: rgb(255, 8, 251);
+background-color: rgb(252, 255, 0);
+color: rgb(255, 50, 14);</string>
+      </property>
+      <property name="text">
+       <string>Report Severity Information of DTC 0x09</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="2">
+     <widget class="QPushButton" name="pushButton_0C">
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Opens the subfunction window 0x0C&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-color: rgb(255, 8, 251);
+background-color: rgb(252, 255, 0);
+color: rgb(255, 50, 14);</string>
+      </property>
+      <property name="text">
+       <string>Report First Confirmed DTC 0x0C</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="1">
+     <widget class="QPushButton" name="pushButton_05">
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Opens the subfunction window 0x05&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-color: rgb(255, 8, 251);
+background-color: rgb(252, 255, 0);
+color: rgb(255, 50, 14);</string>
+      </property>
+      <property name="text">
+       <string>Report DTC Stored Data by Record Number 0x05</string>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="1">
+     <widget class="QPushButton" name="pushButton_11">
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Opens the subfunction window 0x11&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-color: rgb(255, 8, 251);
+background-color: rgb(252, 255, 0);
+color: rgb(255, 50, 14);</string>
+      </property>
+      <property name="text">
+       <string>Report Number Of Mirror Memory DTC By Status Mask 0x11</string>
+      </property>
+     </widget>
+    </item>
+    <item row="7" column="1">
+     <widget class="QPushButton" name="pushButton_17">
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Opens the subfunction window 0x17&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-color: rgb(255, 8, 251);
+background-color: rgb(252, 255, 0);
+color: rgb(255, 50, 14);</string>
+      </property>
+      <property name="text">
+       <string>Report User Def Memory DTC By Status Mask 0x17</string>
+      </property>
+     </widget>
+    </item>
+    <item row="6" column="1">
+     <widget class="QPushButton" name="pushButton_14">
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Opens the subfunction window 0x14&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-color: rgb(255, 8, 251);
+background-color: rgb(252, 255, 0);
+color: rgb(255, 50, 14);</string>
+      </property>
+      <property name="text">
+       <string>Report DTC Fault Detection Counter 0x14</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="1">
+     <widget class="QPushButton" name="pushButton_0E">
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Opens the subfunction window 0x0E&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-color: rgb(255, 8, 251);
+background-color: rgb(252, 255, 0);
+color: rgb(255, 50, 14);</string>
+      </property>
+      <property name="text">
+       <string>Report Most Recent Confirmed DTC 0x0E</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <widget class="QPushButton" name="pushButton_02">
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Opens the subfunction window 0x02&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-color: rgb(255, 8, 251);
+background-color: rgb(255, 255, 0);
+
+color: rgb(255, 50, 14);</string>
+      </property>
+      <property name="text">
+       <string>Report DTC by Status Mask 0x02</string>
+      </property>
+     </widget>
+    </item>
+    <item row="7" column="2">
+     <widget class="QPushButton" name="pushButton_18">
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Opens the subfunction window 0x18&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-color: rgb(255, 8, 251);
+background-color: rgb(252, 255, 0);
+color: rgb(255, 50, 14);</string>
+      </property>
+      <property name="text">
+       <string>Report User Def Memory DTC Snapshot Record By DTC Number 0x18</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="0">
+     <widget class="QPushButton" name="pushButton_07">
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Opens the subfunction window 0x07&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-color: rgb(255, 8, 251);
+background-color: rgb(252, 255, 0);
+color: rgb(255, 50, 14);</string>
+      </property>
+      <property name="text">
+       <string>Report Number of DTC by Severity Mask Record 0x07</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="0">
+     <widget class="QPushButton" name="pushButton_01">
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Opens the subfunction window 0x01&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-color: rgb(255, 8, 251);
+background-color: rgb(255, 255, 0);
+color: rgb(255, 50, 14);</string>
+      </property>
+      <property name="text">
+       <string>Report Number of DTC by Status Mask 0x01</string>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="0">
+     <widget class="QPushButton" name="pushButton_10">
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Opens the subfunction window 0x10&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-color: rgb(255, 8, 251);
+background-color: rgb(252, 255, 0);
+color: rgb(255, 50, 14);</string>
+      </property>
+      <property name="text">
+       <string>Report Mirror Memory DTC Ext Data Record By DTC Number 0x10</string>
+      </property>
+     </widget>
+    </item>
+    <item row="8" column="0">
+     <widget class="QPushButton" name="pushButton_19">
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Opens the subfunction window 0x19&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-color: rgb(255, 8, 251);
+background-color: rgb(252, 255, 0);
+color: rgb(255, 50, 14);</string>
+      </property>
+      <property name="text">
+       <string>Report User Def Memory DTC Ext Data Record By DTC Number 0x19</string>
+      </property>
+     </widget>
+    </item>
+    <item row="8" column="1">
+     <widget class="QPushButton" name="pushButton_42">
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Opens the subfunction window 0x42&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-color: rgb(255, 8, 251);
+background-color: rgb(252, 255, 0);
+color: rgb(255, 50, 14);</string>
+      </property>
+      <property name="text">
+       <string>Report WWH OBD DTC By Mask Record 0x42</string>
+      </property>
+     </widget>
+    </item>
+    <item row="8" column="2">
+     <widget class="QPushButton" name="pushButton_55">
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Opens the subfunction window 0x55&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-color: rgb(255, 8, 251);
+background-color: rgb(252, 255, 0);
+color: rgb(255, 50, 14);</string>
+      </property>
+      <property name="text">
+       <string>Report WWH OBD DTC With Permanent Status 0x55</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>290</x>
+     <y>10</y>
+     <width>831</width>
+     <height>81</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt; font-weight:600; text-decoration: underline; color:#0000ff;&quot;&gt;Select the Sub-function for Service 19 to be Requested&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
