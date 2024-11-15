@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Report Number Of DTC By Status Mask 0x01</string>
+   <string>Report Number Of DTC By Status Mask </string>
   </property>
   <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
@@ -224,7 +224,7 @@ color: rgb(0, 0, 0);</string>
     <item row="0" column="1" colspan="2">
      <widget class="QLabel" name="subFunction_Name">
       <property name="text">
-       <string>Report Number Of DTC By Status Mask 0x01 </string>
+       <string>Report Number Of DTC By Status Mask 0X01 </string>
       </property>
      </widget>
     </item>
