@@ -121,7 +121,7 @@ class Ui_Form_SID_19_01(object):
 
     def retranslateUi(self, Form_SID_19_01):
         _translate = QtCore.QCoreApplication.translate
-        Form_SID_19_01.setWindowTitle(_translate("Form_SID_19_01", "Report Number Of DTC By Status Mask 0x01"))
+        Form_SID_19_01.setWindowTitle(_translate("Form_SID_19_01", "Report Number Of DTC By Status Mask "))
         self.pushButton_appendLog.setText(_translate("Form_SID_19_01", "Add to Log"))
         self.pushButton_clearLog.setText(_translate("Form_SID_19_01", "Clear Log"))
         self.label_4.setText(_translate("Form_SID_19_01", "Response : "))
@@ -149,6 +149,6 @@ class Ui_Form_SID_19_01(object):
         self.pushButton_Send19_01Req.setText(_translate("Form_SID_19_01", "Send Request"))
         self.checkBox_suppressposmsg.setToolTip(_translate("Form_SID_19_01", "If selected then Suppress Positive Response Message Indication bit will be set in Subfunction"))
         self.checkBox_suppressposmsg.setText(_translate("Form_SID_19_01", "SPRMIB"))
-        self.subFunction_Name.setText(_translate("Form_SID_19_01", "Report Number Of DTC By Status Mask 0x01 "))
+        self.subFunction_Name.setText(_translate("Form_SID_19_01", "Report Number Of DTC By Status Mask 0X01 "))
         self.DTCStatusMask_label.setText(_translate("Form_SID_19_01", "DTC Status Mask:"))
         self.label_status.setText(_translate("Form_SID_19_01", "No Status"))
