@@ -1,8 +1,18 @@
-<vkk930175>[2024-11-12 11:15:46] Button Click: Connect CAN button clicked
-<vkk930175>[2024-11-12 11:15:46] CAN Connection: CAN can0 connected with baudrate 125000 and fdf type CAN
-<vkk930175>[2024-11-12 11:15:48] Button Click: Service 28 Window Opened
-<vkk930175>[2024-11-12 11:15:49] UDS Request Success: 28 Request Successfully sent : 0x28 0x0 0x1
-<vkk930175>[2024-11-12 11:15:49] UDS Request Success: 28 Request Successfully sent : 0x28 0x0 0x1
-<vkk930175>[2024-11-12 12:31:26] UDS Request Fail: 19 Request not happened due to invalid DTC Status Mask format
-<vkk930175>[2024-11-12 12:31:29] UDS Request Success: 19 Request Successfully sent : 0x19 0x1 0x12
-<vkk930175>[2024-11-12 12:31:29] UDS Request Success: 19 Request Successfully sent : 0x19 0x1 0x12
+<vkk930175>[2024-11-15 10:00:08] Button Click: Connect CAN button clicked
+<vkk930175>[2024-11-15 10:00:08] CAN Connection: CAN can0 connected with baudrate 125000 and fdf type CAN
+<vkk930175>[2024-11-15 10:00:09] Button Click: Service 22 Window Opened
+<vkk930175>[2024-11-15 10:00:46] Button Click: Service 31 Window Opened
+<vkk930175>[2024-11-15 10:00:52] Button Click: Send 31 request button clicked with RID[1212].
+<vkk930175>[2024-11-15 10:00:52] UDS Request Success: 31 Request Successfully sent : 0x31 0x1 0x12 0x12
+<vkk930175>[2024-11-15 10:00:56] Button Click: Send 31 request button clicked with RID[1212].
+<vkk930175>[2024-11-15 10:00:56] Button Click: Send 31 request button clicked with Status Record[21].
+<vkk930175>[2024-11-15 10:00:56] UDS Request Success: 31 Request Successfully sent : 0x31 0x1 0x12 0x12 0x21
+<vkk930175>[2024-11-15 10:00:59] Button Click: Send 31 request button clicked with RID[1212].
+<vkk930175>[2024-11-15 10:00:59] Button Click: Send 31 request button clicked with Status Record[2121].
+<vkk930175>[2024-11-15 10:00:59] UDS Request Success: 31 Request Successfully sent : 0x31 0x1 0x12 0x12 0x21 0x21
+<vkk930175>[2024-11-15 10:01:04] Button Click: Send 31 request button clicked with RID[1212].
+<vkk930175>[2024-11-15 10:01:04] Button Click: Send 31 request button clicked with Status Record[2121].
+<vkk930175>[2024-11-15 10:01:04] UDS Request Success: 31 Request Successfully sent : 0x31 0x2 0x12 0x12 0x21 0x21
+<vkk930175>[2024-11-15 10:01:08] Button Click: Service 28 Window Opened
+<vkk930175>[2024-11-15 10:01:15] UDS Request Success: 28 Request Successfully sent : 0x28 0x1 0x2
+<vkk930175>[2024-11-15 10:01:15] UDS Request Success: 28 Request Successfully sent : 0x28 0x1 0x2

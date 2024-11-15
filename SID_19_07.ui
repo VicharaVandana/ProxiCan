@@ -6,18 +6,18 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>841</width>
-    <height>636</height>
+    <width>838</width>
+    <height>695</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Report Number Of DTC By Severity Mask Record</string>
+   <string>Report Number of DTC By Severity Mask Record</string>
   </property>
   <widget class="QLabel" name="label_status">
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>550</y>
+     <y>610</y>
      <width>821</width>
      <height>71</height>
     </rect>
@@ -43,17 +43,119 @@ border-color: rgb(0, 0, 255);</string>
      <x>10</x>
      <y>10</y>
      <width>817</width>
-     <height>531</height>
+     <height>581</height>
     </rect>
    </property>
    <layout class="QGridLayout" name="gridLayout_2">
     <property name="sizeConstraint">
      <enum>QLayout::SetNoConstraint</enum>
     </property>
-    <item row="6" column="1" colspan="4">
-     <widget class="QTextBrowser" name="textBrowser_Resp"/>
+    <item row="8" column="4">
+     <widget class="QPushButton" name="pushButton_appendLog">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(85, 255, 127);
+color: rgb(85, 0, 0);</string>
+      </property>
+      <property name="text">
+       <string>Add to Log</string>
+      </property>
+     </widget>
     </item>
-    <item row="3" column="4">
+    <item row="11" column="0">
+     <widget class="QLabel" name="label_4">
+      <property name="text">
+       <string>Response : </string>
+      </property>
+     </widget>
+    </item>
+    <item row="7" column="4">
+     <widget class="QPushButton" name="pushButton_clearLog">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(85, 255, 127);
+color: rgb(85, 0, 0);</string>
+      </property>
+      <property name="text">
+       <string>Clear Log</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="1" colspan="2">
+     <widget class="QLabel" name="subFunction_Name">
+      <property name="text">
+       <string>Report Number of DTC By Severity Mask Record 0x07</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="0">
+     <widget class="QLabel" name="label_subFunction">
+      <property name="text">
+       <string>Sub Function:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="1" colspan="4">
+     <widget class="QLineEdit" name="lineEdit">
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Enter Functional Group Identifier in &lt;span style=&quot; font-weight:600;&quot;&gt;1-byte hexadecimal format&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="1" colspan="4">
+     <layout class="QHBoxLayout" name="horizontalLayout_4">
+      <item>
+       <widget class="QCheckBox" name="checkBox_statusMask_bit4">
+        <property name="toolTip">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-family:'ui-sans-serif','-apple-system','system-ui','Segoe UI','Helvetica','Apple Color Emoji','Arial','sans-serif','Segoe UI Emoji','Segoe UI Symbol'; font-size:16px; color:#0d0d0d; background-color:#ffffff;&quot;&gt;Selecting this indicates the DTC test has&lt;/span&gt;&lt;span style=&quot; font-family:'ui-sans-serif','-apple-system','system-ui','Segoe UI','Helvetica','Apple Color Emoji','Arial','sans-serif','Segoe UI Emoji','Segoe UI Symbol'; font-size:16px; font-style:italic; color:#0d0d0d; background-color:#ffffff;&quot;/&gt;&lt;span style=&quot; font-family:'ui-sans-serif','-apple-system','system-ui','Segoe UI','Helvetica','Apple Color Emoji','Arial','sans-serif','Segoe UI Emoji','Segoe UI Symbol'; font-size:16px; font-weight:600; font-style:italic; color:#0d0d0d; background-color:#ffffff;&quot;&gt;not completed &lt;/span&gt;&lt;span style=&quot; font-family:'ui-sans-serif','-apple-system','system-ui','Segoe UI','Helvetica','Apple Color Emoji','Arial','sans-serif','Segoe UI Emoji','Segoe UI Symbol'; font-size:16px; font-style:italic; color:#0d0d0d; background-color:#ffffff;&quot;&gt;since the last DTC code clear&lt;/span&gt;&lt;span style=&quot; font-family:'ui-sans-serif','-apple-system','system-ui','Segoe UI','Helvetica','Apple Color Emoji','Arial','sans-serif','Segoe UI Emoji','Segoe UI Symbol'; font-size:16px; color:#0d0d0d; background-color:#ffffff;&quot;&gt;.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="text">
+         <string>Test Not Completed Since Last Clear</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QCheckBox" name="checkBox_statusMask_bit5">
+        <property name="toolTip">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-family:'ui-sans-serif','-apple-system','system-ui','Segoe UI','Helvetica','Apple Color Emoji','Arial','sans-serif','Segoe UI Emoji','Segoe UI Symbol'; font-size:16px; color:#0d0d0d; background-color:#ffffff;&quot;&gt;Selecting this indicates the DTC test&lt;/span&gt;&lt;span style=&quot; font-family:'ui-sans-serif','-apple-system','system-ui','Segoe UI','Helvetica','Apple Color Emoji','Arial','sans-serif','Segoe UI Emoji','Segoe UI Symbol'; font-size:16px; font-style:italic; color:#0d0d0d; background-color:#ffffff;&quot;&gt; has &lt;/span&gt;&lt;span style=&quot; font-family:'ui-sans-serif','-apple-system','system-ui','Segoe UI','Helvetica','Apple Color Emoji','Arial','sans-serif','Segoe UI Emoji','Segoe UI Symbol'; font-size:16px; font-weight:600; font-style:italic; color:#0d0d0d; background-color:#ffffff;&quot;&gt;failed &lt;/span&gt;&lt;span style=&quot; font-family:'ui-sans-serif','-apple-system','system-ui','Segoe UI','Helvetica','Apple Color Emoji','Arial','sans-serif','Segoe UI Emoji','Segoe UI Symbol'; font-size:16px; font-style:italic; color:#0d0d0d; background-color:#ffffff;&quot;&gt;at least once since the last code clear.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="text">
+         <string>Test Failed Since Last Clear</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="1" column="0">
+     <widget class="QLabel" name="label">
+      <property name="text">
+       <string>Functional Group Identifier:  </string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="1" colspan="4">
+     <layout class="QHBoxLayout" name="horizontalLayout_3">
+      <item>
+       <widget class="QCheckBox" name="checkBox_statusMask_bit2">
+        <property name="toolTip">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-family:'ui-sans-serif','-apple-system','system-ui','Segoe UI','Helvetica','Apple Color Emoji','Arial','sans-serif','Segoe UI Emoji','Segoe UI Symbol'; font-size:16px; color:#0d0d0d; background-color:#ffffff;&quot;&gt;Selecting this indicates the DTC has failed in the current or previous operation cycle and is &lt;/span&gt;&lt;span style=&quot; font-family:'ui-sans-serif','-apple-system','system-ui','Segoe UI','Helvetica','Apple Color Emoji','Arial','sans-serif','Segoe UI Emoji','Segoe UI Symbol'; font-size:16px; font-weight:600; font-style:italic; color:#0d0d0d; background-color:#ffffff;&quot;&gt;pending  .&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="text">
+         <string>Pending DTC</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QCheckBox" name="checkBox_statusMask_bit3">
+        <property name="toolTip">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'ui-sans-serif','-apple-system','system-ui','Segoe UI','Helvetica','Apple Color Emoji','Arial','sans-serif','Segoe UI Emoji','Segoe UI Symbol'; font-size:16px; color:#0d0d0d; background-color:#ffffff;&quot;&gt;Selecting this indicates that the fault has been continuously active for a specific monitoring routine and is matured enough in the current operation cycle so that it can be said confirmed. &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="text">
+         <string>Confirmed DTC</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="11" column="4">
      <widget class="QPushButton" name="pushButton_reset">
       <property name="styleSheet">
        <string notr="true">background-color: rgb(170, 170, 0);
@@ -65,7 +167,7 @@ color: rgb(0, 85, 0);</string>
       </property>
      </widget>
     </item>
-    <item row="3" column="1" colspan="2">
+    <item row="8" column="1" colspan="3">
      <widget class="QLabel" name="label_ResType">
       <property name="autoFillBackground">
        <bool>false</bool>
@@ -81,13 +183,6 @@ color: rgb(0, 85, 0);</string>
       </property>
      </widget>
     </item>
-    <item row="1" column="1">
-     <widget class="QLineEdit" name="lineEdit_DTCSevMaskRec">
-      <property name="toolTip">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Enter DTC Severity Mask Record in hexadecimal format of 2 Bytes&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
-     </widget>
-    </item>
     <item row="0" column="3">
      <widget class="QCheckBox" name="checkBox_suppressposmsg">
       <property name="toolTip">
@@ -98,53 +193,99 @@ color: rgb(0, 85, 0);</string>
       </property>
      </widget>
     </item>
-    <item row="3" column="0">
+    <item row="8" column="0">
      <widget class="QLabel" name="label_5">
       <property name="text">
        <string>Response Type: </string>
       </property>
      </widget>
     </item>
-    <item row="1" column="3">
-     <widget class="QPushButton" name="pushButton_clearLog">
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(85, 255, 127);
-color: rgb(85, 0, 0);</string>
-      </property>
-      <property name="text">
-       <string>Clear Log</string>
+    <item row="11" column="1" colspan="3">
+     <widget class="QTextBrowser" name="textBrowser_Resp"/>
+    </item>
+    <item row="2" column="0" colspan="5">
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <item>
+       <widget class="QLabel" name="label_DTCSVMREC">
+        <property name="toolTip">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Enter DTC Severity Mask Record in 2&lt;span style=&quot; font-weight:600;&quot;&gt;-byte hexadecimal format&lt;/span&gt; including&lt;span style=&quot; font-weight:600;&quot;/&gt;DTC Status Mask (1-byte) &amp;amp; DTC Severity Mask(1-byte)&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="text">
+         <string>                                                                          DTC Severity Mask Record:                                                                                 </string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="6" column="1" colspan="4">
+     <layout class="QHBoxLayout" name="horizontalLayout_5">
+      <item>
+       <widget class="QCheckBox" name="checkBox_statusMask_bit6">
+        <property name="toolTip">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-family:'ui-sans-serif','-apple-system','system-ui','Segoe UI','Helvetica','Apple Color Emoji','Arial','sans-serif','Segoe UI Emoji','Segoe UI Symbol'; font-size:16px; color:#0d0d0d; background-color:#ffffff;&quot;&gt;Selecting this indicates the DTC test has &lt;/span&gt;&lt;span style=&quot; font-family:'ui-sans-serif','-apple-system','system-ui','Segoe UI','Helvetica','Apple Color Emoji','Arial','sans-serif','Segoe UI Emoji','Segoe UI Symbol'; font-size:16px; font-weight:600; font-style:italic; color:#0d0d0d; background-color:#ffffff;&quot;&gt;not completed &lt;/span&gt;&lt;span style=&quot; font-family:'ui-sans-serif','-apple-system','system-ui','Segoe UI','Helvetica','Apple Color Emoji','Arial','sans-serif','Segoe UI Emoji','Segoe UI Symbol'; font-size:16px; font-style:italic; color:#0d0d0d; background-color:#ffffff;&quot;&gt;during this  current operation cycle.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="text">
+         <string>Test Not Completed This Operation Cycle</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QCheckBox" name="checkBox_statusMask_bit7">
+        <property name="toolTip">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-family:'ui-sans-serif','-apple-system','system-ui','Segoe UI','Helvetica','Apple Color Emoji','Arial','sans-serif','Segoe UI Emoji','Segoe UI Symbol'; font-size:16px; color:#0d0d0d; background-color:#ffffff;&quot;&gt;Selecting this indicates that the server is requesting the &lt;/span&gt;&lt;span style=&quot; font-family:'ui-sans-serif','-apple-system','system-ui','Segoe UI','Helvetica','Apple Color Emoji','Arial','sans-serif','Segoe UI Emoji','Segoe UI Symbol'; font-size:16px; font-weight:600; font-style:italic; color:#0d0d0d; background-color:#ffffff;&quot;&gt;warning indicator &lt;/span&gt;&lt;span style=&quot; font-family:'ui-sans-serif','-apple-system','system-ui','Segoe UI','Helvetica','Apple Color Emoji','Arial','sans-serif','Segoe UI Emoji','Segoe UI Symbol'; font-size:16px; font-style:italic; color:#0d0d0d; background-color:#ffffff;&quot;&gt; to be active.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="text">
+         <string>Warning Indicator Requested</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="3" column="1" colspan="4">
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QCheckBox" name="checkBox_statusMask_bit0">
+        <property name="toolTip">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-family:'ui-sans-serif','-apple-system','system-ui','Segoe UI','Helvetica','Apple Color Emoji','Arial','sans-serif','Segoe UI Emoji','Segoe UI Symbol'; font-size:16px; color:#0d0d0d; background-color:#ffffff;&quot;&gt;Selecting this indicates the &lt;/span&gt;&lt;span style=&quot; font-family:'ui-sans-serif','-apple-system','system-ui','Segoe UI','Helvetica','Apple Color Emoji','Arial','sans-serif','Segoe UI Emoji','Segoe UI Symbol'; font-size:16px; font-weight:600; color:#0d0d0d; background-color:#ffffff;&quot;&gt;DTC test &lt;/span&gt;&lt;span style=&quot; font-family:'ui-sans-serif','-apple-system','system-ui','Segoe UI','Helvetica','Apple Color Emoji','Arial','sans-serif','Segoe UI Emoji','Segoe UI Symbol'; font-size:16px; color:#0d0d0d; background-color:#ffffff;&quot;&gt;has &lt;/span&gt;&lt;span style=&quot; font-family:'ui-sans-serif','-apple-system','system-ui','Segoe UI','Helvetica','Apple Color Emoji','Arial','sans-serif','Segoe UI Emoji','Segoe UI Symbol'; font-size:16px; font-weight:600; color:#0d0d0d; background-color:#ffffff;&quot;&gt;matured as a failure&lt;/span&gt;&lt;span style=&quot; font-family:'ui-sans-serif','-apple-system','system-ui','Segoe UI','Helvetica','Apple Color Emoji','Arial','sans-serif','Segoe UI Emoji','Segoe UI Symbol'; font-size:16px; color:#0d0d0d; background-color:#ffffff;&quot;&gt;, confirming the fault as present.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="text">
+         <string>Test Failed</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QCheckBox" name="checkBox_statusMask_bit1">
+        <property name="toolTip">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-family:'ui-sans-serif','-apple-system','system-ui','Segoe UI','Helvetica','Apple Color Emoji','Arial','sans-serif','Segoe UI Emoji','Segoe UI Symbol'; font-size:16px; color:#0d0d0d; background-color:#ffffff;&quot;&gt;Selecting this indicates the &lt;/span&gt;&lt;span style=&quot; font-family:'ui-sans-serif','-apple-system','system-ui','Segoe UI','Helvetica','Apple Color Emoji','Arial','sans-serif','Segoe UI Emoji','Segoe UI Symbol'; font-size:16px; font-weight:600; font-style:italic; color:#0d0d0d; background-color:#ffffff;&quot;&gt;DTC test failed  &lt;/span&gt;&lt;span style=&quot; font-family:'ui-sans-serif','-apple-system','system-ui','Segoe UI','Helvetica','Apple Color Emoji','Arial','sans-serif','Segoe UI Emoji','Segoe UI Symbol'; font-size:16px; color:#0d0d0d; background-color:#ffffff;&quot;&gt;during the &lt;/span&gt;&lt;span style=&quot; font-family:'ui-sans-serif','-apple-system','system-ui','Segoe UI','Helvetica','Apple Color Emoji','Arial','sans-serif','Segoe UI Emoji','Segoe UI Symbol'; font-size:16px; font-weight:600; color:#0d0d0d; background-color:#ffffff;&quot;&gt;current operation cycle&lt;/span&gt;&lt;span style=&quot; font-family:'ui-sans-serif','-apple-system','system-ui','Segoe UI','Helvetica','Apple Color Emoji','Arial','sans-serif','Segoe UI Emoji','Segoe UI Symbol'; font-size:16px; color:#0d0d0d; background-color:#ffffff;&quot;&gt;.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="text">
+         <string>Test Failed This Operation Cycle</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="7" column="1" colspan="3">
+     <widget class="QLineEdit" name="lineEdit_DTCSM">
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Enter DTC Severity Mask in &lt;span style=&quot; font-weight:600;&quot;&gt;1-byte hexadecimal format&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
     </item>
-    <item row="0" column="1" colspan="2">
-     <widget class="QLabel" name="subFunction_Name">
+    <item row="3" column="0" rowspan="4">
+     <widget class="QLabel" name="DTCStatusMask_label">
       <property name="text">
-       <string>Report Number Of DTC By Severity Mask Record 0x07</string>
+       <string>DTC Status Mask:</string>
       </property>
      </widget>
     </item>
-    <item row="1" column="4">
-     <widget class="QPushButton" name="pushButton_appendLog">
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(85, 255, 127);
-color: rgb(85, 0, 0);</string>
-      </property>
+    <item row="7" column="0">
+     <widget class="QLabel" name="label_DTCSM">
       <property name="text">
-       <string>Add to Log</string>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="0">
-     <widget class="QLabel" name="label_subFunction">
-      <property name="text">
-       <string>Sub Function:</string>
-      </property>
-     </widget>
-    </item>
-    <item row="6" column="0">
-     <widget class="QLabel" name="label_4">
-      <property name="text">
-       <string>          Response : </string>
+       <string>DTC Severity Mask:</string>
       </property>
      </widget>
     </item>
@@ -160,13 +301,6 @@ color: rgb(0, 0, 0);</string>
       </property>
       <property name="text">
        <string>Send Request</string>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="0" rowspan="2">
-     <widget class="QLabel" name="DTCSeverityMaskRec_label">
-      <property name="text">
-       <string>DTC Severity Mask Record:</string>
       </property>
      </widget>
     </item>
