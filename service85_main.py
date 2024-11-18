@@ -44,6 +44,7 @@ class Ui_Service85(Ui_Form_SID85):
         self.textBrowser_Resp.clear()
         self.comboBox_DTCSettingType.setCurrentIndex(0)
         self.checkBox_suppressposmsg.setChecked(False)
+        self.checkBox_DTCOption.setChecked(False)
         self.update_status("Userform cleared successfully")
         gen.log_action("Button Click", "Clear Form for Service 85 window clicked. Userfields cleared successfully.")
         return

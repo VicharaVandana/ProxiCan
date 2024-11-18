@@ -41,7 +41,7 @@ class Ui_Service2E(Ui_Form_SID2E):
         self.label_ResType.setText("No Response")
         self.textBrowser_Resp.clear()
         self.lineEdit_DID.clear()
-        self.lineEdit_DataValue.clear()
+        self.textEdit_datavalue.clear()
         self.update_status("Userform cleared successfully")
         gen.log_action("Button Click", "Clear Form for Service 2E window clicked. Userfields cleared successfully.")
         return

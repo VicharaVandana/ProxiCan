@@ -40,7 +40,13 @@ class Ui_Service19_01(Ui_Form_SID_19_01):
         self.logentrystring = ""
         self.label_ResType.setText("No Response")
         self.textBrowser_Resp.clear()
-        #self.lineEdit_dtc.clear()
+        checkboxes = [self.checkBox_statusMask_bit0, self.checkBox_statusMask_bit1,
+                      self.checkBox_statusMask_bit2, self.checkBox_statusMask_bit3,
+                      self.checkBox_statusMask_bit4, self.checkBox_statusMask_bit5,
+                      self.checkBox_statusMask_bit6, self.checkBox_statusMask_bit7
+        ]
+        for checkbox in checkboxes:
+            checkbox.setChecked(False)
         self.update_status("Userform cleared successfully")
         gen.log_action("Button Click", "Clear Form for Service 14 window clicked. Userfields cleared successfully.")
         return
@@ -61,15 +67,18 @@ class Ui_Service19_01(Ui_Form_SID_19_01):
     
     def send19_01service(self):
         sprmib_flg = self.checkBox_suppressposmsg.isChecked()
-        status_mask= fun.calculate_dtc_status_mask(self.checkBox_statusMask_bit0,
-    self.checkBox_statusMask_bit1,
-    self.checkBox_statusMask_bit2,
-    self.checkBox_statusMask_bit3,
-    self.checkBox_statusMask_bit4,
-    self.checkBox_statusMask_bit5,
-    self.checkBox_statusMask_bit6,
-    self.checkBox_statusMask_bit7)
+        status_mask= fun.calculate_dtc_status_mask(self.checkBox_statusMask_bit0, self.checkBox_statusMask_bit1,
+                                                   self.checkBox_statusMask_bit2, self.checkBox_statusMask_bit3,
+                                                   self.checkBox_statusMask_bit4, self.checkBox_statusMask_bit5,
+                                                   self.checkBox_statusMask_bit6, self.checkBox_statusMask_bit7
+        )
         gen.log_action("Button Click", f"Send 19 01 request button clicked with DTC Status Mask[{status_mask}]].")
+        if status_mask == 0:
+            self.update_status("Please select atleast one bit in DTC status mask")
+            print(f"DTC Status mask {status_mask} is invalid")
+            gen.log_action("UDS Request Fail", "19 01 Request not happened due to invalid DTC Status Mask")
+            return
+
 
         service_request = fun.form_reqmsg4srv19_subfun_1(status_mask,sprmib_flg)
 
@@ -99,6 +108,7 @@ class Ui_Service19_01(Ui_Form_SID_19_01):
             msb = response.resp[4]  # Most Significant Byte
             lsb = response.resp[5]  # Least Significant Byte # Combine them into a single 16-bit value
             combined_value = (msb << 8) | lsb
+            self.update_status("Service 19 subfunction 01 response is received")
  
             response_html = f'''<h4><U>Positive Response Recieved</U></h4>
     <p><strong>Service ID:</strong> <I>{hex(response.resp[0]-0x40)}</I></p>

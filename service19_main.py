@@ -121,10 +121,10 @@ class Ui_Service19 (Ui_Form_Subfun_SID19, QtWidgets.QMainWindow, QtWidgets.QWidg
             self.ui19_01.redesign_ui()
             self.ui19_01.connectFunctions()
             self.window19_01.show()  # Display the new window
-            self.update_status(f"19 01 Button clicked. Report Number Of DTC By Status Mask subfunction window opened")
-            gen.log_action("Button Click", "Service 19 01 Window Opened")
+            self.update_status(f"19 subfunction 01 Button clicked. Report Number Of DTC By Status Mask subfunction window opened")
+            gen.log_action("Button Click", "Service 19 subfunction 01 Window Opened")
         else:
-            self.update_status(f"19 01 Button clicked. But unable to open the service window as CAN is not connected")
+            self.update_status(f"19 subfunction 01 Button clicked. But unable to open the service window as CAN is not connected")
         return
     
 
