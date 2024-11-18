@@ -258,7 +258,29 @@ def sendRequest(request, IsPosResExpected = True):
             response.nrc = 0x31
             response.nrcname = NRC_DATA.get(response.nrc, "Unknown NRC")[0]
             response.nrcdesc = NRC_DATA.get(response.nrc, "Unknown NRC Recieved. There is no record of this NRC in UDS ISO 14229 Document")[1]
-
+    
+    elif(request[0] == 0x19): #dummy implementation for service 19
+        if(request[1] == 0x01 and request[2]==0x08):
+            res = [0x59, 0x01, 0x2F, 0x01, 0x11, 0xff]
+            response.resp = res.copy()
+            response.type = "Positive Response"
+            response.nrc = 0x00
+            response.nrcname = NRC_DATA.get(response.nrc, "Unknown NRC")[0]
+            response.nrcdesc = NRC_DATA.get(response.nrc, "Unknown NRC Recieved. There is no record of this NRC in UDS ISO 14229 Document")[1]
+        elif(request[1] == 0x02):
+            res = [0x7F, 0x19, 0x7F]
+            response.resp = res.copy()
+            response.type = "Negative Response"
+            response.nrc = 0x7F
+            response.nrcname = NRC_DATA.get(response.nrc, "Unknown NRC")[0]
+            response.nrcdesc = NRC_DATA.get(response.nrc, "Unknown NRC Recieved. There is no record of this NRC in UDS ISO 14229 Document")[1]
+        else:
+            res = [0x7F, 0x19, 0x10]
+            response.resp = res.copy()
+            response.type = "Negative Response"
+            response.nrc = 0x10
+            response.nrcname = NRC_DATA.get(response.nrc, "Unknown NRC")[0]
+            response.nrcdesc = NRC_DATA.get(response.nrc, "Unknown NRC Recieved. There is no record of this NRC in UDS ISO 14229 Document")[1]
 
     elif(request[0] == 0x3d): #dummy implementation for service 3d
         if(request[1] == 0x22):

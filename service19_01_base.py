@@ -152,3 +152,13 @@ class Ui_Form_SID_19_01(object):
         self.subFunction_Name.setText(_translate("Form_SID_19_01", "Report Number Of DTC By Status Mask 0X01 "))
         self.DTCStatusMask_label.setText(_translate("Form_SID_19_01", "DTC Status Mask:"))
         self.label_status.setText(_translate("Form_SID_19_01", "No Status"))
+
+
+if __name__ == "__main__":
+    import sys
+    app = QtWidgets.QApplication(sys.argv)
+    Form_SID_19_01 = QtWidgets.QWidget()
+    ui = Ui_Form_SID_19_01()
+    ui.setupUi(Form_SID_19_01)
+    Form_SID_19_01.show()
+    sys.exit(app.exec_())

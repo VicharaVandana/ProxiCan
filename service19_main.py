@@ -1,625 +1,159 @@
-from environment import *
-
-if RUNNING_ON_RASPBERRYPI == False:
-    import uds_dummy as uds     #will have to be replaced with actual uds file while testing on board
-else:
-    import uds
-    import can
-from service19_base import Ui_Form_SID_19
+from service19_base import Ui_Form_Subfun_SID19
 from PyQt5 import QtCore, QtGui, QtWidgets
-from PyQt5.QtWidgets import QMessageBox
-import service19_functions as fun
-from bs4 import BeautifulSoup
-import os
-import datetime
-import general as gen
-#import uds_dummy as uds     #will have to be replaced with actual uds file while testing on board
+from PyQt5.QtWidgets import QMainWindow
+import json
+
+
 import configure as conf
-import os
+import general as gen
 
+#Import service modules
+import service19_01_main as RNODTCBSM
+import mainwindow as mw
 
+Is_CanConnected = False
 
-class Ui_Service19(Ui_Form_SID_19):
+#Create a child class of the mainwindow
+class Ui_Service19 (Ui_Form_Subfun_SID19, QtWidgets.QMainWindow, QtWidgets.QWidget):
     def redesign_ui(self):
-        pass    
+        self.label_status.setWordWrap(True)
+        self.subfunction19button = []
+        #Create the list of all uds services buttons
+        self.subfunction19button.append(self.pushButton_01)
+        self.subfunction19button.append(self.pushButton_02)
+        self.subfunction19button.append(self.pushButton_03)
+        self.subfunction19button.append(self.pushButton_04)
+        self.subfunction19button.append(self.pushButton_05)
+        self.subfunction19button.append(self.pushButton_06)
+        self.subfunction19button.append(self.pushButton_07)
+        self.subfunction19button.append(self.pushButton_08)
+        self.subfunction19button.append(self.pushButton_09)
+        self.subfunction19button.append(self.pushButton_0A)
+        self.subfunction19button.append(self.pushButton_0B)
+        self.subfunction19button.append(self.pushButton_0C)
+        self.subfunction19button.append(self.pushButton_0D)
+        self.subfunction19button.append(self.pushButton_0E)
+        self.subfunction19button.append(self.pushButton_0F)
+        self.subfunction19button.append(self.pushButton_10)
+        self.subfunction19button.append(self.pushButton_11)
+        self.subfunction19button.append(self.pushButton_12)
+        self.subfunction19button.append(self.pushButton_13)
+        self.subfunction19button.append(self.pushButton_14)
+        self.subfunction19button.append(self.pushButton_15)
+        self.subfunction19button.append(self.pushButton_16)
+        self.subfunction19button.append(self.pushButton_17)
+        self.subfunction19button.append(self.pushButton_18)
+        self.subfunction19button.append(self.pushButton_19)
+        self.subfunction19button.append(self.pushButton_42)
+        self.subfunction19button.append(self.pushButton_55)
+
+        #self.udsbuttons.append(self.pushButton_)
+        #self.udsbuttons.clear()
         
-    def connectFunctions(self):
-        self.pushButton_Send19Req.clicked.connect(self.send19service)
-        self.pushButton_reset.clicked.connect(self.clearform)
-        self.pushButton_appendLog.clicked.connect(self.addlog)
-        self.pushButton_clearLog.clicked.connect(self.clearlog)
+
+        # Call the method to update button visibility based on JSON
+        self.load_json()
+        self.update_button_visibility() 
+        self.rearrange_buttons()
+        
+        
+
+    def load_json(self):
+        """Load the visibility settings from the JSON file"""
+        try:
+            with open('windowsettings.json', 'r') as file:
+                data = json.load(file)
+                self.subfunction19_visibility = data["Service_19_Subfunctions_Visibility"]
+        except FileNotFoundError:
+            print("Error: windowssettings.json file not found.")
+            sys.exit(1)
+        
         return
     
+    def update_button_visibility(self):
+        """Show or hide buttons based on JSON values"""
+        self.visible_buttons = []
+        for button_name, visibility in self.subfunction19_visibility.items():
+            # Create the dynamic button name, e.g., 'pushButton_22'
+            button_object_name = f"pushButton_{button_name}"
+
+            # Use getattr to dynamically access the button object
+            button_object = getattr(self, button_object_name, None)
+
+            if button_object:
+                # Show or hide the button based on the visibility value
+                if visibility:
+                    button_object.show()
+                    button_object.setVisible(True)
+                    self.visible_buttons.append(button_object)
+                else:
+                    button_object.hide()
+                    button_object.setVisible(False)
+        return
+    
+    
+    def rearrange_buttons(self):
+        """ Rearrange visible buttons within the existing grid layout """
+        # Rearrange the buttons in the same grid positions (row, col)
+        for idx, button in enumerate(self.visible_buttons):
+            row = idx // 3  # Keeping 3 buttons per row
+            col = idx % 3
+            self.gridLayout.addWidget(button, row, col)
+
+        # Ensure the layout is updated
+        self.gridLayout.update()
+        return
+    
+ 
+    
+    def connectFunctions(self):
+        #Service19 subfunction Buttons
+        self.pushButton_01.clicked.connect(self.openservice19_01)
+        return
+    
+
+
+    def openservice19_01(self):
+        if(Is_CanConnected == False):
+            self.window19_01 = QMainWindow()
+            self.ui19_01 = RNODTCBSM.Ui_Service19_01()
+            self.ui19_01.setupUi(self.window19_01)
+            self.ui19_01.redesign_ui()
+            self.ui19_01.connectFunctions()
+            self.window19_01.show()  # Display the new window
+            self.update_status(f"19 01 Button clicked. Report Number Of DTC By Status Mask subfunction window opened")
+            gen.log_action("Button Click", "Service 19 01 Window Opened")
+        else:
+            self.update_status(f"19 01 Button clicked. But unable to open the service window as CAN is not connected")
+        return
+    
+
     def update_status(self, msg):
         # Create a QMessageBox instance
-        self.label_status.setText(msg)
+        self.label_status.setText(f'''<html><head></head><body>
+            <p>{msg}.</p>
+            </body></html>''')
         return
-    
-    def clearform(self):
-        #Clears all the fields for entering new service request
-        self.logentrystring = ""
-        self.label_ResType.setText("No Response")
-        self.textBrowser_Resp.clear()
-        self.Subfunction.setCurrentIndex(0)        
-        self.checkBox_suppressposmsg.setChecked(False)
-        self.update_status("Userform cleared successfully")
-        gen.log_action("Button Click", "Clear Form for Service 19 window clicked. Userfields cleared successfully.")
-        return
-    
-    def addlog(self):
-        #Add the uds transaction to the log file
-        gen.log_udsreport(self.logentrystring)
-        self.logentrystring = ""    #Clear the log entry so that if multiple tiomes the button is clicked continuously only one entry is made.
-        self.update_status(f"Log file appended with the current UDS transaction (./reports/uds_log_report.txt)")
-        gen.log_action("Button Click", "Add to Log button for Service 19 window clicked.")
-        return
-    
-    def clearlog(self):
-        gen.clearudslogfile()
-        self.update_status(f"Log file cleared (./reports/uds_log_report.txt)")
-        gen.log_action("Button Click", "Clear Log button for Service 28 window clicked.")
-        return
-    
-    def send19service(self):
-        index_subfunction_type = self.Subfunction.currentIndex()
-        subfun_type = fun.get_subfunction(index_subfunction_type)
-        subfun_type_name=fun.getsubfunction_name(subfun_type)
-        sprmib_flg = self.checkBox_suppressposmsg.isChecked()
 
-        #Send the service request and get the response 
-        if(sprmib_flg == False):
-            IsPosResExpected = True 
-        else:
-            IsPosResExpected = False 
 
-        ###############################################################
-        if(index_subfunction_type==0 or index_subfunction_type==1):
-        
-            DTCStatusMask_string = self.lineEdit_DTCStatusMask.text().strip().replace(" ","").replace(" ","").replace(" ","")
-        #gen.log_action("Button Click", f"Send 19 request button clicked with DTC[{DTCStatusMask_string}].")
 
 
-            if(False == gen.check_1Bytehexadecimal(DTCStatusMask_string)):
-                #Show messagebox with enter valid DTC status mask value
-                self.update_status("Please enter a valid DTC Status Mask. It must be 1 byte in hexadecimal format")
-                gen.log_action("UDS Request Fail", "19 Request not happened due to invalid DTC Status Mask format")
-                return 
 
-            self.update_status("DTC Status Mask is validated.")
-            service_request = fun.form_reqmsg4srv19_subfun_1_2_0F_11_12_13(subfun_type,DTCStatusMask_string,sprmib_flg)
-            print(f"the service request is : {service_request}")
 
-
-            #Send the service request        
-            response = uds.sendRequest(service_request, True)
-            
-            self.update_status("Service 19 request is sent")
-            gen.log_action("UDS Request Success", f"19 Request Successfully sent : {' '.join(hex(number) for number in service_request)}")
-            ##############################################################
-                
-            response = uds.sendRequest(service_request, IsPosResExpected)
-            
-            self.update_status("Service 19 request is sent")
-            gen.log_action("UDS Request Success", f"19 Request Successfully sent : {' '.join(hex(number) for number in service_request)}")
-
-            if(response.type == "Positive Response"):
-
-
-                response_html = f'''<h4><U>Positive Response Recieved</U></h4>
-        <p><strong>Service ID:</strong> <I>{hex(response.resp[0]-0x40)}</I></p>
-        <p><strong>Subfunction Type: Type:</strong> <I>{hex(response.resp[1])} {subfun_type_name} </I></p>
-        <p><strong>Suppress Positive Message Request:</strong> <I>{sprmib_flg}</I></p>
-        <p><strong>Info:</strong> <I>Service 19 is successfully sent with subfunction {subfun_type_name}</I></p>       
-
-    '''
-
-            elif(response.type == "Negative Response"):
-                response_html = f'''<h4><U>Negative Response Recieved</U></h4>    
-        <p><strong>Suppress Positive Message Request:</strong> <I>{sprmib_flg}</I></p>
-        <p><strong>NRC Code:</strong> <I>{hex(response.nrc)}</I></p>
-        <p><strong>NRC Name:</strong> <I>{response.nrcname}</I></p>
-        <p><strong>NRC Desc:</strong> <I>{response.nrcdesc}</I></p>
-    '''
-                
-            elif(response.type == "Unknown Response Type"):
-                response_html = f'''<h4><U>Unidentified Response Recieved</U></h4>
-        <p><strong>Response Bytes:</strong> <I>{" ".join(hex(number) for number in response.resp)}</I></p>
-    '''
-            elif(response.type == "No Response"):
-                response_html = f'''<h4><U>No Response Recieved</U></h4>    
-        <p><strong>Suppress Positive Message Request:</strong> <I>{sprmib_flg}</I></p>
-        <p><strong>Response Bytes:</strong> <I>{" ".join(hex(number) for number in response.resp)}</I></p>
-    '''
-            else:
-                response_html = f'''<h4><U>ERROR OCCURED</U></h4>'''
-
-            
-            #Update the response data on userform
-            self.label_ResType.setText(response.type)
-            self.textBrowser_Resp.setHtml(response_html)
-
-            current_user = os.getlogin()
-            currenttime = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-            soup = BeautifulSoup(response_html, 'html.parser')
-            response_text = soup.get_text()
-
-            self.logentrystring = f'''<---- LOG ENTRY [{current_user} - {currenttime}] ---->
-    UDS Request :   [{" ".join(hex(number) for number in service_request)}]
-    Explaination:   Read DTC information service 19 requested for subfunction {subfun_type_name} with DTC Status Mark {DTCStatusMask_string}
-    UDS Response:   [{" ".join(hex(number) for number in response.resp)}]
-    Explaination:   {response_text}<------------------- LOG ENTRY END ------------------->
-
-    '''
-            
-        if(index_subfunction_type==3):
-        
-            DTCMaskRecord_string = self.lineEdit_DTCMaskRecord.text().strip().replace(" ","").replace(" ","").replace(" ","")
-            DTCSExtDataRecordNumber_string=self.lineEdit_ExtDataRecordNumber.text().strip().replace(" ","").replace(" ","").replace(" ","")
-        #gen.log_action("Button Click", f"Send 19 request button clicked with DTC[{DTCStatusMask_string}].")
-
-
-            if(False == gen.check_3Bytehexadecimal(DTCMaskRecord_string)):
-                #Show messagebox with enter valid DTC status mask value
-                self.update_status("Please enter a valid DTC Mask Record. It must be 3 byte in hexadecimal format")
-                gen.log_action("UDS Request Fail", "19 Request not happened due to invalid DTC Mask Record format")
-                return 
-            self.update_status("DTC Mask Record is validated.")
-            
-            if(False == gen.check_1Bytehexadecimal(DTCSExtDataRecordNumber_string)):
-                #Show messagebox with enter valid DTC status mask value
-                self.update_status("Please enter a valid DTC External Data Record Number. It must be 1 byte in hexadecimal format")
-                gen.log_action("UDS Request Fail", "19 Request not happened due to invalid DTC Snapshot External Data Number format")
-                return 
-
-            self.update_status("DTC External Data Record Number is validated.")
-            service_request = fun.form_reqmsg4srv19_subfun_6_10(subfun_type,DTCMaskRecord_string,DTCSExtDataRecordNumber_string,sprmib_flg)
-            print(f"the service request is : {service_request}")
-
-
-            #Send the service request        
-            response = uds.sendRequest(service_request, True)
-            
-            self.update_status("Service 19 request is sent")
-            gen.log_action("UDS Request Success", f"19 Request Successfully sent : {' '.join(hex(number) for number in service_request)}")
-            ##############################################################
-                
-            response = uds.sendRequest(service_request, IsPosResExpected)
-            
-            self.update_status("Service 19 request is sent")
-            gen.log_action("UDS Request Success", f"19 Request Successfully sent : {' '.join(hex(number) for number in service_request)}")
-
-            if(response.type == "Positive Response"):
-
-
-                response_html = f'''<h4><U>Positive Response Recieved</U></h4>
-        <p><strong>Service ID:</strong> <I>{hex(response.resp[0]-0x40)}</I></p>
-        <p><strong>Subfunction Type: Type:</strong> <I>{hex(response.resp[1])} {subfun_type_name} with DTC Mask Record {DTCMaskRecord_string} and DTC Exteranal Data Record Number{DTCSExtDataRecordNumber_string}</I></p>
-        <p><strong>Suppress Positive Message Request:</strong> <I>{sprmib_flg}</I></p>
-        <p><strong>Info:</strong> <I>Service 19 is successfully sent with subfunction {subfun_type_name}</I></p>       
-    '''
-
-            elif(response.type == "Negative Response"):
-                response_html = f'''<h4><U>Negative Response Recieved</U></h4>    
-        <p><strong>Suppress Positive Message Request:</strong> <I>{sprmib_flg}</I></p>
-        <p><strong>NRC Code:</strong> <I>{hex(response.nrc)}</I></p>
-        <p><strong>NRC Name:</strong> <I>{response.nrcname}</I></p>
-        <p><strong>NRC Desc:</strong> <I>{response.nrcdesc}</I></p>
-    '''
-                
-            elif(response.type == "Unknown Response Type"):
-                response_html = f'''<h4><U>Unidentified Response Recieved</U></h4>
-        <p><strong>Response Bytes:</strong> <I>{" ".join(hex(number) for number in response.resp)}</I></p>
-    '''
-            elif(response.type == "No Response"):
-                response_html = f'''<h4><U>No Response Recieved</U></h4>    
-        <p><strong>Suppress Positive Message Request:</strong> <I>{sprmib_flg}</I></p>
-        <p><strong>Response Bytes:</strong> <I>{" ".join(hex(number) for number in response.resp)}</I></p>
-    '''
-            else:
-                response_html = f'''<h4><U>ERROR OCCURED</U></h4>'''
-
-            
-            #Update the response data on userform
-            self.label_ResType.setText(response.type)
-            self.textBrowser_Resp.setHtml(response_html)
-
-            current_user = os.getlogin()
-            currenttime = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-            soup = BeautifulSoup(response_html, 'html.parser')
-            response_text = soup.get_text()
-
-            self.logentrystring = f'''<---- LOG ENTRY [{current_user} - {currenttime}] ---->
-    UDS Request :   [{" ".join(hex(number) for number in service_request)}]
-    Explaination:   Read DTC information service 19 requested for subfunction {subfun_type_name} with DTC Mark Record {DTCMaskRecord_string} and DTC Snapcshot Record Number of {DTCSExtDataRecordNumber_string}
-    UDS Response:   [{" ".join(hex(number) for number in response.resp)}]
-    Explaination:   {response_text}<------------------- LOG ENTRY END ------------------->
-
-    '''
-
-        elif(index_subfunction_type==2):
-        
-            DTCMaskRecord_string = self.lineEdit_DTCMaskRecord.text().strip().replace(" ","").replace(" ","").replace(" ","")
-            DTCSnapshotRecordNumber_string=self.lineEdit_DTCSnapshotRecordNumber.text().strip().replace(" ","").replace(" ","").replace(" ","")
-        #gen.log_action("Button Click", f"Send 19 request button clicked with DTC[{DTCStatusMask_string}].")
-
-
-            if(False == gen.check_3Bytehexadecimal(DTCMaskRecord_string)):
-                #Show messagebox with enter valid DTC status mask value
-                self.update_status("Please enter a valid DTC Mask Record. It must be 3 byte in hexadecimal format")
-                gen.log_action("UDS Request Fail", "19 Request not happened due to invalid DTC Mask Record format")
-                return 
-            self.update_status("DTC Mask Record is validated.")
-            
-            if(False == gen.check_1Bytehexadecimal(DTCSnapshotRecordNumber_string)):
-                #Show messagebox with enter valid DTC status mask value
-                self.update_status("Please enter a valid DTC Snapshot Record Number. It must be 1 byte in hexadecimal format")
-                gen.log_action("UDS Request Fail", "19 Request not happened due to invalid DTC Snapshot Record Number format")
-                return 
-
-            self.update_status("DTC Snapshot Record Number is validated.")
-            service_request = fun.form_reqmsg4srv19_subfun_3_4(subfun_type,DTCMaskRecord_string,DTCSnapshotRecordNumber_string,sprmib_flg)
-            print(f"the service request is : {service_request}")
-
-
-            #Send the service request        
-            response = uds.sendRequest(service_request, True)
-            
-            self.update_status("Service 19 request is sent")
-            gen.log_action("UDS Request Success", f"19 Request Successfully sent : {' '.join(hex(number) for number in service_request)}")
-            ##############################################################
-                
-            response = uds.sendRequest(service_request, IsPosResExpected)
-            
-            self.update_status("Service 19 request is sent")
-            gen.log_action("UDS Request Success", f"19 Request Successfully sent : {' '.join(hex(number) for number in service_request)}")
-
-            if(response.type == "Positive Response"):
-
-
-                response_html = f'''<h4><U>Positive Response Recieved</U></h4>
-        <p><strong>Service ID:</strong> <I>{hex(response.resp[0]-0x40)}</I></p>
-        <p><strong>Subfunction Type: Type:</strong> <I>{hex(response.resp[1])} {subfun_type_name} </I></p>
-        <p><strong>Suppress Positive Message Request:</strong> <I>{sprmib_flg}</I></p>
-        <p><strong>Info:</strong> <I>Service 19 is successfully sent with subfunction {subfun_type_name}</I></p>       
-    '''
-
-            elif(response.type == "Negative Response"):
-                response_html = f'''<h4><U>Negative Response Recieved</U></h4>    
-        <p><strong>Suppress Positive Message Request:</strong> <I>{sprmib_flg}</I></p>
-        <p><strong>NRC Code:</strong> <I>{hex(response.nrc)}</I></p>
-        <p><strong>NRC Name:</strong> <I>{response.nrcname}</I></p>
-        <p><strong>NRC Desc:</strong> <I>{response.nrcdesc}</I></p>
-    '''
-                
-            elif(response.type == "Unknown Response Type"):
-                response_html = f'''<h4><U>Unidentified Response Recieved</U></h4>
-        <p><strong>Response Bytes:</strong> <I>{" ".join(hex(number) for number in response.resp)}</I></p>
-    '''
-            elif(response.type == "No Response"):
-                response_html = f'''<h4><U>No Response Recieved</U></h4>    
-        <p><strong>Suppress Positive Message Request:</strong> <I>{sprmib_flg}</I></p>
-        <p><strong>Response Bytes:</strong> <I>{" ".join(hex(number) for number in response.resp)}</I></p>
-    '''
-            else:
-                response_html = f'''<h4><U>ERROR OCCURED</U></h4>'''
-
-            
-            #Update the response data on userform
-            self.label_ResType.setText(response.type)
-            self.textBrowser_Resp.setHtml(response_html)
-
-            current_user = os.getlogin()
-            currenttime = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-            soup = BeautifulSoup(response_html, 'html.parser')
-            response_text = soup.get_text()
-
-            self.logentrystring = f'''<---- LOG ENTRY [{current_user} - {currenttime}] ---->
-    UDS Request :   [{" ".join(hex(number) for number in service_request)}]
-    Explaination:   Read DTC information service 19 requested for subfunction {subfun_type_name} with DTC Mark Record {DTCMaskRecord_string} and DTC Snapcshot Record Number of {DTCSnapshotRecordNumber_string}
-    UDS Response:   [{" ".join(hex(number) for number in response.resp)}]
-    Explaination:   {response_text}<------------------- LOG ENTRY END ------------------->
-
-    '''
-
-        elif(index_subfunction_type==4 or index_subfunction_type==5):
-        
-            DTCSeverityMaskRecord_string = self.lineEdit_SeverityMaskRecord.text().strip().replace(" ","").replace(" ","").replace(" ","")
-        #gen.log_action("Button Click", f"Send 19 request button clicked with DTC[{DTCSeverityMaskRecord_string}].")
-
-
-            if(False == gen.check_2Bytehexadecimal(DTCSeverityMaskRecord_string)):
-                #Show messagebox with enter valid DTC status mask value
-                self.update_status("Please enter a valid DTC Severity Mask Record. It must be 2 byte in hexadecimal format")
-                gen.log_action("UDS Request Fail", "19 Request not happened due to invalid DTC Severity Mask Record format")
-                return 
-            self.update_status("DTC Severity Mask Record is validated.")
-
-            service_request = fun.form_reqmsg4srv19_subfun_7_8(subfun_type,DTCSeverityMaskRecord_string,sprmib_flg)
-            print(f"the service request is : {service_request}")
-
-
-            #Send the service request        
-            response = uds.sendRequest(service_request, True)
-            
-            self.update_status("Service 19 request is sent")
-            gen.log_action("UDS Request Success", f"19 Request Successfully sent : {' '.join(hex(number) for number in service_request)}")
-            ##############################################################
-                
-            response = uds.sendRequest(service_request, IsPosResExpected)
-            
-            self.update_status("Service 19 request is sent")
-            gen.log_action("UDS Request Success", f"19 Request Successfully sent : {' '.join(hex(number) for number in service_request)}")
-
-            if(response.type == "Positive Response"):
-
-
-                response_html = f'''<h4><U>Positive Response Recieved</U></h4>
-        <p><strong>Service ID:</strong> <I>{hex(response.resp[0]-0x40)}</I></p>
-        <p><strong>Subfunction Type: Type:</strong> <I>{hex(response.resp[1])} {subfun_type_name} with DTC Severity Mask Record {DTCSeverityMaskRecord_string}</I></p>
-        <p><strong>Suppress Positive Message Request:</strong> <I>{sprmib_flg}</I></p>
-        <p><strong>Info:</strong> <I>Service 19 is successfully sent with subfunction {subfun_type_name}</I></p>       
-    '''
-
-            elif(response.type == "Negative Response"):
-                response_html = f'''<h4><U>Negative Response Recieved</U></h4>    
-        <p><strong>Suppress Positive Message Request:</strong> <I>{sprmib_flg}</I></p>
-        <p><strong>NRC Code:</strong> <I>{hex(response.nrc)}</I></p>
-        <p><strong>NRC Name:</strong> <I>{response.nrcname}</I></p>
-        <p><strong>NRC Desc:</strong> <I>{response.nrcdesc}</I></p>
-    '''
-                
-            elif(response.type == "Unknown Response Type"):
-                response_html = f'''<h4><U>Unidentified Response Recieved</U></h4>
-        <p><strong>Response Bytes:</strong> <I>{" ".join(hex(number) for number in response.resp)}</I></p>
-    '''
-            elif(response.type == "No Response"):
-                response_html = f'''<h4><U>No Response Recieved</U></h4>    
-        <p><strong>Suppress Positive Message Request:</strong> <I>{sprmib_flg}</I></p>
-        <p><strong>Response Bytes:</strong> <I>{" ".join(hex(number) for number in response.resp)}</I></p>
-    '''
-            else:
-                response_html = f'''<h4><U>ERROR OCCURED</U></h4>'''
-
-            
-            #Update the response data on userform
-            self.label_ResType.setText(response.type)
-            self.textBrowser_Resp.setHtml(response_html)
-
-            current_user = os.getlogin()
-            currenttime = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-            soup = BeautifulSoup(response_html, 'html.parser')
-            response_text = soup.get_text()
-
-            self.logentrystring = f'''<---- LOG ENTRY [{current_user} - {currenttime}] ---->
-    UDS Request :   [{" ".join(hex(number) for number in service_request)}]
-    Explaination:   Read DTC information service 19 requested for subfunction {subfun_type_name} with DTC Severity Mark Record {DTCSeverityMaskRecord_string} 
-    UDS Response:   [{" ".join(hex(number) for number in response.resp)}]
-    Explaination:   {response_text}<------------------- LOG ENTRY END ------------------->
-
-    '''    
-        
-        elif(index_subfunction_type==6):
-        
-            DTCMaskRecord_string = self.lineEdit_DTCMaskRecord.text().strip().replace(" ","").replace(" ","").replace(" ","")
-        #gen.log_action("Button Click", f"Send 19 request button clicked with DTC[{DTCStatusMask_string}].")
-
-
-            if(False == gen.check_3Bytehexadecimal(DTCMaskRecord_string)):
-                #Show messagebox with enter valid DTC status mask value
-                self.update_status("Please enter a valid DTC Mask Record. It must be 3 byte in hexadecimal format")
-                gen.log_action("UDS Request Fail", "19 Request not happened due to invalid DTC Mask Record format")
-                return 
-            self.update_status("DTC Mask Record is validated.")
-            
-            service_request = fun.form_reqmsg4srv19_subfun_9(subfun_type,DTCMaskRecord_string,sprmib_flg)
-            print(f"the service request is : {service_request}")
-
-
-            #Send the service request        
-            response = uds.sendRequest(service_request, True)
-            
-            self.update_status("Service 19 request is sent")
-            gen.log_action("UDS Request Success", f"19 Request Successfully sent : {' '.join(hex(number) for number in service_request)}")
-            ##############################################################
-                
-            response = uds.sendRequest(service_request, IsPosResExpected)
-            
-            self.update_status("Service 19 request is sent")
-            gen.log_action("UDS Request Success", f"19 Request Successfully sent : {' '.join(hex(number) for number in service_request)}")
-
-            if(response.type == "Positive Response"):
-
-
-                response_html = f'''<h4><U>Positive Response Recieved</U></h4>
-        <p><strong>Service ID:</strong> <I>{hex(response.resp[0]-0x40)}</I></p>
-        <p><strong>Subfunction Type: Type:</strong> <I>{hex(response.resp[1])} {subfun_type_name} and DTC Status mask {DTCMaskRecord_string}</I></p>
-        <p><strong>Suppress Positive Message Request:</strong> <I>{sprmib_flg}</I></p>
-        <p><strong>Info:</strong> <I>Service 19 is successfully sent with subfunction {subfun_type_name}</I></p> 
-    '''
-
-            elif(response.type == "Negative Response"):
-                response_html = f'''<h4><U>Negative Response Recieved</U></h4>    
-        <p><strong>Suppress Positive Message Request:</strong> <I>{sprmib_flg}</I></p>
-        <p><strong>NRC Code:</strong> <I>{hex(response.nrc)}</I></p>
-        <p><strong>NRC Name:</strong> <I>{response.nrcname}</I></p>
-        <p><strong>NRC Desc:</strong> <I>{response.nrcdesc}</I></p>
-    '''
-                
-            elif(response.type == "Unknown Response Type"):
-                response_html = f'''<h4><U>Unidentified Response Recieved</U></h4>
-        <p><strong>Response Bytes:</strong> <I>{" ".join(hex(number) for number in response.resp)}</I></p>
-    '''
-            elif(response.type == "No Response"):
-                response_html = f'''<h4><U>No Response Recieved</U></h4>    
-        <p><strong>Suppress Positive Message Request:</strong> <I>{sprmib_flg}</I></p>
-        <p><strong>Response Bytes:</strong> <I>{" ".join(hex(number) for number in response.resp)}</I></p>
-    '''
-            else:
-                response_html = f'''<h4><U>ERROR OCCURED</U></h4>'''
-
-            
-            #Update the response data on userform
-            self.label_ResType.setText(response.type)
-            self.textBrowser_Resp.setHtml(response_html)
-
-            current_user = os.getlogin()
-            currenttime = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-            soup = BeautifulSoup(response_html, 'html.parser')
-            response_text = soup.get_text()
-
-            self.logentrystring = f'''<---- LOG ENTRY [{current_user} - {currenttime}] ---->
-    UDS Request :   [{" ".join(hex(number) for number in service_request)}]
-    Explaination:   Read DTC information service 19 requested for subfunction {subfun_type_name} with DTC Mark Record {DTCMaskRecord_string} 
-    UDS Response:   [{" ".join(hex(number) for number in response.resp)}]
-    Explaination:   {response_text}<------------------- LOG ENTRY END ------------------->
-
-    '''
-        
-        elif(index_subfunction_type==7 or index_subfunction_type==8 or index_subfunction_type==9):
-            print("HERE")
-            service_request = fun.form_reqmsg4srv19_subfun_A_B_C_D_E_14_15(subfun_type,sprmib_flg)
-            print(f"the service request is : {service_request}")
-
-            #Send the service request        
-            response = uds.sendRequest(service_request, True)
-            
-            self.update_status("Service 19 request is sent")
-            gen.log_action("UDS Request Success", f"19 Request Successfully sent : {' '.join(hex(number) for number in service_request)}")
-            ##############################################################
-                
-            response = uds.sendRequest(service_request, IsPosResExpected)
-            
-            self.update_status("Service 19 request is sent")
-            gen.log_action("UDS Request Success", f"19 Request Successfully sent : {' '.join(hex(number) for number in service_request)}")
-
-            if(response.type == "Positive Response"):
-                
-
-                response_html = f'''<h4><U>Positive Response Recieved</U></h4>
-        <p><strong>Service ID:</strong> <I>{hex(response.resp[0]-0x40)}</I></p>
-        <p><strong>Control Type:</strong> <I>{hex(response.resp[1])} {subfun_type_name}</I></p>
-        <p><strong>Suppress Positive Message Request:</strong> <I>{sprmib_flg}</I></p>
-        <p><strong>Info:</strong> <I>Service 19 is successfully sent with subfunction {subfun_type_name}</I></p> 
-    '''
-
-            elif(response.type == "Negative Response"):
-                response_html = f'''<h4><U>Negative Response Recieved</U></h4>    
-        <p><strong>Suppress Positive Message Request:</strong> <I>{sprmib_flg}</I></p>
-        <p><strong>NRC Code:</strong> <I>{hex(response.nrc)}</I></p>
-        <p><strong>NRC Name:</strong> <I>{response.nrcname}</I></p>
-        <p><strong>NRC Desc:</strong> <I>{response.nrcdesc}</I></p>
-    '''
-                
-            elif(response.type == "Unknown Response Type"):
-                response_html = f'''<h4><U>Unidentified Response Recieved</U></h4>
-        <p><strong>Response Bytes:</strong> <I>{" ".join(hex(number) for number in response.resp)}</I></p>
-    '''
-            elif(response.type == "No Response"):
-                response_html = f'''<h4><U>No Response Recieved</U></h4>    
-        <p><strong>Suppress Positive Message Request:</strong> <I>{sprmib_flg}</I></p>
-        <p><strong>Response Bytes:</strong> <I>{" ".join(hex(number) for number in response.resp)}</I></p>
-    '''
-            else:
-                response_html = f'''<h4><U>ERROR OCCURED</U></h4>'''
-
-            
-            #Update the response data on userform
-            self.label_ResType.setText(response.type)
-            self.textBrowser_Resp.setHtml(response_html)
-
-            current_user = os.getlogin()
-            currenttime = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-            soup = BeautifulSoup(response_html, 'html.parser')
-            response_text = soup.get_text()
-
-            self.logentrystring = f'''<---- LOG ENTRY [{current_user} - {currenttime}] ---->
-    UDS Request :   [{" ".join(hex(number) for number in service_request)}]
-    Explaination:   Read DTC information Requested for subfunction {subfun_type_name} 
-    UDS Response:   [{" ".join(hex(number) for number in response.resp)}]
-    Explaination:   {response_text}<------------------- LOG ENTRY END ------------------->
-
-    '''
-#         elif(index_subfunction_type==10):
-#             service_request = fun.form_reqmsg4srv19_subfun_clear(sprmib_flg)
-#             print(f"the service request is : {service_request}")
-
-#             #Send the service request        
-#             response = uds.sendRequest(service_request, True)
-            
-#             self.update_status("Service 19 request is sent")
-#             gen.log_action("UDS Request Success", f"19 Request Successfully sent : {' '.join(hex(number) for number in service_request)}")
-#             ##############################################################
-                
-#             response = uds.sendRequest(service_request, IsPosResExpected)
-            
-#             self.update_status("Service 19 request is sent")
-#             gen.log_action("UDS Request Success", f"19 Request Successfully sent : {' '.join(hex(number) for number in service_request)}")
-
-#             if(response.type == "Positive Response"):
-                
-
-#                 response_html = f'''<h4><U>Positive Response Recieved</U></h4>
-#         <p><strong>Service ID:</strong> <I>{hex(response.resp[0]-0x40)}</I></p>
-#         <p><strong>Control Type:</strong> <I>{hex(response.resp[1])} {subfun_type_name}</I></p>
-#         <p><strong>Suppress Positive Message Request:</strong> <I>{sprmib_flg}</I></p>
-#         <p><strong>Info:</strong> <I>Service 19 is successfully sent with subfunction {subfun_type_name}</I></p> 
-#     '''
-
-#             elif(response.type == "Negative Response"):
-#                 response_html = f'''<h4><U>Negative Response Recieved</U></h4>    
-#         <p><strong>Suppress Positive Message Request:</strong> <I>{sprmib_flg}</I></p>
-#         <p><strong>NRC Code:</strong> <I>{hex(response.nrc)}</I></p>
-#         <p><strong>NRC Name:</strong> <I>{response.nrcname}</I></p>
-#         <p><strong>NRC Desc:</strong> <I>{response.nrcdesc}</I></p>
-#     '''
-                
-#             elif(response.type == "Unknown Response Type"):
-#                 response_html = f'''<h4><U>Unidentified Response Recieved</U></h4>
-#         <p><strong>Response Bytes:</strong> <I>{" ".join(hex(number) for number in response.resp)}</I></p>
-#     '''
-#             elif(response.type == "No Response"):
-#                 response_html = f'''<h4><U>No Response Recieved</U></h4>    
-#         <p><strong>Suppress Positive Message Request:</strong> <I>{sprmib_flg}</I></p>
-#         <p><strong>Response Bytes:</strong> <I>{" ".join(hex(number) for number in response.resp)}</I></p>
-#     '''
-#             else:
-#                 response_html = f'''<h4><U>ERROR OCCURED</U></h4>'''
-
-            
-#             #Update the response data on userform
-#             self.label_ResType.setText(response.type)
-#             self.textBrowser_Resp.setHtml(response_html)
-
-#             current_user = os.getlogin()
-#             currenttime = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-#             soup = BeautifulSoup(response_html, 'html.parser')
-#             response_text = soup.get_text()
-
-#             self.logentrystring = f'''<---- LOG ENTRY [{current_user} - {currenttime}] ---->
-#     UDS Request :   [{" ".join(hex(number) for number in service_request)}]
-#     Explaination:   Read DTC information Requested for subfunction {subfun_type_name} 
-#     UDS Response:   [{" ".join(hex(number) for number in response.resp)}]
-#     Explaination:   {response_text}<------------------- LOG ENTRY END ------------------->
-            
-# '''
 
 
 if __name__ == "__main__":
     import sys
-    #current_user = os.getlogin()
-    #currenttime = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-    #print(f"<---- LOG ENTRY [{current_user} - {currenttime}] ---->")
     app = QtWidgets.QApplication(sys.argv)
-    Form_SID19 = QtWidgets.QWidget()
+    MainWindow19 = QtWidgets.QMainWindow()
     ui = Ui_Service19()
-    ui.setupUi(Form_SID19)
+    ui.setupUi(MainWindow19)
     ui.redesign_ui()
     ui.connectFunctions()
-    #Initializing the CAN
-    #os.system(f'sudo ip link set {conf.can_channel} up type can bitrate {conf.baudrate} dbitrate {conf.datarate} restart-ms 1000 berr-reporting on fd on')
+    #Clearing the log files
+    gen.cleartp_log()
+    gen.clearcantrafficlogfile()
+    gen.clearActionfile()
 
-    #conf.tx = can.interface.Bus(channel=conf.can_channel, bustype='socketcan', fd=True)
-    #conf.rx = can.interface.Bus(channel=conf.can_channel, bustype='socketcan', fd=True)
-
-    Form_SID19.show()
+    MainWindow19.show()
     sys.exit(app.exec_())

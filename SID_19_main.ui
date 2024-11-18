@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Form_SID_19</class>
- <widget class="QDialog" name="Form_SID_19">
+ <class>Form_Subfun_SID19</class>
+ <widget class="QDialog" name="Form_Subfun_SID19">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
     <width>1363</width>
-    <height>682</height>
+    <height>759</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -442,6 +442,30 @@ color: rgb(255, 50, 14);</string>
    </property>
    <property name="text">
     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt; font-weight:600; text-decoration: underline; color:#0000ff;&quot;&gt;Select the Sub-function for Service 19 to be Requested&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_status">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>660</y>
+     <width>1321</width>
+     <height>81</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(255, 255, 127);
+color: rgb(85, 0, 0);
+border-color: rgb(0, 0, 255);</string>
+   </property>
+   <property name="text">
+    <string>No Status</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="wordWrap">
+    <bool>true</bool>
    </property>
   </widget>
  </widget>

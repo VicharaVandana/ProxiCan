@@ -1,5 +1,43 @@
 import re
+
+def calculate_dtc_status_mask(bit0, bit1, bit2, bit3, bit4, bit5, bit6, bit7):
+    # Create a binary string based on the checkbox states
+    bits = [
+        int(bit0.isChecked()),
+        int(bit1.isChecked()),
+        int(bit2.isChecked()),
+        int(bit3.isChecked()),
+        int(bit4.isChecked()),
+        int(bit5.isChecked()),
+        int(bit6.isChecked()),
+        int(bit7.isChecked())
+    ]
     
+    # Combine bits into a binary number, with Bit 7 as the MSB and Bit 0 as the LSB
+    binary_string = ''.join(map(str, bits[::-1]))  # Reverse the order for correct bit placement
+    dtc_status_mask_decimal = int(binary_string, 2)
+    #dtc_status_mask_hex = f"{dtc_status_mask_decimal:02X}"
+
+    # Convert the binary string to a hexadecimal value
+    #dtc_status_mask_hex = hex(int(binary_string, 2)).upper()
+    
+    # Return the hexadecimal result
+    return dtc_status_mask_decimal
+
+def getDTCFormatIdentifiername(FID):
+     if(FID == "0x0"):
+          return("SAE_J2012-DA_DTCFormat_00 ")
+     elif(FID =="0x1") :
+          return("ISO_14229-1_DTCFormat ")
+     elif(FID == "0x2"):
+          return("SAE_J1939-73_DTCFormat ") 
+     elif(FID == "0x3"):
+          return("ISO_11992-4_DTCFormat ") 
+     elif(FID == "0x4"):
+          return("SAE_J2012-DA_DTCFormat_04 ") 
+     else:
+          return(" ISO/SAE reserved ")
+
 def form_reqmsg4srv19_subfun_3(DTCMaskRecord,DTCSnapshotRecordNumber,sprmib_flag): 
     sid = int("19", 16)
     subfun=int("3",16)
@@ -124,16 +162,19 @@ def form_reqmsg4srv19_subfun_9(DTCMaskRecord,sprmib_flag):
     print(f"{sid} {subfunction} {DTC_highbyte} {DTC_middlebyte} {DTC_lowbyte}")
     return(req_bytes)
 
-def form_reqmsg4srv19_subfun_1_2_0F_11_12_13(subfun,DTCStatusMask,sprmib_flag): 
+def form_reqmsg4srv19_subfun_1(DTCStatusMask,sprmib_flag): 
     sid = int("19", 16)
+    subfun=int("01",16)
     if (sprmib_flag == True):
          subfunction = int(subfun) | 0x80   #MSB is set if SPRMIB is requested.
     else:
          subfunction = int(subfun)   
-    DTCStatusMask_without_spaces = re.sub(r"\s+", "", DTCStatusMask)
-    DTCStatusMask_hex = int(DTCStatusMask_without_spaces, 16)
-    req_bytes = [sid, subfunction, DTCStatusMask_hex]
-    print(f"{sid} {subfunction} {DTCStatusMask_hex}")
+    #DTCStatusMask_without_spaces = re.sub(r"\s+", "", DTCStatusMask)
+    #DTCStatusMask_hex = int(DTCStatusMask_without_spaces, 16)
+
+    
+    req_bytes = [sid, subfunction, DTCStatusMask]
+    print(f"{sid} {subfunction} {DTCStatusMask}")
     return(req_bytes)
 
 def form_reqmsg4srv19_subfun_A(sprmib_flag): 
@@ -294,7 +335,7 @@ def form_reqmsg4srv19_subfun_55(FunctionalGroupIdentifier, sprmib_flag):
     return(req_bytes)
 
 if __name__ == "__main__":
-     print(form_reqmsg4srv19_subfun_1_2_0F_11_12_13("0A","0A",False))
+     print(form_reqmsg4srv19_subfun_1("0A","0A",False))
      #pass
 
    
