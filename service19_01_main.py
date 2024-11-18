@@ -116,7 +116,7 @@ class Ui_Service19_01(Ui_Form_SID_19_01):
     <p><strong>DTC Status Availability Mask:</strong> <I> {hex(response.resp[2])} </I></p>
     <p><strong>DTC Format Identifier:</strong> <I> {hex(response.resp[3])} {DTCFormatIdentifierName} </I></p>
     <p><strong>DTC Count:</strong> <I> {combined_value} </I></p>
-    <p><strong>Info:</strong> <I> Service 19 sunfunction 01 is successfully executed with DTC Status Mask 0x{status_mask}</I></p>
+    <p><strong>Info:</strong> <I> Service 19 sunfunction 01 is successfully executed with DTC Status Mask {hex(status_mask)}</I></p>
 '''
 
         elif(response.type == "Negative Response"):
