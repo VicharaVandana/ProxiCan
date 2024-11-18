@@ -86,15 +86,6 @@ class Ui_Service19_01(Ui_Form_SID_19_01):
             self.update_status("WAIT!! Tester present (Service 3E) is currently ongoing")
             
         response = uds.sendRequest(service_request, True)
-        DTCFormatIdentifierName = fun.getDTCFormatIdentifiername(hex(response.resp[3]))
-        # Extract the last two bytes
-        msb = response.resp[4]  # Most Significant Byte
-        lsb = response.resp[5]  # Least Significant Byte # Combine them into a single 16-bit value
-        combined_value = (msb << 8) | lsb
- 
-
- 
-
 
         gen.IsAnyServiceActive = False   #Next response recieved , so make False
         
@@ -103,6 +94,12 @@ class Ui_Service19_01(Ui_Form_SID_19_01):
         
 
         if(response.type == "Positive Response"):
+            DTCFormatIdentifierName = fun.getDTCFormatIdentifiername(hex(response.resp[3]))
+            # Extract the last two bytes
+            msb = response.resp[4]  # Most Significant Byte
+            lsb = response.resp[5]  # Least Significant Byte # Combine them into a single 16-bit value
+            combined_value = (msb << 8) | lsb
+ 
             response_html = f'''<h4><U>Positive Response Recieved</U></h4>
     <p><strong>Service ID:</strong> <I>{hex(response.resp[0]-0x40)}</I></p>
     <p><strong>Subfunction Name:</strong> <I>Report Number Of DTC By Status Mask {hex(response.resp[1])} </I></p>
