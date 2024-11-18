@@ -121,7 +121,7 @@ class Ui_Form_SID_19_01(object):
 
     def retranslateUi(self, Form_SID_19_01):
         _translate = QtCore.QCoreApplication.translate
-        Form_SID_19_01.setWindowTitle(_translate("Form_SID_19_01", "Report Number Of DTC By Status Mask "))
+        Form_SID_19_01.setWindowTitle(_translate("Form_SID_19_01", "Report Number Of DTC By Status Mask 0x01 "))
         self.pushButton_appendLog.setText(_translate("Form_SID_19_01", "Add to Log"))
         self.pushButton_clearLog.setText(_translate("Form_SID_19_01", "Clear Log"))
         self.label_4.setText(_translate("Form_SID_19_01", "Response : "))

@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Report Number Of DTC By Status Mask </string>
+   <string>Report Number Of DTC By Status Mask 0x01 </string>
   </property>
   <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
