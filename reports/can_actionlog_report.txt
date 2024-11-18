@@ -1,16 +1,8 @@
-<ass930085>[2024-11-18 12:11:06] Button Click: Connect CAN button clicked
-<ass930085>[2024-11-18 12:11:06] CAN Connection: CAN can0 connected with baudrate 125000 and fdf type CAN
-<ass930085>[2024-11-18 12:11:08] Button Click: Service 19 Window Opened
-<ass930085>[2024-11-18 12:11:10] Button Click: Service 19 01 Window Opened
-<ass930085>[2024-11-18 12:11:14] Button Click: Send 19 01 request button clicked with DTC Status Mask[8]].
-<ass930085>[2024-11-18 12:11:14] UDS Request Success: 19 Request Successfully sent : 0x19 0x1 0x8
-<ass930085>[2024-11-18 12:11:24] Button Click: Service 10 Window Opened
-<ass930085>[2024-11-18 12:11:27] Button Click: Service 85 Window Opened
-<ass930085>[2024-11-18 12:24:33] Button Click: Send 19 01 request button clicked with DTC Status Mask[1]].
-<ass930085>[2024-11-18 12:24:33] UDS Request Success: 19 Request Successfully sent : 0x19 0x1 0x1
-<ass930085>[2024-11-18 12:24:38] Button Click: Send 19 01 request button clicked with DTC Status Mask[33]].
-<ass930085>[2024-11-18 12:24:38] UDS Request Success: 19 Request Successfully sent : 0x19 0x1 0x21
-<ass930085>[2024-11-18 12:24:45] Button Click: Send 19 01 request button clicked with DTC Status Mask[32]].
-<ass930085>[2024-11-18 12:24:45] UDS Request Success: 19 Request Successfully sent : 0x19 0x1 0x20
-<ass930085>[2024-11-18 12:24:47] Button Click: Send 19 01 request button clicked with DTC Status Mask[32]].
-<ass930085>[2024-11-18 12:24:47] UDS Request Success: 19 Request Successfully sent : 0x19 0x1 0x20
+<ass930085>[2024-11-18 12:32:27] Button Click: Connect CAN button clicked
+<ass930085>[2024-11-18 12:32:27] CAN Connection: CAN can0 connected with baudrate 125000 and fdf type CAN
+<ass930085>[2024-11-18 12:32:29] Button Click: Service 19 Window Opened
+<ass930085>[2024-11-18 12:32:31] Button Click: Service 19 01 Window Opened
+<ass930085>[2024-11-18 12:32:34] Button Click: Send 19 01 request button clicked with DTC Status Mask[8]].
+<ass930085>[2024-11-18 12:32:34] UDS Request Success: 19 Request Successfully sent : 0x19 0x1 0x8
+<ass930085>[2024-11-18 12:32:42] Button Click: Disonnect CAN button clicked
+<ass930085>[2024-11-18 12:32:42] CAN Connection: CAN disconnected successfully.

@@ -261,7 +261,7 @@ def sendRequest(request, IsPosResExpected = True):
     
     elif(request[0] == 0x19): #dummy implementation for service 19
         if(request[1] == 0x01 and request[2]==0x08):
-            res = [0x59, 0x01, 0x2F, 0x01, 0x11, 0xff]
+            res = [0x59, 0x01, 0x2F, 0x01, 0x00, 0x01]
             response.resp = res.copy()
             response.type = "Positive Response"
             response.nrc = 0x00
