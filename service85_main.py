@@ -76,9 +76,6 @@ class Ui_Service85(Ui_Form_SID85):
                 gen.log_action("UDS Request Fail", "85 Request not happened due to invalid DTC format")
                 return
         
-    
-        
-
 
         #session should be a valid value and not zero
         if(0 == session):
