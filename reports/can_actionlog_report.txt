@@ -1,51 +1,5 @@
-<ass930085>[2024-11-18 12:32:27] Button Click: Connect CAN button clicked
-<ass930085>[2024-11-18 12:32:27] CAN Connection: CAN can0 connected with baudrate 125000 and fdf type CAN
-<ass930085>[2024-11-18 12:32:29] Button Click: Service 19 Window Opened
-<ass930085>[2024-11-18 12:32:31] Button Click: Service 19 01 Window Opened
-<ass930085>[2024-11-18 12:32:34] Button Click: Send 19 01 request button clicked with DTC Status Mask[8]].
-<ass930085>[2024-11-18 12:32:34] UDS Request Success: 19 Request Successfully sent : 0x19 0x1 0x8
-<ass930085>[2024-11-18 12:32:42] Button Click: Disonnect CAN button clicked
-<ass930085>[2024-11-18 12:32:42] CAN Connection: CAN disconnected successfully.
-<ass930085>[2024-11-18 13:39:40] Button Click: Send 19 01 request button clicked with DTC Status Mask[8]].
-<ass930085>[2024-11-18 13:39:40] UDS Request Success: 19 Request Successfully sent : 0x19 0x1 0x8
-<ass930085>[2024-11-18 13:39:46] Button Click: Send 19 01 request button clicked with DTC Status Mask[8]].
-<ass930085>[2024-11-18 13:39:46] UDS Request Success: 19 Request Successfully sent : 0x19 0x1 0x8
-<ass930085>[2024-11-18 13:39:56] Button Click: Send 19 01 request button clicked with DTC Status Mask[9]].
-<ass930085>[2024-11-18 13:39:56] UDS Request Success: 19 Request Successfully sent : 0x19 0x1 0x9
-<ass930085>[2024-11-18 13:40:14] Button Click: Send 19 01 request button clicked with DTC Status Mask[8]].
-<ass930085>[2024-11-18 13:40:14] UDS Request Success: 19 Request Successfully sent : 0x19 0x1 0x8
-<ass930085>[2024-11-18 13:40:26] Button Click: Send 19 01 request button clicked with DTC Status Mask[0]].
-<ass930085>[2024-11-18 13:40:26] UDS Request Success: 19 Request Successfully sent : 0x19 0x1 0x0
-<ass930085>[2024-11-18 13:40:59] Button Click: Send 19 01 request button clicked with DTC Status Mask[2]].
-<ass930085>[2024-11-18 13:40:59] UDS Request Success: 19 Request Successfully sent : 0x19 0x1 0x2
-<ass930085>[2024-11-18 13:41:05] Button Click: Clear Form for Service 14 window clicked. Userfields cleared successfully.
-<ass930085>[2024-11-18 13:41:08] Button Click: Clear Form for Service 14 window clicked. Userfields cleared successfully.
-<ass930085>[2024-11-18 13:49:10] Button Click: Send 19 01 request button clicked with DTC Status Mask[8]].
-<ass930085>[2024-11-18 13:49:10] UDS Request Success: 19 Request Successfully sent : 0x19 0x1 0x8
-<ass930085>[2024-11-18 13:49:14] Button Click: Clear Form for Service 14 window clicked. Userfields cleared successfully.
-<ass930085>[2024-11-18 13:51:53] UDS Request Fail: 85 Request not happened due to invalid DTC format
-<ass930085>[2024-11-18 13:52:12] UDS Request Fail: 85 Request not happened due to invalid DTC format
-<ass930085>[2024-11-18 13:52:21] UDS Request Success: 85 Request Successfully sent : 0x85 0x1 0xff 0xff 0xff
-<ass930085>[2024-11-18 13:52:26] Button Click: Clear Form for Service 85 window clicked. Userfields cleared successfully.
-<ass930085>[2024-11-18 13:57:26] Button Click: Send 19 01 request button clicked with DTC Status Mask[0]].
-<ass930085>[2024-11-18 13:57:26] UDS Request Success: 19 Request Successfully sent : 0x19 0x1 0x0
-<ass930085>[2024-11-18 13:57:57] Button Click: Send 19 01 request button clicked with DTC Status Mask[0]].
-<ass930085>[2024-11-18 13:57:57] UDS Request Success: 19 Request Successfully sent : 0x19 0x1 0x0
-<ass930085>[2024-11-18 14:02:50] Button Click: Send 19 01 request button clicked with DTC Status Mask[8]].
-<ass930085>[2024-11-18 14:02:50] UDS Request Success: 19 Request Successfully sent : 0x19 0x1 0x8
-<ass930085>[2024-11-18 14:02:56] Button Click: Send 19 01 request button clicked with DTC Status Mask[10]].
-<ass930085>[2024-11-18 14:02:56] UDS Request Success: 19 Request Successfully sent : 0x19 0x1 0xa
-<ass930085>[2024-11-18 14:03:38] Button Click: Clear Log button for Service 2E window clicked.
-<ass930085>[2024-11-18 14:03:40] Button Click: Clear Form for Service 14 window clicked. Userfields cleared successfully.
-<ass930085>[2024-11-18 14:03:42] Button Click: Send 19 01 request button clicked with DTC Status Mask[0]].
-<ass930085>[2024-11-18 14:03:42] UDS Request Fail: 19 01 Request not happened due to invalid DTC Status Mask
-<ass930085>[2024-11-18 14:03:52] Button Click: Send 19 01 request button clicked with DTC Status Mask[0]].
-<ass930085>[2024-11-18 14:03:52] UDS Request Fail: 19 01 Request not happened due to invalid DTC Status Mask
-<ass930085>[2024-11-18 15:16:52] Button Click: Send 19 01 request button clicked with DTC Status Mask[138]].
-<ass930085>[2024-11-18 15:16:52] UDS Request Success: 19 Request Successfully sent : 0x19 0x1 0x8a
-<ass930085>[2024-11-18 15:20:45] Button Click: Send 19 01 request button clicked with DTC Status Mask[138]].
-<ass930085>[2024-11-18 15:20:45] UDS Request Success: 19 Request Successfully sent : 0x19 0x1 0x8a
-<ass930085>[2024-11-18 15:22:23] Button Click: Send 19 01 request button clicked with DTC Status Mask[138]].
-<ass930085>[2024-11-18 15:22:23] UDS Request Success: 19 Request Successfully sent : 0x19 0x1 0x8a
-<ass930085>[2024-11-18 15:24:05] Button Click: Send 19 01 request button clicked with DTC Status Mask[138]].
-<ass930085>[2024-11-18 15:24:05] UDS Request Success: 19 Request Successfully sent : 0x19 0x1 0x8a
+<vkk930175>[2024-11-19 09:24:46] Button Click: Connect CAN button clicked
+<vkk930175>[2024-11-19 09:24:46] CAN Connection: CAN can0 connected with baudrate 125000 and fdf type CAN
+<vkk930175>[2024-11-19 09:24:47] Button Click: Service 19 Window Opened
+<vkk930175>[2024-11-19 09:24:49] Button Click: Service 19 subfunction 04 Window Opened
+<vkk930175>[2024-11-19 09:24:56] UDS Request Success: 19 Request Successfully sent : 0x19 0x4 0x21 0x21 0x21 0x21

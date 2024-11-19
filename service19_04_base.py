@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'c:\Users\ass930085\OneDrive - Tata Technologies\Documents\PROXI GIT\reference\ProxiCan\SID_19_04.ui'
+# Form implementation generated from reading ui file 'SID_19_041.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.11
 #
@@ -112,3 +112,13 @@ class Ui_From_SID_19_04(object):
         self.pushButton_clearLog.setText(_translate("From_SID_19_04", "Clear Log"))
         self.pushButton_appendLog.setText(_translate("From_SID_19_04", "Add to Log"))
         self.pushButton_reset.setText(_translate("From_SID_19_04", "Reset"))
+
+
+if __name__ == "__main__":
+    import sys
+    app = QtWidgets.QApplication(sys.argv)
+    From_SID_19_04 = QtWidgets.QDialog()
+    ui = Ui_From_SID_19_04()
+    ui.setupUi(From_SID_19_04)
+    From_SID_19_04.show()
+    sys.exit(app.exec_())
