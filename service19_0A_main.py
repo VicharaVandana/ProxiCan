@@ -87,7 +87,7 @@ class Ui_Service19_0A(Ui_Form_SID_19_0A):
             dtc_records_html = fun.getDTCASR(length, response.resp)
             response_html = f'''<h4><U>Positive Response Recieved</U></h4>
     <p><strong>Service ID:</strong> <I>{hex(response.resp[0]-0x40)}</I></p>
-    <p><strong>Subfunction Name:</strong> <I>Report Supported DTC {hex(response.resp[1])} </I></p>
+    <p><strong>Subfunction Name:</strong> <I>Report Supported DTC {hex(response.resp[1]).upper()} </I></p>
     <p><strong>DTC Status Availability Mask:</strong> <I> {hex(response.resp[2])} </I></p>
     {dtc_records_html} <!-- This will display the DTC records generated in the function -->
     <p><strong>Info:</strong> <I> Service 19 sunfunction 0A is successfully executed</I></p>
