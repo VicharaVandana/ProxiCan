@@ -1,18 +1,13 @@
-<ass930085>[2024-11-19 11:01:50] Button Click: Connect CAN button clicked
-<ass930085>[2024-11-19 11:01:50] CAN Connection: CAN can0 connected with baudrate 125000 and fdf type CAN
-<ass930085>[2024-11-19 11:01:57] Button Click: Connect CAN button clicked
-<ass930085>[2024-11-19 11:01:57] CAN Connection: CAN can0 connected with baudrate 125000 and fdf type CAN
-<ass930085>[2024-11-19 11:02:05] Button Click: Connect CAN button clicked
-<ass930085>[2024-11-19 11:02:05] CAN Connection: CAN can0 connected with baudrate 125000 and fdf type CANFD
-<ass930085>[2024-11-19 11:02:07] Button Click: Service 19 Window Opened
-<ass930085>[2024-11-19 11:02:10] Button Click: Service 19 subfunction 02 Window Opened
-<ass930085>[2024-11-19 11:02:15] Button Click: Send 19 02 request button clicked with DTC Status Mask[132]].
-<ass930085>[2024-11-19 11:02:15] UDS Request Success: 19 Request Successfully sent : 0x19 0x2 0x84
-<ass930085>[2024-11-19 11:02:19] Button Click: Clear Form for Service 14 window clicked. Userfields cleared successfully.
-<ass930085>[2024-11-19 11:02:24] Button Click: Send 19 02 request button clicked with DTC Status Mask[132]].
-<ass930085>[2024-11-19 11:02:24] UDS Request Success: 19 Request Successfully sent : 0x19 0x2 0x84
-<vkk930175>[2024-11-19 09:24:46] Button Click: Connect CAN button clicked
-<vkk930175>[2024-11-19 09:24:46] CAN Connection: CAN can0 connected with baudrate 125000 and fdf type CAN
-<vkk930175>[2024-11-19 09:24:47] Button Click: Service 19 Window Opened
-<vkk930175>[2024-11-19 09:24:49] Button Click: Service 19 subfunction 04 Window Opened
-<vkk930175>[2024-11-19 09:24:56] UDS Request Success: 19 Request Successfully sent : 0x19 0x4 0x21 0x21 0x21 0x21
+<vkk930175>[2024-11-19 12:04:56] Button Click: Connect CAN button clicked
+<vkk930175>[2024-11-19 12:04:56] CAN Connection: CAN can0 connected with baudrate 125000 and fdf type CAN
+<vkk930175>[2024-11-19 12:04:57] Button Click: Service 19 Window Opened
+<vkk930175>[2024-11-19 12:04:59] Button Click: Service 19 subfunction 0A Window Opened
+<vkk930175>[2024-11-19 12:05:00] UDS Request Success: 19 Request Successfully sent : 0x19 0xa
+<vkk930175>[2024-11-19 12:05:05] Button Click: Service 19 subfunction 01 Window Opened
+<vkk930175>[2024-11-19 12:05:12] Button Click: Send 19 01 request button clicked with DTC Status Mask[8]].
+<vkk930175>[2024-11-19 12:05:12] UDS Request Success: 19 Request Successfully sent : 0x19 0x1 0x8
+<vkk930175>[2024-11-19 12:05:16] Button Click: Service 19 subfunction 02 Window Opened
+<vkk930175>[2024-11-19 12:05:20] Button Click: Send 19 02 request button clicked with DTC Status Mask[132]].
+<vkk930175>[2024-11-19 12:05:20] UDS Request Success: 19 Request Successfully sent : 0x19 0x2 0x84
+<vkk930175>[2024-11-19 12:05:26] Button Click: Service 19 subfunction 04 Window Opened
+<vkk930175>[2024-11-19 12:05:31] UDS Request Success: 19 Request Successfully sent : 0x19 0x4 0x12 0x12 0x12 0x12
