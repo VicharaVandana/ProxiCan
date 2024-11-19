@@ -40,17 +40,36 @@ def getDTCFormatIdentifiername(FID):
 
 def getDTCASR(length, response):
     count = (length - 3) // 4  # Calculate the count of DTC records
-    dtc_records_html = ""
+    if count == 0:
+        # No records to display
+        return "<p><strong>DTC and Status Record: </strong><I>No DTC records available.</I></p>"
+    dtc_records_html = """
+    <h4>DTC and Status Record: </h4>
+    <table style="width:100%; border-collapse: collapse; border: 1px solid black;">
+    <tr>
+        <th style="border: 1px solid black; padding: 8px;">Si No</th>
+        <th style="border: 1px solid black; padding: 8px;">DTC</th>
+        <th style="border: 1px solid black; padding: 8px; text-align: center;">Status of DTC</th>
+    </tr>
+    """
 
     # Generate the DTC and Status Record dynamically with a sequential label
     for i in range(count):
         start_idx = 3 + i * 4
         end_idx = start_idx + 3
-        dtc_record = response[start_idx:end_idx + 1]  # Get the slice of the response
-        dtc_record_hex = ", ".join(hex(byte) for byte in dtc_record)  # Convert to comma-separated hex
-        dtc_records_html += f'''
-        <p><strong>DTC And Status Record {i + 1}:</strong> <I> {dtc_record_hex} </I></p>
-        '''
+        dtc = response[start_idx:end_idx ]  # Get the 3 bytes for the DTC
+        status = response[end_idx]  # Get the status byte
+        dtc_hex = "".join(f"{byte:02X}" for byte in dtc)  # Combine DTC bytes as hex string
+        status_hex = f"{status:02X}"  # Status as a hex string
+        dtc_records_html += f"""
+        <tr>
+            <td style="border: 1px solid black; padding: 8px;">{i + 1}</td>
+            <td style="border: 1px solid black; padding: 8px;">0x{dtc_hex}</td>
+            <td style="border: 1px solid black; padding: 8px; text-align: center;">0x{status_hex}</td>
+        </tr>
+        """
+
+    dtc_records_html += "</table>"  # Close the table
 
     return dtc_records_html
 
