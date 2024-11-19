@@ -6,7 +6,7 @@ else:
     import uds
     import can
     
-from service19_01_base import Ui_Form_SID_19_01
+from service19_04_base import Ui_From_SID_19_04
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QMessageBox
 import service19_functions as fun
@@ -19,12 +19,12 @@ import configure as conf
 import os
 
 
-class Ui_Service19_01(Ui_Form_SID_19_01):
+class Ui_Service19_04(Ui_From_SID_19_04):
     def redesign_ui(self):
         pass
 
     def connectFunctions(self):
-        self.pushButton_Send19_01Req.clicked.connect(self.send19_01service)
+        self.pushButton_Send19_04Req.clicked.connect(self.send19_04service)
         self.pushButton_reset.clicked.connect(self.clearform)
         self.pushButton_appendLog.clicked.connect(self.addlog)
         self.pushButton_clearLog.clicked.connect(self.clearlog)
@@ -40,15 +40,10 @@ class Ui_Service19_01(Ui_Form_SID_19_01):
         self.logentrystring = ""
         self.label_ResType.setText("No Response")
         self.textBrowser_Resp.clear()
-        checkboxes = [self.checkBox_statusMask_bit0, self.checkBox_statusMask_bit1,
-                      self.checkBox_statusMask_bit2, self.checkBox_statusMask_bit3,
-                      self.checkBox_statusMask_bit4, self.checkBox_statusMask_bit5,
-                      self.checkBox_statusMask_bit6, self.checkBox_statusMask_bit7
-        ]
-        for checkbox in checkboxes:
-            checkbox.setChecked(False)
+        self.lineEdit_DTCMaskRecord.clear()
+        self.lineEdit_DTCSnapshotRecNumber.clear()
         self.update_status("Userform cleared successfully")
-        gen.log_action("Button Click", "Clear Form for Service 19 subfunction 01 window clicked. Userfields cleared successfully.")
+        gen.log_action("Button Click", "Clear Form for Service 19 subfunction 04 window clicked. Userfields cleared successfully.")
         return
     
     def addlog(self):
@@ -56,31 +51,31 @@ class Ui_Service19_01(Ui_Form_SID_19_01):
         gen.log_udsreport(self.logentrystring)
         self.logentrystring = ""    #Clear the log entry so that if multiple tiomes the button is clicked continuously only one entry is made.
         self.update_status(f"Log file appended with the current UDS transaction (./reports/uds_log_report.txt)")
-        gen.log_action("Button Click", "Add to Log button for Service 19 subfunction 01 window clicked.")
+        gen.log_action("Button Click", "Add to Log button for Service 19 subfunction 04 window clicked.")
         return
     
     def clearlog(self):
         gen.clearudslogfile()
         self.update_status(f"Log file cleared (./reports/uds_log_report.txt)")
-        gen.log_action("Button Click", "Clear Log button for Service 19 subfunction 01 window clicked.")
+        gen.log_action("Button Click", "Clear Log button for Service 19 subfunction 04 window clicked.")
         return
     
-    def send19_01service(self):
+    def send19_04service(self):
         sprmib_flg = self.checkBox_suppressposmsg.isChecked()
-        status_mask= fun.calculate_dtc_status_mask(self.checkBox_statusMask_bit0, self.checkBox_statusMask_bit1,
-                                                   self.checkBox_statusMask_bit2, self.checkBox_statusMask_bit3,
-                                                   self.checkBox_statusMask_bit4, self.checkBox_statusMask_bit5,
-                                                   self.checkBox_statusMask_bit6, self.checkBox_statusMask_bit7
-        )
-        gen.log_action("Button Click", f"Send 19 01 request button clicked with DTC Status Mask[{status_mask}]].")
-        if status_mask == 0:
-            self.update_status("Please select atleast one bit in DTC status mask")
-            print(f"DTC Status mask {status_mask} is invalid")
-            gen.log_action("UDS Request Fail", "19 01 Request not happened due to invalid DTC Status Mask")
+        DTCMaskRecord = self.lineEdit_DTCMaskRecord.text().strip().replace(" ","").replace(" ","").replace(" ","")
+        DTCSnapshotRecordNumber = self.lineEdit_DTCSnapshotRecNumber.text().strip().replace(" ","").replace(" ","").replace(" ","")
+
+        if not gen.check_3Bytehexadecimal(DTCMaskRecord):
+            self.update_status("Invalid DTC Mask Record. Please enter a valid hexadecimal value of 3 bytes.")
+            gen.log_action("UDS Request Fail", "19 Request failed due to invalid DTC Mask Record.")
+            return
+        
+        if not gen.check_1Bytehexadecimal(DTCSnapshotRecordNumber):
+            self.update_status("Invalid DTC Snapshot Record Number. Please enter a valid hexadecimal value of 1 byte.")
+            gen.log_action("UDS Request Fail", "19 Request failed due to invalid DTC Snapshot Record Number.")
             return
 
-
-        service_request = fun.form_reqmsg4srv19_subfun_1(status_mask,sprmib_flg)
+        service_request = fun.form_reqmsg4srv19_subfun_4(DTCMaskRecord,DTCSnapshotRecordNumber,sprmib_flg)
 
         #Send the service request and get the response 
         if(sprmib_flg == False):
@@ -103,20 +98,15 @@ class Ui_Service19_01(Ui_Form_SID_19_01):
         
 
         if(response.type == "Positive Response"):
-            DTCFormatIdentifierName = fun.getDTCFormatIdentifiername(hex(response.resp[3]))
-            # Extract the last two bytes
-            msb = response.resp[4]  # Most Significant Byte
-            lsb = response.resp[5]  # Least Significant Byte # Combine them into a single 16-bit value
-            combined_value = (msb << 8) | lsb
-            self.update_status("Service 19 subfunction 01 response is received")
+            self.update_status("Service 19 subfunction 04 response is received")
  
             response_html = f'''<h4><U>Positive Response Recieved</U></h4>
     <p><strong>Service ID:</strong> <I>{hex(response.resp[0]-0x40)}</I></p>
-    <p><strong>Subfunction Name:</strong> <I>Report Number Of DTC By Status Mask {hex(response.resp[1])} </I></p>
-    <p><strong>DTC Status Availability Mask:</strong> <I> {hex(response.resp[2])} </I></p>
-    <p><strong>DTC Format Identifier:</strong> <I> {hex(response.resp[3])} {DTCFormatIdentifierName} </I></p>
-    <p><strong>DTC Count:</strong> <I> {combined_value} </I></p>
-    <p><strong>Info:</strong> <I> Service 19 sunfunction 01 is successfully executed with DTC Status Mask {hex(status_mask)}</I></p>
+    <p><strong>Subfunction Name:</strong> <I>Report DTC Snapshot Record By DTC Number {hex(response.resp[1])} </I></p>
+    <p><strong>DTC And Status Record:</strong> <I> {" ".join(hex(number) for number in response.resp[2:6])} </I></p>
+    <p><strong>DTC Snapshot Record Number:</strong> <I> {" ".join(hex(number) for number in response.resp[6:7])} </I></p>
+    <p><strong>DTC Snapshot Record Number Of Identifiers:</strong> <I> {" ".join(hex(number) for number in response.resp[7:])} </I></p>
+    <p><strong>Info:</strong> <I> Service 19 sunfunction 04 is successfully executed with DTC Mask Record 0x{DTCMaskRecord} and DTC Snapshot Record Number 0x{DTCSnapshotRecordNumber}</I></p>
 '''
 
         elif(response.type == "Negative Response"):
@@ -149,7 +139,7 @@ class Ui_Service19_01(Ui_Form_SID_19_01):
 
         self.logentrystring = f'''<---- LOG ENTRY [{current_user} - {currenttime}] ---->
  UDS Request :   [{" ".join(hex(number) for number in service_request)}]
- Explaination:   Read DTC Information (Service 19 subfunction 01) Requested for DTC Status Mask {status_mask}
+ Explaination:   Read DTC Information (Service 19 subfunction 04) Requested for DTC Mask Record {DTCMaskRecord} and DTC Snapshot Record Number {DTCSnapshotRecordNumber}
  UDS Response:   [{" ".join(hex(number) for number in response.resp)}]
  Explaination:   {response_text}<------------------- LOG ENTRY END ------------------->
 
@@ -158,7 +148,7 @@ class Ui_Service19_01(Ui_Form_SID_19_01):
     
     def closeEvent(self, event):
         # Custom logic when the window is closed
-        gen.log_action(f"Window Close", f"Service 19 01 Window Closed.")
+        gen.log_action(f"Window Close", f"Service 19 04 Window Closed.")
         return
     
 
@@ -172,9 +162,9 @@ if __name__ == "__main__":
     #currenttime = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     #print(f"<---- LOG ENTRY [{current_user} - {currenttime}] ---->")
     app = QtWidgets.QApplication(sys.argv)
-    Form_SID19_01 = QtWidgets.QWidget()
-    ui = Ui_Service19_01()
-    ui.setupUi(Form_SID19_01)
+    Form_SID19_04 = QtWidgets.QWidget()
+    ui = Ui_Service19_04()
+    ui.setupUi(Form_SID19_04)
     ui.redesign_ui()
     ui.connectFunctions()
     #Initializing the CAN
@@ -183,5 +173,5 @@ if __name__ == "__main__":
         conf.tx = can.interface.Bus(channel=conf.can_channel, bustype='socketcan', fd=True)
         conf.rx = can.interface.Bus(channel=conf.can_channel, bustype='socketcan', fd=True)
 
-    Form_SID19_01.show()
+    Form_SID19_04.show()
     sys.exit(app.exec_())

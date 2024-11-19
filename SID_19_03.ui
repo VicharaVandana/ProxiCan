@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Dialog</class>
- <widget class="QDialog" name="Dialog">
+ <class>Form_SID_19_03</class>
+ <widget class="QDialog" name="Form_SID_19_03">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Report DTC Snapshot Identification 0x03</string>
   </property>
   <widget class="QLabel" name="label_status">
    <property name="geometry">
@@ -95,7 +95,7 @@ color: rgb(85, 0, 0);</string>
      <widget class="QTextBrowser" name="textBrowser_Resp"/>
     </item>
     <item row="0" column="4">
-     <widget class="QPushButton" name="pushButton_Send19_01Req">
+     <widget class="QPushButton" name="pushButton_Send19_03Req">
       <property name="toolTip">
        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Sends the 19 service subfunction 01 request to ECU&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
@@ -147,7 +147,7 @@ color: rgb(0, 0, 0);</string>
      </widget>
     </item>
     <item row="1" column="0" rowspan="2">
-     <widget class="QLabel" name="DTCStatusMask_label">
+     <widget class="QLabel" name="DTCMaskRecord_label">
       <property name="text">
        <string>DTC Mask Record:</string>
       </property>
@@ -164,17 +164,25 @@ color: rgb(0, 0, 0);</string>
      </widget>
     </item>
     <item row="3" column="0">
-     <widget class="QLabel" name="DTCStatusMask_label_2">
+     <widget class="QLabel" name="DTCSnapshotRecordNumber_label">
       <property name="text">
        <string>DTC Snapshot Record Number:</string>
       </property>
      </widget>
     </item>
     <item row="1" column="1">
-     <widget class="QLineEdit" name="lineEdit"/>
+     <widget class="QLineEdit" name="lineEdit_DTCMaskRecord">
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Enter DTC Mask Record in Hexadecimal format of 3 bytes&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
     </item>
     <item row="3" column="1">
-     <widget class="QLineEdit" name="lineEdit_2"/>
+     <widget class="QLineEdit" name="lineEdit_SnapshotRecordNumber">
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Enter DTC Snapshot Record Number in Hexadecimal format of 1 byte&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
     </item>
    </layout>
   </widget>

@@ -10,6 +10,7 @@ import general as gen
 #Import service modules
 import service19_01_main as RNODTCBSM
 import service19_02_main as RDTCBSM
+import service19_04_main as RDTCSSBDTC
 import mainwindow as mw
 
 Is_CanConnected = False
@@ -111,6 +112,7 @@ class Ui_Service19 (Ui_Form_Subfun_SID19, QtWidgets.QMainWindow, QtWidgets.QWidg
         #Service19 subfunction Buttons
         self.pushButton_01.clicked.connect(self.openservice19_01)
         self.pushButton_02.clicked.connect(self.openservice19_02)
+        self.pushButton_04.clicked.connect(self.openservice19_04)
         return
     
 
@@ -128,7 +130,7 @@ class Ui_Service19 (Ui_Form_Subfun_SID19, QtWidgets.QMainWindow, QtWidgets.QWidg
         else:
             self.update_status(f"19 subfunction 01 Button clicked. But unable to open the service window as CAN is not connected")
         return
-    
+
     def openservice19_02(self):
         if(Is_CanConnected == False):
             self.window19_02 = QMainWindow()
@@ -143,6 +145,19 @@ class Ui_Service19 (Ui_Form_Subfun_SID19, QtWidgets.QMainWindow, QtWidgets.QWidg
             self.update_status(f"19 subfunction 02 Button clicked. But unable to open the service window as CAN is not connected")
         return
     
+    def openservice19_04(self):
+        if(Is_CanConnected == False):
+            self.window19_04 = QMainWindow()
+            self.ui19_04 = RDTCSSBDTC.Ui_Service19_04()
+            self.ui19_04.setupUi(self.window19_04)
+            self.ui19_04.redesign_ui()
+            self.ui19_04.connectFunctions()
+            self.window19_04.show()  # Display the new window
+            self.update_status(f"19 subfunction 04 Button clicked. Report DTC Snapshot Record By DTC Number subfunction window opened")
+            gen.log_action("Button Click", "Service 19 subfunction 04 Window Opened")
+        else:
+            self.update_status(f"19 subfunction 04 Button clicked. But unable to open the service window as CAN is not connected")
+        return
 
     def update_status(self, msg):
         # Create a QMessageBox instance
