@@ -38,6 +38,22 @@ def getDTCFormatIdentifiername(FID):
      else:
           return(" ISO/SAE reserved ")
 
+def getDTCASR(length, response):
+    count = (length - 3) // 4  # Calculate the count of DTC records
+    dtc_records_html = ""
+
+    # Generate the DTC and Status Record dynamically with a sequential label
+    for i in range(count):
+        start_idx = 3 + i * 4
+        end_idx = start_idx + 3
+        dtc_record = response[start_idx:end_idx + 1]  # Get the slice of the response
+        dtc_record_hex = ", ".join(hex(byte) for byte in dtc_record)  # Convert to comma-separated hex
+        dtc_records_html += f'''
+        <p><strong>DTC And Status Record {i + 1}:</strong> <I> {dtc_record_hex} </I></p>
+        '''
+
+    return dtc_records_html
+
 def form_reqmsg4srv19_subfun_3(DTCMaskRecord,DTCSnapshotRecordNumber,sprmib_flag): 
     sid = int("19", 16)
     subfun=int("3",16)
@@ -171,11 +187,23 @@ def form_reqmsg4srv19_subfun_1(DTCStatusMask,sprmib_flag):
          subfunction = int(subfun)   
     #DTCStatusMask_without_spaces = re.sub(r"\s+", "", DTCStatusMask)
     #DTCStatusMask_hex = int(DTCStatusMask_without_spaces, 16)
-
-    
     req_bytes = [sid, subfunction, DTCStatusMask]
     print(f"{sid} {subfunction} {DTCStatusMask}")
     return(req_bytes)
+
+def form_reqmsg4srv19_subfun_2(DTCStatusMask,sprmib_flag): 
+    sid = int("19", 16)
+    subfun=int("02",16)
+    if (sprmib_flag == True):
+         subfunction = int(subfun) | 0x80   #MSB is set if SPRMIB is requested.
+    else:
+         subfunction = int(subfun)   
+    #DTCStatusMask_without_spaces = re.sub(r"\s+", "", DTCStatusMask)
+    #DTCStatusMask_hex = int(DTCStatusMask_without_spaces, 16)
+    req_bytes = [sid, subfunction, DTCStatusMask]
+    print(f"{sid} {subfunction} {DTCStatusMask}")
+    return(req_bytes)
+
 
 def form_reqmsg4srv19_subfun_A(sprmib_flag): 
     sid = int("19", 16)
