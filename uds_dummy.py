@@ -319,8 +319,8 @@ def sendRequest(request, IsPosResExpected = True):
             response.nrc = 0x00
             response.nrcname = NRC_DATA.get(response.nrc, "Unknown NRC")[0]
             response.nrcdesc = NRC_DATA.get(response.nrc, "Unknown NRC Recieved. There is no record of this NRC in UDS ISO 14229 Document")[1] 
-        elif(request[1] == 0x06 and request[2]==0x01):
-            res = [0x59, 0x06, 0x7F]
+        elif(request[1] == 0x06):
+            res = [0x59, 0x06, 0x12, 0x34, 0x56, 0x24, 0x05, 0x17, 0x10, 0x79]
             response.resp = res.copy()
             response.type = "Positive Response"
             response.nrc = 0x00

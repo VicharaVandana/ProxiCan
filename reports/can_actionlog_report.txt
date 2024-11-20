@@ -71,3 +71,5 @@
 <ass930085>[2024-11-20 10:14:10] UDS Request Success: 19 Request Successfully sent : 0x19 0x2 0x1
 <ass930085>[2024-11-20 10:14:13] Button Click: Add to Log button for Service 19 subfunction 02 window clicked.
 <ass930085>[2024-11-20 10:32:11] Button Click: Clear Log button for Service 19 subfunction 02 window clicked.
+<ass930085>[2024-11-20 11:11:30] Button Click: Send 19 06 request button clicked with DTC Mask Record 0x123456 & DTC Extended Data Record Number 0xff.
+<ass930085>[2024-11-20 11:11:30] UDS Request Success: 19 Request Successfully sent : 0x19 0x6 0x12 0x34 0x56 0xff
