@@ -1,73 +1,10 @@
-<ass930085>[2024-11-19 13:15:59] Button Click: Service 19 subfunction 02 Window Opened
-<ass930085>[2024-11-19 13:16:04] Button Click: Send 19 02 request button clicked with DTC Status Mask[1]].
-<ass930085>[2024-11-19 13:16:04] UDS Request Success: 19 Request Successfully sent : 0x19 0x2 0x1
-<ass930085>[2024-11-19 13:24:50] Button Click: Send 19 02 request button clicked with DTC Status Mask[132]].
-<ass930085>[2024-11-19 13:24:50] UDS Request Success: 19 Request Successfully sent : 0x19 0x2 0x84
-<ass930085>[2024-11-19 13:24:55] Button Click: Clear Form for Service 14 window clicked. Userfields cleared successfully.
-<ass930085>[2024-11-19 13:24:59] Button Click: Send 19 02 request button clicked with DTC Status Mask[1]].
-<ass930085>[2024-11-19 13:24:59] UDS Request Success: 19 Request Successfully sent : 0x19 0x2 0x1
-<ass930085>[2024-11-19 13:25:12] Button Click: Clear Form for Service 14 window clicked. Userfields cleared successfully.
-<ass930085>[2024-11-19 13:25:19] Button Click: Send 19 02 request button clicked with DTC Status Mask[132]].
-<ass930085>[2024-11-19 13:25:19] UDS Request Success: 19 Request Successfully sent : 0x19 0x2 0x84
-<ass930085>[2024-11-19 13:25:50] Button Click: Clear Form for Service 14 window clicked. Userfields cleared successfully.
-<ass930085>[2024-11-19 13:26:33] Button Click: Send 19 02 request button clicked with DTC Status Mask[1]].
-<ass930085>[2024-11-19 13:26:33] UDS Request Success: 19 Request Successfully sent : 0x19 0x2 0x1
-<ass930085>[2024-11-19 13:28:02] UDS Request Success: 19 Request Successfully sent : 0x19 0xa
-<ass930085>[2024-11-19 14:02:29] Button Click: Send 19 02 request button clicked with DTC Status Mask[132]].
-<ass930085>[2024-11-19 14:02:29] UDS Request Success: 19 Request Successfully sent : 0x19 0x2 0x84
-<ass930085>[2024-11-19 14:11:35] UDS Request Success: 19 Request Successfully sent : 0x19 0xa
-<ass930085>[2024-11-19 14:36:27] Button Click: Send 19 02 request button clicked with DTC Status Mask[132]].
-<ass930085>[2024-11-19 14:36:27] UDS Request Success: 19 Request Successfully sent : 0x19 0x2 0x84
-<ass930085>[2024-11-19 14:37:30] Button Click: Send 19 02 request button clicked with DTC Status Mask[132]].
-<ass930085>[2024-11-19 14:37:30] UDS Request Success: 19 Request Successfully sent : 0x19 0x2 0x84
-<ass930085>[2024-11-19 14:41:40] Button Click: Send 19 02 request button clicked with DTC Status Mask[1]].
-<ass930085>[2024-11-19 14:41:40] UDS Request Success: 19 Request Successfully sent : 0x19 0x2 0x1
-<ass930085>[2024-11-19 14:41:59] Button Click: Send 19 02 request button clicked with DTC Status Mask[4]].
-<ass930085>[2024-11-19 14:41:59] UDS Request Success: 19 Request Successfully sent : 0x19 0x2 0x4
-<ass930085>[2024-11-19 14:42:03] Button Click: Send 19 02 request button clicked with DTC Status Mask[132]].
-<ass930085>[2024-11-19 14:42:03] UDS Request Success: 19 Request Successfully sent : 0x19 0x2 0x84
-<ass930085>[2024-11-19 14:48:24] Button Click: Send 19 02 request button clicked with DTC Status Mask[1]].
-<ass930085>[2024-11-19 14:48:24] UDS Request Success: 19 Request Successfully sent : 0x19 0x2 0x1
-<ass930085>[2024-11-19 14:50:13] Button Click: Clear Form for Service 14 window clicked. Userfields cleared successfully.
-<ass930085>[2024-11-19 14:50:17] Button Click: Send 19 02 request button clicked with DTC Status Mask[132]].
-<ass930085>[2024-11-19 14:50:17] UDS Request Success: 19 Request Successfully sent : 0x19 0x2 0x84
-<ass930085>[2024-11-19 14:51:44] Button Click: Send 19 02 request button clicked with DTC Status Mask[1]].
-<ass930085>[2024-11-19 14:51:44] UDS Request Success: 19 Request Successfully sent : 0x19 0x2 0x1
-<ass930085>[2024-11-19 14:52:14] Button Click: Clear Form for Service 14 window clicked. Userfields cleared successfully.
-<ass930085>[2024-11-19 14:52:20] Button Click: Send 19 02 request button clicked with DTC Status Mask[132]].
-<ass930085>[2024-11-19 14:52:20] UDS Request Success: 19 Request Successfully sent : 0x19 0x2 0x84
-<ass930085>[2024-11-19 14:54:12] Button Click: Send 19 02 request button clicked with DTC Status Mask[1]].
-<ass930085>[2024-11-19 14:54:12] UDS Request Success: 19 Request Successfully sent : 0x19 0x2 0x1
-<ass930085>[2024-11-19 14:54:24] Button Click: Clear Form for Service 14 window clicked. Userfields cleared successfully.
-<ass930085>[2024-11-19 14:54:28] Button Click: Send 19 02 request button clicked with DTC Status Mask[132]].
-<ass930085>[2024-11-19 14:54:28] UDS Request Success: 19 Request Successfully sent : 0x19 0x2 0x84
-<ass930085>[2024-11-19 14:54:56] Button Click: Clear Form for Service 14 window clicked. Userfields cleared successfully.
-<ass930085>[2024-11-19 14:55:00] Button Click: Send 19 02 request button clicked with DTC Status Mask[1]].
-<ass930085>[2024-11-19 14:55:00] UDS Request Success: 19 Request Successfully sent : 0x19 0x2 0x1
-<ass930085>[2024-11-19 15:01:06] Button Click: Send 19 02 request button clicked with DTC Status Mask[1]].
-<ass930085>[2024-11-19 15:01:06] UDS Request Success: 19 Request Successfully sent : 0x19 0x2 0x1
-<ass930085>[2024-11-19 15:02:37] Button Click: Send 19 02 request button clicked with DTC Status Mask[1]].
-<ass930085>[2024-11-19 15:02:37] UDS Request Success: 19 Request Successfully sent : 0x19 0x2 0x1
-<ass930085>[2024-11-19 15:04:01] Button Click: Clear Form for Service 14 window clicked. Userfields cleared successfully.
-<ass930085>[2024-11-19 15:04:05] Button Click: Send 19 02 request button clicked with DTC Status Mask[132]].
-<ass930085>[2024-11-19 15:04:05] UDS Request Success: 19 Request Successfully sent : 0x19 0x2 0x84
-<ass930085>[2024-11-19 15:05:19] UDS Request Success: 19 Request Successfully sent : 0x19 0xa
-<ass930085>[2024-11-19 15:07:16] UDS Request Success: 19 Request Successfully sent : 0x19 0xa
-<ass930085>[2024-11-20 10:06:08] Button Click: Send 19 01 request button clicked with DTC Status Mask[8]].
-<ass930085>[2024-11-20 10:06:08] UDS Request Success: 19 Request Successfully sent : 0x19 0x1 0x8
-<ass930085>[2024-11-20 10:06:11] Button Click: Add to Log button for Service 19 subfunction 01 window clicked.
-<ass930085>[2024-11-20 10:09:02] Button Click: Clear Log button for Service 19 subfunction 01 window clicked.
-<ass930085>[2024-11-20 10:09:12] Button Click: Send 19 01 request button clicked with DTC Status Mask[0x8]].
-<ass930085>[2024-11-20 10:09:12] UDS Request Success: 19 Request Successfully sent : 0x19 0x1 0x8
-<ass930085>[2024-11-20 10:09:15] Button Click: Add to Log button for Service 19 subfunction 01 window clicked.
-<ass930085>[2024-11-20 10:10:27] Button Click: Clear Log button for Service 19 subfunction 01 window clicked.
-<ass930085>[2024-11-20 10:10:31] Button Click: Send 19 01 request button clicked with DTC Status Mask 0x8 .
-<ass930085>[2024-11-20 10:10:31] UDS Request Success: 19 Request Successfully sent : 0x19 0x1 0x8
-<ass930085>[2024-11-20 10:10:33] Button Click: Add to Log button for Service 19 subfunction 01 window clicked.
-<ass930085>[2024-11-20 10:12:29] Button Click: Send 19 02 request button clicked with DTC Status Mask 0x84.
-<ass930085>[2024-11-20 10:12:29] UDS Request Success: 19 Request Successfully sent : 0x19 0x2 0x84
-<ass930085>[2024-11-20 10:12:32] Button Click: Add to Log button for Service 14 window clicked.
-<ass930085>[2024-11-20 10:14:10] Button Click: Send 19 02 request button clicked with DTC Status Mask 0x1.
-<ass930085>[2024-11-20 10:14:10] UDS Request Success: 19 Request Successfully sent : 0x19 0x2 0x1
-<ass930085>[2024-11-20 10:14:13] Button Click: Add to Log button for Service 19 subfunction 02 window clicked.
-<ass930085>[2024-11-20 10:32:11] Button Click: Clear Log button for Service 19 subfunction 02 window clicked.
+<vkk930175>[2024-11-20 11:21:40] Button Click: Service 19 subfunction 0A Window Opened
+<vkk930175>[2024-11-20 11:21:41] UDS Request Success: 19 Request Successfully sent : 0x19 0xa
+<vkk930175>[2024-11-20 11:21:46] Button Click: Service 19 subfunction 0B Window Opened
+<vkk930175>[2024-11-20 11:21:50] UDS Request Success: 19 Request Successfully sent : 0x19 0xb
+<vkk930175>[2024-11-20 11:21:56] Button Click: Service 19 subfunction 0C Window Opened
+<vkk930175>[2024-11-20 11:21:57] UDS Request Success: 19 Request Successfully sent : 0x19 0xc
+<vkk930175>[2024-11-20 11:22:06] Button Click: Service 19 subfunction 0D Window Opened
+<vkk930175>[2024-11-20 11:22:10] UDS Request Success: 19 Request Successfully sent : 0x19 0xd
+<vkk930175>[2024-11-20 11:22:19] Button Click: Service 19 subfunction 0E Window Opened
+<vkk930175>[2024-11-20 11:22:26] UDS Request Success: 19 Request Successfully sent : 0x19 0xe

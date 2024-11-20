@@ -312,6 +312,35 @@ def sendRequest(request, IsPosResExpected = True):
             response.nrc = 0x00
             response.nrcname = NRC_DATA.get(response.nrc, "Unknown NRC")[0]
             response.nrcdesc = NRC_DATA.get(response.nrc, "Unknown NRC Recieved. There is no record of this NRC in UDS ISO 14229 Document")[1]  
+        elif(request[1] == 0x0B):
+            res = [0x59, 0x0B, 0xFF]
+            response.resp = res.copy()
+            response.type = "Positive Response"
+            response.nrc = 0x00
+            response.nrcname = NRC_DATA.get(response.nrc, "Unknown NRC")[0]
+            response.nrcdesc = NRC_DATA.get(response.nrc, "Unknown NRC Recieved. There is no record of this NRC in UDS ISO 14229 Document")[1] 
+        elif(request[1] == 0x0C):
+            res = [0x59, 0x0C, 0x7F, 0x12, 0x34, 0x56, 0x24, 0x23, 0x45, 0x05, 0x00, 0xAB, 0xCD, 0x01, 0x2F]
+            response.resp = res.copy()
+            response.type = "Positive Response"
+            response.nrc = 0x00
+            response.nrcname = NRC_DATA.get(response.nrc, "Unknown NRC")[0]
+            response.nrcdesc = NRC_DATA.get(response.nrc, "Unknown NRC Recieved. There is no record of this NRC in UDS ISO 14229 Document")[1]  
+        elif(request[1] == 0x0D):
+            res = [0x59, 0x0D, 0x7F, 0x12, 0x34, 0x56, 0x24, 0x23, 0x45, 0x05, 0x00, 0xAB, 0xCD, 0x01, 0x2F]
+            response.resp = res.copy()
+            response.type = "Positive Response"
+            response.nrc = 0x00
+            response.nrcname = NRC_DATA.get(response.nrc, "Unknown NRC")[0]
+            response.nrcdesc = NRC_DATA.get(response.nrc, "Unknown NRC Recieved. There is no record of this NRC in UDS ISO 14229 Document")[1]  
+        elif(request[1] == 0x0E):
+            res = [0x59, 0x0E, 0x7F, 0x12, 0x34, 0x56, 0x24, 0x23, 0x45, 0x05, 0x00, 0xAB, 0xCD, 0x01, 0x2F]
+            response.resp = res.copy()
+            response.type = "Positive Response"
+            response.nrc = 0x00
+            response.nrcname = NRC_DATA.get(response.nrc, "Unknown NRC")[0]
+            response.nrcdesc = NRC_DATA.get(response.nrc, "Unknown NRC Recieved. There is no record of this NRC in UDS ISO 14229 Document")[1]  
+
         elif(request[1] == 0x02 and request[2]==0x01):
             res = [0x59, 0x02, 0x7F]
             response.resp = res.copy()
