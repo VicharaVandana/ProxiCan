@@ -1,0 +1,26 @@
+<---- LOG ENTRY [ass930085 - 2024-11-20 14:22:14] ---->
+ UDS Request :   [0x19 0x2 0x1]
+ Explaination:   Read DTC Information (Service 19 subfunction 02) Requested for DTC Status Mask 0x1
+ UDS Response:   [0x59 0x2 0x7f]
+ Explaination:   Positive Response Recieved
+ Service ID: 0x19
+ Subfunction Name: Report DTC By Status Mask 0x2
+ DTC Status Availability Mask: 0x7f
+ DTC and Status Record: No DTC records available.<------------------- LOG ENTRY END ------------------->
+
+# <---- LOG ENTRY [ass930085 - 2024-11-20 14:22:25] ---->
+ UDS Request :   [0x19 0x2 0x84]
+ Explaination:   Read DTC Information (Service 19 subfunction 02) Requested for DTC Status Mask 0x84
+ UDS Response:   [0x59 0x2 0x7f 0xa 0x9b 0x17 0x24 0x8 0x5 0x11 0x2f]
+ Explaination:   Positive Response Recieved
+ Service ID: 0x19
+ Subfunction Name: Report DTC By Status Mask 0x2
+ DTC Status Availability Mask: 0x7f
+ DTC and Status Record:
+Si No DTC         Status of DTC  
+---------------------------------
+1     0x0A9B17      0x24             
+2     0x080511      0x2F             
+<------------------- LOG ENTRY END ------------------->
+
+# 

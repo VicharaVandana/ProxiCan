@@ -40,7 +40,7 @@ def connectCAN(canconfig):
         # Set up the CAN interface
         if RUNNING_ON_RASPBERRYPI == True:
             #os.system(f'sudo ip link set {can_channel} up type can bitrate {baudrate} dbitrate {datarate} restart-ms 1000 berr-reporting on fd on')
-            os.system(f'sudo ip link set {can_channel} up type can bitrate {baudrate} sample-point {sample_point} dbitrate {datarate} dsample-point {sample_point} restart-ms 1000 berr-reporting on fd on')
+            os.system(f'sudo ip link set {can_channel} up type can bitrate {baudrate} sample-point {sample_point} dbitrate {datarate} dsample-point {sample_point} fd on')
             tx = can.interface.Bus(channel=can_channel, bustype='socketcan', fd=True)
             rx = can.interface.Bus(channel=can_channel, bustype='socketcan', fd=True)
         return True

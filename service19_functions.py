@@ -42,7 +42,10 @@ def getDTCASR(length, response):
     count = (length - 3) // 4  # Calculate the count of DTC records
     if count == 0:
         # No records to display
-        return "<p><strong>DTC and Status Record: </strong><I>No DTC records available.</I></p>"
+        return {
+             "html": "<p><strong>DTC and Status Record: </strong><I>No DTC records available.</I></p>",
+            "text": "DTC and Status Record: No DTC records available."
+        }
     dtc_records_html = """
     <h4>DTC and Status Record: </h4>
     <table style="width:100%; border-collapse: collapse; border: 1px solid black;">
@@ -52,6 +55,9 @@ def getDTCASR(length, response):
         <th style="border: 1px solid black; padding: 8px; text-align: center;">Status of DTC</th>
     </tr>
     """
+    dtc_records_text = "DTC and Status Record:\n"
+    dtc_records_text += f"{'Si No':<6}{'DTC':<12}{'Status of DTC':<15}\n"
+    dtc_records_text += "-" * 33 + "\n"
 
     # Generate the DTC and Status Record dynamically with a sequential label
     for i in range(count):
@@ -68,10 +74,11 @@ def getDTCASR(length, response):
             <td style="border: 1px solid black; padding: 8px; text-align: center;">0x{status_hex}</td>
         </tr>
         """
+        dtc_records_text += f"{i + 1:<6}0x{dtc_hex:<12}0x{status_hex:<15}\n"
 
     dtc_records_html += "</table>"  # Close the table
 
-    return dtc_records_html
+    return {"html": dtc_records_html, "text": dtc_records_text}
 
 def form_reqmsg4srv19_subfun_3(DTCMaskRecord,DTCSnapshotRecordNumber,sprmib_flag): 
     sid = int("19", 16)
