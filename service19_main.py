@@ -12,6 +12,7 @@ import service19_01_main as RNODTCBSM
 import service19_02_main as RDTCBSM
 import service19_04_main as RDTCSSBDTC
 import service19_0A_main as RSUPDTC
+import service19_06_main as RDTCEDRBDN
 import mainwindow as mw
 
 Is_CanConnected = False
@@ -115,6 +116,7 @@ class Ui_Service19 (Ui_Form_Subfun_SID19, QtWidgets.QMainWindow, QtWidgets.QWidg
         self.pushButton_02.clicked.connect(self.openservice19_02)
         self.pushButton_04.clicked.connect(self.openservice19_04)
         self.pushButton_0A.clicked.connect(self.openservice19_0A)
+        self.pushButton_06.clicked.connect(self.openservice19_06)
         return
     
 
@@ -173,6 +175,20 @@ class Ui_Service19 (Ui_Form_Subfun_SID19, QtWidgets.QMainWindow, QtWidgets.QWidg
             gen.log_action("Button Click", "Service 19 subfunction 0A Window Opened")
         else:
             self.update_status(f"19 subfunction 0A Button clicked. But unable to open the service window as CAN is not connected")
+        return
+    
+    def openservice19_06(self):
+        if(Is_CanConnected == False):
+            self.window19_06 = QMainWindow()
+            self.ui19_06 = RDTCEDRBDN.Ui_Service19_06()
+            self.ui19_06.setupUi(self.window19_06)
+            self.ui19_06.redesign_ui()
+            self.ui19_06.connectFunctions()
+            self.window19_06.show()  # Display the new window
+            self.update_status(f"19 subfunction 06 Button clicked.Report DTC Extended Data Record By DTC Number window opened")
+            gen.log_action("Button Click", "Service 19 subfunction 06 Window Opened")
+        else:
+            self.update_status(f"19 subfunction 06 Button clicked. But unable to open the service window as CAN is not connected")
         return
 
     def update_status(self, msg):

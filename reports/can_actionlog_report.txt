@@ -53,3 +53,21 @@
 <ass930085>[2024-11-19 15:04:05] UDS Request Success: 19 Request Successfully sent : 0x19 0x2 0x84
 <ass930085>[2024-11-19 15:05:19] UDS Request Success: 19 Request Successfully sent : 0x19 0xa
 <ass930085>[2024-11-19 15:07:16] UDS Request Success: 19 Request Successfully sent : 0x19 0xa
+<ass930085>[2024-11-20 10:06:08] Button Click: Send 19 01 request button clicked with DTC Status Mask[8]].
+<ass930085>[2024-11-20 10:06:08] UDS Request Success: 19 Request Successfully sent : 0x19 0x1 0x8
+<ass930085>[2024-11-20 10:06:11] Button Click: Add to Log button for Service 19 subfunction 01 window clicked.
+<ass930085>[2024-11-20 10:09:02] Button Click: Clear Log button for Service 19 subfunction 01 window clicked.
+<ass930085>[2024-11-20 10:09:12] Button Click: Send 19 01 request button clicked with DTC Status Mask[0x8]].
+<ass930085>[2024-11-20 10:09:12] UDS Request Success: 19 Request Successfully sent : 0x19 0x1 0x8
+<ass930085>[2024-11-20 10:09:15] Button Click: Add to Log button for Service 19 subfunction 01 window clicked.
+<ass930085>[2024-11-20 10:10:27] Button Click: Clear Log button for Service 19 subfunction 01 window clicked.
+<ass930085>[2024-11-20 10:10:31] Button Click: Send 19 01 request button clicked with DTC Status Mask 0x8 .
+<ass930085>[2024-11-20 10:10:31] UDS Request Success: 19 Request Successfully sent : 0x19 0x1 0x8
+<ass930085>[2024-11-20 10:10:33] Button Click: Add to Log button for Service 19 subfunction 01 window clicked.
+<ass930085>[2024-11-20 10:12:29] Button Click: Send 19 02 request button clicked with DTC Status Mask 0x84.
+<ass930085>[2024-11-20 10:12:29] UDS Request Success: 19 Request Successfully sent : 0x19 0x2 0x84
+<ass930085>[2024-11-20 10:12:32] Button Click: Add to Log button for Service 14 window clicked.
+<ass930085>[2024-11-20 10:14:10] Button Click: Send 19 02 request button clicked with DTC Status Mask 0x1.
+<ass930085>[2024-11-20 10:14:10] UDS Request Success: 19 Request Successfully sent : 0x19 0x2 0x1
+<ass930085>[2024-11-20 10:14:13] Button Click: Add to Log button for Service 19 subfunction 02 window clicked.
+<ass930085>[2024-11-20 10:32:11] Button Click: Clear Log button for Service 19 subfunction 02 window clicked.

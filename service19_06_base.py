@@ -118,3 +118,13 @@ class Ui_Form_SID_19_06(object):
         self.pushButton_Send19_06Req.setText(_translate("Form_SID_19_06", "Send Request"))
         self.pushButton_clearLog.setText(_translate("Form_SID_19_06", "Clear Log"))
         self.DTCEDRN_label.setText(_translate("Form_SID_19_06", "DTC Extended Data Record Number:  "))
+
+
+if __name__ == "__main__":
+    import sys
+    app = QtWidgets.QApplication(sys.argv)
+    Form_SID_19_06 = QtWidgets.QWidget()
+    ui = Ui_Form_SID_19_06()
+    ui.setupUi(Form_SID_19_06)
+    Form_SID_19_06.show()
+    sys.exit(app.exec_())

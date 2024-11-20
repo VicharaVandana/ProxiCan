@@ -48,7 +48,7 @@ class Ui_Service19_02(Ui_Form_SID_19_02):
         for checkbox in checkboxes:
             checkbox.setChecked(False)
         self.update_status("Userform cleared successfully")
-        gen.log_action("Button Click", "Clear Form for Service 14 window clicked. Userfields cleared successfully.")
+        gen.log_action("Button Click", "Clear Form for Service 19 subfunction 02 window clicked. Userfields cleared successfully.")
         return
     
     def addlog(self):
@@ -56,13 +56,13 @@ class Ui_Service19_02(Ui_Form_SID_19_02):
         gen.log_udsreport(self.logentrystring)
         self.logentrystring = ""    #Clear the log entry so that if multiple tiomes the button is clicked continuously only one entry is made.
         self.update_status(f"Log file appended with the current UDS transaction (./reports/uds_log_report.txt)")
-        gen.log_action("Button Click", "Add to Log button for Service 14 window clicked.")
+        gen.log_action("Button Click", "Add to Log button for Service 19 subfunction 02 window clicked.")
         return
     
     def clearlog(self):
         gen.clearudslogfile()
         self.update_status(f"Log file cleared (./reports/uds_log_report.txt)")
-        gen.log_action("Button Click", "Clear Log button for Service 2E window clicked.")
+        gen.log_action("Button Click", "Clear Log button for Service 19 subfunction 02 window clicked.")
         return
     
     def send19_02service(self):
@@ -72,11 +72,11 @@ class Ui_Service19_02(Ui_Form_SID_19_02):
                                                    self.checkBox_statusMask_bit4, self.checkBox_statusMask_bit5,
                                                    self.checkBox_statusMask_bit6, self.checkBox_statusMask_bit7
         )
-        gen.log_action("Button Click", f"Send 19 02 request button clicked with DTC Status Mask[{status_mask}]].")
+        gen.log_action("Button Click", f"Send 19 02 request button clicked with DTC Status Mask {hex(status_mask)}.")
         if status_mask == 0:
             self.update_status("Please select atleast one bit in DTC status mask")
-            print(f"DTC Status mask {status_mask} is invalid")
-            gen.log_action("UDS Request Fail", "19 01 Request not happened due to invalid DTC Status Mask")
+            print(f"DTC Status mask {hex(status_mask)} is invalid")
+            gen.log_action("UDS Request Fail", "19 02 Request not happened due to invalid DTC Status Mask")
             return
 
 
@@ -146,7 +146,7 @@ class Ui_Service19_02(Ui_Form_SID_19_02):
 
         self.logentrystring = f'''<---- LOG ENTRY [{current_user} - {currenttime}] ---->
  UDS Request :   [{" ".join(hex(number) for number in service_request)}]
- Explaination:   Read DTC Information (Service 19 subfunction 02) Requested for DTC Status Mask {status_mask}
+ Explaination:   Read DTC Information (Service 19 subfunction 02) Requested for DTC Status Mask {hex(status_mask)}
  UDS Response:   [{" ".join(hex(number) for number in response.resp)}]
  Explaination:   {response_text}<------------------- LOG ENTRY END ------------------->
 
