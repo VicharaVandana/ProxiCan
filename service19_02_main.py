@@ -180,7 +180,9 @@ class Ui_Service19_02(Ui_Form_SID_19_02):
  Service ID: {hex(response.resp[0] - 0x40)}
  Subfunction Name: Report DTC By Status Mask {hex(response.resp[1])}
  DTC Status Availability Mask: {hex(response.resp[2])}
- {dtc_records_text}<------------------- LOG ENTRY END ------------------->
+ {dtc_records_text}
+ Info: Service 19 sunfunction 02 is successfully executed with DTC Status Mask {formatted_status_mask}
+ <------------------- LOG ENTRY END ------------------->
 
 # '''
         return

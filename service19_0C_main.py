@@ -131,7 +131,9 @@ class Ui_Service19_0C(Ui_Form_SID_19_0C):
  Service ID: {hex(response.resp[0] - 0x40)}
  Subfunction Name: Report DTC By Status Mask {hex(response.resp[1])}
  DTC Status Availability Mask: {hex(response.resp[2])}
- {dtc_records_text}<------------------- LOG ENTRY END ------------------->
+ {dtc_records_text}
+ Info: Service 19 sunfunction 0C is successfully executed
+ <------------------- LOG ENTRY END ------------------->
 
 # '''
         return
