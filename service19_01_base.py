@@ -132,14 +132,33 @@ class Ui_Form_SID_19_01(object):
 
         self.DTCStatusMask_label_2.hide()
         self.lineEdit_DTCStatusMask.hide()
-
-        
-
-
-
+        self.comboBox_DTCStatusMask_entryType.currentIndexChanged.connect(self.toggle_line_edit)
 
         self.retranslateUi(Form_SID_19_01)
         QtCore.QMetaObject.connectSlotsByName(Form_SID_19_01)
+
+    def toggle_line_edit(self, index):
+        if index == 1: # Option 2 selected (index 1)
+                self.DTCStatusMask_label_2.show()
+                self.lineEdit_DTCStatusMask.show()
+                self.DTCStatusMask_label.hide()
+                self._hide_or_show_layout_widgets(self.horizontalLayout, False)
+                self._hide_or_show_layout_widgets(self.horizontalLayout_3, False)
+                self._hide_or_show_layout_widgets(self.horizontalLayout_4, False)
+                self._hide_or_show_layout_widgets(self.horizontalLayout_5, False)
+        else : # Option 2 selected (index 1)
+                 self.DTCStatusMask_label_2.hide()
+                 self.lineEdit_DTCStatusMask.hide()
+                 self.DTCStatusMask_label.show()
+                 self._hide_or_show_layout_widgets(self.horizontalLayout, True)
+                 self._hide_or_show_layout_widgets(self.horizontalLayout_3, True)
+                 self._hide_or_show_layout_widgets(self.horizontalLayout_4, True)
+                 self._hide_or_show_layout_widgets(self.horizontalLayout_5, True)
+    def _hide_or_show_layout_widgets(self, layout, show):
+        for i in range(layout.count()):
+             widget = layout.itemAt(i).widget()
+             if widget:  # Ensure the item is a widget
+                  widget.setVisible(show)
 
     def retranslateUi(self, Form_SID_19_01):
         _translate = QtCore.QCoreApplication.translate

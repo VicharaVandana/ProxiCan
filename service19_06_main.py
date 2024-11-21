@@ -66,14 +66,14 @@ class Ui_Service19_06(Ui_Form_SID_19_06):
         DTCEDRN = self.DTCEDRN_lineEdit.text().strip().replace(" ","").replace(" ","").replace(" ","")
         gen.log_action("Button Click", f"Send 19 06 request button clicked with DTC Mask Record 0x{DTCMaskRecord} & DTC Extended Data Record Number 0x{DTCEDRN}.")
         if(False == gen.check_3Bytehexadecimal(DTCMaskRecord)):
-                #Show messagebox with enter valid DTC status mask value
+                #Show messagebox with enter valid DTC mask record
                 self.update_status("Please enter a valid DTC Mask Record. It must be 3 byte in hexadecimal format")
                 gen.log_action("UDS Request Fail", "19 06 Request not sent due to invalid DTC Mask Record format")
                 return 
         self.update_status("DTC Mask Record is validated.")
             
         if(False == gen.check_1Bytehexadecimal(DTCEDRN)):
-                #Show messagebox with enter valid DTC status mask value
+                #Show messagebox with enter valid DTC External Data Record Number
                 self.update_status("Please enter a valid DTC External Data Record Number. It must be 1 byte in hexadecimal format")
                 gen.log_action("UDS Request Fail", "19 06 Request not sent due to invalid DTC External Data Record Number format")
                 return 
