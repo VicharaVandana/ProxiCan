@@ -53,6 +53,13 @@ class Ui_Service19_01(Ui_Form_SID_19_01):
         gen.log_action("Button Click", "Clear Form for Service 19 subfunction 01 window clicked. Userfields cleared successfully.")
         return
     
+    def reset_fields_on_entry_type_change(self, index):    #Handles actions when the entry type in the combo box changes. Clears specific fields based on the selected index.
+            self.textBrowser_Resp.clear()                  # Clear the response text browser when the combo box index change
+            if index == 1:
+                self.lineEdit_DTCStatusMask.clear()        # Clear the line edit field if index is 1
+            else:                                          # Call the clearform method for resetting all fields
+                self.clearform()
+    
     def addlog(self):
         #Add the uds transaction to the log file
         gen.log_udsreport(self.logentrystring)
@@ -65,14 +72,7 @@ class Ui_Service19_01(Ui_Form_SID_19_01):
         gen.clearudslogfile()
         self.update_status(f"Log file cleared (./reports/uds_log_report.txt)")
         gen.log_action("Button Click", "Clear Log button for Service 19 subfunction 01 window clicked.")
-        return
-    
-    def reset_fields_on_entry_type_change(self, index):    #Handles actions when the entry type in the combo box changes. Clears specific fields based on the selected index.
-            self.textBrowser_Resp.clear()                  # Clear the response text browser when the combo box index change
-            if index == 1:
-                self.lineEdit_DTCStatusMask.clear()        # Clear the line edit field if index is 1
-            else:                                          # Call the clearform method for resetting all fields
-                self.clearform()               
+        return               
     
     def send19_01service(self):
         sprmib_flg = self.checkBox_suppressposmsg.isChecked()
