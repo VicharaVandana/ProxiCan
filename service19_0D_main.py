@@ -84,7 +84,9 @@ class Ui_Service19_0D(Ui_Form_SID_19_0D):
         if(response.type == "Positive Response"):
             self.update_status("Service 19 subfunction 0D response is received")
             length=len(response.resp)
-            dtc_records_html = fun.getDTCASR(length, response.resp)
+            response_data = fun.getDTCASR(length, response.resp)
+            dtc_records_html = response_data["html"]
+            dtc_records_text = response_data["text"]
             response_html = f'''<h4><U>Positive Response Recieved</U></h4>
     <p><strong>Service ID:</strong> <I>{hex(response.resp[0]-0x40)}</I></p>
     <p><strong>Subfunction Name:</strong> <I>Report Most Recent Test Failed DTC {hex(response.resp[1]).upper()} </I></p>
@@ -125,7 +127,11 @@ class Ui_Service19_0D(Ui_Form_SID_19_0D):
  UDS Request :   [{" ".join(hex(number) for number in service_request)}]
  Explaination:   Read DTC Information (Service 19 subfunction 0D) Requested 
  UDS Response:   [{" ".join(hex(number) for number in response.resp)}]
- Explaination:   {response_text}<------------------- LOG ENTRY END ------------------->
+ Explaination:   Positive Response Recieved
+ Service ID: {hex(response.resp[0] - 0x40)}
+ Subfunction Name: Report DTC By Status Mask {hex(response.resp[1])}
+ DTC Status Availability Mask: {hex(response.resp[2])}
+ {dtc_records_text}<------------------- LOG ENTRY END ------------------->
 
 # '''
         return
