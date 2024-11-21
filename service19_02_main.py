@@ -40,6 +40,7 @@ class Ui_Service19_02(Ui_Form_SID_19_02):
         self.logentrystring = ""
         self.label_ResType.setText("No Response")
         self.textBrowser_Resp.clear()
+        self.lineEdit_DTCStatusMask.clear()
         checkboxes = [self.checkBox_statusMask_bit0, self.checkBox_statusMask_bit1,
                       self.checkBox_statusMask_bit2, self.checkBox_statusMask_bit3,
                       self.checkBox_statusMask_bit4, self.checkBox_statusMask_bit5,
@@ -47,9 +48,17 @@ class Ui_Service19_02(Ui_Form_SID_19_02):
         ]
         for checkbox in checkboxes:
             checkbox.setChecked(False)
+        self.comboBox_DTCStatusMask_entryType.currentIndexChanged.connect(self.reset_fields_on_entry_type_change)
         self.update_status("Userform cleared successfully")
         gen.log_action("Button Click", "Clear Form for Service 19 subfunction 02 window clicked. Userfields cleared successfully.")
         return
+    
+    def reset_fields_on_entry_type_change(self, index):    #Handles actions when the entry type in the combo box changes. Clears specific fields based on the selected index.
+            self.textBrowser_Resp.clear()                  # Clear the response text browser when the combo box index change
+            if index == 1:
+                self.lineEdit_DTCStatusMask.clear()        # Clear the line edit field if index is 1
+            else:                                          # Call the clearform method for resetting all fields
+                self.clearform()
     
     def addlog(self):
         #Add the uds transaction to the log file
@@ -67,20 +76,36 @@ class Ui_Service19_02(Ui_Form_SID_19_02):
     
     def send19_02service(self):
         sprmib_flg = self.checkBox_suppressposmsg.isChecked()
-        status_mask= fun.calculate_dtc_status_mask(self.checkBox_statusMask_bit0, self.checkBox_statusMask_bit1,
+
+        if self.comboBox_DTCStatusMask_entryType.currentIndex() == 1: # Option 2 selected
+            status_mask = self.lineEdit_DTCStatusMask.text().strip().replace(" ", "")
+            formatted_status_mask = f"0x{status_mask}"
+            if(False == gen.check_1Bytehexadecimal(status_mask)):
+            #Show messagebox with enter valid DTC status mask value
+                self.update_status("Please enter a valid DTC Status Mask. It must be 1 byte in hexadecimal format")
+                gen.log_action("UDS Request Fail", "19 02 Request not sent due to invalid DTC Status Mask")
+                return 
+            self.update_status("DTC Status Mask is validated.")
+            service_request = fun.form_reqmsg4srv19_subfun_2_manual(status_mask,sprmib_flg)
+            gen.log_action("Button Click", f"Send 19 02 request button clicked with DTC Status Mask {formatted_status_mask} .")
+        else:
+            status_mask= fun.calculate_dtc_status_mask(self.checkBox_statusMask_bit0, self.checkBox_statusMask_bit1,
                                                    self.checkBox_statusMask_bit2, self.checkBox_statusMask_bit3,
                                                    self.checkBox_statusMask_bit4, self.checkBox_statusMask_bit5,
                                                    self.checkBox_statusMask_bit6, self.checkBox_statusMask_bit7
         )
-        gen.log_action("Button Click", f"Send 19 02 request button clicked with DTC Status Mask {hex(status_mask)}.")
-        if status_mask == 0:
-            self.update_status("Please select atleast one bit in DTC status mask")
-            print(f"DTC Status mask {hex(status_mask)} is invalid")
-            gen.log_action("UDS Request Fail", "19 02 Request not happened due to invalid DTC Status Mask")
-            return
+            formatted_status_mask = f"{hex(status_mask)}"
+            if status_mask == 0:
+                self.update_status("Please select atleast one bit in DTC status mask")
+                print(f"DTC Status mask {formatted_status_mask} is invalid")
+                gen.log_action("UDS Request Fail", "19 02 Request not happened due to invalid DTC Status Mask")
+                return
+            self.update_status("DTC Status Mask is validated.")
+            service_request = fun.form_reqmsg4srv19_subfun_2(status_mask,sprmib_flg)
+        
+        gen.log_action("Button Click", f"Send 19 02 request button clicked with DTC Status Mask {formatted_status_mask} .")
 
-
-        service_request = fun.form_reqmsg4srv19_subfun_2(status_mask,sprmib_flg)
+        self.comboBox_DTCStatusMask_entryType.currentIndexChanged.connect(self.reset_fields_on_entry_type_change)
 
         #Send the service request and get the response 
         if(sprmib_flg == False):
@@ -116,7 +141,7 @@ class Ui_Service19_02(Ui_Form_SID_19_02):
     <p><strong>Subfunction Name:</strong> <I>Report DTC By Status Mask {hex(response.resp[1])} </I></p>
     <p><strong>DTC Status Availability Mask:</strong> <I> {hex(response.resp[2])} </I></p>
     {dtc_records_html} <!-- This will display the DTC records generated in the function -->
-    <p><strong>Info:</strong> <I> Service 19 sunfunction 02 is successfully executed with DTC Status Mask {hex(status_mask)}</I></p>
+    <p><strong>Info:</strong> <I> Service 19 sunfunction 02 is successfully executed with DTC Status Mask {formatted_status_mask}</I></p>
 '''
 
         elif(response.type == "Negative Response"):
@@ -149,7 +174,7 @@ class Ui_Service19_02(Ui_Form_SID_19_02):
 
         self.logentrystring = f'''<---- LOG ENTRY [{current_user} - {currenttime}] ---->
  UDS Request :   [{" ".join(hex(number) for number in service_request)}]
- Explaination:   Read DTC Information (Service 19 subfunction 02) Requested for DTC Status Mask {hex(status_mask)}
+ Explaination:   Read DTC Information (Service 19 subfunction 02) Requested for DTC Status Mask {formatted_status_mask}
  UDS Response:   [{" ".join(hex(number) for number in response.resp)}]
  Explaination:   Positive Response Recieved
  Service ID: {hex(response.resp[0] - 0x40)}

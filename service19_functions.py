@@ -244,6 +244,19 @@ def form_reqmsg4srv19_subfun_2(DTCStatusMask,sprmib_flag):
     print(f"{sid} {subfunction} {DTCStatusMask}")
     return(req_bytes)
 
+def form_reqmsg4srv19_subfun_2_manual(DTCStatusMask,sprmib_flag): #if status mask is entered manually instead of bitwise entry
+    sid = int("19", 16)
+    subfun=int("02",16)
+    if (sprmib_flag == True):
+         subfunction = int(subfun) | 0x80   #MSB is set if SPRMIB is requested.
+    else:
+         subfunction = int(subfun)   
+    DTCStatusMask_without_spaces = re.sub(r"\s+", "", DTCStatusMask)
+    DTCStatusMask_hex = int(DTCStatusMask_without_spaces, 16)
+    req_bytes = [sid, subfunction, DTCStatusMask_hex]
+    print(f"{sid} {subfunction} {DTCStatusMask_hex}")
+    return(req_bytes)
+
 
 def form_reqmsg4srv19_subfun_A(sprmib_flag): 
     sid = int("19", 16)

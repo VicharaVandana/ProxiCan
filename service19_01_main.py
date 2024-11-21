@@ -87,7 +87,7 @@ class Ui_Service19_01(Ui_Form_SID_19_01):
                 return 
             self.update_status("DTC Status Mask is validated.")
             service_request = fun.form_reqmsg4srv19_subfun_1_manual(status_mask,sprmib_flg)
-            gen.log_action("Button Click", f"Send 19 01 request button clicked with DTC Status Mask {status_mask} .")
+            gen.log_action("Button Click", f"Send 19 01 request button clicked with DTC Status Mask {formatted_status_mask} .")
         else:
             status_mask= fun.calculate_dtc_status_mask(self.checkBox_statusMask_bit0, self.checkBox_statusMask_bit1,
                                                    self.checkBox_statusMask_bit2, self.checkBox_statusMask_bit3,
@@ -97,7 +97,7 @@ class Ui_Service19_01(Ui_Form_SID_19_01):
             formatted_status_mask = f"{hex(status_mask)}"
             if status_mask == 0:
                 self.update_status("Please select atleast one bit in DTC status mask")
-                print(f"DTC Status mask {hex(status_mask)} is invalid")
+                print(f"DTC Status mask {formatted_status_mask} is invalid")
                 gen.log_action("UDS Request Fail", "19 01 Request not happened due to invalid DTC Status Mask")
                 return
             self.update_status("DTC Status Mask is validated.")
