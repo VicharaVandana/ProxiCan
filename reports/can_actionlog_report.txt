@@ -164,3 +164,9 @@
 <ass930085>[2024-11-21 11:35:34] UDS Request Success: 19 Request Successfully sent : 0x19 0x1 0x88
 <ass930085>[2024-11-21 11:35:37] Button Click: Clear Form for Service 19 subfunction 01 window clicked. Userfields cleared successfully.
 <ass930085>[2024-11-21 11:35:37] Button Click: Clear Form for Service 19 subfunction 01 window clicked. Userfields cleared successfully.
+<ass930085>[2024-11-21 11:38:04] Button Click: Clear Form for Service 19 subfunction 01 window clicked. Userfields cleared successfully.
+<ass930085>[2024-11-21 11:38:11] Button Click: Send 19 01 request button clicked with DTC Status Mask 0x8 .
+<ass930085>[2024-11-21 11:38:11] UDS Request Success: 19 Request Successfully sent : 0x19 0x1 0x8
+<ass930085>[2024-11-21 11:38:36] Button Click: Send 19 01 request button clicked with DTC Status Mask 08 .
+<ass930085>[2024-11-21 11:38:36] Button Click: Send 19 01 request button clicked with DTC Status Mask 0x08 .
+<ass930085>[2024-11-21 11:38:36] UDS Request Success: 19 Request Successfully sent : 0x19 0x1 0x8
