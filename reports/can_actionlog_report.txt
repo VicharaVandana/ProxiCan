@@ -65,3 +65,5 @@
 <ass930085>[2024-11-21 09:45:11] Button Click: Add to Log button for Service 19 subfunction 0D window clicked.
 <ass930085>[2024-11-21 09:45:45] UDS Request Success: 19 Request Successfully sent : 0x19 0xe
 <ass930085>[2024-11-21 09:45:48] Button Click: Add to Log button for Service 19 subfunction 0E window clicked.
+<ass930085>[2024-11-21 09:49:06] UDS Request Success: 19 Request Successfully sent : 0x19 0xb
+<ass930085>[2024-11-21 09:49:09] Button Click: Add to Log button for Service 19 subfunction 0B window clicked.

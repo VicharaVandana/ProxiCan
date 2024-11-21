@@ -44,7 +44,7 @@ def getDTCASR(length, response):
         # No records to display
         return {
              "html": "<p><strong>DTC and Status Record: </strong><I>No DTC records available.</I></p>",
-            "text": "DTC and Status Record: No DTC records available."
+            "text": "DTC and Status Record: No DTC records available.\n"
         }
     dtc_records_html = """
     <h4>DTC and Status Record: </h4>

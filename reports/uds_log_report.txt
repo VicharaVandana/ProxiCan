@@ -97,4 +97,15 @@ Si No DTC         Status of DTC
 3     0xABCD01      0x2F             
 <------------------- LOG ENTRY END ------------------->
 
+# <---- LOG ENTRY [ass930085 - 2024-11-21 09:49:06] ---->
+ UDS Request :   [0x19 0xb]
+ Explaination:   Read DTC Information (Service 19 subfunction 0B) Requested 
+ UDS Response:   [0x59 0xb 0xff]
+ Explaination:   Positive Response Recieved
+ Service ID: 0x19
+ Subfunction Name: Report DTC By Status Mask 0xb
+ DTC Status Availability Mask: 0xff
+ DTC and Status Record: No DTC records available.
+<------------------- LOG ENTRY END ------------------->
+
 # 
