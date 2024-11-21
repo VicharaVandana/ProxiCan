@@ -216,3 +216,32 @@
 <ass930085>[2024-11-21 12:18:30] Button Click: Clear Form for Service 19 subfunction 02 window clicked. Userfields cleared successfully.
 <ass930085>[2024-11-21 12:18:36] Button Click: Send 19 02 request button clicked with DTC Status Mask 0x84 .
 <ass930085>[2024-11-21 12:18:36] UDS Request Success: 19 Request Successfully sent : 0x19 0x2 0x84
+<ass930085>[2024-11-21 13:31:52] UDS Request Fail: 19 01 Request not happened due to invalid DTC Status Mask
+<ass930085>[2024-11-21 13:32:01] Button Click: Send 19 01 request button clicked with DTC Status Mask 0x8 .
+<ass930085>[2024-11-21 13:32:01] UDS Request Success: 19 Request Successfully sent : 0x19 0x1 0x8
+<ass930085>[2024-11-21 13:32:16] Button Click: Send 19 01 request button clicked with DTC Status Mask 0x88 .
+<ass930085>[2024-11-21 13:32:16] Button Click: Send 19 01 request button clicked with DTC Status Mask 0x88 .
+<ass930085>[2024-11-21 13:32:16] UDS Request Success: 19 Request Successfully sent : 0x19 0x1 0x88
+<ass930085>[2024-11-21 13:33:41] Button Click: Clear Form for Service 19 subfunction 01 window clicked. Userfields cleared successfully.
+<ass930085>[2024-11-21 13:34:28] Button Click: Send 19 01 request button clicked with DTC Status Mask 0x8 .
+<ass930085>[2024-11-21 13:34:28] UDS Request Success: 19 Request Successfully sent : 0x19 0x1 0x8
+<ass930085>[2024-11-21 13:34:44] Button Click: Send 19 01 request button clicked with DTC Status Mask 0x88 .
+<ass930085>[2024-11-21 13:34:44] Button Click: Send 19 01 request button clicked with DTC Status Mask 0x88 .
+<ass930085>[2024-11-21 13:34:44] UDS Request Success: 19 Request Successfully sent : 0x19 0x1 0x88
+<ass930085>[2024-11-21 13:36:12] Button Click: Clear Form for Service 19 subfunction 01 window clicked. Userfields cleared successfully.
+<ass930085>[2024-11-21 13:36:12] Button Click: Clear Form for Service 19 subfunction 01 window clicked. Userfields cleared successfully.
+<ass930085>[2024-11-21 13:43:14] Button Click: Send 19 01 request button clicked with DTC Status Mask 0x84 .
+<ass930085>[2024-11-21 13:43:14] UDS Request Success: 19 Request Successfully sent : 0x19 0x1 0x84
+<ass930085>[2024-11-21 13:43:28] Button Click: Send 19 01 request button clicked with DTC Status Mask 0x88 .
+<ass930085>[2024-11-21 13:43:28] UDS Request Success: 19 Request Successfully sent : 0x19 0x1 0x88
+<ass930085>[2024-11-21 13:43:38] Button Click: Send 19 01 request button clicked with DTC Status Mask 0x84 .
+<ass930085>[2024-11-21 13:43:38] UDS Request Success: 19 Request Successfully sent : 0x19 0x1 0x84
+<ass930085>[2024-11-21 13:44:06] Button Click: Clear Form for Service 19 subfunction 01 window clicked. Userfields cleared successfully.
+<ass930085>[2024-11-21 13:44:10] Button Click: Send 19 01 request button clicked with DTC Status Mask 0x8 .
+<ass930085>[2024-11-21 13:44:10] UDS Request Success: 19 Request Successfully sent : 0x19 0x1 0x8
+<ass930085>[2024-11-21 13:56:49] UDS Request Fail: 19 02 Request not happened due to invalid DTC Status Mask
+<ass930085>[2024-11-21 13:56:54] Button Click: Send 19 02 request button clicked with DTC Status Mask 0x84 .
+<ass930085>[2024-11-21 13:56:54] UDS Request Success: 19 Request Successfully sent : 0x19 0x2 0x84
+<ass930085>[2024-11-21 13:57:25] Button Click: Send 19 02 request button clicked with DTC Status Mask 0x84 .
+<ass930085>[2024-11-21 13:57:25] Button Click: Send 19 02 request button clicked with DTC Status Mask 0x84 .
+<ass930085>[2024-11-21 13:57:25] UDS Request Success: 19 Request Successfully sent : 0x19 0x2 0x84
