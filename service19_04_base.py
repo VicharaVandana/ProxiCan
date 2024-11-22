@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'SID_19_041.ui'
+# Form implementation generated from reading ui file 'c:\Users\ass930085\OneDrive - Tata Technologies\Documents\PROXI GIT\reference\ProxiCan\SID_19_04.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.11
 #
@@ -11,7 +11,7 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 
-class Ui_From_SID_19_04(object):
+class Ui_Form_SID_19_04(object):
     def setupUi(self, From_SID_19_04):
         From_SID_19_04.setObjectName("From_SID_19_04")
         From_SID_19_04.resize(842, 635)
@@ -30,21 +30,30 @@ class Ui_From_SID_19_04(object):
         self.gridLayout_2.setSizeConstraint(QtWidgets.QLayout.SetNoConstraint)
         self.gridLayout_2.setContentsMargins(0, 0, 0, 0)
         self.gridLayout_2.setObjectName("gridLayout_2")
-        self.subFunction_Name = QtWidgets.QLabel(self.layoutWidget)
-        self.subFunction_Name.setObjectName("subFunction_Name")
-        self.gridLayout_2.addWidget(self.subFunction_Name, 0, 1, 1, 2)
+        self.DTCSnapRecNumber_label = QtWidgets.QLabel(self.layoutWidget)
+        self.DTCSnapRecNumber_label.setObjectName("DTCSnapRecNumber_label")
+        self.gridLayout_2.addWidget(self.DTCSnapRecNumber_label, 3, 0, 1, 1)
         self.pushButton_Send19_04Req = QtWidgets.QPushButton(self.layoutWidget)
         self.pushButton_Send19_04Req.setStyleSheet("background-color: rgb(0, 255, 255);\n"
 "border-color: rgb(0, 0, 0);\n"
 "color: rgb(0, 0, 0);")
         self.pushButton_Send19_04Req.setObjectName("pushButton_Send19_04Req")
         self.gridLayout_2.addWidget(self.pushButton_Send19_04Req, 0, 4, 1, 1)
-        self.label_4 = QtWidgets.QLabel(self.layoutWidget)
-        self.label_4.setObjectName("label_4")
-        self.gridLayout_2.addWidget(self.label_4, 7, 0, 1, 1)
+        self.subFunction_Name = QtWidgets.QLabel(self.layoutWidget)
+        self.subFunction_Name.setObjectName("subFunction_Name")
+        self.gridLayout_2.addWidget(self.subFunction_Name, 0, 1, 1, 2)
+        self.checkBox_suppressposmsg = QtWidgets.QCheckBox(self.layoutWidget)
+        self.checkBox_suppressposmsg.setObjectName("checkBox_suppressposmsg")
+        self.gridLayout_2.addWidget(self.checkBox_suppressposmsg, 0, 3, 1, 1)
         self.label_5 = QtWidgets.QLabel(self.layoutWidget)
         self.label_5.setObjectName("label_5")
         self.gridLayout_2.addWidget(self.label_5, 4, 0, 1, 1)
+        self.DTCStatusMaskRecord_label = QtWidgets.QLabel(self.layoutWidget)
+        self.DTCStatusMaskRecord_label.setObjectName("DTCStatusMaskRecord_label")
+        self.gridLayout_2.addWidget(self.DTCStatusMaskRecord_label, 1, 0, 2, 1)
+        self.label_4 = QtWidgets.QLabel(self.layoutWidget)
+        self.label_4.setObjectName("label_4")
+        self.gridLayout_2.addWidget(self.label_4, 7, 0, 1, 1)
         self.label_subFunction = QtWidgets.QLabel(self.layoutWidget)
         self.label_subFunction.setObjectName("label_subFunction")
         self.gridLayout_2.addWidget(self.label_subFunction, 0, 0, 1, 1)
@@ -54,40 +63,31 @@ class Ui_From_SID_19_04(object):
         self.label_ResType.setAlignment(QtCore.Qt.AlignCenter)
         self.label_ResType.setObjectName("label_ResType")
         self.gridLayout_2.addWidget(self.label_ResType, 4, 1, 1, 2)
-        self.DTCStatusMaskRecord_label = QtWidgets.QLabel(self.layoutWidget)
-        self.DTCStatusMaskRecord_label.setObjectName("DTCStatusMaskRecord_label")
-        self.gridLayout_2.addWidget(self.DTCStatusMaskRecord_label, 1, 0, 2, 1)
-        self.checkBox_suppressposmsg = QtWidgets.QCheckBox(self.layoutWidget)
-        self.checkBox_suppressposmsg.setObjectName("checkBox_suppressposmsg")
-        self.gridLayout_2.addWidget(self.checkBox_suppressposmsg, 0, 3, 1, 1)
-        self.DTCSnapRecNumber_label = QtWidgets.QLabel(self.layoutWidget)
-        self.DTCSnapRecNumber_label.setObjectName("DTCSnapRecNumber_label")
-        self.gridLayout_2.addWidget(self.DTCSnapRecNumber_label, 3, 0, 1, 1)
-        self.lineEdit_DTCMaskRecord = QtWidgets.QLineEdit(self.layoutWidget)
-        self.lineEdit_DTCMaskRecord.setObjectName("lineEdit_DTCMaskRecord")
-        self.gridLayout_2.addWidget(self.lineEdit_DTCMaskRecord, 1, 1, 1, 1)
-        self.lineEdit_DTCSnapshotRecNumber = QtWidgets.QLineEdit(self.layoutWidget)
-        self.lineEdit_DTCSnapshotRecNumber.setObjectName("lineEdit_DTCSnapshotRecNumber")
-        self.gridLayout_2.addWidget(self.lineEdit_DTCSnapshotRecNumber, 3, 1, 1, 1)
-        self.pushButton_clearLog = QtWidgets.QPushButton(self.layoutWidget)
-        self.pushButton_clearLog.setStyleSheet("background-color: rgb(85, 255, 127);\n"
-"color: rgb(85, 0, 0);")
-        self.pushButton_clearLog.setObjectName("pushButton_clearLog")
-        self.gridLayout_2.addWidget(self.pushButton_clearLog, 1, 3, 1, 1)
-        self.pushButton_appendLog = QtWidgets.QPushButton(self.layoutWidget)
-        self.pushButton_appendLog.setStyleSheet("background-color: rgb(85, 255, 127);\n"
-"color: rgb(85, 0, 0);")
-        self.pushButton_appendLog.setObjectName("pushButton_appendLog")
-        self.gridLayout_2.addWidget(self.pushButton_appendLog, 1, 4, 1, 1)
         self.textBrowser_Resp = QtWidgets.QTextBrowser(self.layoutWidget)
         self.textBrowser_Resp.setObjectName("textBrowser_Resp")
-        self.gridLayout_2.addWidget(self.textBrowser_Resp, 7, 1, 1, 4)
+        self.gridLayout_2.addWidget(self.textBrowser_Resp, 7, 1, 1, 3)
         self.pushButton_reset = QtWidgets.QPushButton(self.layoutWidget)
         self.pushButton_reset.setStyleSheet("background-color: rgb(170, 170, 0);\n"
 "font: 75 8pt \"MS Shell Dlg 2\";\n"
 "color: rgb(0, 85, 0);")
         self.pushButton_reset.setObjectName("pushButton_reset")
-        self.gridLayout_2.addWidget(self.pushButton_reset, 4, 4, 1, 1)
+        self.gridLayout_2.addWidget(self.pushButton_reset, 7, 4, 1, 1)
+        self.pushButton_clearLog = QtWidgets.QPushButton(self.layoutWidget)
+        self.pushButton_clearLog.setStyleSheet("background-color: rgb(85, 255, 127);\n"
+"color: rgb(85, 0, 0);")
+        self.pushButton_clearLog.setObjectName("pushButton_clearLog")
+        self.gridLayout_2.addWidget(self.pushButton_clearLog, 4, 3, 1, 1)
+        self.pushButton_appendLog = QtWidgets.QPushButton(self.layoutWidget)
+        self.pushButton_appendLog.setStyleSheet("background-color: rgb(85, 255, 127);\n"
+"color: rgb(85, 0, 0);")
+        self.pushButton_appendLog.setObjectName("pushButton_appendLog")
+        self.gridLayout_2.addWidget(self.pushButton_appendLog, 4, 4, 1, 1)
+        self.lineEdit_DTCMaskRecord = QtWidgets.QLineEdit(self.layoutWidget)
+        self.lineEdit_DTCMaskRecord.setObjectName("lineEdit_DTCMaskRecord")
+        self.gridLayout_2.addWidget(self.lineEdit_DTCMaskRecord, 1, 1, 1, 4)
+        self.lineEdit_DTCSnapshotRecNumber = QtWidgets.QLineEdit(self.layoutWidget)
+        self.lineEdit_DTCSnapshotRecNumber.setObjectName("lineEdit_DTCSnapshotRecNumber")
+        self.gridLayout_2.addWidget(self.lineEdit_DTCSnapshotRecNumber, 3, 1, 1, 4)
 
         self.retranslateUi(From_SID_19_04)
         QtCore.QMetaObject.connectSlotsByName(From_SID_19_04)
@@ -96,29 +96,29 @@ class Ui_From_SID_19_04(object):
         _translate = QtCore.QCoreApplication.translate
         From_SID_19_04.setWindowTitle(_translate("From_SID_19_04", "Report DTC Snapshot Record By DTC Number"))
         self.label_status.setText(_translate("From_SID_19_04", "No Status"))
-        self.subFunction_Name.setText(_translate("From_SID_19_04", "Report DTC Snapshot Record By DTC Number 0X04 "))
+        self.DTCSnapRecNumber_label.setText(_translate("From_SID_19_04", "DTC Snapshot Record Number:"))
         self.pushButton_Send19_04Req.setToolTip(_translate("From_SID_19_04", "<html><head/><body><p>Sends the 19 service subfunction 04 request to ECU</p></body></html>"))
         self.pushButton_Send19_04Req.setText(_translate("From_SID_19_04", "Send Request"))
-        self.label_4.setText(_translate("From_SID_19_04", "          Response : "))
-        self.label_5.setText(_translate("From_SID_19_04", "Response Type: "))
-        self.label_subFunction.setText(_translate("From_SID_19_04", "Sub Function:"))
-        self.label_ResType.setText(_translate("From_SID_19_04", "No Response"))
-        self.DTCStatusMaskRecord_label.setText(_translate("From_SID_19_04", "DTC Mask Record:"))
+        self.subFunction_Name.setText(_translate("From_SID_19_04", "Report DTC Snapshot Record By DTC Number 0X04 "))
         self.checkBox_suppressposmsg.setToolTip(_translate("From_SID_19_04", "If selected then Suppress Positive Response Message Indication bit will be set in Subfunction"))
         self.checkBox_suppressposmsg.setText(_translate("From_SID_19_04", "SPRMIB"))
-        self.DTCSnapRecNumber_label.setText(_translate("From_SID_19_04", "DTC Snapshot Record Number:"))
-        self.lineEdit_DTCMaskRecord.setToolTip(_translate("From_SID_19_04", "<html><head/><body><p>Enter DTC Mask Record in hexadecimal format of 3 Bytes</p></body></html>"))
-        self.lineEdit_DTCSnapshotRecNumber.setToolTip(_translate("From_SID_19_04", "<html><head/><body><p>Enter DTC Snapshot Record Number in hexadecimal format of 1 Byte</p></body></html>"))
+        self.label_5.setText(_translate("From_SID_19_04", "Response Type: "))
+        self.DTCStatusMaskRecord_label.setText(_translate("From_SID_19_04", "DTC Mask Record:"))
+        self.label_4.setText(_translate("From_SID_19_04", "Response : "))
+        self.label_subFunction.setText(_translate("From_SID_19_04", "Sub Function:"))
+        self.label_ResType.setText(_translate("From_SID_19_04", "No Response"))
+        self.pushButton_reset.setText(_translate("From_SID_19_04", "Reset"))
         self.pushButton_clearLog.setText(_translate("From_SID_19_04", "Clear Log"))
         self.pushButton_appendLog.setText(_translate("From_SID_19_04", "Add to Log"))
-        self.pushButton_reset.setText(_translate("From_SID_19_04", "Reset"))
+        self.lineEdit_DTCMaskRecord.setToolTip(_translate("From_SID_19_04", "<html><head/><body><p>Enter DTC Mask Record in hexadecimal format of 3 Bytes</p></body></html>"))
+        self.lineEdit_DTCSnapshotRecNumber.setToolTip(_translate("From_SID_19_04", "<html><head/><body><p>Enter DTC Snapshot Record Number in hexadecimal format of 1 Byte</p></body></html>"))
 
 
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
-    From_SID_19_04 = QtWidgets.QDialog()
-    ui = Ui_From_SID_19_04()
-    ui.setupUi(From_SID_19_04)
-    From_SID_19_04.show()
+    Form_SID_19_04 = QtWidgets.QWidget()
+    ui = Ui_Form_SID_19_04()
+    ui.setupUi(Form_SID_19_04)
+    Form_SID_19_04.show()
     sys.exit(app.exec_())

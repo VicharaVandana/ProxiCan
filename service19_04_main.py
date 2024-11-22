@@ -6,7 +6,7 @@ else:
     import uds
     import can
     
-from service19_04_base import Ui_From_SID_19_04
+from service19_04_base import Ui_Form_SID_19_04
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QMessageBox
 import service19_functions as fun
@@ -19,7 +19,7 @@ import configure as conf
 import os
 
 
-class Ui_Service19_04(Ui_From_SID_19_04):
+class Ui_Service19_04(Ui_Form_SID_19_04):
     def redesign_ui(self):
         pass
 

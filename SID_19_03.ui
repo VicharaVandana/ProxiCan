@@ -170,14 +170,14 @@ color: rgb(0, 0, 0);</string>
       </property>
      </widget>
     </item>
-    <item row="1" column="1">
+    <item row="1" column="1" colspan="4">
      <widget class="QLineEdit" name="lineEdit_DTCMaskRecord">
       <property name="toolTip">
        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Enter DTC Mask Record in Hexadecimal format of 3 bytes&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
     </item>
-    <item row="3" column="1">
+    <item row="3" column="1" colspan="4">
      <widget class="QLineEdit" name="lineEdit_SnapshotRecordNumber">
       <property name="toolTip">
        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Enter DTC Snapshot Record Number in Hexadecimal format of 1 byte&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
