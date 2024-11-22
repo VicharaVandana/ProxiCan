@@ -139,6 +139,7 @@ class Ui_Service19_01(Ui_Form_SID_19_01):
             response_html = f'''<h4><U>Positive Response Recieved</U></h4>
     <p><strong>Service ID:</strong> <I>{hex(response.resp[0]-0x40)}</I></p>
     <p><strong>Subfunction Name:</strong> <I>Report Number Of DTC By Status Mask {hex(response.resp[1])} </I></p>
+    <p><strong>Suppress Positive Message Request:</strong> <I>{sprmib_flg}</I></p>
     <p><strong>DTC Status Availability Mask:</strong> <I> {hex(response.resp[2])} </I></p>
     <p><strong>DTC Format Identifier:</strong> <I> {hex(response.resp[3])} {DTCFormatIdentifierName} </I></p>
     <p><strong>DTC Count:</strong> <I> {combined_value} </I></p>
@@ -148,6 +149,7 @@ class Ui_Service19_01(Ui_Form_SID_19_01):
 
         elif(response.type == "Negative Response"):
             response_html = f'''<h4><U>Negative Response Recieved</U></h4>
+    <p><strong>Suppress Positive Message Request:</strong> <I>{sprmib_flg}</I></p>
     <p><strong>NRC Code:</strong> <I>{hex(response.nrc)}</I></p>
     <p><strong>NRC Name:</strong> <I>{response.nrcname}</I></p>
     <p><strong>NRC Desc:</strong> <I>{response.nrcdesc}</I></p>
@@ -159,7 +161,8 @@ class Ui_Service19_01(Ui_Form_SID_19_01):
 '''
         elif(response.type == "No Response"):
             response_html = f'''<h4><U>No Response Recieved</U></h4>
-    <p><strong>Response Bytes:</strong> <I>{" ".join(hex(number) for number in response.resp)}</I></p>
+            <p><strong>Suppress Positive Message Request:</strong> <I>{sprmib_flg}</I></p>
+            <p><strong>Response Bytes:</strong> <I>{" ".join(hex(number) for number in response.resp)}</I></p>
 '''
         else:
             response_html = f'''<h4><U>ERROR OCCURED</U></h4>'''
@@ -176,7 +179,7 @@ class Ui_Service19_01(Ui_Form_SID_19_01):
 
         self.logentrystring = f'''<---- LOG ENTRY [{current_user} - {currenttime}] ---->
  UDS Request :   [{" ".join(hex(number) for number in service_request)}]
- Explaination:   Read DTC Information (Service 19 subfunction 01) Requested for DTC Status Mask {formatted_status_mask}
+ Explaination:   Read DTC Information (Service 19 subfunction 01) Requested for DTC Status Mask {formatted_status_mask} and SPRMIB flag {sprmib_flg}
  UDS Response:   [{" ".join(hex(number) for number in response.resp)}]
  Explaination:   {response_text}<------------------- LOG ENTRY END ------------------->
 

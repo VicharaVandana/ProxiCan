@@ -80,6 +80,7 @@ def sendRequest(request, IsPosResExpected = True):
         while((res[0] == 0x7F) and (res[2] == 0x78)):   #If positive response pending is recieved then
             response.positiveResponsePending_count = response.positiveResponsePending_count + 1
             res = tp.recieve_data()
+            print(f"Received Positive Response Pending (Attempt {response.positiveResponsePending_count}): {res}")
         else:
             response.resp = res
             #process the response

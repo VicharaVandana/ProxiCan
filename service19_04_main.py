@@ -103,6 +103,7 @@ class Ui_Service19_04(Ui_From_SID_19_04):
             response_html = f'''<h4><U>Positive Response Recieved</U></h4>
     <p><strong>Service ID:</strong> <I>{hex(response.resp[0]-0x40)}</I></p>
     <p><strong>Subfunction Name:</strong> <I>Report DTC Snapshot Record By DTC Number {hex(response.resp[1])} </I></p>
+    <p><strong>Suppress Positive Message Request:</strong> <I>{sprmib_flg}</I></p>
     <p><strong>DTC And Status Record:</strong> <I> {" ".join(hex(number) for number in response.resp[2:6])} </I></p>
     <p><strong>DTC Snapshot Record Number:</strong> <I> {" ".join(hex(number) for number in response.resp[6:7])} </I></p>
     <p><strong>DTC Snapshot Record Number Of Identifiers:</strong> <I> {" ".join(hex(number) for number in response.resp[7:])} </I></p>
@@ -111,6 +112,7 @@ class Ui_Service19_04(Ui_From_SID_19_04):
 
         elif(response.type == "Negative Response"):
             response_html = f'''<h4><U>Negative Response Recieved</U></h4>
+    <p><strong>Suppress Positive Message Request:</strong> <I>{sprmib_flg}</I></p>
     <p><strong>NRC Code:</strong> <I>{hex(response.nrc)}</I></p>
     <p><strong>NRC Name:</strong> <I>{response.nrcname}</I></p>
     <p><strong>NRC Desc:</strong> <I>{response.nrcdesc}</I></p>
@@ -122,7 +124,8 @@ class Ui_Service19_04(Ui_From_SID_19_04):
 '''
         elif(response.type == "No Response"):
             response_html = f'''<h4><U>No Response Recieved</U></h4>
-    <p><strong>Response Bytes:</strong> <I>{" ".join(hex(number) for number in response.resp)}</I></p>
+            <p><strong>Suppress Positive Message Request:</strong> <I>{sprmib_flg}</I></p>
+            <p><strong>Response Bytes:</strong> <I>{" ".join(hex(number) for number in response.resp)}</I></p>
 '''
         else:
             response_html = f'''<h4><U>ERROR OCCURED</U></h4>'''
@@ -139,7 +142,7 @@ class Ui_Service19_04(Ui_From_SID_19_04):
 
         self.logentrystring = f'''<---- LOG ENTRY [{current_user} - {currenttime}] ---->
  UDS Request :   [{" ".join(hex(number) for number in service_request)}]
- Explaination:   Read DTC Information (Service 19 subfunction 04) Requested for DTC Mask Record {DTCMaskRecord} and DTC Snapshot Record Number {DTCSnapshotRecordNumber}
+ Explaination:   Read DTC Information (Service 19 subfunction 04) Requested for DTC Mask Record {DTCMaskRecord} , DTC Snapshot Record Number {DTCSnapshotRecordNumber} and SPRMIB flag {sprmib_flg}
  UDS Response:   [{" ".join(hex(number) for number in response.resp)}]
  Explaination:   {response_text}<------------------- LOG ENTRY END ------------------->
 

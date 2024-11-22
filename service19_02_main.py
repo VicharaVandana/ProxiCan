@@ -139,6 +139,7 @@ class Ui_Service19_02(Ui_Form_SID_19_02):
             response_html = f'''<h4><U>Positive Response Recieved</U></h4>
     <p><strong>Service ID:</strong> <I>{hex(response.resp[0]-0x40)}</I></p>
     <p><strong>Subfunction Name:</strong> <I>Report DTC By Status Mask {hex(response.resp[1])} </I></p>
+    <p><strong>Suppress Positive Message Request:</strong> <I>{sprmib_flg}</I></p>
     <p><strong>DTC Status Availability Mask:</strong> <I> {hex(response.resp[2])} </I></p>
     {dtc_records_html} <!-- This will display the DTC records generated in the function -->
     <p><strong>Info:</strong> <I> Service 19 sunfunction 02 is successfully executed with DTC Status Mask {formatted_status_mask}</I></p>
@@ -146,6 +147,7 @@ class Ui_Service19_02(Ui_Form_SID_19_02):
 
         elif(response.type == "Negative Response"):
             response_html = f'''<h4><U>Negative Response Recieved</U></h4>
+    <p><strong>Suppress Positive Message Request:</strong> <I>{sprmib_flg}</I></p>
     <p><strong>NRC Code:</strong> <I>{hex(response.nrc)}</I></p>
     <p><strong>NRC Name:</strong> <I>{response.nrcname}</I></p>
     <p><strong>NRC Desc:</strong> <I>{response.nrcdesc}</I></p>
@@ -157,7 +159,8 @@ class Ui_Service19_02(Ui_Form_SID_19_02):
 '''
         elif(response.type == "No Response"):
             response_html = f'''<h4><U>No Response Recieved</U></h4>
-    <p><strong>Response Bytes:</strong> <I>{" ".join(hex(number) for number in response.resp)}</I></p>
+            <p><strong>Suppress Positive Message Request:</strong> <I>{sprmib_flg}</I></p>
+            <p><strong>Response Bytes:</strong> <I>{" ".join(hex(number) for number in response.resp)}</I></p>
 '''
         else:
             response_html = f'''<h4><U>ERROR OCCURED</U></h4>'''
@@ -174,15 +177,24 @@ class Ui_Service19_02(Ui_Form_SID_19_02):
 
         self.logentrystring = f'''<---- LOG ENTRY [{current_user} - {currenttime}] ---->
  UDS Request :   [{" ".join(hex(number) for number in service_request)}]
- Explaination:   Read DTC Information (Service 19 subfunction 02) Requested for DTC Status Mask {formatted_status_mask}
+ Explaination:   Read DTC Information (Service 19 subfunction 02) Requested for DTC Status Mask {formatted_status_mask} and SPRMIB flag {sprmib_flg}
  UDS Response:   [{" ".join(hex(number) for number in response.resp)}]
- Explaination:   Positive Response Recieved
- Service ID: {hex(response.resp[0] - 0x40)}
- Subfunction Name: Report DTC By Status Mask {hex(response.resp[1])}
- DTC Status Availability Mask: {hex(response.resp[2])}
- {dtc_records_text}
- Info: Service 19 sunfunction 02 is successfully executed with DTC Status Mask {formatted_status_mask}
- <------------------- LOG ENTRY END ------------------->
+ '''
+        # Conditional part of the log entry
+        if response.type == "Positive Response":
+            self.logentrystring += f'''Explanation:   Positive Response Received
+Service ID: {hex(response.resp[0] - 0x40)}
+Subfunction Name: Report DTC By Status Mask {hex(response.resp[1])}
+Suppress Positive Message Request: {sprmib_flg}
+DTC Status Availability Mask: {hex(response.resp[2])}
+{dtc_records_text}
+Info: Service 19 Subfunction 02 was successfully executed with DTC Status Mask {formatted_status_mask}
+<------------------- LOG ENTRY END ------------------->
+
+# '''
+        else:
+            self.logentrystring += f'''Explanation:   {response_text}
+<------------------- LOG ENTRY END ------------------->
 
 # '''
         return

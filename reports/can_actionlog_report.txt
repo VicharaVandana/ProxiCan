@@ -1,0 +1,41 @@
+<ass930085>[2024-11-22 13:43:34] Button Click: Import pxi button clicked
+<ass930085>[2024-11-22 13:43:38] Config File Import Success: Config File Loaded successfully from: C:/Users/ass930085/OneDrive - Tata Technologies/Documents/PROXI GIT/reference/ProxiCan/config.pxi
+<ass930085>[2024-11-22 13:43:40] Button Click: Connect CAN button clicked
+<ass930085>[2024-11-22 13:43:40] CAN Connection: CAN can0 connected with baudrate 500000 and fdf type CANFD
+<ass930085>[2024-11-22 13:43:42] Button Click: Service 19 Window Opened
+<ass930085>[2024-11-22 13:43:44] Button Click: Service 19 subfunction 01 Window Opened
+<ass930085>[2024-11-22 13:43:48] Button Click: Send 19 01 request button clicked with DTC Status Mask 0x28 .
+<ass930085>[2024-11-22 13:43:48] UDS Request Success: 19 Request Successfully sent : 0x19 0x1 0x28
+<ass930085>[2024-11-22 13:43:51] Button Click: Send 19 01 request button clicked with DTC Status Mask 0x8 .
+<ass930085>[2024-11-22 13:43:51] UDS Request Success: 19 Request Successfully sent : 0x19 0x1 0x8
+<ass930085>[2024-11-22 13:43:57] Button Click: Service 19 subfunction 02 Window Opened
+<ass930085>[2024-11-22 13:44:00] Button Click: Send 19 02 request button clicked with DTC Status Mask 0x10 .
+<ass930085>[2024-11-22 13:44:00] UDS Request Success: 19 Request Successfully sent : 0x19 0x2 0x10
+<ass930085>[2024-11-22 13:44:07] Button Click: Send 19 02 request button clicked with DTC Status Mask 0x03 .
+<ass930085>[2024-11-22 13:44:07] Button Click: Send 19 02 request button clicked with DTC Status Mask 0x03 .
+<ass930085>[2024-11-22 13:44:07] UDS Request Success: 19 Request Successfully sent : 0x19 0x2 0x3
+<ass930085>[2024-11-22 13:44:13] Button Click: Send 19 02 request button clicked with DTC Status Mask 0x01 .
+<ass930085>[2024-11-22 13:44:13] Button Click: Send 19 02 request button clicked with DTC Status Mask 0x01 .
+<ass930085>[2024-11-22 13:44:13] UDS Request Success: 19 Request Successfully sent : 0x19 0x2 0x1
+<ass930085>[2024-11-22 13:44:18] Button Click: Service 19 subfunction 04 Window Opened
+<ass930085>[2024-11-22 13:44:27] UDS Request Success: 19 Request Successfully sent : 0x19 0x4 0x12 0x34 0x56 0xff
+<ass930085>[2024-11-22 13:44:59] Button Click: Service 19 subfunction 06 Window Opened
+<ass930085>[2024-11-22 13:45:08] Button Click: Send 19 06 request button clicked with DTC Mask Record 0x123456 & DTC Extended Data Record Number 0xFF.
+<ass930085>[2024-11-22 13:45:08] UDS Request Success: 19 Request Successfully sent : 0x19 0x6 0x12 0x34 0x56 0xff
+<ass930085>[2024-11-22 13:45:10] Button Click: Add to Log button for Service 19 subfunction 06 window clicked.
+<ass930085>[2024-11-22 13:45:15] Button Click: Send 19 06 request button clicked with DTC Mask Record 0x123456 & DTC Extended Data Record Number 0xF1.
+<ass930085>[2024-11-22 13:45:15] UDS Request Success: 19 Request Successfully sent : 0x19 0x6 0x12 0x34 0x56 0xf1
+<ass930085>[2024-11-22 13:45:22] Button Click: Send 19 06 request button clicked with DTC Mask Record 0x123456 & DTC Extended Data Record Number 0xF1.
+<ass930085>[2024-11-22 13:45:22] UDS Request Success: 19 Request Successfully sent : 0x19 0x6 0x12 0x34 0x56 0xf1
+<ass930085>[2024-11-22 13:45:44] Button Click: Send 19 06 request button clicked with DTC Mask Record 0x123456 & DTC Extended Data Record Number 0xF1.
+<ass930085>[2024-11-22 13:45:44] UDS Request Success: 19 Request Successfully sent : 0x19 0x86 0x12 0x34 0x56 0xf1
+<ass930085>[2024-11-22 13:45:51] Button Click: Service 19 subfunction 04 Window Opened
+<ass930085>[2024-11-22 13:45:58] UDS Request Success: 19 Request Successfully sent : 0x19 0x4 0x12 0x34 0x56 0xf1
+<ass930085>[2024-11-22 13:46:03] UDS Request Success: 19 Request Successfully sent : 0x19 0x84 0x12 0x34 0x56 0xf1
+<ass930085>[2024-11-22 13:46:07] Button Click: Service 19 subfunction 06 Window Opened
+<ass930085>[2024-11-22 13:46:19] Button Click: Service 19 subfunction 0A Window Opened
+<ass930085>[2024-11-22 13:46:21] UDS Request Success: 19 Request Successfully sent : 0x19 0xa
+<ass930085>[2024-11-22 13:46:29] Button Click: Service 19 subfunction 0A Window Opened
+<ass930085>[2024-11-22 13:46:33] UDS Request Success: 19 Request Successfully sent : 0x19 0x8a
+<ass930085>[2024-11-22 13:46:39] Button Click: Disonnect CAN button clicked
+<ass930085>[2024-11-22 13:46:39] CAN Connection: CAN disconnected successfully.

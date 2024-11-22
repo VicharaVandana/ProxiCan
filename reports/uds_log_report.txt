@@ -1,0 +1,135 @@
+<---- LOG ENTRY [ass930085 - 2024-11-22 13:31:18] ---->
+ UDS Request :   [0x19 0xa]
+ Explaination:   Read DTC Information (Service 19 subfunction 0A) Requested 
+ UDS Response:   [0x59 0xa 0x7f 0x12 0x34 0x56 0x24 0x23 0x45 0x5 0x0 0xab 0xcd 0x1 0x2f]
+ Explanation:   Positive Response Received
+Service ID: 0x19
+Subfunction Name: Report Supported DTC 0xa
+Suppress Positive Message Request: False
+DTC Status Availability Mask: 0x7f
+DTC and Status Record:
+Si No DTC         Status of DTC  
+---------------------------------
+1     0x123456      0x24             
+2     0x234505      0x00             
+3     0xABCD01      0x2F             
+
+Info: Service 19 Subfunction 0A was successfully executed.
+<------------------- LOG ENTRY END ------------------->
+
+# <---- LOG ENTRY [ass930085 - 2024-11-22 13:31:41] ---->
+ UDS Request :   [0x19 0x2 0x1]
+ Explaination:   Read DTC Information (Service 19 subfunction 02) Requested for DTC Status Mask 0x1 and SPRMIB flag False
+ UDS Response:   [0x59 0x2 0x7f]
+ Explanation:   Positive Response Received
+Service ID: 0x19
+Subfunction Name: Report DTC By Status Mask 0x2
+Suppress Positive Message Request: False
+DTC Status Availability Mask: 0x7f
+DTC and Status Record: No DTC records available.
+Info: Service 19 Subfunction 02 was successfully executed with DTC Status Mask 0x1
+<------------------- LOG ENTRY END ------------------->
+
+# <---- LOG ENTRY [ass930085 - 2024-11-22 13:32:23] ---->
+ UDS Request :   [0x19 0xb]
+ Explaination:   Read DTC Information (Service 19 subfunction 0B) Requested 
+ UDS Response:   [0x59 0xb 0xff]
+Explanation:   Positive Response Received
+Service ID: 0x19
+Subfunction Name: Report First Test Failed DTC 0xb
+Suppress Positive Message Request: False
+DTC Status Availability Mask: 0xff
+DTC and Status Record: No DTC records available.
+Info: Service 19 Subfunction 0B was successfully executed.
+<------------------- LOG ENTRY END ------------------->
+
+# <---- LOG ENTRY [ass930085 - 2024-11-22 13:35:55] ---->
+ UDS Request :   [0x19 0xc]
+ Explaination:   Read DTC Information (Service 19 subfunction 0C) Requested 
+ UDS Response:   [0x59 0xc 0x7f 0x12 0x34 0x56 0x24 0x23 0x45 0x5 0x0 0xab 0xcd 0x1 0x2f]
+Explanation:   Positive Response Received
+Service ID: 0x19
+Subfunction Name: Report First Confirmed DTC 0xc
+Suppress Positive Message Request: False
+DTC Status Availability Mask: 0x7f
+DTC and Status Record:
+Si No DTC         Status of DTC  
+---------------------------------
+1     0x123456      0x24             
+2     0x234505      0x00             
+3     0xABCD01      0x2F             
+
+Info: Service 19 Subfunction 0C was successfully executed.
+<------------------- LOG ENTRY END ------------------->
+
+# <---- LOG ENTRY [ass930085 - 2024-11-22 13:38:35] ---->
+ UDS Request :   [0x19 0xd]
+ Explaination:   Read DTC Information (Service 19 subfunction 0D) Requested 
+ UDS Response:   [0x59 0xd 0x7f 0x12 0x34 0x56 0x24 0x23 0x45 0x5 0x0 0xab 0xcd 0x1 0x2f]
+ Explaination:   Positive Response Recieved
+ Service ID: 0x19
+ Subfunction Name: Report DTC By Status Mask 0xd
+ DTC Status Availability Mask: 0x7f
+ DTC and Status Record:
+Si No DTC         Status of DTC  
+---------------------------------
+1     0x123456      0x24             
+2     0x234505      0x00             
+3     0xABCD01      0x2F             
+
+ Info: Service 19 sunfunction 0D is successfully executed
+ <------------------- LOG ENTRY END ------------------->
+
+# <---- LOG ENTRY [ass930085 - 2024-11-22 13:39:06] ---->
+ UDS Request :   [0x19 0xd]
+ Explaination:   Read DTC Information (Service 19 subfunction 0D) Requested 
+ UDS Response:   [0x59 0xd 0x7f 0x12 0x34 0x56 0x24 0x23 0x45 0x5 0x0 0xab 0xcd 0x1 0x2f]
+Explanation:   Positive Response Received
+Service ID: 0x19
+Subfunction Name: Report Most Recent Test Failed DTC 0xd
+Suppress Positive Message Request: False
+DTC Status Availability Mask: 0x7f
+DTC and Status Record:
+Si No DTC         Status of DTC  
+---------------------------------
+1     0x123456      0x24             
+2     0x234505      0x00             
+3     0xABCD01      0x2F             
+
+Info: Service 19 Subfunction 0D was successfully executed.
+<------------------- LOG ENTRY END ------------------->
+
+# <---- LOG ENTRY [ass930085 - 2024-11-22 13:42:28] ---->
+ UDS Request :   [0x19 0xe]
+ Explaination:   Read DTC Information (Service 19 subfunction 0E) Requested 
+ UDS Response:   [0x59 0xe 0x7f 0x12 0x34 0x56 0x24 0x23 0x45 0x5 0x0 0xab 0xcd 0x1 0x2f]
+Explanation:   Positive Response Received
+Service ID: 0x19
+Subfunction Name: Report Most Recent Confirmed DTC 0xe
+Suppress Positive Message Request: False
+DTC Status Availability Mask: 0x7f
+DTC and Status Record:
+Si No DTC         Status of DTC  
+---------------------------------
+1     0x123456      0x24             
+2     0x234505      0x00             
+3     0xABCD01      0x2F             
+
+Info: Service 19 Subfunction 0E was successfully executed.
+<------------------- LOG ENTRY END ------------------->
+
+# <---- LOG ENTRY [ass930085 - 2024-11-22 13:45:08] ---->
+ UDS Request :   [0x19 0x6 0x12 0x34 0x56 0xff]
+ Explaination:   Read DTC Information (Service 19 subfunction 06) Requested for DTC Mask Record 0x123456 , DTC Extended Data Record Number 0xFF and SPRMIB flag False
+ UDS Response:   [0x59 0x6 0x12 0x34 0x56 0x24 0x5 0x17 0x10 0x79]
+ Explaination:   Positive Response Recieved
+Service ID: 0x19
+Subfunction Name: Report DTC Extended Data Record By DTC Number 0x6 
+Suppress Positive Message Request: False
+DTC and Status Record:   0x12 0x34 0x56 0x24 
+DTC Extended Data Record Number:   0x5 
+DTC Extended Data Record:   0x17 0x10 0x79 
+Info:  Service 19 sunfunction 06 is successfully executed with DTC Mask Record 0x123456 & DTC Extended Data Record Number 0xFF
+<------------------- LOG ENTRY END ------------------->
+
+# 
