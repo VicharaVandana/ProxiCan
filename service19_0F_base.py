@@ -152,3 +152,13 @@ class Ui_Form_SID_19_0F(object):
         self.checkBox_suppressposmsg.setText(_translate("Form_SID_19_0F", "SPRMIB"))
         self.subFunction_Name.setText(_translate("Form_SID_19_0F", "Report Mirror Memory DTC By Status Mask 0x0F"))
         self.DTCStatusMask_label.setText(_translate("Form_SID_19_0F", "DTC Status Mask:"))
+
+
+if __name__ == "__main__":
+    import sys
+    app = QtWidgets.QApplication(sys.argv)
+    Form_SID_19_0F = QtWidgets.QWidget()
+    ui = Ui_Form_SID_19_0F()
+    ui.setupUi(Form_SID_19_0F)
+    Form_SID_19_0F.show()
+    sys.exit(app.exec_())
