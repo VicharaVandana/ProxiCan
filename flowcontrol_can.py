@@ -267,7 +267,7 @@ def recieve_data():
     
     else:
         print("No message received within the timeout period.")
-        gen.tp_log(f"No Frame recieved before timeout {2}s -FLOW is TERMINATED ", received_message)
+        gen.tp_log(f"No Frame recieved before timeout {5}s -FLOW is TERMINATED ", received_message)
         return False
     #First Frame is recieved and now Flow control frame has to be sent and  consecutive frame has to be recieved
     #Lets send FLow Control frame

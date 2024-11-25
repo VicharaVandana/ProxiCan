@@ -8,7 +8,7 @@ import configure as conf
 import general as gen
 
 
-def receive_specific_can_message(target_id, timeout = 2):
+def receive_specific_can_message(target_id, timeout = 5):
     """
     Wait for a specific CAN message ID within a given timeout period.
     

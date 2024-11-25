@@ -13,7 +13,7 @@ fdf_type = "CANFD"      #CAN or CANFD
 baudrate = 500000
 datarate = 2000000
 sample_point = 0.8
-flowcontrolframe_maxwaittime = 2 #2seconds
+flowcontrolframe_maxwaittime = 5 #2seconds
 
 tx = None
 rx = None
