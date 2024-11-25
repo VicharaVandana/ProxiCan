@@ -110,7 +110,7 @@ class Ui_Service19_06(Ui_Form_SID_19_06):
     <p><strong>Subfunction Name:</strong> <I>Report DTC Extended Data Record By DTC Number {hex(response.resp[1])} </I></p>
     <p><strong>Suppress Positive Message Request:</strong> <I>{sprmib_flg}</I></p>
     <p><strong>DTC and Status Record: </strong> <I> {" ".join(hex(number) for number in response.resp[2:6])} </I></p>
-    <p><strong>DTC Extended Data Record Number: </strong> <I> {hex(response.resp[6])} </I></p>
+    <p><strong>DTC Extended Data Record Number: </strong> <I> {" ".join(hex(number) for number in response.resp[6:7])} </I></p>
     <p><strong>DTC Extended Data Record: </strong> <I> {" ".join(hex(number) for number in response.resp[7:])} </I></p>
     <p><strong>Info:</strong> <I> Service 19 sunfunction 06 is successfully executed with DTC Mask Record 0x{DTCMaskRecord} & DTC Extended Data Record Number 0x{DTCEDRN}</I></p>
 '''
