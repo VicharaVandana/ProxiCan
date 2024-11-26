@@ -140,7 +140,7 @@ class Ui_Service19_02(Ui_Form_SID_19_02):
     <p><strong>Service ID:</strong> <I>{hex(response.resp[0]-0x40)}</I></p>
     <p><strong>Subfunction Name:</strong> <I>Report DTC By Status Mask {hex(response.resp[1])} </I></p>
     <p><strong>Suppress Positive Message Request:</strong> <I>{sprmib_flg}</I></p>
-    <p><strong>DTC Status Availability Mask:</strong> <I> {hex(response.resp[2])} </I></p>
+    <p><strong>DTC Status Availability Mask:</strong> <I> {" ".join(hex(number) for number in response.resp[2:3])} </I></p>
     {dtc_records_html} <!-- This will display the DTC records generated in the function -->
     <p><strong>Info:</strong> <I> Service 19 sunfunction 02 is successfully executed with DTC Status Mask {formatted_status_mask}</I></p>
 '''
