@@ -365,7 +365,7 @@ def recieve_data():
         
         else:
             print("No message received within the timeout period.")
-            gen.tp_log(f"No Frame recieved before timeout {2}s -FLOW is TERMINATED ", received_message)
+            gen.tp_log(f"No Frame recieved before timeout {5}s -FLOW is TERMINATED ", received_message)
             return False
         
     #The complete N_SDU would be recieved by now. Let us Return complete N_SDU
