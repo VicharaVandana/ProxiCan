@@ -361,6 +361,13 @@ def recieve_data():
             else:
                 print(f"Expected CF but Invalid Frame recieved in the flow with frame type = {frametype} and the whole data = [{' '.join(hex(number) for number in data)}]")
                 gen.tp_log(f"Expected CF but Invalid Frame recieved in the flow with frame type = {frametype} and the whole data = ", f"[{' '.join(hex(number) for number in data)}]")
+                #Update the N_SDU buffer with consecutive frame data
+                n_sdu_rx.extend(data[1:])
+                # Update sequence number tracking
+                oldseqnum = seqnum
+                print(f"DEBUG: Updated Old SeqNum={oldseqnum}")
+                # Update pending data length
+                pendingbyteslength -= len(data[1:])
                 return False            
         
         else:
