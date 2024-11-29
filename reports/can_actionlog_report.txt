@@ -23,3 +23,4 @@
 <ass930085>[2024-11-26 14:51:11] Button Click: Service 19 subfunction 04 Window Opened
 <ass930085>[2024-11-26 14:52:21] Button Click: Disonnect CAN button clicked
 <ass930085>[2024-11-26 14:52:21] CAN Connection: CAN disconnected successfully.
+<ass930085>[2024-11-27 13:23:54] UDS Request Success: 19 Request Successfully sent : 0x19 0xa
