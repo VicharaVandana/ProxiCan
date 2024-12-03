@@ -1,5 +1,6 @@
 from mainwindow_base import Ui_MainWindow
 from windowsettings import UDSservice_EnDis_Window
+from subfunctionsettings import Service19Subfunc_EnDis_Window
 from logfile_selector import LogFileSelector
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QMainWindow
@@ -122,6 +123,7 @@ class mainwindow(Ui_MainWindow, QtWidgets.QMainWindow, QtWidgets.QWidget):
         #Connect Menu options 
         self.actionSettings.triggered.connect(self.open_settings)
         self.actionLog_Files_Location.triggered.connect(self.open_log_selector)
+        self.actionECU_Specific_Settings.triggered.connect(self.open_subfuncsettings)
 
         #Connect and Disconnect buttons
         self.pushButton_connect.clicked.connect(self.connectcan)
@@ -164,6 +166,13 @@ class mainwindow(Ui_MainWindow, QtWidgets.QMainWindow, QtWidgets.QWidget):
         self.udsservice_window.show()  # Show the window
         gen.log_action("Menu Option Click", "<UDS Service Settings> Option Selected")
         return
+    
+    def open_subfuncsettings(self):
+        self.service19subfunc_window = Service19Subfunc_EnDis_Window() # Create an instance of Service19Subfunc_EnDis_Window
+        self.service19subfunc_window.show()   # Show the window
+        gen.log_action("Menu Option Click", "<Service 19 Subfunction Settings> Option Selected")
+        return
+
     
     def open_log_selector(self):
         # Create an instance of the LogFileSelector window and show it

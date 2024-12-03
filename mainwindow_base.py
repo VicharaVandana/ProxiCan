@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'mainwindow.ui'
+# Form implementation generated from reading ui file 'c:\Users\ass930085\OneDrive - Tata Technologies\Documents\PROXI GIT\reference\ProxiCan\mainwindow.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.11
 #
@@ -487,8 +487,11 @@ class Ui_MainWindow(object):
         self.actionSettings.setObjectName("actionSettings")
         self.actionLog_Files_Location = QtWidgets.QAction(MainWindow)
         self.actionLog_Files_Location.setObjectName("actionLog_Files_Location")
+        self.actionECU_Specific_Settings = QtWidgets.QAction(MainWindow)
+        self.actionECU_Specific_Settings.setObjectName("actionECU_Specific_Settings")
         self.menuMenu.addAction(self.actionSettings)
         self.menuMenu.addAction(self.actionLog_Files_Location)
+        self.menuMenu.addAction(self.actionECU_Specific_Settings)
         self.menubar.addAction(self.menuMenu.menuAction())
 
         self.retranslateUi(MainWindow)
@@ -593,6 +596,7 @@ class Ui_MainWindow(object):
         self.menuMenu.setTitle(_translate("MainWindow", "Menu"))
         self.actionSettings.setText(_translate("MainWindow", "UDS Service Settings"))
         self.actionLog_Files_Location.setText(_translate("MainWindow", "Log Files Location"))
+        self.actionECU_Specific_Settings.setText(_translate("MainWindow", "Service 19  Subfunction Settings"))
 
 
 if __name__ == "__main__":

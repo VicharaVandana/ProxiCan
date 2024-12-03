@@ -21,35 +21,6 @@
         "2F": true,
         "83": true,
         "86": true
-    },
-
-    "Service_19_Subfunctions_Visibility": {
-        "01":true,
-        "02":true,
-        "03":true,
-        "04":true,
-        "05":true,
-        "06":true,
-        "07":true,
-        "08":true,
-        "09":true,
-        "0A":true,
-        "0B":true,
-        "0C":true,
-        "0D":true,
-        "0E":true,
-        "0F":true,
-        "10":true,
-        "11":true,
-        "12":true,
-        "13":true,
-        "14":true,
-        "15":true,
-        "16":true,
-        "17":true,
-        "18":true,
-        "19":true,
-        "42":true,
-        "55":true
     }
+
 }

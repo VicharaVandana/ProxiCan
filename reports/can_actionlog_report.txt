@@ -1,26 +1,11 @@
-<ass930085>[2024-11-26 14:47:27] Button Click: Import pxi button clicked
-<ass930085>[2024-11-26 14:47:33] Config File Import Success: Config File Loaded successfully from: C:/Users/ass930085/OneDrive - Tata Technologies/Documents/PROXI GIT/reference/ProxiCan/config.pxi
-<ass930085>[2024-11-26 14:47:41] Button Click: Connect CAN button clicked
-<ass930085>[2024-11-26 14:47:41] CAN Connection: CAN can0 connected with baudrate 500000 and fdf type CANFD
-<ass930085>[2024-11-26 14:47:51] Button Click: Service 19 Window Opened
-<ass930085>[2024-11-26 14:47:55] Button Click: Service 19 subfunction 01 Window Opened
-<ass930085>[2024-11-26 14:48:07] Button Click: Send 19 01 request button clicked with DTC Status Mask 0x8 .
-<ass930085>[2024-11-26 14:48:07] UDS Request Success: 19 Request Successfully sent : 0x19 0x1 0x8
-<ass930085>[2024-11-26 14:48:40] Button Click: Send 19 01 request button clicked with DTC Status Mask 0x08 .
-<ass930085>[2024-11-26 14:48:40] Button Click: Send 19 01 request button clicked with DTC Status Mask 0x08 .
-<ass930085>[2024-11-26 14:48:40] UDS Request Success: 19 Request Successfully sent : 0x19 0x1 0x8
-<ass930085>[2024-11-26 14:48:47] Button Click: Send 19 01 request button clicked with DTC Status Mask 0x09 .
-<ass930085>[2024-11-26 14:48:47] Button Click: Send 19 01 request button clicked with DTC Status Mask 0x09 .
-<ass930085>[2024-11-26 14:48:47] UDS Request Success: 19 Request Successfully sent : 0x19 0x1 0x9
-<ass930085>[2024-11-26 14:49:02] Button Click: Send 19 01 request button clicked with DTC Status Mask 0x09 .
-<ass930085>[2024-11-26 14:49:02] Button Click: Send 19 01 request button clicked with DTC Status Mask 0x09 .
-<ass930085>[2024-11-26 14:49:02] UDS Request Success: 19 Request Successfully sent : 0x19 0x81 0x9
-<ass930085>[2024-11-26 14:49:34] Button Click: Service 10 Window Opened
-<ass930085>[2024-11-26 14:49:43] UDS Request Success: 10 Request Successfully sent : 0x10 0x1
-<ass930085>[2024-11-26 14:50:20] Button Click: Service 19 Window Opened
-<ass930085>[2024-11-26 14:50:54] Button Click: Service 19 subfunction 01 Window Opened
-<ass930085>[2024-11-26 14:50:59] Button Click: Service 19 subfunction 02 Window Opened
-<ass930085>[2024-11-26 14:51:11] Button Click: Service 19 subfunction 04 Window Opened
-<ass930085>[2024-11-26 14:52:21] Button Click: Disonnect CAN button clicked
-<ass930085>[2024-11-26 14:52:21] CAN Connection: CAN disconnected successfully.
-<ass930085>[2024-11-27 13:23:54] UDS Request Success: 19 Request Successfully sent : 0x19 0xa
+<ass930085>[2024-12-03 12:25:00] Button Click: Connect CAN button clicked
+<ass930085>[2024-12-03 12:25:04] Button Click: Import pxi button clicked
+<ass930085>[2024-12-03 12:25:09] Config File Import Success: Config File Loaded successfully from: C:/Users/ass930085/OneDrive - Tata Technologies/Documents/PROXI GIT/reference/ProxiCan/config.pxi
+<ass930085>[2024-12-03 12:25:11] Button Click: Connect CAN button clicked
+<ass930085>[2024-12-03 12:25:11] CAN Connection: CAN can0 connected with baudrate 500000 and fdf type CANFD
+<ass930085>[2024-12-03 12:25:12] Button Click: Service 19 Window Opened
+<ass930085>[2024-12-03 12:25:22] Menu Option Click: <Service 19 Subfunction Settings> Option Selected
+<ass930085>[2024-12-03 12:25:28] Button Click: Service 19 Window Opened
+<ass930085>[2024-12-03 12:25:34] Menu Option Click: <Service 19 Subfunction Settings> Option Selected
+<ass930085>[2024-12-03 12:25:46] Button Click: Service 19 Window Opened
+<ass930085>[2024-12-03 12:25:55] Button Click: Service 19 Window Opened

@@ -1579,6 +1579,7 @@ color: rgb(0, 0, 255);</string>
     </property>
     <addaction name="actionSettings"/>
     <addaction name="actionLog_Files_Location"/>
+    <addaction name="actionECU_Specific_Settings"/>
    </widget>
    <addaction name="menuMenu"/>
   </widget>
@@ -1591,6 +1592,11 @@ color: rgb(0, 0, 255);</string>
   <action name="actionLog_Files_Location">
    <property name="text">
     <string>Log Files Location</string>
+   </property>
+  </action>
+  <action name="actionECU_Specific_Settings">
+   <property name="text">
+    <string>Service 19  Subfunction Settings</string>
    </property>
   </action>
  </widget>
