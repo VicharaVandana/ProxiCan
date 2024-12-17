@@ -60,14 +60,22 @@ class Ui_Service3E(Ui_Form_SID3E):
         return
 
     def send3Eservice(self):
-        interval = int(self.lineEdit_testerpresent_interval.text().strip())
+        # Retrieve suppress positive response message flag
         sprmib_flg = self.checkBox_suppressposmsg.isChecked()
+        try:
+        # Parse the interval input and validate
+            interval_text = self.lineEdit_testerpresent_interval.text().strip()
+            interval = int(interval_text)
 
-        # Interval should be a valid value and not less than zero
-        if interval <= 0:
-            self.update_status("Please enter a valid tester present interval.")
-            gen.log_action("UDS Request Fail", f"3E Request not happened due to invalid tester present interval [{self.lineEdit_testerpresent_interval.currentText()}]")
+        # Ensure the interval is greater than 0
+            if interval <= 0:
+                raise ValueError("Interval must be greater than 0.")
+        except ValueError:
+        # Handle invalid input (non-numeric or <= 0)
+            self.update_status("Please enter a valid positive integer for the tester present interval.")
+            gen.log_action("UDS Request Fail", f"3E Request failed due to invalid tester present interval: [{self.lineEdit_testerpresent_interval.text().strip()}]")
             return
+    
 
         # Send the service request and get the response 
         if sprmib_flg == False:
@@ -76,8 +84,6 @@ class Ui_Service3E(Ui_Form_SID3E):
             IsPosResExpected = False 
 
         gen.IsAnyServiceActive = True  # Next request is triggered, so make True      
-        while gen.IsTesterPresentActive:
-            self.update_status("WAIT!! Tester present (Service 3E) is currently ongoing")
 
         # Periodic request sending logic
         def send_periodic_requests():
@@ -155,15 +161,16 @@ Explanation:   {response_text}<------------------- LOG ENTRY END ---------------
         # Stop sending requests
         if hasattr(self, 'timer'):
             self.timer.stop()
-        self.update_status("Periodic request sending stopped.")
+        self.update_status("Periodic  tester present request sending stopped.")
         gen.log_action("Button Click", "Stop Sending button clicked. Request sending stopped.")
         print("request stopped")
         return
 
     def closeEvent(self, event):
-        # Custom logic when the window is closed
+        if hasattr(self, 'timer'):
+            self.timer.stop()  # Ensure the timer is stopped on window close
         gen.log_action(f"Window Close", f"Service 3E Window Closed.")
-        return
+        event.accept()  # Make sure to accept the event to close the window
 
 
 if __name__ == "__main__":

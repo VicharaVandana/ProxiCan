@@ -77,3 +77,15 @@
 <ass930085>[2024-12-17 12:16:52] UDS Request Success: 3E Request Successfully sent: 0x3e 0x0
 <ass930085>[2024-12-17 12:16:55] UDS Request Success: 3E Request Successfully sent: 0x3e 0x0
 <ass930085>[2024-12-17 12:16:57] Button Click: Stop Sending button clicked. Request sending stopped.
+<ass930085>[2024-12-17 14:44:22] UDS Request Fail: 3E Request failed due to invalid tester present interval: [a]
+<ass930085>[2024-12-17 14:44:29] UDS Request Fail: 3E Request failed due to invalid tester present interval: [-2]
+<ass930085>[2024-12-17 14:46:04] UDS Request Fail: 3E Request failed due to invalid tester present interval: [-2]
+<ass930085>[2024-12-17 14:46:11] UDS Request Success: 3E Request Successfully sent: 0x3e 0x0
+<ass930085>[2024-12-17 14:46:13] UDS Request Success: 3E Request Successfully sent: 0x3e 0x0
+<ass930085>[2024-12-17 14:46:15] UDS Request Success: 3E Request Successfully sent: 0x3e 0x0
+<ass930085>[2024-12-17 14:46:17] UDS Request Success: 3E Request Successfully sent: 0x3e 0x0
+<ass930085>[2024-12-17 14:46:18] Button Click: Stop Sending button clicked. Request sending stopped.
+<ass930085>[2024-12-17 14:46:56] UDS Request Success: 3E Request Successfully sent: 0x3e 0x0
+<ass930085>[2024-12-17 14:46:58] UDS Request Success: 3E Request Successfully sent: 0x3e 0x0
+<ass930085>[2024-12-17 14:47:00] UDS Request Success: 3E Request Successfully sent: 0x3e 0x0
+<ass930085>[2024-12-17 14:47:02] UDS Request Success: 3E Request Successfully sent: 0x3e 0x0
