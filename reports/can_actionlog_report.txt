@@ -89,3 +89,33 @@
 <ass930085>[2024-12-17 14:46:58] UDS Request Success: 3E Request Successfully sent: 0x3e 0x0
 <ass930085>[2024-12-17 14:47:00] UDS Request Success: 3E Request Successfully sent: 0x3e 0x0
 <ass930085>[2024-12-17 14:47:02] UDS Request Success: 3E Request Successfully sent: 0x3e 0x0
+<ass930085>[2024-12-17 14:49:36] UDS Request Success: 3E Request Successfully sent: 0x3e 0x0
+<ass930085>[2024-12-17 14:49:38] Button Click: Add to Log button for Service 3E window clicked.
+<ass930085>[2024-12-17 14:49:38] UDS Request Success: 3E Request Successfully sent: 0x3e 0x0
+<ass930085>[2024-12-17 14:49:40] UDS Request Success: 3E Request Successfully sent: 0x3e 0x0
+<ass930085>[2024-12-17 14:49:41] Button Click: Add to Log button for Service 3E window clicked.
+<ass930085>[2024-12-17 14:49:42] UDS Request Success: 3E Request Successfully sent: 0x3e 0x0
+<ass930085>[2024-12-17 14:49:44] UDS Request Success: 3E Request Successfully sent: 0x3e 0x0
+<ass930085>[2024-12-17 14:49:46] UDS Request Success: 3E Request Successfully sent: 0x3e 0x0
+<ass930085>[2024-12-17 14:49:48] UDS Request Success: 3E Request Successfully sent: 0x3e 0x0
+<ass930085>[2024-12-17 14:49:50] UDS Request Success: 3E Request Successfully sent: 0x3e 0x0
+<ass930085>[2024-12-17 14:49:52] UDS Request Success: 3E Request Successfully sent: 0x3e 0x0
+<ass930085>[2024-12-17 14:49:54] UDS Request Success: 3E Request Successfully sent: 0x3e 0x0
+<ass930085>[2024-12-17 14:49:56] UDS Request Success: 3E Request Successfully sent: 0x3e 0x0
+<ass930085>[2024-12-17 14:49:58] UDS Request Success: 3E Request Successfully sent: 0x3e 0x0
+<ass930085>[2024-12-17 14:50:00] UDS Request Success: 3E Request Successfully sent: 0x3e 0x0
+<ass930085>[2024-12-17 14:50:02] UDS Request Success: 3E Request Successfully sent: 0x3e 0x0
+<ass930085>[2024-12-17 14:50:04] UDS Request Success: 3E Request Successfully sent: 0x3e 0x0
+<ass930085>[2024-12-17 14:50:06] UDS Request Success: 3E Request Successfully sent: 0x3e 0x0
+<ass930085>[2024-12-17 14:50:08] UDS Request Success: 3E Request Successfully sent: 0x3e 0x0
+<ass930085>[2024-12-17 14:50:10] UDS Request Success: 3E Request Successfully sent: 0x3e 0x0
+<ass930085>[2024-12-17 14:50:12] UDS Request Success: 3E Request Successfully sent: 0x3e 0x0
+<ass930085>[2024-12-17 14:50:13] Button Click: Stop Sending button clicked. Request sending stopped.
+<ass930085>[2024-12-17 14:53:51] Button Click: Clear Log button for Service 3E window clicked.
+<ass930085>[2024-12-17 14:53:57] UDS Request Fail: 3E Request failed due to invalid tester present interval: []
+<ass930085>[2024-12-17 14:54:03] UDS Request Success: 3E Request Successfully sent: 0x3e 0x0
+<ass930085>[2024-12-17 14:54:05] UDS Request Success: 3E Request Successfully sent: 0x3e 0x0
+<ass930085>[2024-12-17 14:54:05] Button Click: Add to Log button for Service 3E window clicked.
+<ass930085>[2024-12-17 14:54:07] UDS Request Success: 3E Request Successfully sent: 0x3e 0x0
+<ass930085>[2024-12-17 14:54:09] UDS Request Success: 3E Request Successfully sent: 0x3e 0x0
+<ass930085>[2024-12-17 14:54:09] Button Click: Stop Sending button clicked. Request sending stopped.

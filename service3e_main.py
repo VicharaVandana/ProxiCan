@@ -102,16 +102,16 @@ class Ui_Service3E(Ui_Form_SID3E):
 
             if response.type == "Positive Response":
                 response_html = f'''<h4><U>Positive Response Received</U></h4>
-                    <p><strong>Service ID:</strong> <I>{hex(response.resp[0]-0x40)}</I></p>
-                    <p><strong>Subfunction:</strong> <I>{hex(response.resp[1])}</I></p>
-                    <p><strong>Suppress Positive Message Request:</strong> <I>{sprmib_flg}</I></p>
+                <p><strong>Service ID:</strong> <I>{hex(response.resp[0]-0x40)}</I></p>
+                <p><strong>Subfunction:</strong> <I>{hex(response.resp[1])}</I></p>
+                <p><strong>Suppress Positive Message Request:</strong> <I>{sprmib_flg}</I></p>
                 '''
             elif response.type == "Negative Response":
                 response_html = f'''<h4><U>Negative Response Received</U></h4>    
-                    <p><strong>Suppress Positive Message Request:</strong> <I>{sprmib_flg}</I></p>
-                    <p><strong>NRC Code:</strong> <I>{hex(response.nrc)}</I></p>
-                    <p><strong>NRC Name:</strong> <I>{response.nrcname}</I></p>
-                    <p><strong>NRC Desc:</strong> <I>{response.nrcdesc}</I></p>
+                <p><strong>Suppress Positive Message Request:</strong> <I>{sprmib_flg}</I></p>
+                <p><strong>NRC Code:</strong> <I>{hex(response.nrc)}</I></p>
+                <p><strong>NRC Name:</strong> <I>{response.nrcname}</I></p>
+                <p><strong>NRC Desc:</strong> <I>{response.nrcdesc}</I></p>
                 '''
             elif response.type == "Unknown Response Type":
                 response_html = f'''<h4><U>Unidentified Response Received</U></h4>
@@ -145,7 +145,8 @@ class Ui_Service3E(Ui_Form_SID3E):
 UDS Request :   [{" ".join(hex(number) for number in service_request)}]
 Explanation:   Tester Present (Service 3E) Requested and SPRMIB flag {sprmib_flg}
 UDS Response:   [{" ".join(hex(number) for number in response.resp)}]
-Explanation:   {response_text}<------------------- LOG ENTRY END ------------------->
+Explanation:   {response_text}
+<------------------- LOG ENTRY END ------------------->
 
 # '''
             gen.log_udsreport(self.logentrystring)
