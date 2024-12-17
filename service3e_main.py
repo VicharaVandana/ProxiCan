@@ -81,7 +81,6 @@ class Ui_Service3E(Ui_Form_SID3E):
 
         # Periodic request sending logic
         def send_periodic_requests():
-            print("periodic")
             service_request = fun.form_reqmsg4srv3E(sprmib_flg)  # Move request generation here to ensure it's called each time
 
             # Check if service_request is None or empty (ensure it is valid)
@@ -150,6 +149,7 @@ Explanation:   {response_text}<------------------- LOG ENTRY END ---------------
         self.timer = QtCore.QTimer()
         self.timer.timeout.connect(send_periodic_requests)
         self.timer.start(interval * 1000)  # Trigger every `interval` seconds
+        self.update_status("Service 3E started.")
 
     def stop_sending(self):
         # Stop sending requests

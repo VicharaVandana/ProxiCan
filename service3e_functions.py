@@ -1,7 +1,6 @@
 
         
 def form_reqmsg4srv3E(sprmib_flag):   
-    print("function") 
     sid = int("3E", 16)
     subfunction = int("00", 16)
     if (sprmib_flag == True):
