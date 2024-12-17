@@ -147,3 +147,4 @@ def verifyandPopulateConfigFields(ui):
 
 
     return (canconfig, status)
+

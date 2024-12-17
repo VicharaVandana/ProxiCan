@@ -20,7 +20,7 @@ class UDSservice_EnDis_Window(QtWidgets.QWidget):
         self.buttons = []
         self.button_names = [
             "10", "22", "2E", "11", "27", "28", "14", "19", "85", 
-            "23", "2A", "2C", "31", "34", "35", "36", "37", "38", "2F", "86", "83"
+            "23", "2A", "2C", "31", "34", "35", "36", "37", "38", "2F", "86", "83","3D","3E"
         ]
 
         # Add buttons to the grid and store references in the list

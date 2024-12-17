@@ -1,11 +1,60 @@
-<ass930085>[2024-12-03 12:25:00] Button Click: Connect CAN button clicked
-<ass930085>[2024-12-03 12:25:04] Button Click: Import pxi button clicked
-<ass930085>[2024-12-03 12:25:09] Config File Import Success: Config File Loaded successfully from: C:/Users/ass930085/OneDrive - Tata Technologies/Documents/PROXI GIT/reference/ProxiCan/config.pxi
-<ass930085>[2024-12-03 12:25:11] Button Click: Connect CAN button clicked
-<ass930085>[2024-12-03 12:25:11] CAN Connection: CAN can0 connected with baudrate 500000 and fdf type CANFD
-<ass930085>[2024-12-03 12:25:12] Button Click: Service 19 Window Opened
-<ass930085>[2024-12-03 12:25:22] Menu Option Click: <Service 19 Subfunction Settings> Option Selected
-<ass930085>[2024-12-03 12:25:28] Button Click: Service 19 Window Opened
-<ass930085>[2024-12-03 12:25:34] Menu Option Click: <Service 19 Subfunction Settings> Option Selected
-<ass930085>[2024-12-03 12:25:46] Button Click: Service 19 Window Opened
-<ass930085>[2024-12-03 12:25:55] Button Click: Service 19 Window Opened
+<ass930085>[2024-12-17 11:02:29] Menu Option Click: <UDS Service Settings> Option Selected
+<ass930085>[2024-12-17 11:06:21] UDS Request Success: 3E Request Successfully sent: 0x3e 0x0
+<ass930085>[2024-12-17 11:06:24] UDS Request Success: 3E Request Successfully sent: 0x3e 0x0
+<ass930085>[2024-12-17 11:06:27] UDS Request Success: 3E Request Successfully sent: 0x3e 0x0
+<ass930085>[2024-12-17 11:06:30] UDS Request Success: 3E Request Successfully sent: 0x3e 0x0
+<ass930085>[2024-12-17 11:06:33] UDS Request Success: 3E Request Successfully sent: 0x3e 0x0
+<ass930085>[2024-12-17 11:06:36] UDS Request Success: 3E Request Successfully sent: 0x3e 0x0
+<ass930085>[2024-12-17 11:06:39] UDS Request Success: 3E Request Successfully sent: 0x3e 0x0
+<ass930085>[2024-12-17 11:06:42] UDS Request Success: 3E Request Successfully sent: 0x3e 0x0
+<ass930085>[2024-12-17 11:06:45] UDS Request Success: 3E Request Successfully sent: 0x3e 0x0
+<ass930085>[2024-12-17 11:06:48] UDS Request Success: 3E Request Successfully sent: 0x3e 0x0
+<ass930085>[2024-12-17 11:06:51] UDS Request Success: 3E Request Successfully sent: 0x3e 0x0
+<ass930085>[2024-12-17 11:06:54] UDS Request Success: 3E Request Successfully sent: 0x3e 0x0
+<ass930085>[2024-12-17 11:06:55] Button Click: Stop Sending button clicked. Request sending stopped.
+<ass930085>[2024-12-17 11:10:39] Button Click: Stop Sending button clicked. Request sending stopped.
+<ass930085>[2024-12-17 11:11:45] UDS Request Success: 3E Request Successfully sent: 0x3e 0x0
+<ass930085>[2024-12-17 11:11:48] UDS Request Success: 3E Request Successfully sent: 0x3e 0x0
+<ass930085>[2024-12-17 11:11:51] UDS Request Success: 3E Request Successfully sent: 0x3e 0x0
+<ass930085>[2024-12-17 11:11:54] UDS Request Success: 3E Request Successfully sent: 0x3e 0x0
+<ass930085>[2024-12-17 11:11:55] Button Click: Stop Sending button clicked. Request sending stopped.
+<ass930085>[2024-12-17 11:19:28] UDS Request Success: 3E Request Successfully sent: 0x3e 0x0
+<ass930085>[2024-12-17 11:19:31] UDS Request Success: 3E Request Successfully sent: 0x3e 0x0
+<ass930085>[2024-12-17 11:19:34] UDS Request Success: 3E Request Successfully sent: 0x3e 0x0
+<ass930085>[2024-12-17 11:19:37] UDS Request Success: 3E Request Successfully sent: 0x3e 0x0
+<ass930085>[2024-12-17 11:19:40] UDS Request Success: 3E Request Successfully sent: 0x3e 0x0
+<ass930085>[2024-12-17 11:19:42] Button Click: Stop Sending button clicked. Request sending stopped.
+<ass930085>[2024-12-17 11:19:43] Button Click: Stop Sending button clicked. Request sending stopped.
+<ass930085>[2024-12-17 11:21:06] UDS Request Success: 3E Request Successfully sent: 0x3e 0x0
+<ass930085>[2024-12-17 11:21:07] UDS Request Success: 3E Request Successfully sent: 0x3e 0x0
+<ass930085>[2024-12-17 11:21:08] UDS Request Success: 3E Request Successfully sent: 0x3e 0x0
+<ass930085>[2024-12-17 11:21:09] UDS Request Success: 3E Request Successfully sent: 0x3e 0x0
+<ass930085>[2024-12-17 11:21:10] UDS Request Success: 3E Request Successfully sent: 0x3e 0x0
+<ass930085>[2024-12-17 11:21:11] Button Click: Stop Sending button clicked. Request sending stopped.
+<ass930085>[2024-12-17 11:24:13] UDS Request Success: 3E Request Successfully sent: 0x3e 0x0
+<ass930085>[2024-12-17 11:24:16] UDS Request Success: 3E Request Successfully sent: 0x3e 0x0
+<ass930085>[2024-12-17 11:24:19] UDS Request Success: 3E Request Successfully sent: 0x3e 0x0
+<ass930085>[2024-12-17 11:24:22] UDS Request Success: 3E Request Successfully sent: 0x3e 0x0
+<ass930085>[2024-12-17 11:24:25] UDS Request Success: 3E Request Successfully sent: 0x3e 0x0
+<ass930085>[2024-12-17 11:24:28] UDS Request Success: 3E Request Successfully sent: 0x3e 0x0
+<ass930085>[2024-12-17 11:24:31] UDS Request Success: 3E Request Successfully sent: 0x3e 0x0
+<ass930085>[2024-12-17 11:24:33] Button Click: Stop Sending button clicked. Request sending stopped.
+<ass930085>[2024-12-17 11:25:49] UDS Request Success: 3E Request Successfully sent: 0x3e 0x0
+<ass930085>[2024-12-17 11:25:52] UDS Request Success: 3E Request Successfully sent: 0x3e 0x0
+<ass930085>[2024-12-17 11:25:55] UDS Request Success: 3E Request Successfully sent: 0x3e 0x0
+<ass930085>[2024-12-17 11:25:58] UDS Request Success: 3E Request Successfully sent: 0x3e 0x0
+<ass930085>[2024-12-17 11:26:01] UDS Request Success: 3E Request Successfully sent: 0x3e 0x0
+<ass930085>[2024-12-17 11:26:04] UDS Request Success: 3E Request Successfully sent: 0x3e 0x0
+<ass930085>[2024-12-17 11:26:04] Button Click: Stop Sending button clicked. Request sending stopped.
+<ass930085>[2024-12-17 11:26:41] UDS Request Success: 3E Request Successfully sent: 0x3e 0x0
+<ass930085>[2024-12-17 11:26:44] UDS Request Success: 3E Request Successfully sent: 0x3e 0x0
+<ass930085>[2024-12-17 11:26:47] UDS Request Success: 3E Request Successfully sent: 0x3e 0x0
+<ass930085>[2024-12-17 11:26:50] UDS Request Success: 3E Request Successfully sent: 0x3e 0x0
+<ass930085>[2024-12-17 11:26:53] UDS Request Success: 3E Request Successfully sent: 0x3e 0x0
+<ass930085>[2024-12-17 11:26:56] UDS Request Success: 3E Request Successfully sent: 0x3e 0x0
+<ass930085>[2024-12-17 11:26:59] UDS Request Success: 3E Request Successfully sent: 0x3e 0x0
+<ass930085>[2024-12-17 11:27:02] UDS Request Success: 3E Request Successfully sent: 0x3e 0x0
+<ass930085>[2024-12-17 11:27:05] UDS Request Success: 3E Request Successfully sent: 0x3e 0x0
+<ass930085>[2024-12-17 11:27:08] UDS Request Success: 3E Request Successfully sent: 0x3e 0x0
+<ass930085>[2024-12-17 11:27:11] UDS Request Success: 3E Request Successfully sent: 0x3e 0x0
+<ass930085>[2024-12-17 11:27:11] Button Click: Stop Sending button clicked. Request sending stopped.

@@ -1,8 +1,8 @@
 {
     "Service_19_Subfunctions_Visibility": {
-        "01": false,
-        "02": false,
-        "03": false,
+        "01": true,
+        "02": true,
+        "03": true,
         "04": true,
         "05": true,
         "06": true,

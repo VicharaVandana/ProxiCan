@@ -23,6 +23,7 @@ import service31_main as routinectrl
 import service23_main as rdmembyadd
 import service3d_main as wrmembyadd
 import service85_main as cdtcs
+import service3e_main as tp
 Is_CanConnected = False
 
 #Create a child class of the mainwindow
@@ -53,6 +54,7 @@ class mainwindow(Ui_MainWindow, QtWidgets.QMainWindow, QtWidgets.QWidget):
         self.udsbuttons.append(self.pushButton_2F)
         self.udsbuttons.append(self.pushButton_86)
         self.udsbuttons.append(self.pushButton_83)
+        self.udsbuttons.append(self.pushButton_3E)
 
         #self.udsbuttons.append(self.pushButton_)
         #self.udsbuttons.clear()
@@ -147,6 +149,7 @@ class mainwindow(Ui_MainWindow, QtWidgets.QMainWindow, QtWidgets.QWidget):
         self.pushButton_3D.clicked.connect(self.openservice3D)
         self.pushButton_19.clicked.connect(self.openservice19)
         self.pushButton_31.clicked.connect(self.openservice31)
+        self.pushButton_3E.clicked.connect(self.openservice3E)
         return
     
     def on_radiobutton_fdf_clicked(self):
@@ -349,6 +352,20 @@ class mainwindow(Ui_MainWindow, QtWidgets.QMainWindow, QtWidgets.QWidget):
         else:
             self.update_status(f"85 Button clicked. But unable to open the service window as CAN is not connected")
         return   
+    
+    def openservice3E(self):
+        if(Is_CanConnected == True):
+            self.window3e = QMainWindow()
+            self.ui3e = tp.Ui_Service3E()
+            self.ui3e.setupUi(self.window3e)
+            self.ui3e.redesign_ui()
+            self.ui3e.connectFunctions()
+            self.window3e.show()  # Display the new window
+            self.update_status(f"3E Button clicked.Tester Present service window opened")
+            gen.log_action("Button Click", "Service 3E Window Opened")
+        else:
+            self.update_status(f"3E Button clicked. But unable to open the service window as CAN is not connected")
+        return
 
     def update_status(self, msg):
         # Create a QMessageBox instance
