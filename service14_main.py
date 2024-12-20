@@ -64,7 +64,7 @@ class Ui_Service14(Ui_Form_SID14):
         gen.log_action("Button Click", f"Send 14 request button clicked with DTC[{dtc_string}]].")
 
         #First check if a valid DTC is entered in DTC field        
-        if(False == gen.check_3Bytehexadecimal(dtc_string)):
+        if(False == gen.check_nBytehexadecimal(dtc_string,3)):
             #Show messagebox with enter valid DTC value
             self.update_status("Please enter a valid DTC value. It must be 3 byte in hexadecimal format")
             #print(f"DTC {dtc_string} is invalid")

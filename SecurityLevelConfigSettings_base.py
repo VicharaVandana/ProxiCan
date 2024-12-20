@@ -14,10 +14,14 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_Form_SID27Settings(object):
     def setupUi(self, Form_SID27Settings):
         Form_SID27Settings.setObjectName("Form_SID27Settings")
-        Form_SID27Settings.resize(639, 425)
+        Form_SID27Settings.resize(639, 470)
         Form_SID27Settings.setMinimumSize(QtCore.QSize(400, 400))
         self.label_status = QtWidgets.QLabel(Form_SID27Settings)
-        self.label_status.setGeometry(QtCore.QRect(10, 380, 621, 31))
+        self.label_status.setGeometry(QtCore.QRect(10, 380, 621, 81))
+        font = QtGui.QFont()
+        font.setFamily("Arial Narrow")
+        font.setPointSize(7)
+        self.label_status.setFont(font)
         self.label_status.setStyleSheet("background-color: rgb(255, 255, 127);\n"
 "color: rgb(85, 0, 0);\n"
 "border-color: rgb(0, 0, 255);")

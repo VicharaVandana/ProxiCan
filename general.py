@@ -118,36 +118,40 @@ def is_valid_hex(hex_str, min_value, max_value):
         return value
     else:
         return False
+    
+def check_nBytehexadecimal(data, n):
+    """
+    Checks if the input string `data` is a valid `n`-byte hexadecimal number.
+    
+    Parameters:
+    - data (str): The string to check.
+    - n (int): The number of bytes the hexadecimal number should have.
 
-def check_2Bytehexadecimal(data):
+    Returns:
+    - bool: True if `data` is a valid `n`-byte hexadecimal, False otherwise.
+    """
+    # Calculate the number of hexadecimal digits needed for `n` bytes (2 hex digits per byte)
+    hex_length = n * 2
+    # Regular expression for `n`-byte hexadecimal value
+    hex_pattern = re.compile(rf'^[0-9A-Fa-f]{{{hex_length}}}$')
+    # Validate and return the result
+    return bool(hex_pattern.match(data))
+
+def is_positive_integer(s):
+    """
+    Check if the input string is a positive integer.
+    """
+    return s.isdigit() and int(s) > 0  
+
+def check_minNBytehexadecimal(data,n):
         # Retrieve text from QLineEdit
         text = data
+
+        # Calculate the minimum number of hexadecimal digits needed for `n` bytes (2 hex digits per byte)
+        min_hex_length = n * 2
+
         # Regular expression for 2-byte hexadecimal value
-        hex_pattern = re.compile(r'^[0-9A-Fa-f]{4}$')
-
-        # Validate and update the result label
-        if hex_pattern.match(text):
-            return True
-        else:
-            return False
-
-def check_3Bytehexadecimal(data):
-        # Retrieve text from QLineEdit
-        text = data
-        # Regular expression for 2-byte hexadecimal value
-        hex_pattern = re.compile(r'^[0-9A-Fa-f]{6}$')
-
-        # Validate and update the result label
-        if hex_pattern.match(text):
-            return True
-        else:
-            return False     
-
-def check_min1Bytehexadecimal(data):
-        # Retrieve text from QLineEdit
-        text = data
-        # Regular expression for 2-byte hexadecimal value
-        hex_pattern = re.compile(r'^([0-9A-Fa-f]{2})(\s?[0-9A-Fa-f]{2})*$')
+        hex_pattern = re.compile(rf'^([0-9A-Fa-f]{{{min_hex_length}}})(\s?[0-9A-Fa-f]{{{min_hex_length}}})*$')
 
         # Validate and update the result label
         if hex_pattern.match(text):
@@ -157,6 +161,6 @@ def check_min1Bytehexadecimal(data):
         
 
 if __name__ == "__main__":
-    print(check_min1Bytehexadecimal("33f4"))
+    print(check_nBytehexadecimal("0033f4",3))
 
 

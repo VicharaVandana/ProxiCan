@@ -357,6 +357,7 @@ def recieve_data():
                 canmsg = f'RX\tID:{conf.diag_resp_msgid}\tDatalength:{len(data)}\tdata:[{" ".join(hex(number) for number in n_sdu_rx)}].'
                 gen.tp_log(f"Consecutive Frame - {seqnum} Recieved", canmsg)
                 pendingbyteslength = pendingbyteslength - len(data[1:])
+                oldseqnum = expected_seqnum
 
             else:
                 print(f"Expected CF but Invalid Frame recieved in the flow with frame type = {frametype} and the whole data = [{' '.join(hex(number) for number in data)}]")

@@ -91,7 +91,7 @@ class Ui_Service28(Ui_Form_SID28):
         #gen.log_action("Button Click", f"Send 22 request button clicked with DID[{did_string}].")
 
 
-            if(False == gen.check_2Bytehexadecimal(nin_string)):
+            if(False == gen.check_nBytehexadecimal(nin_string,2)):
                 #Show messagebox with enter valid DID value
                 self.update_status("Please enter a valid NIN value. It must be 2 byte in hexadecimal format")
                 gen.log_action("UDS Request Fail", "28 Request not happened due to invalid NIN format")
