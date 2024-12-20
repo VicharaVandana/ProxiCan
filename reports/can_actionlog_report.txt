@@ -1,36 +1,3 @@
-<sbb925582>[2024-12-19 20:03:52] Button Click: Clear Form for Service 27 Security Level Configurations window clicked. Userfields cleared successfully.
-<sbb925582>[2024-12-20 13:36:06] Button Click: Validate Security level details clicked in Security Level Configurations window. Validation result : False
-<sbb925582>[2024-12-20 13:36:10] Button Click: Clear Form for Service 27 Security Level Configurations window clicked. Userfields cleared successfully.
-<sbb925582>[2024-12-20 13:37:13] Button Click: Validate Security level details clicked in Security Level Configurations window. Validation result : True
-<sbb925582>[2024-12-20 13:37:17] Button Click: Add new Security Level for Service 27 in Security Level Configurations window clicked.
-<sbb925582>[2024-12-20 13:37:17] Add Function Failed: Add new Security Level for Service 27 Failed as security level name not updated.
-<sbb925582>[2024-12-20 13:37:35] Button Click: Add new Security Level for Service 27 in Security Level Configurations window clicked.
-<sbb925582>[2024-12-20 13:37:35] Add Function Success: Add new Security Level for Service 27 Successful for security level: New_SecurityLevel2.
-<sbb925582>[2024-12-20 13:37:40] Button Click: Add new Security Level for Service 27 in Security Level Configurations window clicked.
-<sbb925582>[2024-12-20 13:37:40] Add Function Success: Add new Security Level for Service 27 Successful for security level: New_SecurityLevel2.
-<sbb925582>[2024-12-20 13:37:46] Button Click: Add new Security Level for Service 27 in Security Level Configurations window clicked.
-<sbb925582>[2024-12-20 13:37:46] Add Function Success: Add new Security Level for Service 27 Successful for security level: New_SecurityLevel3.
-<sbb925582>[2024-12-20 13:37:48] Button Click: Clear Form for Service 27 Security Level Configurations window clicked. Userfields cleared successfully.
-<sbb925582>[2024-12-20 13:38:07] Button Click: Clear Form for Service 27 Security Level Configurations window clicked. Userfields cleared successfully.
-<sbb925582>[2024-12-20 13:38:24] Button Click: Validate Security level details clicked in Security Level Configurations window. Validation result : True
-<sbb925582>[2024-12-20 13:38:43] Button Click: Validate Security level details clicked in Security Level Configurations window. Validation result : True
-<sbb925582>[2024-12-20 13:41:35] Button Click: Validate Security level details clicked in Security Level Configurations window. Validation result : True
-<sbb925582>[2024-12-20 13:43:58] Button Click: Validate Security level details clicked in Security Level Configurations window. Validation result : True
-<sbb925582>[2024-12-20 13:44:02] Button Click: Validate Security level details clicked in Security Level Configurations window. Validation result : True
-<sbb925582>[2024-12-20 13:44:06] Button Click: Validate Security level details clicked in Security Level Configurations window. Validation result : False
-<sbb925582>[2024-12-20 13:45:48] Button Click: Validate Security level details clicked in Security Level Configurations window. Validation result : False
-<sbb925582>[2024-12-20 13:45:59] Button Click: Validate Security level details clicked in Security Level Configurations window. Validation result : False
-<sbb925582>[2024-12-20 13:46:05] Button Click: Validate Security level details clicked in Security Level Configurations window. Validation result : True
-<sbb925582>[2024-12-20 13:46:15] Button Click: Validate Security level details clicked in Security Level Configurations window. Validation result : True
-<sbb925582>[2024-12-20 13:46:18] Button Click: Add new Security Level for Service 27 in Security Level Configurations window clicked.
-<sbb925582>[2024-12-20 13:46:18] Add Function Success: Add new Security Level for Service 27 Successful for security level: New_SecurityLevel34.
-<sbb925582>[2024-12-20 13:46:28] Button Click: Clear Form for Service 27 Security Level Configurations window clicked. Userfields cleared successfully.
-<sbb925582>[2024-12-20 13:46:35] Button Click: Validate Security level details clicked in Security Level Configurations window. Validation result : True
-<sbb925582>[2024-12-20 13:46:40] Button Click: Validate Security level details clicked in Security Level Configurations window. Validation result : False
-<sbb925582>[2024-12-20 13:46:49] Button Click: Validate Security level details clicked in Security Level Configurations window. Validation result : True
-<sbb925582>[2024-12-20 13:46:53] Button Click: Clear Form for Service 27 Security Level Configurations window clicked. Userfields cleared successfully.
-<sbb925582>[2024-12-20 13:46:59] Button Click: Clear Form for Service 27 Security Level Configurations window clicked. Userfields cleared successfully.
-<sbb925582>[2024-12-20 18:21:15] Button Click: Validate Security level details clicked in Security Level Configurations window. Validation result : False
-<sbb925582>[2024-12-20 18:34:21] Button Click: Validate Security level details clicked in Security Level Configurations window. Validation result : True
-<sbb925582>[2024-12-20 18:34:41] Button Click: Update Security Level for Service 27 in Security Level Configurations window clicked.
-<sbb925582>[2024-12-20 18:34:41] Update Function Success: Security level 'SecuLvl_01_SubFn_01_02' successfully updated.
+<sbb925582>[2024-12-20 21:53:20] Button Click: Connect CAN button clicked
+<sbb925582>[2024-12-20 21:53:20] CAN Connection: CAN can0 connected with baudrate 125000 and fdf type CAN
+<sbb925582>[2024-12-20 21:53:22] Button Click: Service 27 Window Opened

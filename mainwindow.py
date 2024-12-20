@@ -1,6 +1,4 @@
 from mainwindow_base import Ui_MainWindow
-from windowsettings import UDSservice_EnDis_Window
-from logfile_selector import LogFileSelector
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QMainWindow
 import json
@@ -18,6 +16,14 @@ import service11_main as er
 import service14_main as clearDTC
 import service28_main as commcontrol
 import service85_main as cdtcs
+
+#Import menu related modules.
+from windowsettings import UDSservice_EnDis_Window
+from logfile_selector import LogFileSelector
+from secuLevel_Import import SecuLvlImportTool
+from secuLevel_Export import SecuLvlExportTool
+from secuLevel_Delete import SecuLvlDeleteTool
+from SecurityLevelConfigSettings_main import Ui_SecurityLevel_Settings
 
 Is_CanConnected = False
 
@@ -117,6 +123,10 @@ class mainwindow(Ui_MainWindow, QtWidgets.QWidget):
         #Connect Menu options 
         self.actionSettings.triggered.connect(self.open_settings)
         self.actionLog_Files_Location.triggered.connect(self.open_log_selector)
+        self.actionDelete_Security_Levels.triggered.connect(self.open_deleteSecuLevelsWindow)
+        self.actionExport_Security_Levels.triggered.connect(self.open_exportSecuLevelsWindow)
+        self.actionImport_Security_Levels.triggered.connect(self.open_importSecuLevelsWindow)
+        self.actionConfigure_Security_Levels.triggered.connect(self.open_configureSecuLevelsWindow)
 
         #Connect and Disconnect buttons
         self.pushButton_connect.clicked.connect(self.connectcan)
@@ -156,6 +166,24 @@ class mainwindow(Ui_MainWindow, QtWidgets.QWidget):
         gen.log_action("Menu Option Click", "<UDS Service Settings> Option Selected")
         return
     
+    def open_deleteSecuLevelsWindow(self):
+        self.deleteSecuLevels_window = SecuLvlDeleteTool()
+        self.deleteSecuLevels_window.show()
+        gen.log_action("Menu Option Click", "<Delete Security Levels> Option Selected")
+        return
+    
+    def open_exportSecuLevelsWindow(self):
+        self.exportSecuLevels_window = SecuLvlExportTool()
+        self.exportSecuLevels_window.show()
+        gen.log_action("Menu Option Click", "<Export Security Levels> Option Selected")
+        return
+    
+    def open_importSecuLevelsWindow(self):
+        self.importSecuLevels_window = SecuLvlImportTool()
+        self.importSecuLevels_window.show()
+        gen.log_action("Menu Option Click", "<Import Security Levels> Option Selected")
+        return
+    
     def open_log_selector(self):
         # Create an instance of the LogFileSelector window and show it
         self.log_selector_window = LogFileSelector()
@@ -163,6 +191,16 @@ class mainwindow(Ui_MainWindow, QtWidgets.QWidget):
         gen.log_action("Menu Option Click", "<Log File Location> Option Selected")
         return
 
+    def open_configureSecuLevelsWindow(self):
+        gen.log_action("Menu Option Click", "<Configure Security Levels> Option Selected")
+        self.windowConfigSecuLevel = QMainWindow()
+        self.configureSecuLevels_window = Ui_SecurityLevel_Settings()
+        self.configureSecuLevels_window.setupUi(self.windowConfigSecuLevel)
+        self.configureSecuLevels_window.redesign_ui()
+        self.configureSecuLevels_window.connectFunctions()
+        self.configureSecuLevels_window.initialise_ui()
+        self.windowConfigSecuLevel.show()  # Display the new window
+        return
 
     def openservice10(self):
         if(Is_CanConnected == True):

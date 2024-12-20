@@ -1,6 +1,5 @@
 import sys
 import json
-import base64
 from cryptography.fernet import Fernet
 from PyQt5.QtWidgets import (
     QApplication, QWidget, QVBoxLayout, QCheckBox, QPushButton,
@@ -11,10 +10,10 @@ from PyQt5.QtWidgets import (
 JSON_FILE_PATH = "securityLvl_config.json"
 KEY_FILE_PATH = "encryption.key"  # File to store the encryption key
 
-class JsonExportImportTool(QWidget):
+class SecuLvlExportTool(QWidget):
     def __init__(self):
         super().__init__()
-        self.setWindowTitle("JSON Export & Import Tool")
+        self.setWindowTitle("JSON Export Tool")
         self.setGeometry(300, 100, 500, 600)
         self.selected_items = {}
         self.cipher_suite = self.load_or_generate_key()
@@ -57,20 +56,6 @@ class JsonExportImportTool(QWidget):
         self.button_export = QPushButton("Export Non-Human-Readable")
         self.button_export.clicked.connect(self.export_selected_items)
         layout.addWidget(self.button_export)
-
-        # Import Section
-        layout.addWidget(QLabel("\nImport Configuration"))
-        self.line_edit_import_path = QLineEdit(self)
-        self.line_edit_import_path.setPlaceholderText("Enter or browse the file path to import...")
-        layout.addWidget(self.line_edit_import_path)
-
-        self.button_browse_import = QPushButton("Browse Import Path")
-        self.button_browse_import.clicked.connect(self.browse_import_file)
-        layout.addWidget(self.button_browse_import)
-
-        self.button_import = QPushButton("Import and Merge")
-        self.button_import.clicked.connect(self.import_and_merge)
-        layout.addWidget(self.button_import)
 
         self.setLayout(layout)
 
@@ -128,42 +113,9 @@ class JsonExportImportTool(QWidget):
         except Exception as e:
             QMessageBox.critical(self, "Error", f"Failed to export items: {e}")
 
-    def browse_import_file(self):
-        file_path, _ = QFileDialog.getOpenFileName(self, "Choose Import File", "", "Encoded Files (*.enc);;All Files (*)")
-        if file_path:
-            self.line_edit_import_path.setText(file_path)
-
-    def import_and_merge(self):
-        file_path = self.line_edit_import_path.text()
-
-        if not file_path:
-            QMessageBox.warning(self, "Warning", "Please specify a file path to import.")
-            return
-
-        try:
-            # Read and decode the data
-            with open(file_path, 'rb') as import_file:
-                encoded_data = import_file.read()
-
-            decoded_data = self.cipher_suite.decrypt(encoded_data).decode()
-            imported_data = json.loads(decoded_data)
-
-            # Merge the imported data with the existing JSON
-            with open(JSON_FILE_PATH, 'r+') as json_file:
-                existing_data = json.load(json_file)
-                existing_data.update(imported_data)
-                json_file.seek(0)
-                json.dump(existing_data, json_file, indent=4)
-                json_file.truncate()
-
-            QMessageBox.information(self, "Success", "Imported data successfully merged with the existing JSON file.")
-
-        except Exception as e:
-            QMessageBox.critical(self, "Error", f"Failed to import and merge data: {e}")
-
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
-    window = JsonExportImportTool()
+    window = SecuLvlExportTool()
     window.show()
     sys.exit(app.exec_())

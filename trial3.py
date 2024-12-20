@@ -1,73 +1,111 @@
-class abcd:
-    def update_security_level(self):
-        '''Updates the existing security level configuration in the JSON file'''
-        gen.log_action("Button Click", "Update Security Level for Service 27 in Security Level Configurations window clicked.")
+import sys
+import json
+from PyQt5.QtWidgets import (
+    QApplication, QWidget, QVBoxLayout, QCheckBox, QPushButton,
+    QFileDialog, QLineEdit, QLabel, QMessageBox, QScrollArea, QGroupBox
+)
+
+JSON_FILE_PATH = "securityLvl_config.json"
+
+
+class JsonExportTool(QWidget):
+    def __init__(self):
+        super().__init__()
+        self.setWindowTitle("JSON Export Tool")
+        self.setGeometry(300, 100, 500, 600)
+        self.selected_items = {}
+        self.init_ui()
+
+    def init_ui(self):
+        layout = QVBoxLayout()
+
+        # Instruction Label
+        self.label_instruction = QLabel("Select elements to export:")
+        layout.addWidget(self.label_instruction)
+
+        # Scrollable Area for Checkboxes
+        self.scroll_area = QScrollArea()
+        self.scroll_area.setWidgetResizable(True)
+        self.checkbox_group = QGroupBox()
+        self.checkbox_layout = QVBoxLayout()
+
+        # Load JSON and populate checkboxes
+        self.load_json_data()
+
+        self.checkbox_group.setLayout(self.checkbox_layout)
+        self.scroll_area.setWidget(self.checkbox_group)
+        layout.addWidget(self.scroll_area)
+
+        # LineEdit for file path and Browse Button
+        self.line_edit_path = QLineEdit(self)
+        self.line_edit_path.setPlaceholderText("Enter or browse the file path to export...")
+        layout.addWidget(self.line_edit_path)
+
+        self.button_browse = QPushButton("Browse")
+        self.button_browse.clicked.connect(self.browse_file)
+        layout.addWidget(self.button_browse)
+
+        # Export Button
+        self.button_export = QPushButton("Export")
+        self.button_export.clicked.connect(self.export_selected_items)
+        layout.addWidget(self.button_export)
+
+        self.setLayout(layout)
+
+    def load_json_data(self):
         try:
-            # Retrieve the security level ID from the comboBox
-            selected_SecuLvl = self.comboBox_SecurityLevel.currentText()
-            if not selected_SecuLvl:
-                self.update_status("Security level ID cannot be empty for update operation.")
-                gen.log_action("Update Function Failed", "Update Security Level for Service 27 Failed as security level name was empty.")
-                return
-            if selected_SecuLvl == "New_SecurityLevel":
-                self.update_status("Security level ID cannot be 'New_SecurityLevel'. Select an existing security level to update.")
-                gen.log_action("Update Function Failed", "Update Security Level for Service 27 Failed as no valid security level was selected.")
-                return
+            with open(JSON_FILE_PATH, 'r') as json_file:
+                self.json_data = json.load(json_file)
 
-            # Collect data from the form fields
-            updated_subfunction_getseed = self.lineEdit_SubFn_Seed.text()
-            updated_SecuLvl_ConfigData = {
-                "subfunction_getseed": updated_subfunction_getseed,
-                "subfunction_validatekey": self.lineEdit_SubFn_Key.text(),
-                "seedLength": self.lineEdit_SeedLengthBytes.text(),
-                "keyLength": self.lineEdit_KeyLengthBytes.text(),
-                "SampleSeed": self.lineEdit_sampleseed.text(),
-                "SampleKey": self.lineEdit_samplekey.text(),
-                "SecurityFunction": self.lineEdit_SecurityFuncName.text(),
-                "SecurityFunctionDefinition": self.textEdit_SecuFnDef.toPlainText(),
-            }
+                # Create a checkbox for each key in the JSON file, excluding "New_SecurityLevel" and empty keys
+                for key in self.json_data.keys():
+                    if key and key != "New_SecurityLevel":  # Exclude empty and "New_SecurityLevel"
+                        checkbox = QCheckBox(key)
+                        checkbox.stateChanged.connect(lambda state, k=key: self.update_selected_items(state, k))
+                        self.checkbox_layout.addWidget(checkbox)
 
-            # Load existing JSON data
-            try:
-                with open(JSON_FILE_PATH, 'r') as SecuLvlCfgFile:
-                    SecuLvl_ConfigDatas = json.load(SecuLvlCfgFile)
+        except FileNotFoundError:
+            QMessageBox.critical(self, "Error", f"JSON file '{JSON_FILE_PATH}' not found.")
+            self.json_data = {}
+        except json.JSONDecodeError:
+            QMessageBox.critical(self, "Error", "Failed to decode JSON file. Check the file format.")
+            self.json_data = {}
 
-                    # Check if the security level exists
-                    if selected_SecuLvl not in SecuLvl_ConfigDatas:
-                        self.update_status(f"Security level '{selected_SecuLvl}' does not exist. Cannot update.")
-                        gen.log_action("Update Function Failed", f"Security level '{selected_SecuLvl}' does not exist.")
-                        return
+    def update_selected_items(self, state, key):
+        if state == 2:  # Checked
+            self.selected_items[key] = self.json_data[key]
+        elif key in self.selected_items:
+            del self.selected_items[key]
 
-                    # Check if subfunction_getseed is unique (excluding the current security level)
-                    for secu_level, config_data in SecuLvl_ConfigDatas.items():
-                        if secu_level != selected_SecuLvl and config_data.get("subfunction_getseed") == updated_subfunction_getseed:
-                            self.update_status(f"The subfunction_getseed value '{updated_subfunction_getseed}' is already used by security level '{secu_level}'.")
-                            gen.log_action("Update Function Failed", f"The subfunction_getseed value '{updated_subfunction_getseed}' is already used by security level '{secu_level}'.")
-                            return
+    def browse_file(self):
+        options = QFileDialog.Options()
+        options |= QFileDialog.DontUseNativeDialog
+        file_path, _ = QFileDialog.getSaveFileName(self, "Choose Export File", "", "JSON Files (*.json);;All Files (*)", options=options)
+        if file_path:
+            self.line_edit_path.setText(file_path)
 
-            except FileNotFoundError:
-                self.update_status("Configuration file not found. Update operation failed.")
-                gen.log_action("Update Function Failed", "Configuration file not found.")
-                return
-            except json.JSONDecodeError:
-                self.update_status("Failed to decode JSON file. Check the file format.")
-                gen.log_action("Update Function Failed", "JSONDecodeError: Invalid file format.")
-                return
+    def export_selected_items(self):
+        file_path = self.line_edit_path.text()
 
-            # Update the security level data
-            SecuLvl_ConfigDatas[selected_SecuLvl] = updated_SecuLvl_ConfigData
+        if not file_path:
+            QMessageBox.warning(self, "Warning", "Please specify a file path to export.")
+            return
 
-            # Write back to the JSON file
-            with open(JSON_FILE_PATH, 'w') as SecuLvlCfgFile:
-                json.dump(SecuLvl_ConfigDatas, SecuLvlCfgFile, indent=4)
+        if not self.selected_items:
+            QMessageBox.warning(self, "Warning", "No items selected for export.")
+            return
 
-            gen.log_action("Update Function Success", f"Security level '{selected_SecuLvl}' successfully updated.")
-            self.update_status(f"Security level '{selected_SecuLvl}' successfully updated.")
+        try:
+            with open(file_path, 'w') as export_file:
+                json.dump(self.selected_items, export_file, indent=4)
+            QMessageBox.information(self, "Success", f"Selected items successfully exported to {file_path}.")
 
-        except ValueError as ve:
-            self.update_status(f"Update Security Level - ValueError: {ve}")
-            gen.log_action("Update Function Failed", f"ValueError: {ve}")
         except Exception as e:
-            self.update_status(f"Update Security Level - Unexpected error: {e}")
-            gen.log_action("Update Function Failed", f"Unexpected Error: {e}")
-        return
+            QMessageBox.critical(self, "Error", f"Failed to export items: {e}")
+
+
+if __name__ == "__main__":
+    app = QApplication(sys.argv)
+    window = JsonExportTool()
+    window.show()
+    sys.exit(app.exec_())

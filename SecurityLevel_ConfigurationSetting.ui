@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form_SID27Settings</class>
+ <widget class="QWidget" name="Form_SID27Settings">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>639</width>
+    <height>470</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>400</width>
+    <height>400</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Configuration of Security Levels</string>
+  </property>
+  <widget class="QLabel" name="label_status">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>380</y>
+     <width>621</width>
+     <height>81</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Arial Narrow</family>
+     <pointsize>7</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(255, 255, 127);
+color: rgb(85, 0, 0);
+border-color: rgb(0, 0, 255);</string>
+   </property>
+   <property name="text">
+    <string>No Status</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="wordWrap">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QWidget" name="layoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>20</y>
+     <width>621</width>
+     <height>351</height>
+    </rect>
+   </property>
+   <layout class="QGridLayout" name="gridLayout">
+    <property name="sizeConstraint">
+     <enum>QLayout::SetNoConstraint</enum>
+    </property>
+    <item row="3" column="0">
+     <widget class="QLabel" name="label_6">
+      <property name="text">
+       <string>Validate Key SubFn             .</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="0" colspan="2">
+     <widget class="QLabel" name="label_SecurityLogic">
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(0, 0, 255);</string>
+      </property>
+      <property name="text">
+       <string>Security Level Logic Section</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="4">
+     <widget class="QPushButton" name="pushButton_Update">
+      <property name="toolTip">
+       <string>Updates the Security level details and configurations for selected Security level</string>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(170, 255, 255);
+color: rgb(85, 0, 0);</string>
+      </property>
+      <property name="text">
+       <string>Update</string>
+      </property>
+     </widget>
+    </item>
+    <item row="11" column="1" colspan="3">
+     <widget class="QTextEdit" name="textEdit_SecuFnDef">
+      <property name="font">
+       <font>
+        <family>Consolas</family>
+        <pointsize>6</pointsize>
+       </font>
+      </property>
+      <property name="toolTip">
+       <string>The Python Function definition for computing the key from seed is entered here. </string>
+      </property>
+     </widget>
+    </item>
+    <item row="6" column="3">
+     <widget class="QLineEdit" name="lineEdit_samplekey">
+      <property name="toolTip">
+       <string>Enter a key value in hex. Sample value to validate the function. This must be correct Key value for given sample seed value.</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="3">
+     <widget class="QLineEdit" name="lineEdit_SeedLengthBytes">
+      <property name="toolTip">
+       <string>Enter the lenth of Seed in bytes. Ex: 2 if seed is 2 byte long.</string>
+      </property>
+     </widget>
+    </item>
+    <item row="6" column="2">
+     <widget class="QLabel" name="label_9">
+      <property name="text">
+       <string>Sample Key Val</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="2">
+     <widget class="QLabel" name="label_7">
+      <property name="text">
+       <string>Key Length</string>
+      </property>
+     </widget>
+    </item>
+    <item row="6" column="0">
+     <widget class="QLabel" name="label_8">
+      <property name="text">
+       <string>Sample Seed Val</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="2">
+     <widget class="QLabel" name="label_5">
+      <property name="text">
+       <string>Seed Length</string>
+      </property>
+     </widget>
+    </item>
+    <item row="11" column="0">
+     <widget class="QLabel" name="label_3">
+      <property name="text">
+       <string>Function Definition</string>
+      </property>
+     </widget>
+    </item>
+    <item row="6" column="1">
+     <widget class="QLineEdit" name="lineEdit_sampleseed">
+      <property name="toolTip">
+       <string>Enter a Seed value in hex. Sample value to validate the function</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="0">
+     <widget class="QLabel" name="label">
+      <property name="text">
+       <string>Security Level</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="1">
+     <widget class="QLineEdit" name="lineEdit_SubFn_Seed">
+      <property name="toolTip">
+       <string>Enter the Subfunction in hexadecimal format for Getting the Seed value in Security Access UDS Service request. forexample 2C</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="3">
+     <widget class="QLineEdit" name="lineEdit_KeyLengthBytes">
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Enter the lenth of key in bytes. Ex: 1 if key is 1 byte long.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="4">
+     <widget class="QPushButton" name="pushButton_Delete">
+      <property name="toolTip">
+       <string>Deletes the Security level from configurations</string>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(170, 255, 255);
+color: rgb(85, 0, 0);</string>
+      </property>
+      <property name="text">
+       <string>Delete</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <widget class="QLabel" name="label_4">
+      <property name="text">
+       <string>Get Seed SubFn</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="1">
+     <widget class="QLineEdit" name="lineEdit_SubFn_Key">
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Enter the Subfunction in hexadecimal format for validating the key value in Security Access UDS Service request. for example 2D&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="1" colspan="3">
+     <widget class="QComboBox" name="comboBox_SecurityLevel">
+      <property name="minimumSize">
+       <size>
+        <width>220</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>1000</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="toolTip">
+       <string>Select the Security Level which you want to view. If New_SecurityLevel is selected then please provide a name to security level</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="4">
+     <widget class="QPushButton" name="pushButton_Reset">
+      <property name="toolTip">
+       <string>Resets the window to initial state. All the data entered would be cleared</string>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(170, 170, 0);
+font: 75 8pt &quot;MS Shell Dlg 2&quot;;
+color: rgb(0, 85, 0);</string>
+      </property>
+      <property name="text">
+       <string>Reset</string>
+      </property>
+     </widget>
+    </item>
+    <item row="11" column="4">
+     <widget class="QPushButton" name="pushButton_AddSecuLvl">
+      <property name="toolTip">
+       <string>Adds the Security Level to configuration List</string>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(0, 255, 255);
+border-color: rgb(0, 0, 0);
+color: rgb(0, 0, 0);</string>
+      </property>
+      <property name="text">
+       <string>Add</string>
+      </property>
+     </widget>
+    </item>
+    <item row="6" column="4">
+     <widget class="QPushButton" name="pushButton_ValidateSecuLvlConfig">
+      <property name="toolTip">
+       <string>Validates the Security Level configuration and Logic </string>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(85, 255, 127);
+color: rgb(85, 0, 0);</string>
+      </property>
+      <property name="text">
+       <string>Validate</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="2" colspan="3">
+     <widget class="QLineEdit" name="lineEdit_SecurityFuncName">
+      <property name="toolTip">
+       <string>Enter the name of Security Function name</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+   <zorder>textEdit_SecuFnDef</zorder>
+   <zorder>label</zorder>
+   <zorder>label_3</zorder>
+   <zorder>comboBox_SecurityLevel</zorder>
+   <zorder>label_4</zorder>
+   <zorder>lineEdit_SubFn_Seed</zorder>
+   <zorder>label_5</zorder>
+   <zorder>lineEdit_SeedLengthBytes</zorder>
+   <zorder>label_6</zorder>
+   <zorder>lineEdit_SubFn_Key</zorder>
+   <zorder>label_7</zorder>
+   <zorder>lineEdit_KeyLengthBytes</zorder>
+   <zorder>label_8</zorder>
+   <zorder>label_SecurityLogic</zorder>
+   <zorder>lineEdit_sampleseed</zorder>
+   <zorder>label_9</zorder>
+   <zorder>lineEdit_samplekey</zorder>
+   <zorder>pushButton_Update</zorder>
+   <zorder>lineEdit_SecurityFuncName</zorder>
+   <zorder>pushButton_Delete</zorder>
+   <zorder>pushButton_Reset</zorder>
+   <zorder>pushButton_AddSecuLvl</zorder>
+   <zorder>pushButton_ValidateSecuLvlConfig</zorder>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

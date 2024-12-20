@@ -22,11 +22,31 @@
     "SecuLvl_01_SubFn_01_02": {
         "subfunction_getseed": "01",
         "subfunction_validatekey": "02",
-        "seedLength": "02",
-        "keyLength": "02",
+        "seedLength": "2",
+        "keyLength": "2",
         "SampleSeed": "1234",
         "SampleKey": "EDCC",
         "SecurityFunction": "getKey4mSeed_SecuLvl_01",
         "SecurityFunctionDefinition": "def getKey4mSeed_SecuLvl_01(seed):\n    # Update the code between start and end section only\n    ################# START ########################\n    # Logic: Key is 2's complement of the seed \n    ones_complement = ~seed\n    twos_complement = ones_complement + 1\n    key = 0xFFFF & twos_complement\n    ################## END #########################\n    return(key)"
+    },
+    "SecuLvl_31_SubFn_61_62": {
+        "subfunction_getseed": "61",
+        "subfunction_validatekey": "62",
+        "seedLength": "02",
+        "keyLength": "02",
+        "SampleSeed": "1234",
+        "SampleKey": "EDCA",
+        "SecurityFunction": "getKey4mSeed_SecuLvl_01",
+        "SecurityFunctionDefinition": "def getKey4mSeed_SecuLvl_01(seed):\n    # Update the code between start and end section only\n    ################# START ########################\n    # Logic: Key is one less than 1's complement of the seed \n    ones_complement = ~seed\n    oneless = ones_complement - 1\n    key = 0xFFFF & oneless\n    ################## END #########################\n    return(key)"
+    },
+    "SecuLvl_02_SubFn_03_04": {
+        "subfunction_getseed": "03",
+        "subfunction_validatekey": "04",
+        "seedLength": "1",
+        "keyLength": "1",
+        "SampleSeed": "12",
+        "SampleKey": "13",
+        "SecurityFunction": "SecurityFunction2",
+        "SecurityFunctionDefinition": "def SecurityFunction2(seed):\n    # Logic to compute key from seed in python\n    # START OF LOGIC \n    #Enter your python code here\n    key = seed + 1  #to be replaced with actual logic\n    # END OF LOGIC\n    return key\n"
     }
 }
