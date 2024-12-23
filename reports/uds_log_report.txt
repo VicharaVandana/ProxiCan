@@ -42,4 +42,312 @@ Suppress Positive Message Request: False
 
 <------------------- LOG ENTRY END ------------------->
 
+# <---- LOG ENTRY [ass930085 - 2024-12-18 11:10:33] ---->
+UDS Request :   [0x3e 0x0]
+Explanation:   Tester Present (Service 3E) Requested and SPRMIB flag False
+UDS Response:   [0x7e 0x0]
+Explanation:   Positive Response Received
+Service ID: 0x3e
+Subfunction: 0x0
+Suppress Positive Message Request: False
+
+<------------------- LOG ENTRY END ------------------->
+
+# <---- LOG ENTRY [ass930085 - 2024-12-18 11:10:36] ---->
+UDS Request :   [0x3e 0x0]
+Explanation:   Tester Present (Service 3E) Requested and SPRMIB flag False
+UDS Response:   [0x7e 0x0]
+Explanation:   Positive Response Received
+Service ID: 0x3e
+Subfunction: 0x0
+Suppress Positive Message Request: False
+
+<------------------- LOG ENTRY END ------------------->
+
+# <---- LOG ENTRY [ass930085 - 2024-12-18 11:10:39] ---->
+UDS Request :   [0x3e 0x0]
+Explanation:   Tester Present (Service 3E) Requested and SPRMIB flag False
+UDS Response:   [0x7e 0x0]
+Explanation:   Positive Response Received
+Service ID: 0x3e
+Subfunction: 0x0
+Suppress Positive Message Request: False
+
+<------------------- LOG ENTRY END ------------------->
+
+# <---- LOG ENTRY [ass930085 - 2024-12-18 11:19:51] ---->
+UDS Request :   [0x3e 0x0]
+Explanation:   Tester Present (Service 3E) Requested and SPRMIB flag False
+UDS Response:   [0x7e 0x0]
+Explanation:   Positive Response Received
+Service ID: 0x3e
+Subfunction: 0x0
+Suppress Positive Message Request: False
+
+<------------------- LOG ENTRY END ------------------->
+
+# <---- LOG ENTRY [ass930085 - 2024-12-18 11:19:54] ---->
+UDS Request :   [0x3e 0x0]
+Explanation:   Tester Present (Service 3E) Requested and SPRMIB flag False
+UDS Response:   [0x7e 0x0]
+Explanation:   Positive Response Received
+Service ID: 0x3e
+Subfunction: 0x0
+Suppress Positive Message Request: False
+
+<------------------- LOG ENTRY END ------------------->
+
+# <---- LOG ENTRY [ass930085 - 2024-12-18 11:19:57] ---->
+UDS Request :   [0x3e 0x0]
+Explanation:   Tester Present (Service 3E) Requested and SPRMIB flag False
+UDS Response:   [0x7e 0x0]
+Explanation:   Positive Response Received
+Service ID: 0x3e
+Subfunction: 0x0
+Suppress Positive Message Request: False
+
+<------------------- LOG ENTRY END ------------------->
+
+# <---- LOG ENTRY [ass930085 - 2024-12-18 11:20:00] ---->
+UDS Request :   [0x3e 0x0]
+Explanation:   Tester Present (Service 3E) Requested and SPRMIB flag False
+UDS Response:   [0x7e 0x0]
+Explanation:   Positive Response Received
+Service ID: 0x3e
+Subfunction: 0x0
+Suppress Positive Message Request: False
+
+<------------------- LOG ENTRY END ------------------->
+
+# <---- LOG ENTRY [ass930085 - 2024-12-18 11:20:03] ---->
+UDS Request :   [0x3e 0x0]
+Explanation:   Tester Present (Service 3E) Requested and SPRMIB flag False
+UDS Response:   [0x7e 0x0]
+Explanation:   Positive Response Received
+Service ID: 0x3e
+Subfunction: 0x0
+Suppress Positive Message Request: False
+
+<------------------- LOG ENTRY END ------------------->
+
+# <---- LOG ENTRY [ass930085 - 2024-12-18 11:20:06] ---->
+UDS Request :   [0x3e 0x0]
+Explanation:   Tester Present (Service 3E) Requested and SPRMIB flag False
+UDS Response:   [0x7e 0x0]
+Explanation:   Positive Response Received
+Service ID: 0x3e
+Subfunction: 0x0
+Suppress Positive Message Request: False
+
+<------------------- LOG ENTRY END ------------------->
+
+# <---- LOG ENTRY [ass930085 - 2024-12-18 11:20:09] ---->
+UDS Request :   [0x3e 0x0]
+Explanation:   Tester Present (Service 3E) Requested and SPRMIB flag False
+UDS Response:   [0x7e 0x0]
+Explanation:   Positive Response Received
+Service ID: 0x3e
+Subfunction: 0x0
+Suppress Positive Message Request: False
+
+<------------------- LOG ENTRY END ------------------->
+
+# <---- LOG ENTRY [ass930085 - 2024-12-18 11:20:12] ---->
+UDS Request :   [0x3e 0x0]
+Explanation:   Tester Present (Service 3E) Requested and SPRMIB flag False
+UDS Response:   [0x7e 0x0]
+Explanation:   Positive Response Received
+Service ID: 0x3e
+Subfunction: 0x0
+Suppress Positive Message Request: False
+
+<------------------- LOG ENTRY END ------------------->
+
+# <---- LOG ENTRY [ass930085 - 2024-12-18 11:20:15] ---->
+UDS Request :   [0x3e 0x0]
+Explanation:   Tester Present (Service 3E) Requested and SPRMIB flag False
+UDS Response:   [0x7e 0x0]
+Explanation:   Positive Response Received
+Service ID: 0x3e
+Subfunction: 0x0
+Suppress Positive Message Request: False
+
+<------------------- LOG ENTRY END ------------------->
+
+# <---- LOG ENTRY [ass930085 - 2024-12-18 11:20:18] ---->
+UDS Request :   [0x3e 0x0]
+Explanation:   Tester Present (Service 3E) Requested and SPRMIB flag False
+UDS Response:   [0x7e 0x0]
+Explanation:   Positive Response Received
+Service ID: 0x3e
+Subfunction: 0x0
+Suppress Positive Message Request: False
+
+<------------------- LOG ENTRY END ------------------->
+
+# <---- LOG ENTRY [ass930085 - 2024-12-18 11:20:21] ---->
+UDS Request :   [0x3e 0x0]
+Explanation:   Tester Present (Service 3E) Requested and SPRMIB flag False
+UDS Response:   [0x7e 0x0]
+Explanation:   Positive Response Received
+Service ID: 0x3e
+Subfunction: 0x0
+Suppress Positive Message Request: False
+
+<------------------- LOG ENTRY END ------------------->
+
+# <---- LOG ENTRY [ass930085 - 2024-12-18 11:20:24] ---->
+UDS Request :   [0x3e 0x0]
+Explanation:   Tester Present (Service 3E) Requested and SPRMIB flag False
+UDS Response:   [0x7e 0x0]
+Explanation:   Positive Response Received
+Service ID: 0x3e
+Subfunction: 0x0
+Suppress Positive Message Request: False
+
+<------------------- LOG ENTRY END ------------------->
+
+# <---- LOG ENTRY [ass930085 - 2024-12-18 11:20:27] ---->
+UDS Request :   [0x3e 0x0]
+Explanation:   Tester Present (Service 3E) Requested and SPRMIB flag False
+UDS Response:   [0x7e 0x0]
+Explanation:   Positive Response Received
+Service ID: 0x3e
+Subfunction: 0x0
+Suppress Positive Message Request: False
+
+<------------------- LOG ENTRY END ------------------->
+
+# <---- LOG ENTRY [ass930085 - 2024-12-18 11:20:30] ---->
+UDS Request :   [0x3e 0x0]
+Explanation:   Tester Present (Service 3E) Requested and SPRMIB flag False
+UDS Response:   [0x7e 0x0]
+Explanation:   Positive Response Received
+Service ID: 0x3e
+Subfunction: 0x0
+Suppress Positive Message Request: False
+
+<------------------- LOG ENTRY END ------------------->
+
+# <---- LOG ENTRY [ass930085 - 2024-12-18 11:20:33] ---->
+UDS Request :   [0x3e 0x0]
+Explanation:   Tester Present (Service 3E) Requested and SPRMIB flag False
+UDS Response:   [0x7e 0x0]
+Explanation:   Positive Response Received
+Service ID: 0x3e
+Subfunction: 0x0
+Suppress Positive Message Request: False
+
+<------------------- LOG ENTRY END ------------------->
+
+# <---- LOG ENTRY [ass930085 - 2024-12-18 11:20:36] ---->
+UDS Request :   [0x3e 0x0]
+Explanation:   Tester Present (Service 3E) Requested and SPRMIB flag False
+UDS Response:   [0x7e 0x0]
+Explanation:   Positive Response Received
+Service ID: 0x3e
+Subfunction: 0x0
+Suppress Positive Message Request: False
+
+<------------------- LOG ENTRY END ------------------->
+
+# <---- LOG ENTRY [ass930085 - 2024-12-18 11:20:39] ---->
+UDS Request :   [0x3e 0x0]
+Explanation:   Tester Present (Service 3E) Requested and SPRMIB flag False
+UDS Response:   [0x7e 0x0]
+Explanation:   Positive Response Received
+Service ID: 0x3e
+Subfunction: 0x0
+Suppress Positive Message Request: False
+
+<------------------- LOG ENTRY END ------------------->
+
+# <---- LOG ENTRY [ass930085 - 2024-12-18 11:20:42] ---->
+UDS Request :   [0x3e 0x0]
+Explanation:   Tester Present (Service 3E) Requested and SPRMIB flag False
+UDS Response:   [0x7e 0x0]
+Explanation:   Positive Response Received
+Service ID: 0x3e
+Subfunction: 0x0
+Suppress Positive Message Request: False
+
+<------------------- LOG ENTRY END ------------------->
+
+# <---- LOG ENTRY [ass930085 - 2024-12-18 11:20:45] ---->
+UDS Request :   [0x3e 0x0]
+Explanation:   Tester Present (Service 3E) Requested and SPRMIB flag False
+UDS Response:   [0x7e 0x0]
+Explanation:   Positive Response Received
+Service ID: 0x3e
+Subfunction: 0x0
+Suppress Positive Message Request: False
+
+<------------------- LOG ENTRY END ------------------->
+
+# <---- LOG ENTRY [ass930085 - 2024-12-18 11:26:30] ---->
+UDS Request :   [0x3e 0x0]
+Explanation:   Tester Present (Service 3E) Requested and SPRMIB flag False
+UDS Response:   [0x7e 0x0]
+Explanation:   Positive Response Received
+Service ID: 0x3e
+Subfunction: 0x0
+Suppress Positive Message Request: False
+
+<------------------- LOG ENTRY END ------------------->
+
+# <---- LOG ENTRY [ass930085 - 2024-12-18 11:26:33] ---->
+UDS Request :   [0x3e 0x0]
+Explanation:   Tester Present (Service 3E) Requested and SPRMIB flag False
+UDS Response:   [0x7e 0x0]
+Explanation:   Positive Response Received
+Service ID: 0x3e
+Subfunction: 0x0
+Suppress Positive Message Request: False
+
+<------------------- LOG ENTRY END ------------------->
+
+# <---- LOG ENTRY [ass930085 - 2024-12-18 11:26:36] ---->
+UDS Request :   [0x3e 0x0]
+Explanation:   Tester Present (Service 3E) Requested and SPRMIB flag False
+UDS Response:   [0x7e 0x0]
+Explanation:   Positive Response Received
+Service ID: 0x3e
+Subfunction: 0x0
+Suppress Positive Message Request: False
+
+<------------------- LOG ENTRY END ------------------->
+
+# <---- LOG ENTRY [ass930085 - 2024-12-18 11:26:39] ---->
+UDS Request :   [0x3e 0x0]
+Explanation:   Tester Present (Service 3E) Requested and SPRMIB flag False
+UDS Response:   [0x7e 0x0]
+Explanation:   Positive Response Received
+Service ID: 0x3e
+Subfunction: 0x0
+Suppress Positive Message Request: False
+
+<------------------- LOG ENTRY END ------------------->
+
+# <---- LOG ENTRY [ass930085 - 2024-12-18 11:26:42] ---->
+UDS Request :   [0x3e 0x0]
+Explanation:   Tester Present (Service 3E) Requested and SPRMIB flag False
+UDS Response:   [0x7e 0x0]
+Explanation:   Positive Response Received
+Service ID: 0x3e
+Subfunction: 0x0
+Suppress Positive Message Request: False
+
+<------------------- LOG ENTRY END ------------------->
+
+# <---- LOG ENTRY [ass930085 - 2024-12-18 11:26:45] ---->
+UDS Request :   [0x3e 0x0]
+Explanation:   Tester Present (Service 3E) Requested and SPRMIB flag False
+UDS Response:   [0x7e 0x0]
+Explanation:   Positive Response Received
+Service ID: 0x3e
+Subfunction: 0x0
+Suppress Positive Message Request: False
+
+<------------------- LOG ENTRY END ------------------->
+
 # 

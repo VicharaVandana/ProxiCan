@@ -1,5 +1,5 @@
 from service19_base import Ui_Form_Subfun_SID19
-from subfunctionsettings import Service19Subfunc_EnDis_Window
+#from subfunctionsettings import Service19Subfunc_EnDis_Window
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QMainWindow
 import json

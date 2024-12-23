@@ -1603,16 +1603,27 @@ color: rgb(0, 0, 255);</string>
     <property name="title">
      <string>Menu</string>
     </property>
+    <widget class="QMenu" name="menuUDS_Subfunction_Settings">
+     <property name="title">
+      <string>UDS Subfunction Settings</string>
+     </property>
+     <addaction name="actionService_10"/>
+     <addaction name="actionService_11"/>
+     <addaction name="actionService_19"/>
+     <addaction name="actionService_28"/>
+     <addaction name="actionService_31"/>
+     <addaction name="actionService_85"/>
+    </widget>
     <addaction name="actionSettings"/>
     <addaction name="actionLog_Files_Location"/>
-    <addaction name="actionECU_Specific_Settings"/>
+    <addaction name="menuUDS_Subfunction_Settings"/>
    </widget>
    <addaction name="menuMenu"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <action name="actionSettings">
    <property name="text">
-    <string>UDS Service Settings</string>
+    <string>UDS Service Selection Settings</string>
    </property>
   </action>
   <action name="actionLog_Files_Location">
@@ -1620,9 +1631,34 @@ color: rgb(0, 0, 255);</string>
     <string>Log Files Location</string>
    </property>
   </action>
-  <action name="actionECU_Specific_Settings">
+  <action name="actionService_10">
    <property name="text">
-    <string>Service 19  Subfunction Settings</string>
+    <string>Service 10</string>
+   </property>
+  </action>
+  <action name="actionService_11">
+   <property name="text">
+    <string>Service 11</string>
+   </property>
+  </action>
+  <action name="actionService_19">
+   <property name="text">
+    <string>Service 19</string>
+   </property>
+  </action>
+  <action name="actionService_28">
+   <property name="text">
+    <string>Service 28</string>
+   </property>
+  </action>
+  <action name="actionService_31">
+   <property name="text">
+    <string>Service 31</string>
+   </property>
+  </action>
+  <action name="actionService_85">
+   <property name="text">
+    <string>Service 85</string>
    </property>
   </action>
  </widget>

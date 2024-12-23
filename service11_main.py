@@ -9,19 +9,63 @@ else:
 from service11_base import Ui_Form_SID11
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QMessageBox
-import service11_function as fun
+import service11_functions as fun
 from bs4 import BeautifulSoup
 import os
 import datetime
 import general as gen
 import configure as conf
 import os
+from service11_subfunctionsettings import Service11Subfunc_EnDis_Window
+import json
 
 
 
 class Ui_Service11(Ui_Form_SID11):
     def redesign_ui(self):
-        pass    
+        self.load_subfunction_visibility()
+        self.update_subfunction_visibility()
+        return
+
+    def load_subfunction_visibility(self):
+        """Load the visibility settings for subfunctions from the JSON file."""
+        try:
+            with open('service11_subfunctionsettings.json', 'r') as file:
+                data = json.load(file)
+                self.subfunction11_visibility = data["Service_11_Subfunctions_Visibility"]
+                print("Loaded JSON: ", self.subfunction11_visibility)  # Debugging line
+        except FileNotFoundError:
+            print("Error: service11_subfunctionsettings.json file not found.")
+            self.subfunction11_visibility = {"01": True, "02": True, "03": True}  # Default visibility
+        return
+
+    def update_subfunction_visibility(self):
+        """
+        Update the visibility of each item in the combo box based on the loaded JSON data.
+        Iterate backwards to safely remove items without affecting the loop.
+        """
+        for index in range(self.comboBox_ECUReset.count() - 1, -1, -1):
+            item_text = self.comboBox_ECUReset.itemText(index)  # Get the text of the item (e.g., "01 - Hard reset")
+            
+            # Extract the numeric part of the item text to match the JSON keys
+            item_key = item_text.split(" ")[0]  # Get the part before the space (e.g., "01", "02")
+            print(f"Checking visibility for item: {item_key}")  # Debugging line
+            
+            # Check if the item key exists in visibility settings; default to True (visible) if not found
+            visibility = self.subfunction11_visibility.get(item_key, True)
+            print(f"Visibility for {item_key}: {visibility}")  # Debugging line
+            
+            if not visibility:
+                # Remove the item from the combo box if it should be hidden
+                self.comboBox_ECUReset.removeItem(index)
+                print(f"Subfunction {item_key} hidden.")  # Debugging line
+            else:
+                print(f"Subfunction {item_key} visible.")  # Debugging line
+        
+        # Force an update of the combo box display
+        self.comboBox_ECUReset.update()
+        print("ComboBox update completed.")  # Debugging line
+        return   
         
     def connectFunctions(self):
         self.pushButton_Send11Req.clicked.connect(self.send11service)
@@ -62,8 +106,11 @@ class Ui_Service11(Ui_Form_SID11):
     
     def send11service(self):
         index_ERSession = self.comboBox_ECUReset.currentIndex()
-        session = fun.getsubfunction(index_ERSession)
-        session_name = fun.getsubfunctionname(session)
+        session_name = self.comboBox_ECUReset.itemText(index_ERSession)
+        session_name_cleaned = session_name.split('-')[-1].strip()    
+        session = fun.getsubfunction(session_name_cleaned)
+        print(session)
+        session_name_returned = fun.getsubfunctionname(session)
         sprmib_flg = self.checkBox_suppressposmsg.isChecked()
         
 
@@ -97,10 +144,10 @@ class Ui_Service11(Ui_Form_SID11):
 
             response_html = f'''<h4><U>Positive Response Recieved</U></h4>
     <p><strong>Service ID:</strong> <I>{hex(response.resp[0]-0x40)}</I></p>
-    <p><strong>Reset Type:</strong> <I>{hex(response.resp[1])} {session_name}</I></p>
+    <p><strong>Reset Type:</strong> <I>{hex(response.resp[1])} {session_name_cleaned}</I></p>
     <p><strong>Requested Reset Initiated:</strong> <I>{reset_initiation}</I></p>
     <p><strong>Suppress Positive Message Request:</strong> <I>{sprmib_flg}</I></p>
-    <p><strong>Info:</strong> <I>Service 11 is successfully sent with reset type {session_name}</I></p>   
+    <p><strong>Info:</strong> <I>Service 11 is successfully sent with reset type {session_name_cleaned}</I></p>   
 '''
 
         elif(response.type == "Negative Response"):
@@ -137,7 +184,7 @@ class Ui_Service11(Ui_Form_SID11):
 
         self.logentrystring = f'''<---- LOG ENTRY [{current_user} - {currenttime}] ---->
 UDS Request :   [{" ".join(hex(number) for number in service_request)}]
-Explaination:   ECU Reset (Service 11) Requested for reset type 0x{session} ({session_name}) and SPRMIB flag {sprmib_flg}
+Explaination:   ECU Reset (Service 11) Requested for reset type 0x{session} ({session_name_cleaned}) and SPRMIB flag {sprmib_flg}
 UDS Response:   [{" ".join(hex(number) for number in response.resp)}]
 Explaination:   {response_text}<------------------- LOG ENTRY END ------------------->
 

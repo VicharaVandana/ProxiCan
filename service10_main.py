@@ -16,12 +16,55 @@ import datetime
 import general as gen
 import configure as conf
 import os
+from service10_subfunctionsettings import Service10Subfunc_EnDis_Window
+import json
 
 
 
 class Ui_Service10(Ui_Form_SID10):
     def redesign_ui(self):
-        pass    
+        self.load_subfunction_visibility()
+        self.update_subfunction_visibility()
+        return
+
+    def load_subfunction_visibility(self):
+        """Load the visibility settings for subfunctions from the JSON file."""
+        try:
+            with open('service10_subfunctionsettings.json', 'r') as file:
+                data = json.load(file)
+                self.subfunction10_visibility = data["Service_10_Subfunctions_Visibility"]
+                print("Loaded JSON: ", self.subfunction10_visibility)  # Added this line for debugging
+        except FileNotFoundError:
+            print("Error: service10_subfunctionsettings.json file not found.")
+            self.subfunction10_visibility = {"01": True, "02": True, "03": True, "04": True}  # Default visibility
+        return
+
+    def update_subfunction_visibility(self):
+        #Update the visibility of each item in the combo box based on the loaded JSON data.
+        # We iterate backwards through the combo box so we can safely remove items without affecting the loop.
+        for index in range(self.comboBox_Diagsession.count() - 1, -1, -1):
+            item_text = self.comboBox_Diagsession.itemText(index)  # Get the text of the item (e.g., "01 - Default", "02 - Programming")
+            
+            # Extract the numeric part of the item text to match the JSON keys
+            item_key = item_text.split(" ")[0]  # Get the part before the space (e.g., "01", "02")
+            print(f"Checking visibility for item: {item_key}")  # Debugging line
+            
+            # Check if the item key exists in visibility settings; default to True (visible) if not found
+            visibility = self.subfunction10_visibility.get(item_key, True)
+            print(f"Visibility for {item_key}: {visibility}")  # Debugging line
+            
+            if not visibility:
+                # Remove the item from the combo box if it should be hidden
+                self.comboBox_Diagsession.removeItem(index)
+                print(f"Subfunction {item_key} hidden.")  # Debugging line
+            else:
+                print(f"Subfunction {item_key} visible.")  # Debugging line
+        
+        # Force an update of the combo box display
+        self.comboBox_Diagsession.update()
+        print("ComboBox update completed.")  # Debugging line
+        return
+        
         
     def connectFunctions(self):
         self.pushButton_Send10Req.clicked.connect(self.send10service)
@@ -60,10 +103,15 @@ class Ui_Service10(Ui_Form_SID10):
         gen.log_action("Button Click", "Clear Log button for Service 10 window clicked.")
         return
     
+
+    
     def send10service(self):
         index_dscSession = self.comboBox_Diagsession.currentIndex()
-        session = fun.getsubfunction(index_dscSession)
+        session_name = self.comboBox_Diagsession.itemText(index_dscSession)    # Get the name of the selected diagnostic session
+        session_name_cleaned = session_name.split('-')[-1].strip()        # Remove the numeric prefix (e.g., "01 - ") to extract just the session name if needed
+        session = fun.getsubfunction(session_name_cleaned)
         sprmib_flg = self.checkBox_suppressposmsg.isChecked()
+        
 
         #session should be a valid value and not zero
         if(0 == session):
@@ -96,7 +144,7 @@ class Ui_Service10(Ui_Form_SID10):
 
             response_html = f'''<h4><U>Positive Response Recieved</U></h4>
     <p><strong>Service ID:</strong> <I>{hex(response.resp[0]-0x40)}</I></p>
-    <p><strong>Diag Session:</strong> <I>{hex(response.resp[1])}</I></p>
+    <p><strong>Diag Session:</strong> <I>{hex(response.resp[1])} {session_name_cleaned}</I></p>
     <p><strong>Suppress Positive Message Request:</strong> <I>{sprmib_flg}</I></p>
     <p><strong>P2ServerMax:</strong> <I>{p2servermax} milliseconds</I></p>
     <p><strong>P2*ServerMax:</strong> <I>{p2starservermax} milliseconds</I></p>
@@ -124,7 +172,7 @@ class Ui_Service10(Ui_Form_SID10):
             p2starservermax = ((response.resp[4] << 8)|(response.resp[5]))
             response_html = f'''<h4><U>Positive Response Recieved after a Response Pending (0x78)</U></h4>
     <p><strong>Service ID:</strong> <I>{hex(response.resp[0]-0x40)}</I></p>
-    <p><strong>Diag Session:</strong> <I>{hex(response.resp[1])}</I></p>
+    <p><strong>Diag Session:</strong> <I>{hex(response.resp[1])} {session_name_cleaned}</I></p>
     <p><strong>Positive Response Pending count:</strong> <I>{response.positiveResponsePending_count}</I></p>
     <p><strong>Suppress Positive Message Request:</strong> <I>{sprmib_flg}</I></p>
     <p><strong>P2ServerMax:</strong> <I>{p2servermax} milliseconds</I></p>
