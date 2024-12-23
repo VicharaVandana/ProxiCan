@@ -17,12 +17,56 @@ import datetime
 import general as gen
 import configure as conf
 import os
+from service85_subfunctionsettings import Service85Subfunc_EnDis_Window
+import json
 
 
 
 class Ui_Service85(Ui_Form_SID85):
     def redesign_ui(self):
-        pass    
+        self.load_subfunction_visibility()
+        self.update_subfunction_visibility()
+        return
+    
+    def load_subfunction_visibility(self):
+        """Load the visibility settings for subfunctions from the JSON file."""
+        try:
+            with open('service85_subfunctionsettings.json', 'r') as file:
+                data = json.load(file)
+                self.subfunction85_visibility = data["Service_85_Subfunctions_Visibility"]
+                print("Loaded JSON: ", self.subfunction85_visibility)  # Debugging line
+        except FileNotFoundError:
+            print("Error: service85_subfunctionsettings.json file not found.")
+            self.subfunction85_visibility = {"01": True, "02": True}  # Default visibility
+        return
+
+    def update_subfunction_visibility(self):
+        """
+        Update the visibility of each item in the combo box based on the loaded JSON data.
+        Iterate backwards to safely remove items without affecting the loop.
+        """
+        for index in range(self.comboBox_DTCSettingType.count() - 1, -1, -1):
+            item_text = self.comboBox_DTCSettingType.itemText(index)  # Get the text of the item (e.g., "01 - ON")
+            
+            # Extract the numeric part of the item text to match the JSON keys
+            item_key = item_text.split(" ")[0]  # Get the part before the space (e.g., "01", "02")
+            print(f"Checking visibility for item: {item_key}")  # Debugging line
+            
+            # Check if the item key exists in visibility settings; default to True (visible) if not found
+            visibility = self.subfunction85_visibility.get(item_key, True)
+            print(f"Visibility for {item_key}: {visibility}")  # Debugging line
+            
+            if not visibility:
+                # Remove the item from the combo box if it should be hidden
+                self.comboBox_DTCSettingType.removeItem(index)
+                print(f"Subfunction {item_key} hidden.")  # Debugging line
+            else:
+                print(f"Subfunction {item_key} visible.")  # Debugging line
+        
+        # Force an update of the combo box display
+        self.comboBox_DTCSettingType.update()
+        print("ComboBox update completed.")  # Debugging line
+        return
         
     def connectFunctions(self):
         self.pushButton_Send85Req.clicked.connect(self.send85service)
@@ -65,8 +109,10 @@ class Ui_Service85(Ui_Form_SID85):
     
     def send85service(self):
         index_DTCSession = self.comboBox_DTCSettingType.currentIndex()
-        session = fun.getsubfunction(index_DTCSession)
-        session_name = fun.getsubfunctionname(session)
+        session_name = self.comboBox_DTCSettingType.itemText(index_DTCSession)
+        session_name_cleaned = session_name.split('-')[-1].strip()
+        session = fun.getsubfunction(session_name_cleaned)
+        session_name_returned = fun.getsubfunctionname(session)
         sprmib_flg = self.checkBox_suppressposmsg.isChecked()
         if(self.checkBox_DTCOption.isChecked()): 
             dtc_string= self.lineEdit_DTCSettingInput.text().strip().replace(" ","").replace(" ","").replace(" ","")
@@ -108,7 +154,7 @@ class Ui_Service85(Ui_Form_SID85):
 
             response_html = f'''<h4><U>Positive Response Recieved</U></h4>
     <p><strong>Service ID:</strong> <I>{hex(response.resp[0]-0x40)}</I></p>
-    <p><strong>Control DTC Setting Type:</strong> <I>{hex(response.resp[1])} {session_name}</I></p>
+    <p><strong>Control DTC Setting Type:</strong> <I>{hex(response.resp[1])} {session_name_returned}</I></p>
     <p><strong>Suppress Positive Message Request:</strong> <I>{sprmib_flg}</I></p>
     
 '''
@@ -145,7 +191,7 @@ class Ui_Service85(Ui_Form_SID85):
 
         self.logentrystring = f'''<---- LOG ENTRY [{current_user} - {currenttime}] ---->
 UDS Request :   [{" ".join(hex(number) for number in service_request)}]
-Explaination:   Control DTC Setting (Service 85) Requested for Control DTC Setting type 0x{session} {session_name} 
+Explaination:   Control DTC Setting (Service 85) Requested for Control DTC Setting type 0x{session} {session_name_returned} 
 SPRMIB flag :   {sprmib_flg}
 UDS Response:   [{" ".join(hex(number) for number in response.resp)}]
 Explaination:   {response_text}<------------------- LOG ENTRY END ------------------->

@@ -1,19 +1,23 @@
 import re
-def getsubfunction(index):
-     if(index == 0):
-          return(0x01)
-     elif(index == 1):
-          return(0x02)
-     else:
-          return(0x00)
+def getsubfunction(session_name):
+    # Mapping for the DTC Setting Type
+    session_mapping = {
+        "ON": 0x01,
+        "OFF": 0x02
+    }
+    
+    # Return the corresponding value, default to 0x00 if not found
+    return session_mapping.get(session_name, 0x00)
+
      
-def getsubfunctionname(session):
-     if(session == 0x01):
-          return("ON - To enable setting of DTCs")
-     elif(session == 0x02) :
-          return("OFF - To disable setting of DTCs")
-     else:
-          return("User defined setting (Unknown)")
+def getsubfunctionname(session_name):
+    # Mapping for the DTC Setting Type (using session_name as keys)
+    session_mapping = {
+        0x01: "ON - To enable setting of DTCs",
+        0x02: "OFF - To disable setting of DTCs"
+    }
+    # Return the corresponding description, default to "User defined setting (Unknown)" if not found
+    return session_mapping.get(session_name, "User defined setting (Unknown)")
      
 def form_reqmsg4srv85_withdtc(session, sprmib_flag,dtc_string):    
     sid = int("85", 16)

@@ -3,6 +3,7 @@ from windowsettings import UDSservice_EnDis_Window
 #from subfunctionsettings import Service19Subfunc_EnDis_Window
 from service10_subfunctionsettings import Service10Subfunc_EnDis_Window
 from service11_subfunctionsettings import Service11Subfunc_EnDis_Window
+from service85_subfunctionsettings import Service85Subfunc_EnDis_Window
 import json
 from logfile_selector import LogFileSelector
 from PyQt5 import QtCore, QtGui, QtWidgets
@@ -131,6 +132,7 @@ class mainwindow(Ui_MainWindow, QtWidgets.QMainWindow, QtWidgets.QWidget):
         #self.actionECU_Specific_Settings.triggered.connect(self.open_subfuncsettings)
         self.actionService_10.triggered.connect(self.open_service10subfuncsettings)
         self.actionService_11.triggered.connect(self.open_service11subfuncsettings)
+        self.actionService_85.triggered.connect(self.open_service85subfuncsettings)
 
         #Connect and Disconnect buttons
         self.pushButton_connect.clicked.connect(self.connectcan)
@@ -188,13 +190,17 @@ class mainwindow(Ui_MainWindow, QtWidgets.QMainWindow, QtWidgets.QWidget):
         return
     
     def open_service11subfuncsettings(self):
-        self.service11subfunc_window = Service11Subfunc_EnDis_Window()  # Create an instance of Service10Subfunc_EnDis_Window
+        self.service11subfunc_window = Service11Subfunc_EnDis_Window()  # Create an instance of Service11Subfunc_EnDis_Window
         self.service11subfunc_window.show()  # Show the window
         gen.log_action("Menu Option Click", "<Service 11 Subfunction Settings> Option Selected")
         return
-
-
     
+    def open_service85subfuncsettings(self):
+        self.service85subfunc_window = Service85Subfunc_EnDis_Window()  # Create an instance of Service85Subfunc_EnDis_Window
+        self.service85subfunc_window.show()  # Show the window
+        gen.log_action("Menu Option Click", "<Service 85 Subfunction Settings> Option Selected")
+        return
+
     def open_log_selector(self):
         # Create an instance of the LogFileSelector window and show it
         self.log_selector_window = LogFileSelector()
