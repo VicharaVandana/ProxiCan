@@ -1,41 +1,10 @@
-<ass930085>[2024-12-23 11:32:19] Button Click: Import pxi button clicked
-<ass930085>[2024-12-23 11:32:23] Config File Import Success: Config File Loaded successfully from: C:/Users/ass930085/OneDrive - Tata Technologies/Documents/PROXI GIT/reference/ProxiCan/config.pxi
-<ass930085>[2024-12-23 11:32:25] Button Click: Connect CAN button clicked
-<ass930085>[2024-12-23 11:32:25] CAN Connection: CAN can0 connected with baudrate 500000 and fdf type CANFD
-<ass930085>[2024-12-23 11:32:29] Menu Option Click: <Service 10 Subfunction Settings> Option Selected
-<ass930085>[2024-12-23 11:32:35] Button Click: Service 10 Window Opened
-<ass930085>[2024-12-23 11:32:48] UDS Request Success: 10 Request Successfully sent : 0x10 0x1
-<ass930085>[2024-12-23 11:32:53] UDS Request Success: 10 Request Successfully sent : 0x10 0x2
-<ass930085>[2024-12-23 11:33:08] UDS Request Success: 10 Request Successfully sent : 0x10 0x2
-<ass930085>[2024-12-23 11:33:30] Button Click: Service 28 Window Opened
-<ass930085>[2024-12-23 11:34:00] Button Click: Service 10 Window Opened
-<ass930085>[2024-12-23 11:43:11] UDS Request Success: 10 Request Successfully sent : 0x10 0x3
-<ass930085>[2024-12-23 11:43:21] UDS Request Success: 10 Request Successfully sent : 0x10 0x1
-<ass930085>[2024-12-23 11:43:47] UDS Request Success: 10 Request Successfully sent : 0x10 0x2
-<ass930085>[2024-12-23 11:43:52] UDS Request Success: 10 Request Successfully sent : 0x10 0x4
-<ass930085>[2024-12-23 11:47:22] UDS Request Success: 10 Request Successfully sent : 0x10 0x1
-<ass930085>[2024-12-23 11:47:43] UDS Request Success: 10 Request Successfully sent : 0x10 0x3
-<ass930085>[2024-12-23 11:48:01] UDS Request Success: 11 Request Successfully sent : 0x11 0x1
-<ass930085>[2024-12-23 11:51:58] UDS Request Fail: 11 Request not happened due to invalid Reset Type selection [03 - Soft reset]
-<ass930085>[2024-12-23 11:52:00] UDS Request Fail: 11 Request not happened due to invalid Reset Type selection [03 - Soft reset]
-<ass930085>[2024-12-23 11:53:41] UDS Request Fail: 11 Request not happened due to invalid Reset Type selection [01 - Hard reset]
-<ass930085>[2024-12-23 11:54:51] UDS Request Fail: 11 Request not happened due to invalid Reset Type selection [01 - Hard reset]
-<ass930085>[2024-12-23 11:54:52] UDS Request Fail: 11 Request not happened due to invalid Reset Type selection [01 - Hard reset]
-<ass930085>[2024-12-23 11:54:52] UDS Request Fail: 11 Request not happened due to invalid Reset Type selection [01 - Hard reset]
-<ass930085>[2024-12-23 11:54:52] UDS Request Fail: 11 Request not happened due to invalid Reset Type selection [01 - Hard reset]
-<ass930085>[2024-12-23 11:54:52] UDS Request Fail: 11 Request not happened due to invalid Reset Type selection [01 - Hard reset]
-<ass930085>[2024-12-23 11:56:21] UDS Request Fail: 11 Request not happened due to invalid Reset Type selection [01 - Hard reset]
-<ass930085>[2024-12-23 11:57:23] UDS Request Success: 11 Request Successfully sent : 0x11 0x1
-<ass930085>[2024-12-23 11:57:41] UDS Request Fail: 11 Request not happened due to invalid Reset Type selection [03 - Soft reset]
-<ass930085>[2024-12-23 11:57:43] UDS Request Fail: 11 Request not happened due to invalid Reset Type selection [03 - Soft reset]
-<ass930085>[2024-12-23 11:57:44] UDS Request Fail: 11 Request not happened due to invalid Reset Type selection [03 - Soft reset]
-<ass930085>[2024-12-23 11:57:45] UDS Request Fail: 11 Request not happened due to invalid Reset Type selection [03 - Soft reset]
-<ass930085>[2024-12-23 11:57:45] UDS Request Fail: 11 Request not happened due to invalid Reset Type selection [03 - Soft reset]
-<ass930085>[2024-12-23 11:57:45] UDS Request Fail: 11 Request not happened due to invalid Reset Type selection [03 - Soft reset]
-<ass930085>[2024-12-23 11:58:16] UDS Request Fail: 11 Request not happened due to invalid Reset Type selection [03 - Soft reset]
-<ass930085>[2024-12-23 11:59:34] UDS Request Success: 10 Request Successfully sent : 0x10 0x1
-<ass930085>[2024-12-23 12:00:34] UDS Request Success: 11 Request Successfully sent : 0x11 0x1
-<ass930085>[2024-12-23 12:00:39] UDS Request Success: 11 Request Successfully sent : 0x11 0x3
-<ass930085>[2024-12-23 12:03:38] UDS Request Success: 10 Request Successfully sent : 0x10 0x1
-<ass930085>[2024-12-23 12:03:42] UDS Request Success: 10 Request Successfully sent : 0x10 0x2
-<ass930085>[2024-12-23 12:03:47] UDS Request Success: 10 Request Successfully sent : 0x10 0x3
+<raspberrypi4>[2024-12-23 12:23:34] Button Click: Disonnect CAN button clicked
+<raspberrypi4>[2024-12-23 12:23:35] CAN Connection: CAN disconnected successfully.
+<raspberrypi4>[2024-12-23 12:23:35] Button Click: Import pxi button clicked
+<raspberrypi4>[2024-12-23 12:23:39] Config File Import Success: Config File Loaded successfully from: /home/raspberrypi4/service19/ProxiCan/config.pxi
+<raspberrypi4>[2024-12-23 12:23:40] Button Click: Connect CAN button clicked
+<raspberrypi4>[2024-12-23 12:23:40] CAN Connection: CAN can0 connected with baudrate 500000 and fdf type CANFD
+<raspberrypi4>[2024-12-23 12:23:42] Button Click: Service 11 Window Opened
+<raspberrypi4>[2024-12-23 12:23:45] UDS Request Success: 11 Request Successfully sent : 0x11 0x2
+<raspberrypi4>[2024-12-23 12:23:54] Button Click: Disonnect CAN button clicked
+<raspberrypi4>[2024-12-23 12:23:54] CAN Connection: CAN disconnected successfully.

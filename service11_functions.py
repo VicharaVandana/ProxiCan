@@ -2,7 +2,7 @@
 def getsubfunction(session_name):
     session_mapping = {
         "Hard reset": 0x01,
-        "Key Off/On reset": 0x02,
+        "KeyOffOn reset": 0x02,
         "Soft reset": 0x03
     }
     return session_mapping.get(session_name, 0x00)

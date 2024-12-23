@@ -1,0 +1,2 @@
+[2024-12-23 12:23:45] Single Frame Sent: Timestamp:        0.000000    ID: 18da6cf2    X Rx     F          DL:  3    02 11 02
+[2024-12-23 12:23:45] Single Frame Recieved: RX	ID:417002092	datalength:3bytes	 data:[0x7f 0x11 0x12].
