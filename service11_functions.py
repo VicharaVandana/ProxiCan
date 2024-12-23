@@ -7,7 +7,6 @@ def getsubfunction(session_name):
     }
     return session_mapping.get(session_name, 0x00)
 
-
 def form_reqmsg4srv11(session, sprmib_flag):    
     sid = int("11", 16)
     if (sprmib_flag == True):
