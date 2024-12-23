@@ -83,7 +83,7 @@ class Service11Subfunc_EnDis_Window(QtWidgets.QWidget):
 
         # Toggle the button's background color
         if self.subfunc_visibility[button_name]:
-            button.setStyleSheet("background-color: rgb(0, 200, 0); color: white;")  # Green for enabled
+            button.setStyleSheet("background-color: rgb(0, 200, 0); color: blue;")  # Green for enabled
             self.status_label.setText(f"Subfunction {button_name} enabled.")
         else:
             button.setStyleSheet("background-color: rgb(200, 0, 0); color: white;")  # Red for disabled
