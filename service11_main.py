@@ -108,10 +108,7 @@ class Ui_Service11(Ui_Form_SID11):
         index_ERSession = self.comboBox_ECUReset.currentIndex()
         session_name = self.comboBox_ECUReset.itemText(index_ERSession)
         session_name_cleaned = session_name.split('-')[-1].strip()    
-        print(session_name_cleaned)
         session = fun.getsubfunction(session_name_cleaned)
-        print(session)
-        #session_name_returned = fun.getsubfunctionname(session)
         sprmib_flg = self.checkBox_suppressposmsg.isChecked()
         
 

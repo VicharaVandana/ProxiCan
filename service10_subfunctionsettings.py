@@ -42,7 +42,7 @@ class Service10Subfunc_EnDis_Window(QtWidgets.QWidget):
 
             # Set the initial color based on the current state in JSON
             if self.subfunc_visibility[name]:
-                button.setStyleSheet("background-color: rgb(0, 200, 0); color: white;")  # Green for enabled
+                button.setStyleSheet("background-color: rgb(0, 200, 0); color: blue;")  # Green for enabled
             else:
                 button.setStyleSheet("background-color: rgb(200, 0, 0); color: white;")  # Red for disabled
 

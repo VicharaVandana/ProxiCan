@@ -8,3 +8,4 @@
 <raspberrypi4>[2024-12-23 12:23:45] UDS Request Success: 11 Request Successfully sent : 0x11 0x2
 <raspberrypi4>[2024-12-23 12:23:54] Button Click: Disonnect CAN button clicked
 <raspberrypi4>[2024-12-23 12:23:54] CAN Connection: CAN disconnected successfully.
+<ass930085>[2024-12-23 13:20:21] UDS Request Success: 11 Request Successfully sent : 0x11 0x2
