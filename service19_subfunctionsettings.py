@@ -32,8 +32,8 @@ class Service19Subfunc_EnDis_Window(QtWidgets.QWidget):
         self.buttons = []
         self.button_names = [
             "01", "02", "03", "04", "05", "06", "07", "08", "09",
-            "0A", "0B", "0C", "0D", "0E", "0F", "10", "11", "12", "13", "14", "15",
-            "16", "17", "18", "19", "42", "55"
+            "0A", "0B", "0C", "0D", "0E", "0F", "10", "11", "12", 
+            "13", "14", "15", "16", "17", "18", "19", "42", "55"
         ]
 
         for i, name in enumerate(self.button_names):

@@ -1,6 +1,6 @@
 {
     "Service_19_Subfunctions_Visibility": {
-        "01": false,
+        "01": true,
         "02": true,
         "03": true,
         "04": true,
@@ -14,9 +14,9 @@
         "0C": true,
         "0D": true,
         "0E": true,
-        "0F": false,
-        "10": false,
-        "11": false,
+        "0F": true,
+        "10": true,
+        "11": true,
         "12": true,
         "13": true,
         "14": true,
