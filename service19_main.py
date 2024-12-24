@@ -70,11 +70,11 @@ class Ui_Service19 (Ui_Form_Subfun_SID19, QtWidgets.QMainWindow, QtWidgets.QWidg
     def load_json(self):
         """Load the visibility settings from the JSON file"""
         try:
-            with open('subfunctionsettings.json', 'r') as file:
+            with open('service19_subfunctionsettings.json', 'r') as file:
                 data = json.load(file)
                 self.subfunction19_visibility = data["Service_19_Subfunctions_Visibility"]
         except FileNotFoundError:
-            print("Error: subfunctionsettings.json file not found.")
+            print("Error: service19_subfunctionsettings.json file not found.")
             sys.exit(1)
         
         return

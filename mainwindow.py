@@ -1,6 +1,6 @@
 from mainwindow_base import Ui_MainWindow
 from windowsettings import UDSservice_EnDis_Window
-#from subfunctionsettings import Service19Subfunc_EnDis_Window
+from service19_subfunctionsettings import Service19Subfunc_EnDis_Window
 from service10_subfunctionsettings import Service10Subfunc_EnDis_Window
 from service11_subfunctionsettings import Service11Subfunc_EnDis_Window
 from service85_subfunctionsettings import Service85Subfunc_EnDis_Window
@@ -137,6 +137,7 @@ class mainwindow(Ui_MainWindow, QtWidgets.QMainWindow, QtWidgets.QWidget):
         self.actionService_85.triggered.connect(self.open_service85subfuncsettings)
         self.actionService_28.triggered.connect(self.open_service28subfuncsettings)
         self.actionService_31.triggered.connect(self.open_service31subfuncsettings)
+        self.actionService_19.triggered.connect(self.open_service19subfuncsettings)
 
 
 
@@ -183,11 +184,11 @@ class mainwindow(Ui_MainWindow, QtWidgets.QMainWindow, QtWidgets.QWidget):
         gen.log_action("Menu Option Click", "<UDS Service Settings> Option Selected")
         return
     
-    """def open_subfuncsettings(self):
+    def open_service19subfuncsettings(self):
         self.service19subfunc_window = Service19Subfunc_EnDis_Window() # Create an instance of Service19Subfunc_EnDis_Window
         self.service19subfunc_window.show()   # Show the window
         gen.log_action("Menu Option Click", "<Service 19 Subfunction Settings> Option Selected")
-        return"""
+        return
     
     def open_service10subfuncsettings(self):
         self.service10subfunc_window = Service10Subfunc_EnDis_Window()  # Create an instance of Service10Subfunc_EnDis_Window
