@@ -1,14 +1,14 @@
 import re
 import general as gen
 
-def get_subfunction(index):
-     if(index == 0):
-        return(0x01)
-     elif(index == 1):
-        return(0x02)
-     elif(index == 2):
-        return(0x03)
-     
+def get_subfunction(sub_fun_name):
+     sub_fun_mapping = {
+        "Start Routine": 0x01,
+        "Stop Routine": 0x02,
+        "Request Routine Results":0x03
+    }
+     return sub_fun_mapping.get(sub_fun_name, 0x00)
+ 
 def get_subfunction_name(index):
      if(index == 0):
         return("Start Routine")

@@ -4,6 +4,8 @@ from windowsettings import UDSservice_EnDis_Window
 from service10_subfunctionsettings import Service10Subfunc_EnDis_Window
 from service11_subfunctionsettings import Service11Subfunc_EnDis_Window
 from service85_subfunctionsettings import Service85Subfunc_EnDis_Window
+from service28_subfunctionsettings import Service28Subfunc_CommType_EnDis_Window
+from service31_subfunctionsettings import Service31Subfunc_EnDis_Window
 import json
 from logfile_selector import LogFileSelector
 from PyQt5 import QtCore, QtGui, QtWidgets
@@ -133,6 +135,10 @@ class mainwindow(Ui_MainWindow, QtWidgets.QMainWindow, QtWidgets.QWidget):
         self.actionService_10.triggered.connect(self.open_service10subfuncsettings)
         self.actionService_11.triggered.connect(self.open_service11subfuncsettings)
         self.actionService_85.triggered.connect(self.open_service85subfuncsettings)
+        self.actionService_28.triggered.connect(self.open_service28subfuncsettings)
+        self.actionService_31.triggered.connect(self.open_service31subfuncsettings)
+
+
 
         #Connect and Disconnect buttons
         self.pushButton_connect.clicked.connect(self.connectcan)
@@ -200,6 +206,20 @@ class mainwindow(Ui_MainWindow, QtWidgets.QMainWindow, QtWidgets.QWidget):
         self.service85subfunc_window.show()  # Show the window
         gen.log_action("Menu Option Click", "<Service 85 Subfunction Settings> Option Selected")
         return
+    
+    def open_service28subfuncsettings(self):
+        self.service28subfunc_window = Service28Subfunc_CommType_EnDis_Window() 
+        self.service28subfunc_window.show()  # Show the window
+        gen.log_action("Menu Option Click", "<Service 28 Subfunction Settings> Option Selected")
+        return
+    
+    def open_service31subfuncsettings(self):
+        self.service31subfunc_window = Service31Subfunc_EnDis_Window()  # Create an instance of Service28Subfunc_EnDis_Window
+        self.service31subfunc_window.show()  # Show the window
+        gen.log_action("Menu Option Click", "<Service 31 Subfunction Settings> Option Selected")
+        return
+    
+
 
     def open_log_selector(self):
         # Create an instance of the LogFileSelector window and show it

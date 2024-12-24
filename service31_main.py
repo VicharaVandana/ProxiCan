@@ -16,12 +16,56 @@ import general as gen
 #import uds_dummy as uds     #will have to be replaced with actual uds file while testing on board
 import configure as conf
 import os
+from service31_subfunctionsettings import Service31Subfunc_EnDis_Window
+import json
 
 
 
 class Ui_Service31(Ui_Form_SID_31):
     def redesign_ui(self):
-        pass
+         self.load_subfunction_visibility()
+         self.update_subfunction_visibility()
+         return
+
+    def load_subfunction_visibility(self):
+        """Load the visibility settings for subfunctions from the JSON file."""
+        try:
+            with open('service31_subfunctionsettings.json', 'r') as file:
+                data = json.load(file)
+                self.subfunction31_visibility = data["Service_31_Subfunctions_Visibility"]
+                print("Loaded JSON: ", self.subfunction31_visibility)  # Debugging line
+        except FileNotFoundError:
+            print("Error: service31_subfunctionsettings.json file not found.")
+            self.subfunction31_visibility = {"01": True,"02": True,"03": True }  # Default visibility
+        return
+
+    def update_subfunction_visibility(self):
+        """
+        Update the visibility of each item in the combo box based on the loaded JSON data.
+        Iterate backwards to safely remove items without affecting the loop.
+        """
+        for index in range(self.Subfunction.count() - 1, -1, -1):
+            item_text = self.Subfunction.itemText(index)  # Get the text of the item (e.g., "01 - Start Routine")
+            
+            # Extract the numeric part of the item text to match the JSON keys
+            item_key = item_text.split(" ")[0]  # Get the part before the space (e.g., "01", "02")
+            print(f"Checking visibility for item: {item_key}")  # Debugging line
+            
+            # Check if the item key exists in visibility settings; default to True (visible) if not found
+            visibility = self.subfunction31_visibility.get(item_key, True)
+            print(f"Visibility for {item_key}: {visibility}")  # Debugging line
+            
+            if not visibility:
+                # Remove the item from the combo box if it should be hidden
+                self.Subfunction.removeItem(index)
+                print(f"Subfunction {item_key} hidden.")  # Debugging line
+            else:
+                print(f"Subfunction {item_key} visible.")  # Debugging line
+        
+        # Force an update of the combo box display
+        self.Subfunction.update()
+        print("ComboBox update completed.")  # Debugging line
+        return
 
     def connectFunctions(self):
         self.pushButton_Send31Req.clicked.connect(self.send31service)
@@ -61,8 +105,9 @@ class Ui_Service31(Ui_Form_SID_31):
     
     def send31service(self):
         index_sub_fun = self.Subfunction.currentIndex()
-        sub_fun = fun.get_subfunction(index_sub_fun)
-        sub_fun_name=fun.get_subfunction_name(sub_fun)
+        sub_fun_name= self.Subfunction.itemText(index_sub_fun).split('-')[-1].strip()
+        sub_fun = fun.get_subfunction(sub_fun_name)
+        #sub_fun_name=fun.get_subfunction_name(sub_fun)
         rid_string = self.lineEdit_RoutineIdentifier.text().strip().replace(" ","").replace(" ","").replace(" ","")
         gen.log_action("Button Click", f"Send 31 request button clicked with RID[{rid_string}].")
         sprmib_flg = self.checkBox_suppressposmsg.isChecked()

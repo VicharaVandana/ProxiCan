@@ -16,12 +16,77 @@ import general as gen
 #import uds_dummy as uds     #will have to be replaced with actual uds file while testing on board
 import configure as conf
 import os
+from service28_subfunctionsettings import Service28Subfunc_CommType_EnDis_Window
+import json
 
 
 
 class Ui_Service28(Ui_Form_SID28):
     def redesign_ui(self):
-        pass    
+        self.load_subfunction_visibility()
+        self.update_control_and_communication_visibility()
+        return
+    
+    def load_subfunction_visibility(self):
+        """Load the visibility settings for Service 28 from the JSON file."""
+        try:
+            with open('service28_subfunctionsettings.json', 'r') as file:
+                data = json.load(file)
+                self.subfunction28_visibility = data["Service_28_Subfunctions_Visibility"]
+                print("Loaded JSON:", self.subfunction28_visibility)  # Debugging line
+        except FileNotFoundError:
+            print("Error: service28_subfunctionsettings.json file not found.")
+            self.subfunction28_visibility = {
+                "Control_Types": {"00": True, "01": True, "02": True, "03": True, "04": True, "05": True},
+                "Communication_Types": {"01": True, "02": True, "03": True}
+            }  # Default visibility
+        return
+
+    def update_control_and_communication_visibility(self):
+        """
+        Update the visibility of each item in the combo boxes based on the loaded JSON data.
+        """
+        # Update Control_Type combo box
+        for index in range(self.Control_Type.count() - 1, -1, -1):
+            item_text = self.Control_Type.itemText(index)  # Get the text of the item (e.g., "00 - Enable Rx and Tx")
+            
+            # Extract the numeric part of the item text to match the JSON keys
+            item_key = item_text.split(" ")[0]  # Get the part before the space (e.g., "00", "01")
+            print(f"Checking visibility for Control Type: {item_key}")  # Debugging line
+            
+            # Check visibility; default to True if not found
+            visibility = self.subfunction28_visibility["subfunctions"].get(item_key, True)
+            print(f"Visibility for Control Type {item_key}: {visibility}")  # Debugging line
+            
+            if not visibility:
+                self.Control_Type.removeItem(index)
+                print(f"Control Type {item_key} hidden.")  # Debugging line
+            else:
+                print(f"Control Type {item_key} visible.")  # Debugging line
+
+        # Update Communication_type combo box
+        for index in range(self.Communication_type.count() - 1, -1, -1):
+            item_text = self.Communication_type.itemText(index)  # Get the text of the item (e.g., "01 - Normal communication")
+            
+            # Extract the numeric part of the item text to match the JSON keys
+            item_key = item_text.split(" ")[0]  # Get the part before the space (e.g., "01", "02")
+            print(f"Checking visibility for Communication Type: {item_key}")  # Debugging line
+            
+            # Check visibility; default to True if not found
+            visibility = self.subfunction28_visibility["communication_types"].get(item_key, True)
+            print(f"Visibility for Communication Type {item_key}: {visibility}")  # Debugging line
+            
+            if not visibility:
+                self.Communication_type.removeItem(index)
+                print(f"Communication Type {item_key} hidden.")  # Debugging line
+            else:
+                print(f"Communication Type {item_key} visible.")  # Debugging line
+
+        # Force updates to the combo boxes
+        self.Control_Type.update()
+        self.Communication_type.update()
+        print("ComboBox update completed.")  # Debugging line
+        return   
         
     def connectFunctions(self):
         self.pushButton_Send28Req.clicked.connect(self.send28service)
@@ -63,11 +128,16 @@ class Ui_Service28(Ui_Form_SID28):
     
     def send28service(self):
         index_Control_type = self.Control_Type.currentIndex()
-        Control_type = fun.get_subfunction(index_Control_type)
-        Control_type_name=fun.getsubfunction_name(Control_type)
+        Control_type_name = self.Control_Type.itemText(index_Control_type).split("-")[-1].strip()
+        #print(Control_type_name)
+        Control_type = fun.get_subfunction(Control_type_name)
+        #print(Control_type)
+        #Control_type_name = fun.getsubfunction_name(Control_type)
         index_Communication_type = self.Communication_type.currentIndex()
-        Comm_type = fun.get_communication_type(index_Communication_type)
-        Comm_type_name=fun.get_communication_type_name(Comm_type)
+        Comm_type_name = self.Communication_type.itemText(index_Communication_type).split("-")[-1].strip()
+        #print(Comm_type_name)
+        Comm_type = fun.get_communication_type(Comm_type_name)
+        #Comm_type_name = fun.get_communication_type_name(Comm_type)
         sprmib_flg = self.checkBox_suppressposmsg.isChecked()
         #self.lineEdit_NIN.hide()
         #session should be a valid value and not zero
@@ -84,7 +154,7 @@ class Ui_Service28(Ui_Form_SID28):
             IsPosResExpected = False 
 
         ###############################################################
-        if(Control_type==4 or Control_type==5):
+        if(Control_type_name=="Enable Rx and Disable Tx with Address Info" or Control_type_name=="Enable Rx and Tx  with Address Info"):
         
             nin_string = self.lineEdit_NIN.text().strip().replace(" ","").replace(" ","").replace(" ","")
         #gen.log_action("Button Click", f"Send 22 request button clicked with DID[{did_string}].")
