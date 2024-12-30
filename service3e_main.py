@@ -83,7 +83,8 @@ class Ui_Service3E(Ui_Form_SID3E):
         else:
             IsPosResExpected = False 
 
-        gen.IsAnyServiceActive = True  # Next request is triggered, so make True      
+        gen.IsAnyServiceActive = True  # Next request is triggered, so make True 
+           
 
         # Periodic request sending logic
         def send_periodic_requests():
@@ -94,9 +95,12 @@ class Ui_Service3E(Ui_Form_SID3E):
                 self.update_status("Failed to form service request.")
                 gen.log_action("UDS Request Fail", "3E Request not formed correctly.")
                 return
+            
+            gen.IsTesterPresentActive = True  
 
             response = uds.sendRequest(service_request, IsPosResExpected)
             gen.IsAnyServiceActive = False  # Next response received, so make False
+            gen.IsTesterPresentActive = False  # Set to False after receiving any response
             self.update_status("Service 3E request is sent")
             gen.log_action("UDS Request Success", f"3E Request Successfully sent: {' '.join(hex(number) for number in service_request)}")
 
@@ -162,6 +166,7 @@ Explanation:   {response_text}
         # Stop sending requests
         if hasattr(self, 'timer'):
             self.timer.stop()
+        gen.IsTesterPresentActive = False
         self.update_status("Periodic  tester present request sending stopped.")
         gen.log_action("Button Click", "Stop Sending button clicked. Request sending stopped.")
         print("request stopped")
@@ -170,6 +175,7 @@ Explanation:   {response_text}
     def closeEvent(self, event):
         if hasattr(self, 'timer'):
             self.timer.stop()  # Ensure the timer is stopped on window close
+        gen.IsTesterPresentActive = False
         gen.log_action(f"Window Close", f"Service 3E Window Closed.")
         event.accept()  # Make sure to accept the event to close the window
 
