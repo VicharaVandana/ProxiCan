@@ -1,11 +1,26 @@
-<ass930085>[2024-12-30 11:39:59] Button Click: Import pxi button clicked
-<ass930085>[2024-12-30 11:40:03] Config File Import Success: Config File Loaded successfully from: C:/Users/ass930085/OneDrive - Tata Technologies/Documents/PROXI GIT/reference/ProxiCan/config.pxi
-<ass930085>[2024-12-30 11:40:05] Button Click: Connect CAN button clicked
-<ass930085>[2024-12-30 11:40:05] CAN Connection: CAN can0 connected with baudrate 500000 and fdf type CANFD
-<ass930085>[2024-12-30 11:40:08] Menu Option Click: <UDS Service Settings> Option Selected
-<ass930085>[2024-12-30 11:40:20] Menu Option Click: <Service 10 Subfunction Settings> Option Selected
-<ass930085>[2024-12-30 13:39:20] UDS Request Success: 3E Request Successfully sent: 0x3e 0x0
-<ass930085>[2024-12-30 13:39:23] UDS Request Success: 3E Request Successfully sent: 0x3e 0x0
-<ass930085>[2024-12-30 13:39:26] UDS Request Success: 3E Request Successfully sent: 0x3e 0x0
-<ass930085>[2024-12-30 13:39:29] UDS Request Success: 3E Request Successfully sent: 0x3e 0x0
-<ass930085>[2024-12-30 13:39:32] Button Click: Stop Sending button clicked. Request sending stopped.
+<ass930085>[2025-01-07 11:55:00] Button Click: Import pxi button clicked
+<ass930085>[2025-01-07 11:55:05] Config File Import Success: Config File Loaded successfully from: C:/Users/ass930085/OneDrive - Tata Technologies/Documents/PROXI GIT/reference/ProxiCan/config.pxi
+<ass930085>[2025-01-07 11:55:06] Button Click: Connect CAN button clicked
+<ass930085>[2025-01-07 11:55:06] CAN Connection: CAN can0 connected with baudrate 500000 and fdf type CANFD
+<ass930085>[2025-01-07 11:55:12] Button Click: Service 3E Window Opened
+<ass930085>[2025-01-07 11:55:19] UDS Request Success: 3E Request Successfully sent: 0x3e 0x0
+<ass930085>[2025-01-07 11:55:22] Button Click: Service 10 Window Opened
+<ass930085>[2025-01-07 11:55:22] UDS Request Success: 3E Request Successfully sent: 0x3e 0x0
+<ass930085>[2025-01-07 11:55:25] UDS Request Success: 10 Request Successfully sent : 0x10 0x1
+<ass930085>[2025-01-07 11:55:25] UDS Request Success: 3E Request Successfully sent: 0x3e 0x0
+<ass930085>[2025-01-07 11:55:28] UDS Request Success: 3E Request Successfully sent: 0x3e 0x0
+<ass930085>[2025-01-07 11:55:30] UDS Request Success: 10 Request Successfully sent : 0x10 0x1
+<ass930085>[2025-01-07 11:55:31] UDS Request Success: 3E Request Successfully sent: 0x3e 0x0
+<ass930085>[2025-01-07 11:55:34] UDS Request Success: 3E Request Successfully sent: 0x3e 0x0
+<ass930085>[2025-01-07 11:55:35] UDS Request Success: 10 Request Successfully sent : 0x10 0x1
+<ass930085>[2025-01-07 11:55:37] UDS Request Success: 3E Request Successfully sent: 0x3e 0x0
+<ass930085>[2025-01-07 11:55:40] UDS Request Success: 3E Request Successfully sent: 0x3e 0x0
+<ass930085>[2025-01-07 11:55:43] UDS Request Success: 3E Request Successfully sent: 0x3e 0x0
+<ass930085>[2025-01-07 11:55:44] Button Click: Disonnect CAN button clicked
+<ass930085>[2025-01-07 11:55:44] CAN Connection: CAN disconnected successfully.
+<ass930085>[2025-01-07 11:55:46] UDS Request Success: 3E Request Successfully sent: 0x3e 0x0
+<ass930085>[2025-01-07 11:55:49] UDS Request Success: 3E Request Successfully sent: 0x3e 0x0
+<ass930085>[2025-01-07 11:55:53] UDS Request Success: 3E Request Successfully sent: 0x3e 0x0
+<ass930085>[2025-01-07 11:55:56] UDS Request Success: 3E Request Successfully sent: 0x3e 0x0
+<ass930085>[2025-01-07 11:55:59] UDS Request Success: 3E Request Successfully sent: 0x3e 0x0
+<ass930085>[2025-01-07 11:55:59] Button Click: Stop Sending button clicked. Request sending stopped.

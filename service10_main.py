@@ -167,7 +167,7 @@ class Ui_Service10(Ui_Form_SID10):
     <p><strong>Suppress Positive Message Request:</strong> <I>{sprmib_flg}</I></p>
     <p><strong>Response Bytes:</strong> <I>{" ".join(hex(number) for number in response.resp)}</I></p>
 '''
-        elif(response.type == "Positive Response" & sprmib_flg == True ):
+        elif response.type == "Positive Response" and self.checkBox_suppressposmsg.isChecked():
             p2servermax = ((response.resp[2] << 8)|(response.resp[3]))
             p2starservermax = ((response.resp[4] << 8)|(response.resp[5]))
             response_html = f'''<h4><U>Positive Response Recieved after a Response Pending (0x78)</U></h4>
