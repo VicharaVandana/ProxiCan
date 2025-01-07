@@ -131,10 +131,10 @@ class Ui_Service10(Ui_Form_SID10):
         gen.IsAnyServiceActive = True   #Next request is triggered, so make True      
         while(gen.IsTesterPresentActive == True):
             self.update_status("WAIT!! Tester present (Service 3E) is currently ongoing")
-            
+        print(gen.IsAnyServiceActive)
         response = uds.sendRequest(service_request, IsPosResExpected)
         gen.IsAnyServiceActive = False   #Next response recieved , so make False
-        
+        print(gen.IsAnyServiceActive)
         self.update_status("Service 10 request is sent")
         gen.log_action("UDS Request Success", f"10 Request Successfully sent : {' '.join(hex(number) for number in service_request)}")
 

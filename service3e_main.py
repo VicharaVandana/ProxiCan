@@ -82,7 +82,7 @@ class Ui_Service3E(Ui_Form_SID3E):
         else:
             IsPosResExpected = False
 
-        gen.IsAnyServiceActive = False
+        #gen.IsAnyServiceActive = False
         self.start_timer(interval)  # Start the timer
 
     def send_periodic_requests(self):
@@ -102,7 +102,7 @@ class Ui_Service3E(Ui_Form_SID3E):
         #from service3e_thread import run_check
         #run_check(self)  # Now call run_check with the current `self` (which is the `Ui_Service3E` instance)
 
-        gen.IsAnyServiceActive = False  # Next response received, so make False
+        #gen.IsAnyServiceActive = False  # Next response received, so make False
         gen.IsTesterPresentActive = False  # Set to False after receiving any response
         self.update_status("Service 3E request is sent")
         gen.log_action("UDS Request Success", f"3E Request Successfully sent: {' '.join(hex(number) for number in service_request)}")
@@ -200,9 +200,8 @@ Explanation:   {response_text}
                 if gen.IsAnyServiceActive:
                     interval = int(self.lineEdit_testerpresent_interval.text().strip())
                     self.reset_timer(interval)
-                else:
-                    self.stop_timer()
-                previous_state = gen.IsAnyServiceActive
+                    previous_state = gen.IsAnyServiceActive
+                
 
     def closeEvent(self, event):
         if hasattr(self, 'timer'):
