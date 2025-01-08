@@ -203,13 +203,19 @@ Explanation:   {response_text}
                     previous_state = gen.IsAnyServiceActive
                 
 
-    def closeEvent(self, event):
+    def closeEvent(self, event: QtGui.QCloseEvent):
+        #self.stop_sending()
+        print("close")
         if hasattr(self, 'timer'):
             self.timer.stop()  # Ensure the timer is stopped on window close
-        if hasattr(self, 'monitor'):
-            self.monitor.stop()  # Stop the TimerMonitor thread
+        if hasattr(self, 'monitoring_thread') and self.monitoring_thread.isRunning():
+            self.monitoring_thread.quit()
+            self.monitoring_thread.wait()
+        #if hasattr(self, 'monitor'):
+            #self.monitor.stop()  # Stop the TimerMonitor thread
         gen.IsTesterPresentActive = False
         gen.log_action(f"Window Close", f"Service 3E Window Closed.")
+        print("Window Close", f"Service 3E Window Closed.")
         event.accept()  # Make sure to accept the event to close the window
 
     def get_timer(self):
@@ -241,6 +247,7 @@ if __name__ == "__main__":
 
     monitoring_thread = QtCore.QThread()
     monitoring_thread.run = ui.monitor_service_active
+    ui.monitoring_thread = monitoring_thread
     monitoring_thread.start()
 
     
