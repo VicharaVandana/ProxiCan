@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Ui_form_sid36</class>
+ <widget class="QDialog" name="Ui_form_sid36">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>805</width>
+    <height>569</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Data_transfer_service36</string>
+  </property>
+  <widget class="QProgressBar" name="progressBar">
+   <property name="geometry">
+    <rect>
+     <x>110</x>
+     <y>20</y>
+     <width>671</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="value">
+    <number>24</number>
+   </property>
+  </widget>
+  <widget class="QWidget" name="layoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>50</y>
+     <width>761</width>
+     <height>411</height>
+    </rect>
+   </property>
+   <layout class="QGridLayout" name="gridLayout_2">
+    <property name="sizeConstraint">
+     <enum>QLayout::SetNoConstraint</enum>
+    </property>
+    <item row="1" column="2">
+     <widget class="QPushButton" name="pushButton_clearLog_2">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(85, 255, 127);
+color: rgb(85, 0, 0);</string>
+      </property>
+      <property name="text">
+       <string>Clear Log</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="3">
+     <widget class="QPushButton" name="pushButton_reset_2">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(170, 170, 0);
+font: 75 8pt &quot;MS Shell Dlg 2&quot;;
+color: rgb(0, 85, 0);</string>
+      </property>
+      <property name="text">
+       <string>Reset</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="1" colspan="2">
+     <widget class="QTextBrowser" name="textBrowser_Resp_2"/>
+    </item>
+    <item row="1" column="1">
+     <widget class="QLabel" name="label_ResType_2">
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(0, 0, 255);</string>
+      </property>
+      <property name="text">
+       <string>No Response</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="0">
+     <widget class="QLabel" name="label_4">
+      <property name="text">
+       <string>Response : </string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="3">
+     <widget class="QPushButton" name="pushButton_appendLog_2">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(85, 255, 127);
+color: rgb(85, 0, 0);</string>
+      </property>
+      <property name="text">
+       <string>Add to Log</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <widget class="QLabel" name="label_5">
+      <property name="text">
+       <string>Response Type: </string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QLabel" name="label_status">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>470</y>
+     <width>761</width>
+     <height>81</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(255, 255, 127);
+color: rgb(85, 0, 0);
+border-color: rgb(0, 0, 255);</string>
+   </property>
+   <property name="text">
+    <string>No Status</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="wordWrap">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_6">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>20</y>
+     <width>81</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Progress Bar</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

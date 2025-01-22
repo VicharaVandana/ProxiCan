@@ -5,6 +5,7 @@ if RUNNING_ON_RASPBERRYPI == False:
 else:
     import uds
     import can
+from service36_base import Ui_Ui_form_sid36
 from intelhex import IntelHex 
 from service34_base import Ui_Form_SID34
 from PyQt5 import QtCore, QtGui, QtWidgets
@@ -17,6 +18,9 @@ import general as gen
 #import uds_dummy as uds     #will have to be replaced with actual uds file while testing on board
 import configure as conf
 import os
+import service36_functions as DT
+import service36_main as main36
+import data_trans_variable as DTV
 
 
 
@@ -122,6 +126,7 @@ class Ui_Service34(Ui_Form_SID34):
                         # Print the extracted data in the terminal
                         print(f"Data from address 0x{start_address:04X} for size {size}:")
                         e_data = " ".join(extracted_data)
+                        DTV.ex_data=e_data
 
                     else:
                         # Print all address-to-data mappings for debugging
@@ -213,17 +218,21 @@ class Ui_Service34(Ui_Form_SID34):
         # Step 1: Convert each element to a 2-character hex string
             hex_blocksize = ''.join(f'{byte:02x}' for byte in blocksize)
         # Step 2: Convert the concatenated hex string to a decimal integer
-            decimal_blocksize = int(hex_blocksize, 16)
-            blocks=(memsize//decimal_blocksize)+1
+            DTV.decimal_blocksize = int(hex_blocksize, 16)
+            DTV.blocks=(memsize//DTV.decimal_blocksize)+1
 
-            hex_values = [f"{value:02x}" for value in blocksize]
+            DTV.blocksize_hex_values = [f"{value:02x}" for value in blocksize]
     
     # Modify the first hexadecimal value by adding 1
-            if hex_values:
-                first_value = int(hex_values[0], 16) +16
-                print("f",first_value)
-                hex_values[0] = f"{first_value:02x}"
-            print("hh ",hex_values)
+            if DTV.blocksize_hex_values:
+                first_value = int(DTV.blocksize_hex_values[0], 16) +16
+                DTV.blocksize_hex_values[0] = f"{first_value:02x}"
+                print(DTV.blocksize_hex_values)
+    #Data transfer part using service 36
+
+            d = main36.Ui_Service36.send36service(DTV.ex_data,DTV.blocksize_hex_values,DTV.blocks,DTV.decimal_blocksize)
+
+
          
 
             #data_transfer = data_transfer()
@@ -232,8 +241,8 @@ class Ui_Service34(Ui_Form_SID34):
             <p><strong>Service ID:</strong> <I>{hex(response.resp[0]-0x40)}</I></p>
             <p><strong>Memory Address:</strong> <I>{mem_add}</I></p>
             <p><strong>Memory Size:</strong> <I>{mem_size}</I></p>
-            <p><strong>Info:</strong> <I> Service 34 response successfully received with Block size {decimal_blocksize}</I></p>
-            <p><strong>Info:</strong> <I> Number of blocks required {blocks}</I></p>
+            <p><strong>Info:</strong> <I> Service 34 response successfully received with Block size {DTV.decimal_blocksize}</I></p>
+            <p><strong>Info:</strong> <I> Number of blocks required {DTV.blocks}</I></p>
             '''
         elif response.type == "Negative Response":
             response_html = f'''
@@ -271,7 +280,7 @@ class Ui_Service34(Ui_Form_SID34):
         Explanation:    {response_text}<------------------- LOG ENTRY END ------------------->
 
         '''
-        return
+        return 
 
 
 
