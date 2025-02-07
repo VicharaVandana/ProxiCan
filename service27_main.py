@@ -13,6 +13,7 @@ import service27_functions as fun
 from securityaccesslogic import *
 from bs4 import BeautifulSoup
 import os
+import json
 import datetime
 import general as gen
 import configure as conf
@@ -20,8 +21,33 @@ import configure as conf
 
 
 class Ui_Service27(Ui_Form_SID27, QtWidgets.QMainWindow):
+    def __init__(self):
+        super().__init__()
+        self.security_config = self.load_security_config()
+    
+    def load_security_config(self):
+        """
+        Load the security level configuration from the JSON file.
+        Excludes the keys "New_SecurityLevel" and "".
+        """
+        try:
+            with open("securityLvl_config.json", "r") as file:
+                data = json.load(file)
+                # Exclude "New_SecurityLevel" and "" keys
+                filtered_data = {key: value for key, value in data.items() if key not in ["New_SecurityLevel", ""]}
+                return filtered_data
+        except FileNotFoundError:
+            print("securityLvl_config.json file not found.")
+            return {}
+        except json.JSONDecodeError:
+            print("Error decoding securityLvl_config.json file.")
+            return {}
+
     def redesign_ui(self):
-        pass 
+        # Populate comboBox_SecurityLevel with filtered keys from the JSON file
+        self.comboBox_SecurityLevel.clear()
+        for key in self.security_config.keys():
+            self.comboBox_SecurityLevel.addItem(key) 
     
     def connectFunctions(self):
         self.pushButton_Send27Req.clicked.connect(self.send27service)
@@ -60,11 +86,13 @@ class Ui_Service27(Ui_Form_SID27, QtWidgets.QMainWindow):
         return
     
     def send27service(self):
-        index_SecurityLevel = self.comboBox_SecurityLevel.currentIndex()
-        current_securitydetails = fun.getsecurityaccessdetails(index_SecurityLevel)
+        current_SecurityLevel = self.comboBox_SecurityLevel.currentText()
+        #current_securitydetails = fun.getsecurityaccessdetails(index_SecurityLevel)
+        current_securitydetails = self.security_config[current_SecurityLevel]
+        print(current_securitydetails["subfunction_getseed"])
 
         #Request for Get Seed part of Security Access
-        service_request_getseed = fun.form_reqmsg4srv27_getSeed(current_securitydetails["subfunction_getseed"])
+        service_request_getseed = fun.form_reqmsg4srv27_getSeed(int(current_securitydetails["subfunction_getseed"]))
 
         gen.IsAnyServiceActive = True   #Next request is triggered, so make True      
         while(gen.IsTesterPresentActive == True):
@@ -117,11 +145,17 @@ class Ui_Service27(Ui_Form_SID27, QtWidgets.QMainWindow):
         if(Is_ValidateKeyNeeded == True):
             #Compute the key from seed
             logicfunction = current_securitydetails["SecurityFunction"]
+            function_definition = current_securitydetails["SecurityFunctionDefinition"]
+            try:
+                exec(function_definition, globals())
+            except Exception as e:
+                raise RuntimeError(f"Error defining function '{logicfunction}': {e}")
+            #print(current_securitydetails["SecurityFunction"])
             #print(f"function is {logicfunction}. Seed is {seed} and key value is {globals()[logicfunction](seed)}")
             key = globals()[logicfunction](seed)
 
             #Request for Validate Key part of Security Access
-            service_request_validatekey = fun.form_reqmsg4srv27_validateKey(current_securitydetails["subfunction_validatekey"], key, current_securitydetails["keyLength"])
+            service_request_validatekey = fun.form_reqmsg4srv27_validateKey(int(current_securitydetails["subfunction_validatekey"]), key, int(current_securitydetails["keyLength"]))
 
             response_validatekey = uds.sendRequest(service_request_validatekey, True)
             gen.log_action("UDS Request Success", f"27 Request to Validate Key Successfully sent : {' '.join(hex(number) for number in service_request_validatekey)}")
@@ -178,13 +212,13 @@ class Ui_Service27(Ui_Form_SID27, QtWidgets.QMainWindow):
 
         self.logentrystring = f'''<---- LOG ENTRY [{current_user} - {currenttime}] ---->
 UDS Request for Get Seed :   [{" ".join(hex(number) for number in service_request_getseed)}]
-Explaination:   Security Access (Service 27) Requested to Get seed value for Security Level {(current_securitydetails["subfunction_validatekey"]//2)} - Subfunctions {hex(current_securitydetails["subfunction_getseed"])}_{hex(current_securitydetails["subfunction_validatekey"])}
+Explaination:   Security Access (Service 27) Requested to Get seed value for Security Level {(int(current_securitydetails["subfunction_validatekey"])//2)} - Subfunctions {hex(int(current_securitydetails["subfunction_getseed"]))}_{hex(int(current_securitydetails["subfunction_validatekey"]))}
 UDS Response for Get Seed:   [{" ".join(hex(number) for number in response_getseed.resp)}]'''
         if(Is_ValidateKeyNeeded == True):
             self.logentrystring = f'''{self.logentrystring}
 UDS Get Seed Successful. The Seed Recieved is: {hex(seed)}. The Key computed internally is {hex(key)}
 UDS Request for Validate Key :   [{" ".join(hex(number) for number in service_request_validatekey)}]
-Explaination:   Security Access (Service 27) Requested to validate Key computed for Security Level {(current_securitydetails["subfunction_validatekey"]//2)} - Subfunctions {hex(current_securitydetails["subfunction_getseed"])}_{hex(current_securitydetails["subfunction_validatekey"])}
+Explaination:   Security Access (Service 27) Requested to validate Key computed for Security Level {(int(current_securitydetails["subfunction_validatekey"])//2)} - Subfunctions {hex(int(current_securitydetails["subfunction_getseed"]))}_{hex(int(current_securitydetails["subfunction_validatekey"]))}
 UDS Response for Validate Key:   [{" ".join(hex(number) for number in response_validatekey.resp)}]'''
 
         self.logentrystring = f'''{self.logentrystring}
