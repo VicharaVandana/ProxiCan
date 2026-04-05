@@ -937,7 +937,7 @@ background-color: rgb(170, 255, 255);</string>
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>450</x>
@@ -1509,20 +1509,60 @@ color: rgb(0, 0, 255);</string>
     <property name="title">
      <string>Menu</string>
     </property>
+    <widget class="QMenu" name="menuUDS_Service_Settings">
+     <property name="title">
+      <string>UDS Service Settings</string>
+     </property>
+     <widget class="QMenu" name="menuSecurity_Access_0x27">
+      <property name="title">
+       <string>Security Access 0x27</string>
+      </property>
+      <addaction name="actionExport_Security_Levels"/>
+      <addaction name="actionImport_Security_Levels"/>
+      <addaction name="actionDelete_Security_Levels"/>
+      <addaction name="actionConfigure_Security_Levels"/>
+     </widget>
+     <addaction name="menuSecurity_Access_0x27"/>
+    </widget>
     <addaction name="actionSettings"/>
     <addaction name="actionLog_Files_Location"/>
+    <addaction name="separator"/>
+    <addaction name="menuUDS_Service_Settings"/>
    </widget>
    <addaction name="menuMenu"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <action name="actionSettings">
    <property name="text">
-    <string>UDS Service Settings</string>
+    <string>UDS Service Selection</string>
+   </property>
+   <property name="toolTip">
+    <string>UDS Service Selection which are applicable to the project.</string>
    </property>
   </action>
   <action name="actionLog_Files_Location">
    <property name="text">
     <string>Log Files Location</string>
+   </property>
+  </action>
+  <action name="actionExport_Security_Levels">
+   <property name="text">
+    <string>Export Security Levels</string>
+   </property>
+  </action>
+  <action name="actionImport_Security_Levels">
+   <property name="text">
+    <string>Import Security Levels</string>
+   </property>
+  </action>
+  <action name="actionDelete_Security_Levels">
+   <property name="text">
+    <string>Delete Security Levels</string>
+   </property>
+  </action>
+  <action name="actionConfigure_Security_Levels">
+   <property name="text">
+    <string>Configure Security Levels</string>
    </property>
   </action>
  </widget>

@@ -1,6 +1,6 @@
 from environment import *
 
-if RUNNING_ON_RASPBERRYPI == False:
+if (RUNNING_ON_RASPBERRYPI == False) and (RUNNING_ON_WINDOWS_WAVESHARE == False):
     import uds_dummy as uds     #will have to be replaced with actual uds file while testing on board
 else:
     import uds
@@ -63,7 +63,7 @@ class Ui_Service22(Ui_Form_SID22):
         did_string = self.lineEdit_DID.text().strip().replace(" ","").replace(" ","").replace(" ","")
         gen.log_action("Button Click", f"Send 22 request button clicked with DID[{did_string}].")
 
-        if(False == gen.check_2Bytehexadecimal(did_string)):
+        if(False == gen.check_nBytehexadecimal(did_string,2)):
             #Show messagebox with enter valid DID value
             self.update_status("Please enter a valid DID value. It must be 2 byte in hexadecimal format")
             gen.log_action("UDS Request Fail", "22 Request not happened due to invalid DID format")

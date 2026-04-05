@@ -1,6 +1,6 @@
 from environment import *
 
-if RUNNING_ON_RASPBERRYPI == False:
+if (RUNNING_ON_RASPBERRYPI == False) and (RUNNING_ON_WINDOWS_WAVESHARE == False):
     import uds_dummy as uds     #will have to be replaced with actual uds file while testing on board
 else:
     import uds
@@ -69,7 +69,7 @@ class Ui_Service85(Ui_Form_SID85):
         sprmib_flg = self.checkBox_suppressposmsg.isChecked()
         if(self.checkBox_DTCOption.isChecked()): 
             dtc_string= self.lineEdit_DTCSettingInput.text().strip().replace(" ","").replace(" ","").replace(" ","")
-            if(False == gen.check_3Bytehexadecimal(dtc_string)):
+            if(False == gen.check_nBytehexadecimal(dtc_string,3)):
                 self.update_status("Please enter a valid DTC value. It must be 3 byte in hexadecimal format")
                 print(f"DTC {dtc_string} is invalid")
                 gen.log_action("UDS Request Fail", "85 Request not happened due to invalid DTC format")

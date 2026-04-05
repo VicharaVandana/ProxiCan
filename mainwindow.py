@@ -1,9 +1,9 @@
 from mainwindow_base import Ui_MainWindow
-from windowsettings import UDSservice_EnDis_Window
-from logfile_selector import LogFileSelector
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QMainWindow
 import json
+import time
+import sys
 
 import mainfunctions as fun
 import configure as conf
@@ -18,6 +18,15 @@ import service11_main as er
 import service14_main as clearDTC
 import service28_main as commcontrol
 import service85_main as cdtcs
+
+#Import menu related modules.
+from windowsettings import UDSservice_EnDis_Window
+from logfile_selector import LogFileSelector
+from secuLevel_Import import SecuLvlImportTool
+from secuLevel_Delete import SecuLvlDeleteTool
+from secuLevel_Export import SecuLvlExportTool
+from SecurityLevelConfigSettings_main import Ui_SecurityLevel_Settings
+from ecu_simulator import EcuSimulatorThread
 
 Is_CanConnected = False
 
@@ -56,6 +65,8 @@ class mainwindow(Ui_MainWindow, QtWidgets.QWidget):
         self.load_json()
         self.update_button_visibility() 
         self.rearrange_buttons()
+        
+        self.ecu_thread = None
         
         #Hide the functionality of elements till its functionality is implemented
         self.checkBox_EnableTesterPresent.hide()
@@ -117,6 +128,10 @@ class mainwindow(Ui_MainWindow, QtWidgets.QWidget):
         #Connect Menu options 
         self.actionSettings.triggered.connect(self.open_settings)
         self.actionLog_Files_Location.triggered.connect(self.open_log_selector)
+        self.actionDelete_Security_Levels.triggered.connect(self.open_deleteSecuLevelsWindow)
+        self.actionExport_Security_Levels.triggered.connect(self.open_exportSecuLevelsWindow)
+        self.actionImport_Security_Levels.triggered.connect(self.open_importSecuLevelsWindow)
+        self.actionConfigure_Security_Levels.triggered.connect(self.open_configureSecuLevelsWindow)
 
         #Connect and Disconnect buttons
         self.pushButton_connect.clicked.connect(self.connectcan)
@@ -156,6 +171,24 @@ class mainwindow(Ui_MainWindow, QtWidgets.QWidget):
         gen.log_action("Menu Option Click", "<UDS Service Settings> Option Selected")
         return
     
+    def open_deleteSecuLevelsWindow(self):
+        self.deleteSecuLevels_window = SecuLvlDeleteTool()
+        self.deleteSecuLevels_window.show()
+        gen.log_action("Menu Option Click", "<Delete Security Levels> Option Selected")
+        return
+    
+    def open_exportSecuLevelsWindow(self):
+        self.exportSecuLevels_window = SecuLvlExportTool()
+        self.exportSecuLevels_window.show()
+        gen.log_action("Menu Option Click", "<Export Security Levels> Option Selected")
+        return
+    
+    def open_importSecuLevelsWindow(self):
+        self.importSecuLevels_window = SecuLvlImportTool()
+        self.importSecuLevels_window.show()
+        gen.log_action("Menu Option Click", "<Import Security Levels> Option Selected")
+        return
+    
     def open_log_selector(self):
         # Create an instance of the LogFileSelector window and show it
         self.log_selector_window = LogFileSelector()
@@ -163,6 +196,16 @@ class mainwindow(Ui_MainWindow, QtWidgets.QWidget):
         gen.log_action("Menu Option Click", "<Log File Location> Option Selected")
         return
 
+    def open_configureSecuLevelsWindow(self):
+        gen.log_action("Menu Option Click", "<Configure Security Levels> Option Selected")
+        self.windowConfigSecuLevel = QtWidgets.QWidget()
+        self.configureSecuLevels_window = Ui_SecurityLevel_Settings()
+        self.configureSecuLevels_window.setupUi(self.windowConfigSecuLevel)
+        self.configureSecuLevels_window.redesign_ui()
+        self.configureSecuLevels_window.connectFunctions()
+        self.configureSecuLevels_window.initialise_ui()
+        self.windowConfigSecuLevel.show() 
+        return
 
     def openservice10(self):
         if(Is_CanConnected == True):
@@ -443,6 +486,12 @@ class mainwindow(Ui_MainWindow, QtWidgets.QWidget):
             self.update_status(f"Connect Button Clicked: CAN Connect successful on channel {canconfig.channel}")
             gen.log_action(f"CAN Connection", f"CAN {canconfig.channel} connected with baudrate {canconfig.bitrate} and fdf type {canconfig.fdftype}")
             Is_CanConnected = True
+            
+            # Start ECU Simulator thread if Waveshare and enabled
+            if conf.RUNNING_ON_WINDOWS_WAVESHARE and conf.ecu_ch is not None:
+                self.ecu_thread = EcuSimulatorThread(conf.ecu_ch)
+                self.ecu_thread.start()
+                
             return True
         else:
             self.update_status(f"Connect Failed!! {res}")
@@ -454,6 +503,12 @@ class mainwindow(Ui_MainWindow, QtWidgets.QWidget):
     def disconnectcan(self):
         global Is_CanConnected
         gen.log_action("Button Click", "Disonnect CAN button clicked")
+        
+        # Stop the simulator thread gracefully
+        if self.ecu_thread is not None:
+            self.ecu_thread.stop()
+            self.ecu_thread = None
+            
         conf.disconnectCAN()
         self.label_connectionstatus.setStyleSheet("background-color: rgb(250, 10, 10);")
         self.update_status(f"Disconnect Button Clicked: CAN Disconnected successfully")
@@ -469,7 +524,6 @@ class mainwindow(Ui_MainWindow, QtWidgets.QWidget):
 
 
 if __name__ == "__main__":
-    import sys
     app = QtWidgets.QApplication(sys.argv)
     MainWindow = QtWidgets.QMainWindow()
     ui = mainwindow()

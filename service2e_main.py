@@ -1,6 +1,6 @@
 from environment import *
 
-if RUNNING_ON_RASPBERRYPI == False:
+if (RUNNING_ON_RASPBERRYPI == False) and (RUNNING_ON_WINDOWS_WAVESHARE == False):
     import uds_dummy as uds     #will have to be replaced with actual uds file while testing on board
 else:
     import uds
@@ -65,7 +65,7 @@ class Ui_Service2E(Ui_Form_SID2E):
         gen.log_action("Button Click", f"Send 2E request button clicked with DID[{did_string}] and data value[{dataval_string}].")
 
         #First check if a valid DID is entered in DID field        
-        if(False == gen.check_2Bytehexadecimal(did_string)):
+        if(False == gen.check_nBytehexadecimal(did_string,2)):
             #Show messagebox with enter valid DID value
             self.update_status("Please enter a valid DID value. It must be 2 byte in hexadecimal format")
             #print(f"DID {did_string} is invalid")
@@ -74,7 +74,7 @@ class Ui_Service2E(Ui_Form_SID2E):
         
         #print(f"DID {did_string} is valid")
          #Next check if a valid Data values is entered in hex format
-        if(False == gen.check_min1Bytehexadecimal(dataval_string)):
+        if(False == gen.check_minNBytehexadecimal(dataval_string,1)):
             #Show messagebox with enter valid DID value
             self.update_status("Please enter a valid Data value. It must be in hexadecimal format in bytes. Each byte needs to have 2 characters. lik 03 or 6F etc Minimum 1 byte is needed.")
             #print(f"Data {dataval_string} is invalid")

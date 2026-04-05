@@ -1,6 +1,6 @@
 from environment import *
 
-if RUNNING_ON_RASPBERRYPI == False:
+if (RUNNING_ON_RASPBERRYPI == False) and (RUNNING_ON_WINDOWS_WAVESHARE == False):
     import uds_dummy as uds     #will have to be replaced with actual uds file while testing on board
 else:
     import uds
@@ -13,7 +13,6 @@ from bs4 import BeautifulSoup
 import os
 import datetime
 import general as gen
-import uds_dummy as uds     #will have to be replaced with actual uds file while testing on board
 import configure as conf
 import os
 
@@ -91,7 +90,7 @@ class Ui_Service28(Ui_Form_SID28):
         #gen.log_action("Button Click", f"Send 22 request button clicked with DID[{did_string}].")
 
 
-            if(False == gen.check_2Bytehexadecimal(nin_string)):
+            if(False == gen.check_nBytehexadecimal(nin_string,2)):
                 #Show messagebox with enter valid DID value
                 self.update_status("Please enter a valid NIN value. It must be 2 byte in hexadecimal format")
                 gen.log_action("UDS Request Fail", "28 Request not happened due to invalid NIN format")

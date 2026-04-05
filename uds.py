@@ -1,4 +1,13 @@
-import flowcontrol_canfd as tp
+import flowcontrol_canfd
+import flowcontrol_can
+import configure as conf
+
+def get_tp():
+    """Returns the correct transport protocol module based on configuration."""
+    if hasattr(conf, 'fdf_type') and conf.fdf_type == "CAN":
+        return flowcontrol_can
+    return flowcontrol_canfd
+
 
 NRC_DATA = {
     0x00: ["PositiveResponse", "This response code indicates that the requested action has been fulfilled by the server. The response is positive as well."],
@@ -55,6 +64,7 @@ response = cls_response()
 #request = [0x22, 0xF1, 0x82]
 def sendRequest(request, IsPosResExpected = True):
     global response
+    tp = get_tp()
     response.req = request.copy()
     status = tp.send_data(request)
     if (status == True):
@@ -79,7 +89,7 @@ def sendRequest(request, IsPosResExpected = True):
 
         while((res[0] == 0x7F) and (res[2] == 0x78)):   #If positive response pending is recieved then
             response.positiveResponsePending_count = response.positiveResponsePending_count + 1
-            res = tp.recieve_data()
+            res = get_tp().recieve_data()
         else:
             response.resp = res
             #process the response
