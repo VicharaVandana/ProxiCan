@@ -18,7 +18,7 @@ JSON_FILE_PATH = "securityLvl_config.json"
 
 Is_SecurityLevelValid = False
 
-class Ui_SecurityLevel_Settings(Ui_Form_SID27Settings, QtWidgets.QMainWindow):
+class Ui_SecurityLevel_Settings(Ui_Form_SID27Settings):
     def redesign_ui(self):
         pass
     

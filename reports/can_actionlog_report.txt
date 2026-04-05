@@ -1,7 +1,4 @@
-<sbb925582>[2025-02-07 17:37:24] Menu Option Click: <Delete Security Levels> Option Selected
-<sbb925582>[2025-02-07 17:37:42] Button Click: Connect CAN button clicked
-<sbb925582>[2025-02-07 17:37:42] CAN Connection: CAN can0 connected with baudrate 125000 and fdf type CAN
-<sbb925582>[2025-02-07 17:37:43] Button Click: Service 27 Window Opened
-<sbb925582>[2025-02-07 17:37:49] UDS Request Success: 27 Request to get Seed Successfully sent : 0x27 0x3d
-<sbb925582>[2025-02-07 17:37:53] UDS Request Success: 27 Request to get Seed Successfully sent : 0x27 0x1
-<sbb925582>[2025-02-07 17:37:53] UDS Request Success: 27 Request to Validate Key Successfully sent : 0x27 0x2 0xe6 0xb9
+<vicha>[2026-04-05 14:24:16] Menu Option Click: <Configure Security Levels> Option Selected
+<vicha>[2026-04-05 14:24:52] Button Click: Validate Security level details clicked in Security Level Configurations window. Validation result : True
+<vicha>[2026-04-05 14:25:00] Button Click: Validate Security level details clicked in Security Level Configurations window. Validation result : False
+<vicha>[2026-04-05 14:25:07] Button Click: Validate Security level details clicked in Security Level Configurations window. Validation result : True

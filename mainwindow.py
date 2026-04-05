@@ -2,6 +2,8 @@ from mainwindow_base import Ui_MainWindow
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QMainWindow
 import json
+import time
+import sys
 
 import mainfunctions as fun
 import configure as conf
@@ -21,9 +23,10 @@ import service85_main as cdtcs
 from windowsettings import UDSservice_EnDis_Window
 from logfile_selector import LogFileSelector
 from secuLevel_Import import SecuLvlImportTool
-from secuLevel_Export import SecuLvlExportTool
 from secuLevel_Delete import SecuLvlDeleteTool
+from secuLevel_Export import SecuLvlExportTool
 from SecurityLevelConfigSettings_main import Ui_SecurityLevel_Settings
+from ecu_simulator import EcuSimulatorThread
 
 Is_CanConnected = False
 
@@ -62,6 +65,8 @@ class mainwindow(Ui_MainWindow, QtWidgets.QWidget):
         self.load_json()
         self.update_button_visibility() 
         self.rearrange_buttons()
+        
+        self.ecu_thread = None
         
         #Hide the functionality of elements till its functionality is implemented
         self.checkBox_EnableTesterPresent.hide()
@@ -193,13 +198,13 @@ class mainwindow(Ui_MainWindow, QtWidgets.QWidget):
 
     def open_configureSecuLevelsWindow(self):
         gen.log_action("Menu Option Click", "<Configure Security Levels> Option Selected")
-        self.windowConfigSecuLevel = QMainWindow()
+        self.windowConfigSecuLevel = QtWidgets.QWidget()
         self.configureSecuLevels_window = Ui_SecurityLevel_Settings()
         self.configureSecuLevels_window.setupUi(self.windowConfigSecuLevel)
         self.configureSecuLevels_window.redesign_ui()
         self.configureSecuLevels_window.connectFunctions()
         self.configureSecuLevels_window.initialise_ui()
-        self.windowConfigSecuLevel.show()  # Display the new window
+        self.windowConfigSecuLevel.show() 
         return
 
     def openservice10(self):
@@ -481,6 +486,12 @@ class mainwindow(Ui_MainWindow, QtWidgets.QWidget):
             self.update_status(f"Connect Button Clicked: CAN Connect successful on channel {canconfig.channel}")
             gen.log_action(f"CAN Connection", f"CAN {canconfig.channel} connected with baudrate {canconfig.bitrate} and fdf type {canconfig.fdftype}")
             Is_CanConnected = True
+            
+            # Start ECU Simulator thread if Waveshare and enabled
+            if conf.RUNNING_ON_WINDOWS_WAVESHARE and conf.ecu_ch is not None:
+                self.ecu_thread = EcuSimulatorThread(conf.ecu_ch)
+                self.ecu_thread.start()
+                
             return True
         else:
             self.update_status(f"Connect Failed!! {res}")
@@ -492,6 +503,12 @@ class mainwindow(Ui_MainWindow, QtWidgets.QWidget):
     def disconnectcan(self):
         global Is_CanConnected
         gen.log_action("Button Click", "Disonnect CAN button clicked")
+        
+        # Stop the simulator thread gracefully
+        if self.ecu_thread is not None:
+            self.ecu_thread.stop()
+            self.ecu_thread = None
+            
         conf.disconnectCAN()
         self.label_connectionstatus.setStyleSheet("background-color: rgb(250, 10, 10);")
         self.update_status(f"Disconnect Button Clicked: CAN Disconnected successfully")
@@ -507,7 +524,6 @@ class mainwindow(Ui_MainWindow, QtWidgets.QWidget):
 
 
 if __name__ == "__main__":
-    import sys
     app = QtWidgets.QApplication(sys.argv)
     MainWindow = QtWidgets.QMainWindow()
     ui = mainwindow()

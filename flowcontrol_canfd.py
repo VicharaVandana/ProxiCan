@@ -2,6 +2,11 @@ from environment import *
 
 if RUNNING_ON_RASPBERRYPI == True:
     import can
+elif RUNNING_ON_WINDOWS_WAVESHARE == True:
+    from waveshare_wrapper import Message as can_Message
+else:
+    pass
+
 import time
 import datetime
 import configure as conf
@@ -72,16 +77,28 @@ def send_firstframe(n_sdu):
 
     databytes = pci + nsdu_FFchunk
     if(conf.id_type == "EXTENDED"):
-        can_msg = can.Message(arbitration_id=conf.diag_req_msgid, data=databytes, is_extended_id=True, is_fd=True)
+        if RUNNING_ON_RASPBERRYPI == True:
+            can_msg = can.Message(arbitration_id=conf.diag_req_msgid, data=databytes, is_extended_id=True, is_fd=True)
+        elif RUNNING_ON_WINDOWS_WAVESHARE == True:
+            can_msg = can_Message(arbitration_id=conf.diag_req_msgid, data=databytes, is_extended_id=True, is_fd=True)
+        else:
+            pass
     else:
-        can_msg = can.Message(arbitration_id=conf.diag_req_msgid, data=databytes, is_extended_id=False, is_fd=True)
+        if RUNNING_ON_RASPBERRYPI == True:
+            can_msg = can.Message(arbitration_id=conf.diag_req_msgid, data=databytes, is_extended_id=False, is_fd=True)
+        elif RUNNING_ON_WINDOWS_WAVESHARE == True:
+            can_msg = can_Message(arbitration_id=conf.diag_req_msgid, data=databytes, is_extended_id=False, is_fd=True)
+        else:
+            pass
+        
     
     conf.tx.send(can_msg)
     # Record the time before sending
     send_time = datetime.datetime.fromtimestamp(time.time()).strftime('%Y-%m-%d %H:%M:%S.%f')
     gen.logcantraffic("TX", send_time, conf.diag_req_msgid, len(databytes), databytes)
 
-    gen.tp_log("First Frame Sent", can_msg)
+    canmsg = f'TX\tID:{hex(can_msg.arbitration_id)}\tdatalength:{len(can_msg.data)}bytes\t data:[{" ".join(hex(number) for number in can_msg.data)}].'
+    gen.tp_log("First Frame Sent", canmsg)
     print(f"The First frame sent : {can_msg}")
 
     return 
@@ -93,9 +110,21 @@ def send_consecutiveframe(sequence_number, data_chunk, cf_gap_time_min):
     databytes = [pci] + data_chunk
 
     if(conf.id_type == "EXTENDED"):
-        can_msg = can.Message(arbitration_id=conf.diag_req_msgid, data=databytes, is_extended_id=True, is_fd=True)
+        if RUNNING_ON_RASPBERRYPI == True:
+            can_msg = can.Message(arbitration_id=conf.diag_req_msgid, data=databytes, is_extended_id=True, is_fd=True)
+        elif RUNNING_ON_WINDOWS_WAVESHARE == True:
+            can_msg = can_Message(arbitration_id=conf.diag_req_msgid, data=databytes, is_extended_id=True, is_fd=True)
+        else:
+            pass
+        
     else:
-        can_msg = can.Message(arbitration_id=conf.diag_req_msgid, data=databytes, is_extended_id=False, is_fd=True)
+        if RUNNING_ON_RASPBERRYPI == True:
+            can_msg = can.Message(arbitration_id=conf.diag_req_msgid, data=databytes, is_extended_id=False, is_fd=True)
+        elif RUNNING_ON_WINDOWS_WAVESHARE == True:
+            can_msg = can_Message(arbitration_id=conf.diag_req_msgid, data=databytes, is_extended_id=False, is_fd=True)
+        else:
+            pass
+
     
     conf.tx.send(can_msg)
     # Record the time before sending
@@ -103,7 +132,8 @@ def send_consecutiveframe(sequence_number, data_chunk, cf_gap_time_min):
     gen.logcantraffic("TX", send_time, conf.diag_req_msgid, len(databytes), databytes)
 
     time.sleep(cf_gap_time_min)
-    gen.tp_log(f"Consecutive Frame - {sequence_number} Sent", can_msg)
+    canmsg = f'TX\tID:{hex(can_msg.arbitration_id)}\tdatalength:{len(can_msg.data)}bytes\t data:[{" ".join(hex(number) for number in can_msg.data)}].'
+    gen.tp_log(f"Consecutive Frame - {sequence_number} Sent", canmsg)
     print(f"The Consecutive Frame - {sequence_number} sent : {can_msg}")
 
     return True
@@ -139,16 +169,29 @@ def send_small_data(n_sdu):
         databytes = [0x00, datalength] + n_sdu
 
     if(conf.id_type == "EXTENDED"):
-        can_msg = can.Message(arbitration_id=0x18DA6CF2, data=databytes, is_extended_id=True, is_fd=True)
+        if RUNNING_ON_RASPBERRYPI == True:
+            can_msg = can.Message(arbitration_id=conf.diag_req_msgid, data=databytes, is_extended_id=True, is_fd=True)
+        elif RUNNING_ON_WINDOWS_WAVESHARE == True:
+            can_msg = can_Message(arbitration_id=conf.diag_req_msgid, data=databytes, is_extended_id=True, is_fd=True)
+        else:
+            pass
+    
     else:
-        can_msg = can.Message(arbitration_id=conf.diag_req_msgid, data=databytes, is_extended_id=False, is_fd=True)
+        if RUNNING_ON_RASPBERRYPI == True:
+            can_msg = can.Message(arbitration_id=conf.diag_req_msgid, data=databytes, is_extended_id=False, is_fd=True)
+        elif RUNNING_ON_WINDOWS_WAVESHARE == True:
+            can_msg = can_Message(arbitration_id=conf.diag_req_msgid, data=databytes, is_extended_id=False, is_fd=True)
+        else:
+            pass
+        
     
     conf.tx.send(can_msg)
     # Record the time before sending
     send_time = datetime.datetime.fromtimestamp(time.time()).strftime('%Y-%m-%d %H:%M:%S.%f')
     gen.logcantraffic("TX", send_time, conf.diag_req_msgid, len(databytes), databytes)
 
-    gen.tp_log("Single Frame Sent", can_msg)
+    canmsg = f'TX\tID:{hex(can_msg.arbitration_id)}\tdatalength:{len(can_msg.data)}bytes\t data:[{" ".join(hex(number) for number in can_msg.data)}].'
+    gen.tp_log("Single Frame Sent", canmsg)
     print(f"The single frame sent : {can_msg}")
     print(f'The can id is {conf.diag_req_msgid}')
 
@@ -269,9 +312,20 @@ def send_flowcontrolframe(flow_status, block_size, st_min):
     databytes = [byte1, byte2, byte3]
 
     if(conf.id_type == "EXTENDED"):
-        can_msg = can.Message(arbitration_id=conf.diag_req_msgid, data=databytes, is_extended_id=True, is_fd=True)
+        if RUNNING_ON_RASPBERRYPI == True:
+            can_msg = can.Message(arbitration_id=conf.diag_req_msgid, data=databytes, is_extended_id=True, is_fd=True)
+        elif RUNNING_ON_WINDOWS_WAVESHARE == True:
+            can_msg = can_Message(arbitration_id=conf.diag_req_msgid, data=databytes, is_extended_id=True, is_fd=True)
+        else:
+            pass
     else:
-        can_msg = can.Message(arbitration_id=conf.diag_req_msgid, data=databytes, is_extended_id=False, is_fd=True)
+        if RUNNING_ON_RASPBERRYPI == True:
+            can_msg = can.Message(arbitration_id=conf.diag_req_msgid, data=databytes, is_extended_id=False, is_fd=True)
+        elif RUNNING_ON_WINDOWS_WAVESHARE == True:
+            can_msg = can_Message(arbitration_id=conf.diag_req_msgid, data=databytes, is_extended_id=False, is_fd=True)
+        else:
+            pass
+        
     
     conf.tx.send(can_msg)
     # Record the time before sending
@@ -280,7 +334,8 @@ def send_flowcontrolframe(flow_status, block_size, st_min):
 
     
 
-    gen.tp_log("FLow Control Frame Sent", can_msg)
+    canmsg = f'TX\tID:{hex(can_msg.arbitration_id)}\tdatalength:{len(can_msg.data)}bytes\t data:[{" ".join(hex(number) for number in can_msg.data)}].'
+    gen.tp_log("FLow Control Frame Sent", canmsg)
     print(f"The FLow Control frame sent : {can_msg}")
 
     return True
@@ -305,7 +360,7 @@ def recieve_data():
             else:
                 n_sdu_rx.extend(data[1:])
             print(f'Single Frame Recieved of length {datalength}. N_SDU = [{" ".join(hex(number) for number in n_sdu_rx)}]')
-            canmsg = f'RX\tID:{conf.diag_resp_msgid}\tdatalength:{datalength}bytes\t data:[{" ".join(hex(number) for number in n_sdu_rx)}].'
+            canmsg = f'RX\tID:{hex(conf.diag_resp_msgid)}\tdatalength:{datalength}bytes\t data:[{" ".join(hex(number) for number in n_sdu_rx)}].'
             gen.tp_log("Single Frame Recieved", canmsg)
             return(n_sdu_rx)
         
@@ -319,7 +374,7 @@ def recieve_data():
                 n_sdu_rx.extend(data[2:])
                 pendingbyteslength = n_sdu_length - len(data[2:])
             print(f"First Frame Recieved. Total NSDU Length = {n_sdu_length}bytes. Data Chunk = [{' '.join(hex(number) for number in n_sdu_rx)}]")
-            canmsg = f'RX\tID:{conf.diag_resp_msgid}\tnsdulength:{n_sdu_length}bytes\t data:[{" ".join(hex(number) for number in n_sdu_rx)}].'
+            canmsg = f'RX\tID:{hex(conf.diag_resp_msgid)}\tnsdulength:{n_sdu_length}bytes\t data:[{" ".join(hex(number) for number in n_sdu_rx)}].'
             gen.tp_log("First Frame Recieved", canmsg)
 
         else:
@@ -348,13 +403,13 @@ def recieve_data():
                 expected_seqnum = (oldseqnum + 1) % 16
                 if (seqnum != expected_seqnum):
                     print(f"Sequence broken. Expected sequence num {expected_seqnum} but recieved sequence num {seqnum}. - FLOW TERMINATED")
-                    canmsg = f'RX\tID:{conf.diag_resp_msgid}\tdata:[{" ".join(hex(number) for number in n_sdu_rx)}].'
+                    canmsg = f'RX\tID:{hex(conf.diag_resp_msgid)}\tdata:[{" ".join(hex(number) for number in n_sdu_rx)}].'
                     gen.tp_log(f"Consecutive Frame - {seqnum} Recieved but expected seq num is {expected_seqnum}", canmsg)
                     return False
                 #Update the N_SDU Buffer with consecutive frame data
                 n_sdu_rx.extend(data[1:])
                 print(f"Consecutive Frame Recieved. SeqNum:{seqnum} | Data Chunk = [{' '.join(hex(number) for number in data[1:])}]")
-                canmsg = f'RX\tID:{conf.diag_resp_msgid}\tDatalength:{len(data)}\tdata:[{" ".join(hex(number) for number in n_sdu_rx)}].'
+                canmsg = f'RX\tID:{hex(conf.diag_resp_msgid)}\tDatalength:{len(data)}\tdata:[{" ".join(hex(number) for number in n_sdu_rx)}].'
                 gen.tp_log(f"Consecutive Frame - {seqnum} Recieved", canmsg)
                 pendingbyteslength = pendingbyteslength - len(data[1:])
                 oldseqnum = expected_seqnum

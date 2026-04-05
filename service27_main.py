@@ -1,6 +1,6 @@
 from environment import *
 
-if RUNNING_ON_RASPBERRYPI == False:
+if (RUNNING_ON_RASPBERRYPI == False) and (RUNNING_ON_WINDOWS_WAVESHARE == False):
     import uds_dummy as uds     #will have to be replaced with actual uds file while testing on board
 else:
     import uds
