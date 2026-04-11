@@ -1,4 +1,10 @@
-<vicha>[2026-04-05 14:24:16] Menu Option Click: <Configure Security Levels> Option Selected
-<vicha>[2026-04-05 14:24:52] Button Click: Validate Security level details clicked in Security Level Configurations window. Validation result : True
-<vicha>[2026-04-05 14:25:00] Button Click: Validate Security level details clicked in Security Level Configurations window. Validation result : False
-<vicha>[2026-04-05 14:25:07] Button Click: Validate Security level details clicked in Security Level Configurations window. Validation result : True
+<vicha>[2026-04-11 13:57:38] Button Click: Import pxi button clicked
+<vicha>[2026-04-11 13:57:43] Config File Import Success: Config File Loaded successfully from: D:/Project/ProUDS/configfile.pxi
+<vicha>[2026-04-11 13:57:46] Button Click: Connect CAN button clicked
+<vicha>[2026-04-11 13:57:46] CAN Connection: CAN can0 connected with baudrate 500000 and fdf type CANFD
+<vicha>[2026-04-11 13:57:49] Button Click: Service 10 Window Opened
+<vicha>[2026-04-11 13:57:52] UDS Request Success: 10 Request Successfully sent : 0x10 0x1
+<vicha>[2026-04-11 13:58:23] UDS Request Success: 10 Request Successfully sent : 0x10 0x3
+<vicha>[2026-04-11 13:58:32] Button Click: Service 22 Window Opened
+<vicha>[2026-04-11 13:59:19] Button Click: Send 22 request button clicked with DID[d105].
+<vicha>[2026-04-11 13:59:22] UDS Request Success: 22 Request Successfully sent : 0x22 0xd1 0x5

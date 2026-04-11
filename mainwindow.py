@@ -10,14 +10,14 @@ import configure as conf
 import general as gen
 
 #Import service modules
-import service22_main as rdbi
-import service2e_main as wdbi
-import service10_main as dsc
-import service27_main as secuacc
-import service11_main as er
-import service14_main as clearDTC
-import service28_main as commcontrol
-import service85_main as cdtcs
+import Service_22.service22_main as rdbi
+import Service_2E.service2e_main as wdbi
+import Service_10.service10_main as dsc
+import Service_27.service27_main as secuacc
+import Service_11.service11_main as er
+import Service_14.service14_main as clearDTC
+import Service_28.service28_main as commcontrol
+import Service_85.service85_main as cdtcs
 
 #Import menu related modules.
 from windowsettings import UDSservice_EnDis_Window
